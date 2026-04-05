@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-black font-sans antialiased m-0 p-0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-black;
+  }
+
+  p {
+    @apply text-black leading-relaxed;
+  }
+
+  /* 去除全局滚动条以增加极简感（可选，视具体需求）*/
+  /*
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  */
+}
+
+@layer components {
+  .link-hover {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-0 after:left-0 after:bg-neon-green after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+}

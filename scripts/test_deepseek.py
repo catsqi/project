@@ -1,0 +1,47 @@
+import time
+import os
+from app.core.config import settings
+from app.core.llm import DeepSeekClient
+
+def test_deepseek():
+    print(f"--- DeepSeek Connectivity Test ---")
+    print(f"Model: {settings.deepseek_model}")
+    print(f"Base URL: {settings.deepseek_base_url}")
+    
+    client = DeepSeekClient()
+    
+    messages = [
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Hello! Can you introduce yourself briefly?"}
+    ]
+    
+    print("\nSending request to DeepSeek...")
+    start_time = time.time()
+    
+    try:
+        response = client.chat_completion(
+            messages=messages,
+            temperature=0.5
+        )
+        end_time = time.time()
+        
+        content = response.choices[0].message.content
+        print(f"\nResponse Received in {end_time - start_time:.2f} seconds:")
+        print("-" * 40)
+        print(content)
+        print("-" * 40)
+        
+        if hasattr(response, 'usage'):
+            print(f"\nUsage Stats:")
+            print(f"Prompt Tokens: {response.usage.prompt_tokens}")
+            print(f"Completion Tokens: {response.usage.completion_tokens}")
+            print(f"Total Tokens: {response.usage.total_tokens}")
+            
+    except Exception as e:
+        print(f"\n❌ Error during DeepSeek request: {e}")
+
+if __name__ == "__main__":
+    if not settings.deepseek_api_key:
+        print("❌ DEEPSEEK_API_KEY is not set in .env")
+    else:
+        test_deepseek()
