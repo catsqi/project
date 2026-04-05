@@ -24,17 +24,88 @@ const InterviewRoom: React.FC = () => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const handleTextSubmit = (text: string) => {
-    setMessages(prev => [...prev, { id: Date.now(), sender: 'user', text }]);
+  // Audio Queue Management
+  const audioQueueRef = useRef<string[]>([]);
+  const isPlayingRef = useRef<boolean>(false);
+
+  const playNextInQueue = () => {
+    if (audioQueueRef.current.length === 0) {
+      isPlayingRef.current = false;
+      setAiState('idle'); // Back to idle after all audio finished
+      return;
+    }
+
+    isPlayingRef.current = true;
+    setAiState('speaking');
+    const b64 = audioQueueRef.current.shift();
+    const audio = new Audio("data:audio/wav;base64," + b64);
+    audio.onended = playNextInQueue;
+    audio.play().catch(e => {
+        console.error("Audio playback error:", e);
+        playNextInQueue(); // Skip on error
+    });
+  };
+
+  const handleTextSubmit = async (text: string) => {
+    const userMsgId = Date.now();
+    setMessages(prev => [...prev, { id: userMsgId, sender: 'user', text }]);
     setAiState('thinking');
     
-    // Mock network thinking + response
-    setTimeout(() => {
-      setMessages(prev => [...prev, { id: Date.now(), sender: 'ai', text: 'INTERESTING POINT. CAN YOU ELABORATE ON THAT?' }]);
-      setAiState('speaking');
+    try {
+      const res = await fetch("/api/chat/text", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text })
+      });
+      
+      if (!res.ok) throw new Error("Text processing failed");
+      if (!res.body) throw new Error("No response body");
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      
+      const aiMsgId = userMsgId + 1;
+      setMessages(prev => [...prev, { id: aiMsgId, sender: 'ai', text: "" }]);
+      let fullAiText = "";
+      let partialLine = "";
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+
+        const chunkText = decoder.decode(value, { stream: true });
+        const lines = (partialLine + chunkText).split("\n");
+        partialLine = lines.pop() || ""; // The last element is the incomplete line
+
+        for (const line of lines) {
+          if (!line.trim()) continue;
+          try {
+            const data = JSON.parse(line);
+            
+            if (data.text) {
+              fullAiText += data.text;
+              setMessages(prev => prev.map(m => m.id === aiMsgId ? { ...m, text: fullAiText } : m));
+            }
+
+            if (data.audio) {
+              audioQueueRef.current.push(data.audio);
+              if (!isPlayingRef.current) {
+                playNextInQueue();
+              }
+            }
+
+          } catch (e) {
+            console.warn("Parse chunk failed", e);
+          }
+        }
+      }
+
       setProgress(p => Math.min(100, p + 15));
-      setTimeout(() => setAiState('idle'), 3000); // Stop speaking after 3s
-    }, 1500);
+    } catch (err: any) {
+      console.error("Text Submit Error:", err);
+      setMessages(prev => [...prev, { id: Date.now(), sender: 'ai', text: `ERROR: ${err.message}` }]);
+      setAiState('idle');
+    }
   };
 
   const setupLocalSpeechRecognition = () => {
