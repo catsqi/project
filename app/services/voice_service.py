@@ -82,11 +82,21 @@ async def process_interaction_stream(input_type: str, content: any, output_queue
                 else:
                     print(f"[System] 注意：当前 WebRTC 未连接，音频将仅通过 API 流返回。")
 
-        # 核心：使用 asyncio.to_thread 将同步阻塞的迭代器变为非阻塞
+        # 滑动窗口：System Prompt 永远保留，只发送最近 6 条消息（3 轮对话）给模型
+        # 这样无论面试多少轮，发送给模型的 Token 数始终固定，时延不会随轮次增大
+        WINDOW_SIZE = 6
+        system_prompt = global_state.messages[:1]          # 始终包含 System Prompt
+        recent_history = global_state.messages[-WINDOW_SIZE:]  # 最近 6 条对话
+        # 防止 system_prompt 被重复包含
+        if recent_history and recent_history[0].get("role") == "system":
+            messages_to_send = recent_history
+        else:
+            messages_to_send = system_prompt + recent_history
+
         response_iter = await asyncio.to_thread(
             client.chat.completions.create,
             model="glm-4-voice",
-            messages=global_state.messages,
+            messages=messages_to_send,
             stream=True
         )
 
