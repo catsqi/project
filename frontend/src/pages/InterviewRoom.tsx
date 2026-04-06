@@ -200,7 +200,11 @@ const InterviewRoom: React.FC = () => {
         if (!response.ok) throw new Error("Offer failed");
         
         const answer = await response.json();
-        await pc.setRemoteDescription(answer);
+        // 修复竞争条件：如果用户在握手期间又点了"关闭"，连接会已经是 closed 状态
+        // 此时不能再设置 RemoteDescription，否则会报错
+        if (pc.signalingState !== 'closed') {
+            await pc.setRemoteDescription(answer);
+        }
         
       } catch(err: any) {
           console.error("WebRTC Error:", err);
