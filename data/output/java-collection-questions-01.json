@@ -1,0 +1,470 @@
+[
+  {
+    "id": "java_collection_overview_001",
+    "content": "Java集合框架主要由Collection和Map两大接口派生。Collection用于存放单一元素，其下包含List、Set和Queue三个主要子接口，分别管理有序可重复、无序唯一和队列元素。Map则专门用于存储键值对映射关系。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请简要概述一下Java集合框架的主要组成部分。",
+      "best_answer_model": {
+        "logic_chain": "两大根接口 -> Collection的子接口分类 -> 各接口核心用途",
+        "scoring_keywords": [
+          "Collection接口",
+          "Map接口",
+          "List",
+          "Set",
+          "Queue",
+          "键值对"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_four_interfaces_001",
+    "content": "List有序可重复，Set元素唯一，Queue按规则有序可重复，Map为键值对存储，键唯一值可重复。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说List、Set、Queue和Map这四者之间的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "存储元素的有序性 -> 存储元素的可重复性 -> 数据结构与用途",
+        "scoring_keywords": [
+          "有序可重复",
+          "元素唯一",
+          "键值对",
+          "键唯一"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_framework_data_structure_summary_001",
+    "content": "Java集合框架中，List接口下ArrayList和Vector基于数组，LinkedList基于双向链表。Set接口下HashSet和LinkedHashSet基于HashMap，TreeSet基于红黑树。Queue接口下PriorityQueue基于数组堆，ArrayDeque基于动态双向数组。Map接口下HashMap和Hashtable为数组加链表/红黑树，LinkedHashMap额外有双向链表，TreeMap基于红黑树。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能总结一下Java集合框架中主要集合类的底层数据结构吗？",
+      "best_answer_model": {
+        "logic_chain": "接口分类 -> 各接口下具体实现类 -> 每个实现类的核心数据结构",
+        "scoring_keywords": [
+          "数组",
+          "双向链表",
+          "HashMap",
+          "红黑树",
+          "数组+链表",
+          "小顶堆"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_selection_001",
+    "content": "根据数据访问需求选择集合接口：需键值对用Map，需排序选TreeMap，否则用HashMap，要线程安全用ConcurrentHashMap。仅存放元素用Collection，需唯一性用Set如HashSet或TreeSet，否则用List如ArrayList或LinkedList，再根据具体实现特性细化选择。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "在Java中，如何根据不同的需求来选择合适的集合类？",
+      "best_answer_model": {
+        "logic_chain": "需求分析 -> 选择顶层接口 -> 根据特性选择具体实现类",
+        "scoring_keywords": [
+          "Map接口",
+          "Collection接口",
+          "Set接口",
+          "List接口",
+          "线程安全",
+          "排序"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_overview_001",
+    "content": "集合解决了数组存储固定类型和固定大小的局限性，提供了大小可变、支持泛型、内置丰富算法等特性，能灵活存储和处理多样化的数据对象，提升开发效率与代码质量。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "在Java开发中，我们为什么要使用集合而不是数组呢？",
+      "best_answer_model": {
+        "logic_chain": "数组的局限性 -> 集合的灵活性 -> 核心优势列举 -> 总结价值",
+        "scoring_keywords": [
+          "大小可变",
+          "支持泛型",
+          "内建算法",
+          "存储灵活",
+          "类型多样"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_list_arraylist_vs_array_001",
+    "content": "ArrayList基于动态数组实现，可动态扩容缩容，支持泛型确保类型安全，只能存储对象并提供丰富的API操作。Array是固定长度的静态数组，创建时需指定大小，可直接存储基本类型或对象，但缺乏动态操作能力。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说ArrayList和Array（数组）之间有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "底层实现 -> 容量可变性 -> 类型安全与泛型 -> 存储数据类型 -> API功能丰富度",
+        "scoring_keywords": [
+          "动态数组",
+          "动态扩容",
+          "泛型",
+          "类型安全",
+          "固定长度",
+          "基本类型"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_list_arraylist_vector_001",
+    "content": "ArrayList是List的主要实现类，底层为Object数组，查询效率高但线程不安全。Vector是古老的实现类，底层结构类似，但通过同步方法实现了线程安全。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说ArrayList和Vector的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "实现类定位 -> 底层数据结构 -> 线程安全性 -> 性能与适用场景",
+        "scoring_keywords": [
+          "Object数组",
+          "线程不安全",
+          "线程安全",
+          "同步方法",
+          "查询效率"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_vector_stack_diff_001",
+    "content": "Vector是线程安全的动态数组，Stack继承自Vector，是后进先出的栈结构。两者均因性能问题被淘汰，推荐使用并发集合类实现线程安全。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请简述一下Vector和Stack的区别。",
+      "best_answer_model": {
+        "logic_chain": "线程安全实现 -> 继承关系 -> 数据结构差异 -> 现代替代方案",
+        "scoring_keywords": [
+          "线程安全",
+          "synchronized",
+          "继承",
+          "栈",
+          "淘汰",
+          "并发集合"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_arraylist_null_001",
+    "content": "ArrayList可以存储null值，因为其底层实现允许任何对象引用。但添加null值可能导致代码难以维护，如忘记判空会引发空指针异常，因此不建议使用。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请问，ArrayList可以添加null值吗？",
+      "best_answer_model": {
+        "logic_chain": "底层实现允许 -> 可以存储null -> 实际使用风险 -> 不建议添加",
+        "scoring_keywords": [
+          "存储null值",
+          "对象引用",
+          "判空处理",
+          "空指针异常",
+          "代码维护"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_list_arraylist_time_complexity_001",
+    "content": "ArrayList的插入和删除操作时间复杂度取决于操作位置。头部或指定位置操作需移动元素，为O(n)；尾部操作通常为O(1)，但扩容时涉及数组复制为O(n)。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说ArrayList在插入和删除元素时的时间复杂度是怎样的？",
+      "best_answer_model": {
+        "logic_chain": "底层数组结构 -> 不同位置插入分析 -> 不同位置删除分析 -> 扩容影响",
+        "scoring_keywords": [
+          "时间复杂度O(n)",
+          "时间复杂度O(1)",
+          "数组扩容",
+          "元素移动",
+          "尾部操作"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_linkedlist_time_complexity_001",
+    "content": "LinkedList在头部或尾部插入/删除元素的时间复杂度为O(1)，因为只需修改头尾指针。在指定位置操作时，需要遍历链表定位，平均时间复杂度为O(n)。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说LinkedList在插入和删除元素时的时间复杂度是怎样的？",
+      "best_answer_model": {
+        "logic_chain": "数据结构特性 -> 头尾操作分析 -> 指定位置操作分析 -> 时间复杂度结论",
+        "scoring_keywords": [
+          "双向链表",
+          "时间复杂度O(1)",
+          "时间复杂度O(n)",
+          "头尾指针",
+          "遍历定位"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_linkedlist_randomaccess_001",
+    "content": "RandomAccess是标记接口，表明支持通过索引快速随机访问。LinkedList底层为链表，内存不连续，访问元素需顺序遍历指针，无法快速定位，故不能实现此接口。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下，为什么LinkedList不能实现RandomAccess接口？",
+      "best_answer_model": {
+        "logic_chain": "接口定义 -> 底层数据结构 -> 访问方式差异 -> 结论",
+        "scoring_keywords": [
+          "RandomAccess",
+          "标记接口",
+          "链表",
+          "内存不连续",
+          "顺序访问"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_list_001",
+    "content": "ArrayList基于数组，支持快速随机访问，但中间插入删除效率低；LinkedList基于双向链表，头尾操作高效，但不支持快速随机访问。两者均非线程安全。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请详细说明一下ArrayList和LinkedList的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "线程安全性 -> 底层数据结构 -> 插入删除效率分析 -> 随机访问能力 -> 内存占用特点",
+        "scoring_keywords": [
+          "数组",
+          "双向链表",
+          "线程不安全",
+          "随机访问",
+          "时间复杂度",
+          "内存空间"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_list_arraylist_resize_001",
+    "content": "ArrayList 基于数组实现，当添加元素导致容量不足时，会触发扩容。默认初始容量为10，扩容时通常创建原容量1.5倍的新数组，并将旧数组元素复制到新数组中。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请详细说一说 ArrayList 的扩容机制是怎样的？",
+      "best_answer_model": {
+        "logic_chain": "底层数据结构 -> 默认初始容量 -> 触发扩容条件 -> 新容量计算规则 -> 数据迁移过程",
+        "scoring_keywords": [
+          "数组",
+          "默认容量10",
+          "1.5倍扩容",
+          "System.arraycopy"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_fail_fast_safe_001",
+    "content": "fail-fast（快速失败）机制在迭代时检测到并发修改会立即抛出异常，防止数据不一致。fail-safe（安全失败）机制通过写时复制等技术避免并发修改异常，允许迭代继续但可能无法反映最新数据。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java集合中的fail-fast和fail-safe机制是什么？",
+      "best_answer_model": {
+        "logic_chain": "设计哲学定义 -> 典型实现类与机制 -> 优缺点对比",
+        "scoring_keywords": [
+          "快速失败",
+          "安全失败",
+          "ConcurrentModificationException",
+          "写时复制",
+          "modCount",
+          "CopyOnWriteArrayList"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_comparable_comparator_001",
+    "content": "Comparable是对象内部实现的自然排序接口，定义compareTo方法。Comparator是外部比较器接口，定义compare方法，提供更灵活的定制排序策略，支持多种排序规则。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中Comparable接口和Comparator接口的区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "接口定义与归属 -> 方法签名与调用方式 -> 排序策略的耦合度 -> 应用场景与灵活性",
+        "scoring_keywords": [
+          "Comparable接口",
+          "Comparator接口",
+          "compareTo方法",
+          "compare方法",
+          "自然排序",
+          "定制排序"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_set_unordered_unique_001",
+    "content": "无序性指元素存储顺序由哈希值决定，而非添加顺序；不可重复性指通过equals()方法判断元素是否已存在，需同时重写equals()和hashCode()方法。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Set集合的无序性和不可重复性具体指的是什么？",
+      "best_answer_model": {
+        "logic_chain": "无序性定义 -> 哈希值决定存储 -> 不可重复性定义 -> equals()与hashCode()方法重写",
+        "scoring_keywords": [
+          "无序性",
+          "哈希值",
+          "不可重复性",
+          "equals()",
+          "hashCode()",
+          "重写"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_set_comparison_001",
+    "content": "HashSet、LinkedHashSet和TreeSet均为Set接口实现，保证元素唯一且非线程安全。核心区别在于底层数据结构：HashSet基于哈希表，无序；LinkedHashSet结合链表与哈希表，保持插入顺序；TreeSet基于红黑树，支持自然或定制排序。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请比较一下HashSet、LinkedHashSet和TreeSet这三者的异同。",
+      "best_answer_model": {
+        "logic_chain": "共同特性 -> 底层数据结构差异 -> 排序与顺序特性 -> 适用场景",
+        "scoring_keywords": [
+          "哈希表",
+          "链表",
+          "红黑树",
+          "元素唯一",
+          "插入顺序",
+          "排序"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_queue_deque_difference_001",
+    "content": "Queue是单端队列，遵循先进先出规则，仅支持一端插入另一端删除。Deque是双端队列，两端均可插入和删除，功能更全面，并可模拟栈。两者都提供了操作失败时抛出异常或返回特殊值的方法。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中Queue和Deque的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "基本定义与结构 -> 操作方向与规则 -> 方法分类与失败处理 -> 功能扩展与关系",
+        "scoring_keywords": [
+          "单端队列",
+          "双端队列",
+          "先进先出",
+          "抛出异常",
+          "返回特殊值",
+          "模拟栈"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_arraydeque_linkedlist_001",
+    "content": "ArrayDeque基于可变长数组实现，不支持存储null，插入时存在扩容但均摊性能为O(1)。LinkedList基于链表实现，支持null，每次插入需申请新空间。通常ArrayDeque作为队列或栈性能更优。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请谈谈ArrayDeque和LinkedList作为Deque实现的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "底层数据结构 -> 对null值的支持 -> 历史版本引入 -> 插入与扩容的性能分析 -> 应用场景建议",
+        "scoring_keywords": [
+          "可变长数组",
+          "链表",
+          "不支持null",
+          "扩容",
+          "均摊O(1)",
+          "性能更优"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_priorityqueue_001",
+    "content": "PriorityQueue是基于二叉堆实现的优先级队列，出队顺序由元素优先级决定。底层使用可变长数组，通过元素上浮和下沉操作，保证插入和删除堆顶元素的时间复杂度为O(logn)。它非线程安全，不支持存储null或不可比较对象，默认是小顶堆，可通过Comparator自定义优先级。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请说一说你对PriorityQueue的理解。",
+      "best_answer_model": {
+        "logic_chain": "核心特性（优先级出队）-> 底层数据结构（二叉堆与数组）-> 关键操作与复杂度（上浮/下沉，O(logn)）-> 重要限制（线程安全、null、Comparator）",
+        "scoring_keywords": [
+          "二叉堆",
+          "优先级出队",
+          "O(logn)",
+          "非线程安全",
+          "Comparator",
+          "小顶堆"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_collection_blockingqueue_001",
+    "content": "BlockingQueue是一个支持阻塞操作的队列接口，当队列为空时获取操作会阻塞，当队列满时插入操作会阻塞，常用于实现生产者-消费者模型。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能解释一下什么是BlockingQueue吗？",
+      "best_answer_model": {
+        "logic_chain": "接口定义 -> 阻塞特性 -> 典型应用场景",
+        "scoring_keywords": [
+          "阻塞队列",
+          "生产者-消费者模型",
+          "队列为空阻塞",
+          "队列已满阻塞"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_queue_blockingqueue_implementations_001",
+    "content": "Java中BlockingQueue的主要实现类包括：基于数组的有界队列ArrayBlockingQueue、基于链表的可选有界队列LinkedBlockingQueue、支持优先级排序的无界队列PriorityBlockingQueue、不存储元素的同步队列SynchronousQueue以及延迟队列DelayQueue。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请列举一下Java中BlockingQueue的主要实现类，并简要说明它们的特点。",
+      "best_answer_model": {
+        "logic_chain": "核心接口 -> 有界队列实现 -> 无界/特殊队列实现 -> 典型应用场景",
+        "scoring_keywords": [
+          "ArrayBlockingQueue",
+          "LinkedBlockingQueue",
+          "PriorityBlockingQueue",
+          "SynchronousQueue",
+          "DelayQueue",
+          "有界队列"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  },
+  {
+    "id": "java_concurrent_queue_001",
+    "content": "ArrayBlockingQueue基于数组，有界，使用单锁；LinkedBlockingQueue基于链表，默认无界，使用分离锁（生产消费各一把），内存动态分配。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请你说说ArrayBlockingQueue和LinkedBlockingQueue有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "底层数据结构 -> 队列边界性 -> 锁机制 -> 内存占用",
+        "scoring_keywords": [
+          "数组实现",
+          "链表实现",
+          "有界队列",
+          "分离锁",
+          "内存预分配",
+          "动态分配"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md"
+    }
+  }
+]

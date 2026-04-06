@@ -1,0 +1,1178 @@
+[
+  {
+    "id": "mysql_basis_rdb_001",
+    "content": "关系型数据库是基于关系模型组织数据的数据库，数据以表格形式存储，表间通过关系（如一对一、一对多）关联。它通常使用SQL语言进行操作，并支持事务的ACID特性以保证数据一致性。",
+    "metadata": {
+      "category_stack": "MySQL基础",
+      "interview_point": "请解释一下什么是关系型数据库？",
+      "best_answer_model": {
+        "logic_chain": "关系模型定义 -> 表格化数据存储 -> 表间关系类型 -> SQL操作语言 -> ACID事务支持 -> 常见产品举例",
+        "scoring_keywords": [
+          "关系模型",
+          "表格存储",
+          "SQL",
+          "ACID",
+          "事务"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_basis_sql_001",
+    "content": "SQL是一种专门用于与数据库交互的结构化查询语言，主要用于数据的增删改查、库表管理以及数据分析等操作，具有广泛的适用性。",
+    "metadata": {
+      "category_stack": "MySQL基础",
+      "interview_point": "请你介绍一下什么是SQL？",
+      "best_answer_model": {
+        "logic_chain": "语言定义与目的 -> 主要功能与应用场景 -> 广泛的适用性",
+        "scoring_keywords": [
+          "结构化查询语言",
+          "数据库交互",
+          "增删改查",
+          "关系数据库",
+          "数据分析"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_basis_intro_001",
+    "content": "MySQL是一种开源的关系型数据库管理系统，用于持久化存储系统数据。它在GPL协议下可免费使用和修改，默认端口号为3306，因其成熟稳定而被广泛应用于各类系统。",
+    "metadata": {
+      "category_stack": "MySQL基础",
+      "interview_point": "请简单介绍一下什么是MySQL？",
+      "best_answer_model": {
+        "logic_chain": "数据库类型 -> 核心用途 -> 开源特性 -> 应用普及度",
+        "scoring_keywords": [
+          "关系型数据库",
+          "开源",
+          "GPL协议",
+          "持久化存储",
+          "默认端口3306"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_basis_advantages_001",
+    "content": "MySQL 的流行得益于其在生态成本、核心功能与运维体验上的综合优势。生态上开源免费且社区庞大，功能上具备强大的事务支持与优秀的可扩展性，运维上则简单易用且维护成本低。",
+    "metadata": {
+      "category_stack": "MySQL基础",
+      "interview_point": "请谈谈 MySQL 有哪些主要的优点？",
+      "best_answer_model": {
+        "logic_chain": "生态与成本优势 -> 核心功能优势 -> 运维与使用优势",
+        "scoring_keywords": [
+          "开源免费",
+          "社区庞大",
+          "事务支持",
+          "可扩展性",
+          "运维简单",
+          "维护成本低"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_field_types_overview_001",
+    "content": "MySQL字段类型主要分为数值、字符串和日期时间三大类。数值型包括整型、浮点型和定点型；字符串型以CHAR和VARCHAR最常用；日期时间型包含YEAR、DATE、DATETIME等。理解这些类型是数据库设计和优化的基础。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请介绍一下MySQL中主要的字段类型有哪些，并简单说明它们的分类。",
+      "best_answer_model": {
+        "logic_chain": "三大分类概述 -> 数值类型细分 -> 字符串类型细分 -> 日期时间类型细分 -> 总结与优化提示",
+        "scoring_keywords": [
+          "数值类型",
+          "字符串类型",
+          "日期时间类型",
+          "CHAR",
+          "VARCHAR",
+          "DECIMAL"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_field_type_unsigned_001",
+    "content": "UNSIGNED属性用于定义无符号整数，禁止存储负值，从而将正整数的取值范围上限扩大一倍，适用于从0开始递增的ID列等场景。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "MySQL整数类型的UNSIGNED属性有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "属性定义 -> 取值范围变化 -> 适用场景",
+        "scoring_keywords": [
+          "无符号整数",
+          "禁止负值",
+          "取值范围扩大",
+          "ID列"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_field_type_char_varchar_001",
+    "content": "CHAR是定长字符串，存储时会填充空格，检索时去除，适合存储长度固定或较短的字符串。VARCHAR是变长字符串，存储时需额外字节记录长度，适合存储长度不确定或差异较大的字符串。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请解释一下 MySQL 中 CHAR 和 VARCHAR 这两种字段类型的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "存储方式（定长 vs 变长） -> 存储机制（填充空格 vs 记录长度） -> 检索处理 -> 适用场景",
+        "scoring_keywords": [
+          "定长字符串",
+          "变长字符串",
+          "填充空格",
+          "额外长度字节",
+          "适用场景"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_field_type_varchar_001",
+    "content": "VARCHAR(100)与VARCHAR(10)均为变长字符串类型，最大存储字符数不同。存储相同字符串时磁盘空间占用相同，但VARCHAR(100)在内存操作（如排序）时会分配更大内存块，消耗更多内存资源。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请解释一下，在MySQL中，VARCHAR(100)和VARCHAR(10)这两种字段类型有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "定义与最大长度 -> 磁盘存储空间特性 -> 内存占用与操作影响",
+        "scoring_keywords": [
+          "变长字符串",
+          "最大字符数",
+          "磁盘空间相同",
+          "内存分配",
+          "排序操作",
+          "内存消耗"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_field_type_decimal_float_difference_001",
+    "content": "DECIMAL是定点数，用于存储精确的小数值，如货币数据，避免精度损失。FLOAT/DOUBLE是浮点数，存储的是近似值，可能存在精度误差。在Java中，DECIMAL通常对应BigDecimal类。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "你能解释一下MySQL中DECIMAL类型和FLOAT/DOUBLE类型的主要区别是什么吗？",
+      "best_answer_model": {
+        "logic_chain": "数据类型本质 -> 精度特性 -> 适用场景 -> 编程语言映射",
+        "scoring_keywords": [
+          "定点数",
+          "浮点数",
+          "精确值",
+          "近似值",
+          "精度损失",
+          "BigDecimal"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_field_types_text_blob_001",
+    "content": "TEXT和BLOB类型用于存储大文本或二进制数据，但不推荐使用。主要缺点包括：不能设置默认值、无法使用内存临时表、检索效率低、创建索引需指定前缀长度、消耗大量网络和IO带宽，并可能导致DML操作变慢。若数据长度可用VARCHAR满足，应优先使用VARCHAR。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在MySQL数据库设计中，为什么不推荐使用TEXT和BLOB类型来存储数据？",
+      "best_answer_model": {
+        "logic_chain": "类型定义与用途 -> 核心缺点列举 -> 性能影响分析 -> 替代方案建议",
+        "scoring_keywords": [
+          "默认值限制",
+          "内存临时表",
+          "检索效率低",
+          "前缀长度索引",
+          "网络IO消耗",
+          "DML操作变慢"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_datetime_timestamp_001",
+    "content": "DATETIME与时区无关，存储空间大，时间范围广。TIMESTAMP与时区相关，存储空间小，支持自动时区转换，但存在2038年时间范围限制。选择取决于应用是否需要时区处理以及对未来时间的需求。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请详细说明一下 MySQL 中 DATETIME 和 TIMESTAMP 这两种时间类型的区别，以及在项目中应该如何选择？",
+      "best_answer_model": {
+        "logic_chain": "存储空间差异 -> 时间范围差异 -> 时区处理机制 -> 应用场景选择依据",
+        "scoring_keywords": [
+          "时区",
+          "存储空间",
+          "时间范围",
+          "2038年问题",
+          "UTC转换",
+          "自动管理"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_field_type_null_vs_empty_string_001",
+    "content": "NULL代表缺失或未知的数据，不等于任何值，比较运算结果为NULL，聚合函数通常忽略它。空字符串''是一个已知存在的值，可正常比较，聚合函数会将其纳入计算。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在MySQL中，NULL值和空字符串''有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "核心含义差异 -> 存储空间占用 -> 比较运算行为 -> 聚合函数处理",
+        "scoring_keywords": [
+          "NULL",
+          "空字符串",
+          "IS NULL",
+          "聚合函数",
+          "未知数据",
+          "比较运算"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_field_type_boolean_001",
+    "content": "MySQL 没有专门的布尔类型，而是使用 TINYINT(1) 来模拟，其中 0 表示 false，1 表示 true。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在 MySQL 中，布尔类型是如何表示的？",
+      "best_answer_model": {
+        "logic_chain": "类型缺失 -> 替代方案 -> 映射关系",
+        "scoring_keywords": [
+          "TINYINT(1)",
+          "布尔类型",
+          "0 表示 false",
+          "1 表示 true"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_field_type_phone_storage_001",
+    "content": "存储手机号应使用 VARCHAR 类型，因其能完整保留前导零、国家代码前缀等格式信息，支持按号段高效查询，并兼容加密存储后的字符串密文，更符合手机号作为标识符而非数值的数据性质。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在 MySQL 中存储手机号，你会选择使用 INT 类型还是 VARCHAR 类型？为什么？",
+      "best_answer_model": {
+        "logic_chain": "数据性质分析 -> 格式完整性要求 -> 查询灵活性需求 -> 加密存储兼容性",
+        "scoring_keywords": [
+          "VARCHAR",
+          "前导零",
+          "格式兼容性",
+          "号段查询",
+          "加密存储",
+          "标识符"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_basis_architecture_001",
+    "content": "MySQL 基础架构主要包括连接器、查询缓存、分析器、优化器、执行器和插件式存储引擎。连接器负责身份认证与权限管理，分析器检查语法语义，优化器生成最优执行计划，执行器调用存储引擎完成数据读写。",
+    "metadata": {
+      "category_stack": "MySQL基础",
+      "interview_point": "请简述一条 SQL 语句在 MySQL 中的完整执行流程。",
+      "best_answer_model": {
+        "logic_chain": "连接建立与权限校验 -> 查询缓存检查 -> 语法语义分析 -> 执行计划优化 -> 执行器调用存储引擎 -> 返回结果",
+        "scoring_keywords": [
+          "连接器",
+          "查询缓存",
+          "分析器",
+          "优化器",
+          "执行器",
+          "存储引擎"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_storage_engine_001",
+    "content": "MySQL的核心在于其可插拔的存储引擎架构，不同的存储引擎如InnoDB和MyISAM在事务支持、锁机制、外键和索引实现上各有特点，决定了数据库的性能、可靠性和适用场景。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请谈谈你对MySQL存储引擎的理解，以及不同存储引擎的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "架构概述 -> 核心引擎对比 -> 特性与适用场景",
+        "scoring_keywords": [
+          "可插拔架构",
+          "InnoDB",
+          "MyISAM",
+          "事务支持",
+          "锁机制",
+          "索引实现"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_storage_engine_overview_001",
+    "content": "MySQL支持多种存储引擎，可通过SHOW ENGINES命令查看。InnoDB是当前默认且唯一支持事务的存储引擎。MySQL 5.5.5版本后，默认引擎从MyISAM切换为InnoDB。",
+    "metadata": {
+      "category_stack": "MySQL存储引擎",
+      "interview_point": "请介绍一下MySQL支持哪些存储引擎，以及默认使用的是哪一个？",
+      "best_answer_model": {
+        "logic_chain": "引擎列表 -> 默认引擎 -> 版本变迁 -> 事务支持",
+        "scoring_keywords": [
+          "InnoDB",
+          "MyISAM",
+          "SHOW ENGINES",
+          "默认存储引擎",
+          "事务性存储引擎",
+          "MySQL 5.5.5"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_storage_engine_architecture_001",
+    "content": "MySQL采用插件式架构，支持多种存储引擎，且引擎是基于表而非数据库的。用户可为不同表选择不同引擎以适应场景，甚至可遵循标准接口开发自定义的第三方存储引擎。",
+    "metadata": {
+      "category_stack": "MySQL存储引擎",
+      "interview_point": "你能介绍一下MySQL存储引擎的架构吗？",
+      "best_answer_model": {
+        "logic_chain": "插件式架构 -> 引擎与表绑定 -> 多引擎支持场景适配 -> 自定义引擎接口",
+        "scoring_keywords": [
+          "插件式架构",
+          "基于表",
+          "多种存储引擎",
+          "自定义引擎",
+          "标准接口"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_storage_engine_myisam_innodb_001",
+    "content": "MyISAM与InnoDB的核心区别在于事务、锁、恢复机制与索引实现。InnoDB支持事务、行级锁、MVCC、外键及崩溃安全恢复，其索引与数据文件一体。MyISAM仅支持表级锁，无事务与MVCC，索引与数据文件分离，且崩溃后无法安全恢复。",
+    "metadata": {
+      "category_stack": "MySQL存储引擎",
+      "interview_point": "请对比说明MySQL中MyISAM和InnoDB存储引擎的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "锁粒度对比 -> 事务支持性 -> 外键与MVCC -> 崩溃恢复机制 -> 索引实现差异 -> 性能与适用场景",
+        "scoring_keywords": [
+          "行级锁",
+          "事务支持",
+          "MVCC",
+          "外键",
+          "崩溃恢复",
+          "聚簇索引"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_storage_engine_choice_001",
+    "content": "InnoDB 支持事务、行级锁和崩溃恢复，适用于大多数业务场景。MyISAM 仅适用于读密集且不要求事务一致性的特定情况，但现代应用中已很少使用。",
+    "metadata": {
+      "category_stack": "MySQL 存储引擎",
+      "interview_point": "在实际项目中，你会如何选择 MyISAM 和 InnoDB 存储引擎？",
+      "best_answer_model": {
+        "logic_chain": "核心特性对比 -> 适用场景分析 -> 现代实践推荐",
+        "scoring_keywords": [
+          "事务支持",
+          "行级锁",
+          "崩溃恢复",
+          "读密集",
+          "聚簇索引",
+          "默认引擎"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_index_overview_001",
+    "content": "索引是数据库中用于快速查找数据的数据结构，能显著提升查询效率。其核心原理包括B+树结构、聚簇与非聚簇索引、索引覆盖与最左前缀原则等。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请介绍一下你对MySQL索引的理解。",
+      "best_answer_model": {
+        "logic_chain": "索引定义与目的 -> B+树核心数据结构 -> 聚簇索引与非聚簇索引区别 -> 索引覆盖与最左前缀原则",
+        "scoring_keywords": [
+          "B+树",
+          "聚簇索引",
+          "非聚簇索引",
+          "索引覆盖",
+          "最左前缀原则",
+          "查询优化"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_index_basis_001",
+    "content": "索引是用于快速查询和检索数据的排序数据结构，其核心作用是减少数据扫描量、加速数据定位。它通过B+树等结构实现，能提升查询、排序和分组效率，但会占用存储空间并增加数据维护成本。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "你能解释一下数据库中的索引是什么吗？",
+      "best_answer_model": {
+        "logic_chain": "核心定义与类比 -> 底层数据结构 -> 主要优点 -> 主要缺点 -> 使用注意事项",
+        "scoring_keywords": [
+          "数据结构",
+          "B+树",
+          "查询加速",
+          "维护成本",
+          "存储空间",
+          "优化器"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_index_performance_001",
+    "content": "索引通过有序的B+树数据结构，大幅减少磁盘I/O次数。其矮胖结构使千万级数据查询仅需3-4次I/O，且叶子节点链表便于顺序读取，避免全表扫描，从而极大提升查询速度。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "你能解释一下数据库索引为什么能显著提升查询速度吗？",
+      "best_answer_model": {
+        "logic_chain": "减少磁盘I/O -> 有序数据结构 -> B+树矮胖结构 -> 叶子节点链表顺序读取",
+        "scoring_keywords": [
+          "磁盘I/O",
+          "B+树",
+          "矮胖结构",
+          "叶子节点链表",
+          "顺序读取",
+          "全表扫描"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_index_b+tree_001",
+    "content": "MySQL 的 MyISAM 和 InnoDB 存储引擎均采用 B+Tree 作为其索引的底层数据结构，以实现高效的数据检索。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请问，MySQL 索引的底层数据结构是什么？",
+      "best_answer_model": {
+        "logic_chain": "索引类型 -> B+Tree结构 -> MyISAM与InnoDB实现",
+        "scoring_keywords": [
+          "B+Tree",
+          "MyISAM",
+          "InnoDB",
+          "索引结构",
+          "数据检索"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_index_innodb_hash_001",
+    "content": "哈希索引虽在等值查询上效率高，但因其无序性，无法支持数据库常见的范围查询、排序操作以及部分索引键查询，且存在哈希冲突问题，故InnoDB未将其作为默认的通用索引结构。",
+    "metadata": {
+      "category_stack": "MySQL 索引",
+      "interview_point": "为什么 InnoDB 存储引擎没有选择哈希作为索引的数据结构？",
+      "best_answer_model": {
+        "logic_chain": "哈希索引优点 -> 不支持范围查询 -> 不支持排序 -> 不支持部分索引键 -> 哈希冲突 -> 通用性不足",
+        "scoring_keywords": [
+          "等值查询",
+          "范围查询",
+          "排序",
+          "部分索引键",
+          "哈希冲突",
+          "通用性"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_index_innodb_bplus_tree_001",
+    "content": "InnoDB选择B+树而非B树作为索引结构，主要因为B+树通过非叶子节点仅存储索引键来增大扇出、降低树高，减少磁盘I/O次数。其所有数据存储在叶子节点并通过链表连接，确保了查询性能稳定，并极大优化了范围查询的效率。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "为什么InnoDB没有使用B树，而是选择了B+树作为索引的数据结构？",
+      "best_answer_model": {
+        "logic_chain": "数据结构对比 -> 扇出与I/O效率 -> 查询稳定性 -> 范围查询优化",
+        "scoring_keywords": [
+          "B+树",
+          "非叶子节点",
+          "扇出",
+          "磁盘I/O",
+          "范围查询",
+          "双向链表"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_index_covering_index_001",
+    "content": "覆盖索引是指一个索引包含了查询语句所需的所有字段值，使得查询可以直接从索引中获取数据，避免了通过主键索引再次查找完整行数据的回表操作，从而提升查询性能。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "你能解释一下什么是覆盖索引吗？",
+      "best_answer_model": {
+        "logic_chain": "定义覆盖索引 -> 解释回表操作 -> 对比说明覆盖索引如何避免回表 -> 总结性能优势",
+        "scoring_keywords": [
+          "覆盖索引",
+          "回表",
+          "叶子节点",
+          "查询字段",
+          "性能提升"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_index_compound_leftmost_001",
+    "content": "联合索引是在多个列上创建的索引，遵循最左前缀原则。查询时，MySQL会从索引最左列开始向右匹配，直到遇到范围查询。查询条件必须包含最左列才能有效利用索引，优化器可能对条件重排序以匹配索引顺序。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "请你解释一下MySQL的联合索引以及它的最左前缀匹配原则。",
+      "best_answer_model": {
+        "logic_chain": "联合索引定义 -> 最左前缀原则核心 -> 匹配规则与范围查询 -> 查询优化器重排序",
+        "scoring_keywords": [
+          "联合索引",
+          "最左前缀原则",
+          "范围查询",
+          "索引匹配",
+          "查询优化器"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_index_select_star_001",
+    "content": "SELECT * 本身不会直接导致索引失效，索引是否生效主要取决于WHERE条件。但使用它会带来性能损耗，如增加网络传输与数据处理负担，且无法利用覆盖索引进行优化。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "在MySQL中，使用SELECT *会导致索引失效吗？",
+      "best_answer_model": {
+        "logic_chain": "索引失效的直接原因 -> SELECT * 的潜在性能影响 -> 覆盖索引的利用",
+        "scoring_keywords": [
+          "索引失效",
+          "WHERE条件",
+          "性能损耗",
+          "覆盖索引",
+          "网络传输"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_index_suitable_fields_001",
+    "content": "适合创建索引的字段包括：非空字段、频繁查询或作为WHERE条件的字段、需要排序的字段以及常用于表连接的字段，以提升查询和连接效率。",
+    "metadata": {
+      "category_stack": "MySQL 索引",
+      "interview_point": "在MySQL中，哪些字段适合创建索引？",
+      "best_answer_model": {
+        "logic_chain": "非空原则 -> 查询频率 -> 条件筛选 -> 排序需求 -> 连接优化",
+        "scoring_keywords": [
+          "非空字段",
+          "频繁查询",
+          "WHERE条件",
+          "排序字段",
+          "连接字段",
+          "外键列"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_index_failure_causes_001",
+    "content": "索引失效的常见原因包括：未遵守组合索引的最左匹配原则；在索引列上使用计算、函数或类型转换；使用以%开头的LIKE模糊查询；OR条件中部分列无索引；IN或NOT IN的取值范围过大；以及查询时发生隐式类型转换。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "在MySQL中，有哪些常见的操作会导致索引失效，从而影响查询性能？",
+      "best_answer_model": {
+        "logic_chain": "组合索引原则 -> 列上操作 -> 模糊查询 -> OR条件 -> 范围查询 -> 隐式转换",
+        "scoring_keywords": [
+          "最左匹配原则",
+          "索引列计算",
+          "LIKE %开头",
+          "OR条件无索引",
+          "IN范围过大",
+          "隐式转换"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_query_cache_001",
+    "content": "MySQL查询缓存是存储查询结果的机制，命中时直接返回结果。其匹配条件极为严格，语句、数据库等细微差异都会导致不命中。涉及表数据或结构变更时，相关缓存会失效。由于带来额外开销，写密集应用需谨慎开启，且MySQL 8.0已移除该功能。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请介绍一下MySQL的查询缓存机制。",
+      "best_answer_model": {
+        "logic_chain": "基本概念与作用 -> 开启与配置方式 -> 缓存命中与失效的严格条件 -> 潜在开销与使用注意事项 -> 版本演进与现状",
+        "scoring_keywords": [
+          "查询结果缓存",
+          "缓存命中",
+          "严格匹配",
+          "表变更失效",
+          "额外开销",
+          "MySQL 8.0移除"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_logs_001",
+    "content": "MySQL 日志主要包括错误日志、查询日志、慢查询日志、二进制日志、中继日志和重做日志。它们分别用于记录数据库运行错误、客户端操作、执行缓慢的SQL、数据更改、主从复制以及事务的持久性保证。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请介绍一下 MySQL 中有哪些主要的日志，以及它们各自的作用是什么？",
+      "best_answer_model": {
+        "logic_chain": "日志分类 -> 核心功能 -> 应用场景",
+        "scoring_keywords": [
+          "错误日志",
+          "慢查询日志",
+          "二进制日志",
+          "重做日志",
+          "中继日志",
+          "事务持久性"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_transaction_basis_001",
+    "content": "事务是数据库操作的最小逻辑单元，它确保一组相关的操作要么全部成功执行，要么全部失败回滚，从而维护数据的一致性和完整性。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请你解释一下，什么是数据库中的事务？",
+      "best_answer_model": {
+        "logic_chain": "核心定义 -> ACID特性 -> 应用场景（如转账） -> 一致性保障",
+        "scoring_keywords": [
+          "逻辑单元",
+          "全部成功",
+          "全部失败",
+          "一致性",
+          "原子性",
+          "回滚"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_transaction_basis_001",
+    "content": "数据库事务确保多个SQL操作构成一个逻辑整体，遵循原子性原则，即要么全部成功执行，要么全部不执行，以维护数据一致性。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "你能解释一下什么是数据库事务吗？",
+      "best_answer_model": {
+        "logic_chain": "事务定义 -> 核心作用 -> 原子性原则 -> 数据一致性保障",
+        "scoring_keywords": [
+          "原子性",
+          "逻辑整体",
+          "数据一致性",
+          "SQL操作"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_transaction_acid_001",
+    "content": "COMMIT是提交事务的SQL命令，确保事务的ACID特性生效。ACID包括原子性、一致性、隔离性和持久性，其中AID是数据库保障的手段，C是应用层面的目的。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请解释一下数据库事务中的COMMIT命令以及ACID特性。",
+      "best_answer_model": {
+        "logic_chain": "COMMIT定义 -> ACID特性详解 -> AID与C的关系澄清",
+        "scoring_keywords": [
+          "COMMIT",
+          "原子性",
+          "一致性",
+          "隔离性",
+          "持久性",
+          "ACID"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_transaction_concurrency_issues_001",
+    "content": "并发事务可能导致数据不一致问题，主要包括脏读、丢失修改、不可重复读和幻读。脏读是读取到未提交的数据，丢失修改是更新被覆盖，不可重复读是同一事务内两次读取结果不同，幻读是同一查询返回了新增的行。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "你能详细说明一下并发事务通常会带来哪些问题吗？",
+      "best_answer_model": {
+        "logic_chain": "问题定义 -> 脏读 -> 丢失修改 -> 不可重复读 -> 幻读",
+        "scoring_keywords": [
+          "脏读",
+          "丢失修改",
+          "不可重复读",
+          "幻读",
+          "数据不一致",
+          "并发控制"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_transaction_isolation_001",
+    "content": "不可重复读指同一事务内多次读取同一数据，发现内容被修改或删除。幻读指同一事务内多次执行相同查询，发现结果集新增了记录。解决不可重复读通常使用记录锁，而解决幻读需要间隙锁或临键锁。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请解释一下不可重复读和幻读有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "定义不可重复读 -> 定义幻读 -> 区分核心差异（修改/删除 vs 新增） -> 解决方案差异（记录锁 vs 间隙锁/临键锁）",
+        "scoring_keywords": [
+          "不可重复读",
+          "幻读",
+          "记录锁",
+          "间隙锁",
+          "临键锁",
+          "事务隔离"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_concurrency_control_001",
+    "content": "MySQL通过锁和MVCC控制并发事务。锁是悲观控制，分为共享锁与排他锁，以及表级锁和行级锁。MVCC是乐观控制，通过隐藏字段、Read View和Undo Log实现多版本数据管理，确保事务隔离性。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在MySQL中，控制并发事务的主要方式有哪些？",
+      "best_answer_model": {
+        "logic_chain": "两种核心模式 -> 锁的分类与粒度 -> MVCC的实现原理",
+        "scoring_keywords": [
+          "锁",
+          "MVCC",
+          "共享锁",
+          "排他锁",
+          "行级锁",
+          "Read View"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_transaction_isolation_levels_001",
+    "content": "SQL标准定义了四种事务隔离级别，用于平衡数据一致性与并发性能。从低到高依次为：读取未提交、读取已提交、可重复读和可串行化。级别越高，隔离性越强，能防止的并发问题越多，但并发性能通常越低。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请介绍一下SQL标准中定义的事务隔离级别有哪些？",
+      "best_answer_model": {
+        "logic_chain": "定义与目的 -> 四种级别名称 -> 各级别特性与问题 -> 默认级别与实现",
+        "scoring_keywords": [
+          "READ-UNCOMMITTED",
+          "READ-COMMITTED",
+          "REPEATABLE-READ",
+          "SERIALIZABLE",
+          "脏读",
+          "幻读"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_transaction_isolation_default_001",
+    "content": "MySQL InnoDB存储引擎的默认事务隔离级别是可重复读（REPEATABLE READ），它保证了在同一事务中多次读取同一数据的结果是一致的。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请问，MySQL的默认事务隔离级别是什么？",
+      "best_answer_model": {
+        "logic_chain": "存储引擎 -> 默认级别 -> 级别特性 -> 查看命令",
+        "scoring_keywords": [
+          "InnoDB",
+          "REPEATABLE READ",
+          "可重复读",
+          "事务隔离级别",
+          "默认"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_transaction_isolation_001",
+    "content": "MySQL的隔离级别由锁和MVCC共同实现。SERIALIZABLE级别完全依赖锁，READ-COMMITTED和REPEATABLE-READ级别主要基于MVCC，但在特定场景如当前读时仍需使用锁来保证一致性。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "MySQL的隔离级别是完全基于锁来实现的吗？",
+      "best_answer_model": {
+        "logic_chain": "总体实现机制 -> SERIALIZABLE级别实现 -> READ-COMMITTED/REPEATABLE-READ级别实现 -> 特定场景的补充说明",
+        "scoring_keywords": [
+          "锁",
+          "MVCC",
+          "SERIALIZABLE",
+          "当前读",
+          "幻读"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_lock_basis_001",
+    "content": "锁是数据库管理系统用于控制并发事务访问共享资源，防止数据不一致的核心机制，通过协调事务的读写顺序来保证隔离性。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请谈谈你对数据库锁的理解，它在并发事务中起什么作用？",
+      "best_answer_model": {
+        "logic_chain": "并发控制需求 -> 锁的基本定义与目的 -> 保证数据一致性 -> 实现事务隔离",
+        "scoring_keywords": [
+          "并发控制",
+          "事务隔离",
+          "数据一致性",
+          "共享资源",
+          "读写顺序"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_lock_table_vs_row_001",
+    "content": "表级锁锁定整张表，实现简单但并发性能差；行级锁针对索引字段锁定特定行，并发度高但开销大。InnoDB支持行级锁，MyISAM仅支持表级锁。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请谈谈你对MySQL中表级锁和行级锁的理解，它们的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "锁粒度定义 -> 实现与开销对比 -> 支持引擎与适用场景",
+        "scoring_keywords": [
+          "表级锁",
+          "行级锁",
+          "锁定粒度",
+          "并发性能",
+          "索引字段",
+          "存储引擎"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_lock_row_001",
+    "content": "InnoDB行锁基于索引实现，若UPDATE或DELETE的WHERE条件未命中有效索引，将导致全表扫描并升级为表级锁。即使使用索引，优化器也可能选择全表扫描，需注意索引有效性以避免锁冲突。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在使用行级锁时，有哪些需要特别注意的地方？",
+      "best_answer_model": {
+        "logic_chain": "锁的实现基础 -> 索引失效的后果 -> 优化器的影响 -> 实践注意事项",
+        "scoring_keywords": [
+          "索引字段",
+          "全表扫描",
+          "表级锁",
+          "优化器",
+          "索引失效"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_lock_innodb_row_lock_types_001",
+    "content": "InnoDB行锁基于索引实现，主要包含记录锁、间隙锁和临键锁三种类型。临键锁是前两者的组合，用于防止幻读。在可重复读隔离级别下，默认使用临键锁，但对唯一索引或主键操作时会优化为记录锁。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "你能介绍一下 InnoDB 中有哪几类行锁吗？",
+      "best_answer_model": {
+        "logic_chain": "锁的实现基础 -> 三种具体类型定义 -> 临键锁的作用 -> 默认使用与优化场景",
+        "scoring_keywords": [
+          "记录锁",
+          "间隙锁",
+          "临键锁",
+          "幻读",
+          "唯一索引",
+          "Next-Key Lock"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_lock_shared_exclusive_001",
+    "content": "共享锁（S锁）允许多个事务并发读取同一记录，锁兼容；排他锁（X锁）在事务修改记录时获取，独占且与任何锁都不兼容。InnoDB默认SELECT不加锁，但可通过特定语句显式加锁。",
+    "metadata": {
+      "category_stack": "MySQL 锁",
+      "interview_point": "请解释一下MySQL中的共享锁和排他锁。",
+      "best_answer_model": {
+        "logic_chain": "锁的基本定义 -> 共享锁特性 -> 排他锁特性 -> 锁兼容性 -> 显式加锁方式",
+        "scoring_keywords": [
+          "共享锁",
+          "排他锁",
+          "锁兼容",
+          "读锁",
+          "写锁",
+          "FOR UPDATE"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_lock_intention_lock_001",
+    "content": "意向锁是表级锁，用于快速判断表是否可加表锁，无需遍历行锁。分为意向共享锁（IS）和意向排他锁（IX），由引擎自动维护，与行锁不互斥，但与表级S/X锁存在互斥关系。",
+    "metadata": {
+      "category_stack": "MySQL 锁",
+      "interview_point": "请你解释一下，MySQL中的意向锁具体有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "问题背景（表锁效率） -> 意向锁定义与分类 -> 兼容性与互斥性 -> 引擎自动管理",
+        "scoring_keywords": [
+          "表级锁",
+          "意向共享锁",
+          "意向排他锁",
+          "快速判断",
+          "兼容互斥",
+          "引擎维护"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_lock_current_vs_snapshot_read_001",
+    "content": "快照读是普通SELECT，读取历史版本，在RC和RR隔离级别下工作，RC读最新快照，RR读事务开始时的版本。当前读通过SELECT FOR UPDATE/LOCK IN SHARE MODE等语句加锁，读取记录最新版本并保证一致性。",
+    "metadata": {
+      "category_stack": "MySQL 锁",
+      "interview_point": "请解释一下MySQL中当前读和快照读有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "定义快照读 -> 定义当前读 -> 对比读取机制 -> 对比适用场景与隔离级别",
+        "scoring_keywords": [
+          "快照读",
+          "当前读",
+          "一致性非锁定读",
+          "一致性锁定读",
+          "历史版本",
+          "加锁"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_lock_auto_inc_001",
+    "content": "自增锁是InnoDB中用于管理AUTO_INCREMENT列的表级锁，确保自增值的唯一性和连续性。其行为由innodb_autoinc_lock_mode参数控制，包括传统、连续和交错模式。交错模式使用轻量级锁提升并发性能，但在基于语句的复制中需注意数据一致性问题。",
+    "metadata": {
+      "category_stack": "MySQL 锁",
+      "interview_point": "你能介绍一下MySQL中的自增锁吗？",
+      "best_answer_model": {
+        "logic_chain": "锁定义与作用 -> 参数innodb_autoinc_lock_mode -> 三种模式区别 -> 并发性能与数据一致性考量",
+        "scoring_keywords": [
+          "AUTO-INC Locks",
+          "innodb_autoinc_lock_mode",
+          "表级锁",
+          "交错模式",
+          "主从同步",
+          "数据一致性"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_performance_optimization_001",
+    "content": "MySQL性能优化涉及数据库设计、索引策略、查询语句优化、服务器配置及硬件资源等多个层面，旨在提升系统吞吐量、降低响应时间并保障高并发下的稳定性。",
+    "metadata": {
+      "category_stack": "MySQL性能优化",
+      "interview_point": "请谈谈你对MySQL性能优化有哪些主要的建议和思路？",
+      "best_answer_model": {
+        "logic_chain": "数据库设计规范 -> 索引创建与使用 -> SQL语句优化 -> 服务器参数调优 -> 硬件与架构考量",
+        "scoring_keywords": [
+          "数据库设计",
+          "索引策略",
+          "查询优化",
+          "配置调优",
+          "高并发"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_performance_storage_001",
+    "content": "理论上可将文件二进制数据存入MySQL，但不推荐。这会严重消耗数据库性能与存储空间。最佳实践是使用云存储或自建文件服务存储文件，数据库仅保存其地址信息。",
+    "metadata": {
+      "category_stack": "MySQL 性能优化",
+      "interview_point": "请问，我们是否可以直接用 MySQL 来存储文件，比如图片呢？",
+      "best_answer_model": {
+        "logic_chain": "可行性说明 -> 性能弊端分析 -> 推荐方案（云存储/自建服务） -> 职责分离（库存地址，服务存文件）",
+        "scoring_keywords": [
+          "二进制数据",
+          "数据库性能",
+          "存储空间",
+          "文件存储服务",
+          "存储地址"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_performance_ip_storage_001",
+    "content": "将 IP 地址转换为无符号整型存储，可提升查询性能并减少存储空间。MySQL 提供 INET_ATON() 和 INET_NTOA() 函数进行转换与还原。",
+    "metadata": {
+      "category_stack": "MySQL 性能优化",
+      "interview_point": "在 MySQL 中，如何高效地存储 IP 地址？",
+      "best_answer_model": {
+        "logic_chain": "存储方式选择 -> 转换函数使用 -> 性能与空间优势",
+        "scoring_keywords": [
+          "无符号整型",
+          "INET_ATON",
+          "INET_NTOA",
+          "性能优化",
+          "空间占用"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_performance_optimization_001",
+    "content": "SQL优化手段包括使用索引避免全表扫描、优化查询语句结构、避免SELECT *、使用连接代替子查询、分析执行计划、以及通过分库分表处理大数据量。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在MySQL性能优化中，有哪些常见的SQL优化手段可以和我们分享一下？",
+      "best_answer_model": {
+        "logic_chain": "索引优化 -> 查询语句重构 -> 执行计划分析 -> 数据库架构调整",
+        "scoring_keywords": [
+          "索引",
+          "避免全表扫描",
+          "执行计划",
+          "分库分表",
+          "查询优化"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_performance_sql_analysis_001",
+    "content": "使用EXPLAIN命令分析SQL的执行计划，了解查询优化器选择的执行方式，包括访问方法、索引使用、预计扫描行数等关键信息，以评估和优化查询性能。",
+    "metadata": {
+      "category_stack": "MySQL性能优化",
+      "interview_point": "在MySQL中，你通常如何分析一条SQL语句的性能？",
+      "best_answer_model": {
+        "logic_chain": "核心工具介绍 -> 执行计划解读 -> 关键字段分析 -> 性能瓶颈定位",
+        "scoring_keywords": [
+          "EXPLAIN",
+          "执行计划",
+          "查询优化器",
+          "索引",
+          "访问方法",
+          "扫描行数"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_performance_optimization_read_write_separation_sharding_001",
+    "content": "读写分离通过主库处理写操作、从库处理读操作来分摊数据库压力。分库分表则通过水平或垂直拆分数据到不同数据库或表中，以解决单库单表数据量过大导致的性能瓶颈。两者都是提升数据库扩展性和性能的核心架构方案。",
+    "metadata": {
+      "category_stack": "MySQL 性能优化",
+      "interview_point": "你对数据库的读写分离和分库分表方案有了解吗？可以谈谈它们的作用和区别。",
+      "best_answer_model": {
+        "logic_chain": "读写分离原理 -> 分库分表原理 -> 适用场景与区别 -> 带来的挑战",
+        "scoring_keywords": [
+          "主从复制",
+          "读写分摊",
+          "水平拆分",
+          "垂直拆分",
+          "数据分片",
+          "扩展性"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_performance_deep_pagination_001",
+    "content": "深度分页优化的核心在于避免使用LIMIT offset, size带来的巨大性能开销，主要策略包括使用覆盖索引、记录上次查询位置、或利用子查询先定位ID再关联数据。",
+    "metadata": {
+      "category_stack": "MySQL性能优化",
+      "interview_point": "当遇到深度分页查询导致性能瓶颈时，你会如何进行优化？",
+      "best_answer_model": {
+        "logic_chain": "问题分析 -> 覆盖索引优化 -> 游标/ID定位法 -> 业务层面规避",
+        "scoring_keywords": [
+          "覆盖索引",
+          "LIMIT性能开销",
+          "游标分页",
+          "子查询优化",
+          "业务规避"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_performance_cold_hot_separation_001",
+    "content": "数据冷热分离通过将访问频率高的热数据与访问频率低的冷数据分开存储，以优化查询性能和降低存储成本。核心在于制定合理的冷热数据划分标准，并利用数据库分区、归档表或不同存储介质等技术实现物理分离。",
+    "metadata": {
+      "category_stack": "MySQL性能优化",
+      "interview_point": "在MySQL性能优化中，数据冷热分离具体是如何实现的？",
+      "best_answer_model": {
+        "logic_chain": "概念定义与价值 -> 冷热数据划分标准 -> 物理分离实现技术 -> 应用场景与收益",
+        "scoring_keywords": [
+          "访问频率",
+          "划分标准",
+          "物理分离",
+          "查询性能",
+          "存储成本",
+          "归档表"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_performance_optimization_001",
+    "content": "MySQL性能优化遵循系统性思路，核心是定位并分析慢SQL，通过EXPLAIN分析查询计划。优化手段包括索引设计、表结构规范、SQL编写技巧。进阶方案涉及读写分离、分库分表、缓存等架构调整，并辅以连接池和硬件配置优化。",
+    "metadata": {
+      "category_stack": "MySQL性能优化",
+      "interview_point": "请谈谈你对MySQL性能优化的整体思路和具体方法。",
+      "best_answer_model": {
+        "logic_chain": "慢SQL定位 -> 索引与SQL优化 -> 架构调整 -> 其他配置优化",
+        "scoring_keywords": [
+          "慢查询日志",
+          "EXPLAIN",
+          "索引优化",
+          "读写分离",
+          "分库分表",
+          "连接池"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  },
+  {
+    "id": "mysql_learning_resources_001",
+    "content": "推荐系统学习MySQL的书籍与高质量文章，涵盖基础、SQL优化、InnoDB锁机制、自增主键特性及索引底层原理等核心知识点。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "如果要系统学习MySQL，你会推荐哪些书籍和文章？",
+      "best_answer_model": {
+        "logic_chain": "学习路径规划 -> 书籍推荐 -> 系列教程推荐 -> 专题文章推荐",
+        "scoring_keywords": [
+          "书籍推荐",
+          "系列教程",
+          "SQL优化",
+          "InnoDB锁",
+          "自增主键",
+          "索引原理"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md"
+    }
+  }
+]

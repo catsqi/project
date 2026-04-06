@@ -4,11 +4,11 @@ __pycache__/
 .idea/
 *.pyc
 
-# 排除所有模型文件（根据你的报错路径）
+# 排除所有模型文件
 app/services/models/
 models/
 
-# 排除前端依赖（我看你项目里也有这个）
+# 排除前端依赖
 node_modules/
 frontend/node_modules/
 

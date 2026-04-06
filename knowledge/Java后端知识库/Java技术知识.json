@@ -1,0 +1,6033 @@
+[
+  {
+    "id": "java_basis_language_features_001",
+    "content": "Java语言具有简单易学、面向对象、平台无关性、支持多线程、可靠性高、安全性强、高效性、支持网络编程、编译与解释并存等特点，其强大的生态是当前主要优势。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请介绍一下Java语言有哪些主要特点？",
+      "best_answer_model": {
+        "logic_chain": "核心特性列举 -> 面向对象核心 -> 平台无关性原理 -> 多线程与可靠性 -> 生态优势",
+        "scoring_keywords": [
+          "面向对象",
+          "平台无关性",
+          "多线程",
+          "异常处理",
+          "自动内存管理",
+          "Java生态"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_platform_001",
+    "content": "Java SE是Java平台标准版，提供核心类库和虚拟机，用于开发桌面或简单服务器应用。Java EE是建立在SE之上的企业版，提供Servlet、JSP等规范，用于构建复杂、可伸缩的企业级Web应用。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java SE和Java EE的区别与联系。",
+      "best_answer_model": {
+        "logic_chain": "核心定义 -> 包含组件 -> 应用场景 -> 版本关系",
+        "scoring_keywords": [
+          "Java SE",
+          "Java EE",
+          "核心类库",
+          "企业级规范",
+          "应用场景"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_jvm_jdk_jre_001",
+    "content": "JVM是运行Java字节码的虚拟机，实现跨平台。JRE包含JVM和基础类库，用于运行程序。JDK包含JRE及开发工具（如编译器、调试器），用于开发和编译Java程序。三者是包含关系。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下JVM、JDK和JRE三者之间的区别与联系。",
+      "best_answer_model": {
+        "logic_chain": "核心定义 -> 功能职责 -> 包含关系 -> 版本演进",
+        "scoring_keywords": [
+          "JVM",
+          "JDK",
+          "JRE",
+          "字节码",
+          "跨平台",
+          "开发工具"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_bytecode_001",
+    "content": "字节码是JVM可理解的中间代码，存储在.class文件中。它不依赖特定处理器，面向虚拟机，实现了跨平台可移植性。通过结合解释执行与JIT即时编译，Java在保证可移植性的同时提升了执行效率。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下什么是字节码，以及采用字节码的好处是什么？",
+      "best_answer_model": {
+        "logic_chain": "中间代码定义 -> 跨平台特性 -> 解释与JIT编译结合 -> 效率与可移植性平衡",
+        "scoring_keywords": [
+          "字节码",
+          ".class文件",
+          "JVM",
+          "跨平台",
+          "解释执行",
+          "JIT编译"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_compile_interpret_001",
+    "content": "Java 程序执行时先通过编译器将源代码编译成平台无关的字节码文件，然后由 Java 虚拟机（JVM）内的解释器逐行解释执行字节码，这种结合了编译和解释两种方式的特点，使其兼具跨平台性和一定的执行效率。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你解释一下，为什么我们常说 Java 语言是‘编译与解释并存’的？",
+      "best_answer_model": {
+        "logic_chain": "编译型与解释型语言定义 -> Java的两阶段执行过程（先编译为字节码 -> 再由JVM解释/即时编译执行） -> 总结并存特性与优势",
+        "scoring_keywords": [
+          "编译器",
+          "字节码",
+          "JVM解释器",
+          "即时编译",
+          "跨平台"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_aot_001",
+    "content": "AOT编译在程序运行前生成机器码，能显著提升启动速度、降低内存占用并增强安全性，尤其适合云原生场景。但它无法支持Java的反射、动态代理等动态特性，因此无法完全替代JIT编译。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请谈谈AOT编译的优点，以及为什么我们不全部使用AOT编译？",
+      "best_answer_model": {
+        "logic_chain": "AOT定义与时机 -> 核心优点（启动、内存、安全） -> 动态特性缺失 -> 与JIT场景对比",
+        "scoring_keywords": [
+          "静态编译",
+          "启动速度",
+          "内存占用",
+          "动态特性",
+          "反射",
+          "云原生"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_jdk_001",
+    "content": "OpenJDK是完全开源免费的参考实现，Oracle JDK是其商业发行版，早期包含私有组件和工具。两者核心代码接近，主要区别在于许可协议、商业支持策略和部分高级功能。Java 11后功能趋于一致。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请谈谈Oracle JDK和OpenJDK的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "历史渊源与关系 -> 核心区别（开源性、许可、功能、支持） -> 版本演进与现状 -> 选择建议",
+        "scoring_keywords": [
+          "开源",
+          "许可协议",
+          "商业支持",
+          "LTS",
+          "功能一致性"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_java_vs_cpp_001",
+    "content": "Java与C++同为面向对象语言，但存在关键差异：Java无指针访问内存更安全，采用单继承与接口多继承，拥有自动垃圾回收机制，且不支持操作符重载。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请谈谈Java和C++这两种语言的主要区别有哪些？",
+      "best_answer_model": {
+        "logic_chain": "面向对象共性 -> 内存访问安全性 -> 继承机制差异 -> 内存管理方式 -> 重载支持范围",
+        "scoring_keywords": [
+          "指针",
+          "单继承",
+          "垃圾回收",
+          "接口多继承",
+          "操作符重载"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_comment_001",
+    "content": "Java注释有三种形式：单行注释用于解释单行代码，多行注释用于解释代码段，文档注释用于生成API文档。注释是代码说明书，帮助理解逻辑，但应优先通过清晰的代码本身来表达意图。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "Java中的注释有哪几种形式，它们各自有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "三种形式列举 -> 各自用途说明 -> 注释的重要性与使用原则",
+        "scoring_keywords": [
+          "单行注释",
+          "多行注释",
+          "文档注释",
+          "代码说明书",
+          "编译器抹掉",
+          "Clean Code"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_identifier_keyword_001",
+    "content": "标识符是程序员为程序元素自定义的名称，而关键字是Java语言预先定义并赋予特殊含义的保留标识符，不能用于命名自定义元素。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能解释一下Java中标识符和关键字的区别吗？",
+      "best_answer_model": {
+        "logic_chain": "定义标识符 -> 定义关键字 -> 阐述关系与核心区别",
+        "scoring_keywords": [
+          "标识符",
+          "关键字",
+          "自定义名称",
+          "保留字",
+          "特殊含义"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basic_keywords_001",
+    "content": "Java关键字是语言预定义的保留标识符，用于声明访问控制、类与成员修饰、程序流程控制、异常处理、基本类型和变量引用等，所有关键字均为小写，不能用作自定义标识符。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能列举一下Java语言中的关键字，并简单说明它们的分类吗？",
+      "best_answer_model": {
+        "logic_chain": "定义与特性 -> 主要分类列举 -> 特殊关键字说明 -> 与保留字、字面值区分",
+        "scoring_keywords": [
+          "关键字",
+          "保留标识符",
+          "访问控制",
+          "程序控制",
+          "基本类型",
+          "保留字"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basic_increment_decrement_001",
+    "content": "自增（++）和自减（--）运算符用于变量值加1或减1。前缀形式先运算后使用值，后缀形式先使用值后运算，核心区别在于运算与值使用的先后顺序。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中自增和自减运算符的工作原理，特别是前缀和后缀形式的区别。",
+      "best_answer_model": {
+        "logic_chain": "运算符定义 -> 前缀形式（先运算后使用） -> 后缀形式（先使用后运算） -> 核心区别总结",
+        "scoring_keywords": [
+          "自增运算符",
+          "自减运算符",
+          "前缀形式",
+          "后缀形式",
+          "运算顺序"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basic_shift_operator_001",
+    "content": "移位运算符直接操作二进制位，包括左移（<<）、带符号右移（>>）和无符号右移（>>>）。它们高效且常用于乘以/除以2的幂、位字段管理、哈希算法等场景。仅支持int和long类型，移位位数超过位数时会先求余。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请介绍一下Java中的移位运算符，包括它们的区别和主要应用场景。",
+      "best_answer_model": {
+        "logic_chain": "三种运算符定义 -> 移位规则与数学效果 -> 支持的数据类型与位数处理 -> 主要应用场景与优势",
+        "scoring_keywords": [
+          "左移运算符",
+          "带符号右移",
+          "无符号右移",
+          "二进制操作",
+          "高效运算",
+          "位字段管理"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basic_flow_control_001",
+    "content": "continue 跳过本次循环进入下一次，break 跳出整个循环体，return 用于结束当前方法的执行，可以无返回值或返回特定值。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下在Java中，continue、break和return这三个关键字在控制流程上的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "循环内控制 -> 方法级控制 -> 作用范围与结果",
+        "scoring_keywords": [
+          "continue",
+          "break",
+          "return",
+          "跳出循环",
+          "结束方法",
+          "控制流程"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_datatype_001",
+    "content": "Java有8种基本数据类型，包括4种整数型、2种浮点型、1种字符型和1种布尔型。它们具有固定的存储空间和默认值，保证了程序的可移植性，并有对应的包装类。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能介绍一下Java中的几种基本数据类型吗？",
+      "best_answer_model": {
+        "logic_chain": "类型总览 -> 具体分类与位数 -> 默认值与取值范围 -> 可移植性与包装类",
+        "scoring_keywords": [
+          "基本数据类型",
+          "整数型",
+          "浮点型",
+          "字符型",
+          "布尔型",
+          "包装类"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_datatype_001",
+    "content": "基本类型与包装类型在用途、存储方式、占用空间、默认值和比较方式上存在核心差异。包装类型是对象，可用于泛型，默认值为null，比较需用equals方法；基本类型非对象，有固定默认值，直接比较值。存储位置取决于变量作用域，局部变量在栈，成员变量在堆。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请详细阐述一下Java中基本数据类型和包装类型的主要区别有哪些？",
+      "best_answer_model": {
+        "logic_chain": "核心概念定义 -> 用途差异（泛型） -> 存储位置与方式 -> 空间占用与默认值 -> 比较方式（==与equals）",
+        "scoring_keywords": [
+          "包装类型",
+          "基本类型",
+          "存储位置",
+          "默认值",
+          "equals比较",
+          "泛型支持"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_wrapper_cache_001",
+    "content": "Java包装类为提升性能，对部分类型实现了缓存机制。Byte、Short、Integer、Long默认缓存[-128,127]的值，Character缓存[0,127]，Boolean直接返回预定义实例。Float和Double无缓存。超出范围会创建新对象。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能介绍一下Java包装类型的缓存机制吗？",
+      "best_answer_model": {
+        "logic_chain": "缓存目的 -> 具体类型与缓存范围 -> 特殊参数与限制 -> 浮点类型无缓存 -> 使用建议",
+        "scoring_keywords": [
+          "缓存机制",
+          "[-128,127]",
+          "valueOf",
+          "IntegerCache",
+          "自动装箱",
+          "equals比较"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_autoboxing_001",
+    "content": "自动装箱是将基本类型自动转换为对应的包装类对象，拆箱则是将包装类对象自动转换为基本类型。其原理是编译器在编译时分别替换为调用包装类的valueOf()和xxxValue()方法。频繁的自动拆装箱操作会影响系统性能。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中的自动装箱与拆箱，并说明其底层原理是什么？",
+      "best_answer_model": {
+        "logic_chain": "基本概念定义 -> 底层实现原理 -> 性能影响与注意事项",
+        "scoring_keywords": [
+          "装箱",
+          "拆箱",
+          "valueOf()",
+          "xxxValue()",
+          "性能影响"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basic_float_precision_001",
+    "content": "浮点数运算精度丢失源于计算机使用二进制有限宽度表示数字，无限循环小数会被截断，导致十进制小数无法精确转换为二进制表示。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能解释一下为什么在Java中进行浮点数运算时，有时会出现精度丢失的风险吗？",
+      "best_answer_model": {
+        "logic_chain": "二进制表示限制 -> 十进制小数转换问题 -> 无限循环截断 -> 运算结果误差",
+        "scoring_keywords": [
+          "二进制表示",
+          "有限宽度",
+          "精度丢失",
+          "无限循环",
+          "截断误差"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_float_precision_001",
+    "content": "使用BigDecimal类进行浮点数运算可避免精度丢失，尤其适用于金融等对精度要求高的场景。注意其比较应使用compareTo方法而非equals。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "在Java中，如何解决浮点数运算可能出现的精度丢失问题？",
+      "best_answer_model": {
+        "logic_chain": "问题根源 -> 解决方案（BigDecimal） -> 使用注意事项（构造与比较）",
+        "scoring_keywords": [
+          "BigDecimal",
+          "精度丢失",
+          "金融场景",
+          "compareTo",
+          "equals"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_biginteger_001",
+    "content": "当需要表示超过long范围的整数时，应使用BigInteger类。它内部使用int数组存储数据，可以表示任意精度的整数，但运算效率低于基本数据类型。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "在Java中，如果需要处理超过long类型范围的整数，我们应该如何表示和操作？",
+      "best_answer_model": {
+        "logic_chain": "基本类型范围限制 -> long溢出风险 -> BigInteger解决方案 -> 内部实现与性能考量",
+        "scoring_keywords": [
+          "BigInteger",
+          "任意精度",
+          "int数组",
+          "运算效率低",
+          "数值溢出"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_variable_001",
+    "content": "成员变量属于类或实例，有默认值，生命周期与对象一致，存储在堆或方法区。局部变量定义于方法或代码块内，无默认值，生命周期限于方法调用，存储在栈内存。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请阐述一下成员变量和局部变量之间的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "语法形式 -> 存储方式 -> 生存时间 -> 默认值",
+        "scoring_keywords": [
+          "语法形式",
+          "存储方式",
+          "生存时间",
+          "默认值",
+          "生命周期",
+          "访问修饰符"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_static_variable_001",
+    "content": "静态变量被static修饰，属于类而非实例，所有对象共享同一份内存，常用于存储类级别的共享数据或常量，节省内存空间。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你解释一下，静态变量在Java中有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "定义与修饰符 -> 内存分配与共享性 -> 访问方式 -> 常见用途（常量）",
+        "scoring_keywords": [
+          "static关键字",
+          "类级别共享",
+          "内存分配一次",
+          "节省内存",
+          "通过类名访问",
+          "final常量"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_variable_001",
+    "content": "字符常量是单引号引起的单个字符，占2字节，相当于整型值可参与运算；字符串常量是双引号引起的字符序列，代表内存地址，占用字节数可变。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下字符型常量和字符串常量之间的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "定义形式 -> 内存表示 -> 占用大小 -> 运算特性",
+        "scoring_keywords": [
+          "单引号",
+          "双引号",
+          "整型值",
+          "地址值",
+          "2字节",
+          "可变字节"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_method_return_type_001",
+    "content": "方法的返回值是方法体执行后产生的结果，用于被调用者接收和使用。根据是否有返回值及参数，方法可分为无参无返、有参无返、无参有返和有参有返四种基本类型。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你解释一下什么是方法的返回值？方法通常有哪几种类型？",
+      "best_answer_model": {
+        "logic_chain": "返回值定义 -> 返回值作用 -> 四种分类标准 -> 四种类型列举",
+        "scoring_keywords": [
+          "返回值",
+          "执行结果",
+          "无参无返",
+          "有参无返",
+          "无参有返",
+          "有参有返"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_method_static_001",
+    "content": "静态方法属于类，在类加载时即存在；非静态成员属于实例对象，需对象实例化后才存在。静态方法调用时可能非静态成员尚未初始化，导致非法访问。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下，为什么在Java中静态方法不能直接调用非静态成员？",
+      "best_answer_model": {
+        "logic_chain": "内存分配时机 -> 类与实例的归属关系 -> 访问合法性分析",
+        "scoring_keywords": [
+          "类加载",
+          "实例化",
+          "内存分配",
+          "非法操作"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_method_001",
+    "content": "静态方法属于类，可通过类名直接调用，无需创建对象，且只能访问类的静态成员。实例方法属于对象，必须通过对象实例调用，可以访问所有成员变量和方法。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下静态方法和实例方法有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "调用方式 -> 所属主体 -> 访问权限限制",
+        "scoring_keywords": [
+          "类名调用",
+          "对象调用",
+          "静态成员",
+          "实例成员",
+          "无需创建对象"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_method_overload_override_001",
+    "content": "重载是同一类中方法名相同但参数列表不同的多态形式，用于处理不同输入。重写是子类对继承自父类的方法进行重新实现，要求方法签名相同，遵循访问权限、返回类型及异常声明的特定规则。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中方法重载和方法重写有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "定义与发生范围 -> 方法签名与参数要求 -> 返回类型与访问修饰符规则 -> 绑定时期与核心原则总结",
+        "scoring_keywords": [
+          "重载",
+          "重写",
+          "参数列表",
+          "方法签名",
+          "动态绑定",
+          "两同两小一大"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_method_varargs_001",
+    "content": "可变长参数允许方法接受不定数量的参数，使用省略号语法定义，且必须是方法的最后一个参数。编译后会被转换为数组。在方法重载时，固定参数方法比可变参数方法具有更高的匹配优先级。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中的可变长参数是什么，以及它的使用规则和注意事项。",
+      "best_answer_model": {
+        "logic_chain": "定义与语法 -> 位置限制 -> 编译原理（转为数组） -> 重载匹配规则",
+        "scoring_keywords": [
+          "不定长度参数",
+          "省略号语法",
+          "最后一个参数",
+          "编译为数组",
+          "重载优先级"
+        ]
+      },
+      "source_ref": "java-basic-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_oop_vs_pop_001",
+    "content": "面向对象编程以对象为核心，通过抽象、封装、继承和多态组织代码，强调模块化和复用性。面向过程编程以过程或函数为核心，按步骤顺序执行，结构简单直接。两者核心区别在于组织代码和解决问题的思维方式不同。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请谈谈面向对象编程和面向过程编程的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "核心思想对比 -> 代码组织方式 -> 核心特性 -> 优缺点与适用场景",
+        "scoring_keywords": [
+          "对象",
+          "过程",
+          "封装",
+          "继承",
+          "多态",
+          "模块化"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_oop_002",
+    "content": "使用new运算符在堆内存中创建对象实例，对象引用则存储在栈内存中并指向该实例。一个引用只能指向一个实例，而一个实例可被多个引用指向。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请问，创建一个对象使用什么运算符？以及对象实例和对象引用之间有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "创建运算符 -> 实例与引用的内存位置 -> 引用与实例的指向关系",
+        "scoring_keywords": [
+          "new运算符",
+          "对象实例",
+          "对象引用",
+          "堆内存",
+          "栈内存",
+          "指向关系"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_oop_002",
+    "content": "对象的相等比较内存中存放的内容是否相同，通常使用equals方法；引用相等比较两个引用是否指向同一个内存地址，使用==运算符。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下对象的相等和引用相等的区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "概念定义 -> 比较运算符（==） -> 内容比较方法（equals） -> 典型示例（String）",
+        "scoring_keywords": [
+          "内存地址",
+          "内容相等",
+          "==运算符",
+          "equals方法",
+          "引用相等"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_oop_constructor_001",
+    "content": "即使类未显式声明构造方法，程序也能正确执行，因为Java编译器会自动提供一个默认的无参构造方法来完成对象初始化。若显式定义了任何构造方法，则默认构造方法将不再提供。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "如果一个类没有声明构造方法，这个程序还能正确执行吗？",
+      "best_answer_model": {
+        "logic_chain": "构造方法作用 -> 默认无参构造方法的存在 -> 显式定义构造方法的影响 -> 实践建议",
+        "scoring_keywords": [
+          "默认构造方法",
+          "对象初始化",
+          "无参构造",
+          "编译器自动提供",
+          "显式定义"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_constructor_001",
+    "content": "构造方法名称与类名相同，无返回值，在创建对象时自动执行。它不能被重写，但可以被重载，允许通过不同参数列表提供多种对象初始化方式。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请介绍一下构造方法有哪些特点？它是否可以被重写？",
+      "best_answer_model": {
+        "logic_chain": "核心特点定义 -> 执行时机说明 -> 重写与重载辨析",
+        "scoring_keywords": [
+          "名称与类名相同",
+          "没有返回值",
+          "自动执行",
+          "不能被重写",
+          "可以被重载"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_oop_three_features",
+    "content": "面向对象三大特征包括封装、继承和多态。封装隐藏对象内部状态并提供公共访问方法以保护数据。继承允许子类复用和扩展父类的属性和方法。多态表现为父类引用指向子类对象，实现运行时方法动态绑定。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请简要阐述面向对象编程的三大核心特征。",
+      "best_answer_model": {
+        "logic_chain": "概念定义 -> 封装原理 -> 继承机制 -> 多态实现",
+        "scoring_keywords": [
+          "封装",
+          "继承",
+          "多态",
+          "隐藏内部状态",
+          "代码复用",
+          "动态绑定"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_oop_interface_vs_abstract_class_001",
+    "content": "接口和抽象类都不能直接实例化，都可包含抽象方法。接口用于约束行为，支持多实现；抽象类用于代码复用，强调所属关系，仅支持单继承。接口成员变量为常量，方法在Java8后更灵活；抽象类成员变量和方法的定义更自由。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你谈谈接口和抽象类有什么共同点和区别？",
+      "best_answer_model": {
+        "logic_chain": "共同点（实例化与抽象方法）-> 核心区别（设计目的与继承实现）-> 成员变量区别 -> 方法区别（含Java8/9新特性）",
+        "scoring_keywords": [
+          "不能直接实例化",
+          "抽象方法",
+          "多实现",
+          "单继承",
+          "public static final",
+          "default方法"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_oop_copy_001",
+    "content": "浅拷贝创建新对象，但复制引用类型属性的地址，与原对象共享内部对象。深拷贝递归复制整个对象及其所有内部对象，生成完全独立的副本。引用拷贝则是多个引用指向同一个对象，不创建新对象。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下深拷贝和浅拷贝的区别，以及什么是引用拷贝？",
+      "best_answer_model": {
+        "logic_chain": "概念定义 -> 浅拷贝原理 -> 深拷贝原理 -> 引用拷贝概念",
+        "scoring_keywords": [
+          "浅拷贝",
+          "深拷贝",
+          "引用拷贝",
+          "Cloneable接口",
+          "递归复制",
+          "共享引用"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_object_methods_001",
+    "content": "Object类是所有类的父类，提供11个核心方法，包括getClass、hashCode、equals、clone、toString、notify、notifyAll、wait系列及finalize，涉及对象信息、线程通信和垃圾回收。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请列举一下Object类中常见的几个方法，并简要说明它们的作用。",
+      "best_answer_model": {
+        "logic_chain": "类定义与继承关系 -> 核心方法分类（信息获取、对象比较、线程通信、垃圾回收） -> 关键方法特性（如native、final）",
+        "scoring_keywords": [
+          "getClass",
+          "hashCode",
+          "equals",
+          "clone",
+          "wait/notify",
+          "finalize"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_object_equals_001",
+    "content": "== 比较基本类型的值或引用类型的内存地址。equals() 用于比较对象，Object 默认实现等同于 ==，但可被重写以比较对象内容，如 String 类重写后比较字符序列。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下 Java 中 == 和 equals() 方法的区别。",
+      "best_answer_model": {
+        "logic_chain": "操作数类型区分 -> == 的本质（值/地址） -> equals() 的默认行为与可重写性 -> 典型示例（String）说明",
+        "scoring_keywords": [
+          "基本类型",
+          "引用类型",
+          "内存地址",
+          "值传递",
+          "重写equals",
+          "对象内容"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_object_hashcode_001",
+    "content": "hashCode()方法用于获取对象的哈希码，主要作用是确定对象在哈希表中的索引位置，以实现快速检索。它是Object类的本地方法，具体实现因JDK版本而异。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下hashCode()方法有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "基本定义与作用 -> 与哈希表的关系 -> 方法来源与特性 -> 不同实现的说明",
+        "scoring_keywords": [
+          "哈希码",
+          "索引位置",
+          "哈希表",
+          "快速检索",
+          "本地方法"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_hashcode_001",
+    "content": "hashCode方法用于为对象生成哈希值，在HashSet等集合中，先通过hashCode快速定位桶，再在桶内用equals精确比较，从而大幅减少equals调用次数，提升查找和插入效率。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你解释一下，为什么Java中要有hashCode这个方法？",
+      "best_answer_model": {
+        "logic_chain": "集合查找效率问题 -> hashCode定位桶 -> equals精确比较 -> 减少equals调用",
+        "scoring_keywords": [
+          "哈希值",
+          "定位桶",
+          "equals方法",
+          "哈希碰撞",
+          "查找效率"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_object_equals_hashcode_001",
+    "content": "重写equals()时必须重写hashCode()，以确保两个相等的对象具有相同的哈希值。这是Java集合框架（如HashMap）正确工作的基础，否则可能导致对象在哈希集合中行为异常。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "为什么在重写equals()方法时，也必须重写hashCode()方法？",
+      "best_answer_model": {
+        "logic_chain": "对象相等性定义 -> 哈希契约要求 -> 违反契约在哈希集合中的后果",
+        "scoring_keywords": [
+          "哈希契约",
+          "对象相等",
+          "哈希值相等",
+          "HashMap行为异常",
+          "哈希碰撞"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_string_immutable_vs_mutable_001",
+    "content": "String不可变，线程安全但频繁修改性能差。StringBuffer和StringBuilder可变，基于字符数组操作自身，性能高。StringBuffer通过同步锁保证线程安全，StringBuilder非线程安全但性能略优。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请详细说明一下String、StringBuffer和StringBuilder三者之间的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "可变性分析 -> 线程安全性对比 -> 性能差异解释 -> 使用场景总结",
+        "scoring_keywords": [
+          "不可变性",
+          "字符数组",
+          "线程安全",
+          "同步锁",
+          "性能开销",
+          "使用场景"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_string_immutable_001",
+    "content": "String不可变的核心在于其内部存储字符的数组被private final修饰且未暴露修改方法，同时String类本身被final修饰以防止子类破坏其不可变性。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你解释一下，为什么Java中的String类型被设计为不可变的？",
+      "best_answer_model": {
+        "logic_chain": "final修饰类 -> final修饰私有字符数组 -> 未提供修改方法 -> 不可变性的保证",
+        "scoring_keywords": [
+          "final修饰类",
+          "private final数组",
+          "无修改方法",
+          "不可变对象",
+          "线程安全"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_string_concatenation_001",
+    "content": "Java中字符串的'+'拼接在编译时会转换为StringBuilder的append操作，但在循环内使用会导致多次创建StringBuilder对象，效率低下。JDK9对此有优化，但循环拼接仍推荐显式使用StringBuilder以提高性能。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "在Java中，进行字符串拼接时，是使用'+'运算符好，还是使用StringBuilder更好？",
+      "best_answer_model": {
+        "logic_chain": "运算符重载特性 -> 编译后字节码转换 -> 循环拼接的性能缺陷 -> JDK9的优化与局限 -> 最佳实践总结",
+        "scoring_keywords": [
+          "运算符重载",
+          "StringBuilder",
+          "append方法",
+          "循环性能",
+          "JDK9优化"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_string_equals_001",
+    "content": "String#equals() 重写了 Object#equals()，用于比较字符串的值是否相等，而 Object#equals() 默认比较两个对象的内存地址是否相同。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下 String 类中的 equals 方法和 Object 类中的 equals 方法有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "Object.equals默认行为 -> String.equals重写目的 -> 值比较与地址比较",
+        "scoring_keywords": [
+          "重写",
+          "值相等",
+          "内存地址",
+          "默认实现"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_string_constant_pool_001",
+    "content": "字符串常量池是JVM中存储字符串字面量的特殊内存区域，用于缓存字符串对象以避免重复创建，从而提升性能并减少内存消耗。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能介绍一下字符串常量池的作用吗？",
+      "best_answer_model": {
+        "logic_chain": "定义与目的 -> 内存区域归属 -> 核心机制（缓存与避免重复） -> 性能与内存收益",
+        "scoring_keywords": [
+          "字符串常量池",
+          "JVM内存区域",
+          "避免重复创建",
+          "提升性能",
+          "减少内存消耗"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_string_new_object_count_001",
+    "content": "使用 new String(\"abc\") 创建字符串对象时，具体数量取决于字符串常量池中是否已存在 \"abc\"。若不存在，则创建两个对象（常量池一个，堆中一个）；若已存在，则仅在堆中创建一个新对象。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请问，String s1 = new String(\"abc\"); 这行代码执行后，会创建几个字符串对象？",
+      "best_answer_model": {
+        "logic_chain": "常量池检查 -> 对象创建场景分析 -> 最终数量结论",
+        "scoring_keywords": [
+          "字符串常量池",
+          "ldc指令",
+          "堆内存对象",
+          "对象引用"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_string_intern_001",
+    "content": "String.intern() 是一个 native 方法，用于操作字符串常量池。其核心作用是确保字符串引用的唯一性：若常量池中已存在相同内容的字符串，则返回其引用；否则，将当前字符串的引用添加至常量池并返回。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下 String 类的 intern 方法有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "方法定义 -> 常量池查询逻辑 -> 唯一性保证 -> 返回引用规则",
+        "scoring_keywords": [
+          "字符串常量池",
+          "native方法",
+          "引用唯一性",
+          "堆与常量池"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_string_concatenation_001",
+    "content": "String变量与常量进行'+'运算时，若操作数均为编译期常量，则通过常量折叠优化，结果直接存入字符串常量池。若涉及变量，则底层通过StringBuilder的append方法动态拼接，在堆上创建新对象。final修饰的字符串变量在编译期可确定值时，也被视为常量处理。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请问，当String类型的变量和常量进行'+'运算时，底层具体发生了什么？",
+      "best_answer_model": {
+        "logic_chain": "编译期常量判定 -> 常量折叠优化 -> 字符串常量池 -> 变量拼接的StringBuilder机制 -> final关键字的影响",
+        "scoring_keywords": [
+          "常量折叠",
+          "字符串常量池",
+          "StringBuilder",
+          "编译期优化",
+          "final变量"
+        ]
+      },
+      "source_ref": "java-basic-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_exception_hierarchy_001",
+    "content": "Java异常类层次结构以Throwable为根，分为Error和Exception。Exception又分为检查异常和非检查异常，是理解Java异常处理机制的基础。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请描述一下Java异常类的层次结构。",
+      "best_answer_model": {
+        "logic_chain": "根类Throwable -> 两大子类Error与Exception -> Exception下的检查异常与非检查异常 -> 常见具体异常类归属",
+        "scoring_keywords": [
+          "Throwable",
+          "Error",
+          "Exception",
+          "检查异常",
+          "非检查异常",
+          "RuntimeException"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_exception_error_difference_001",
+    "content": "Exception 和 Error 都继承自 Throwable。Exception 是程序可以处理的异常，分为受检和非受检异常。Error 是程序无法处理的严重错误，如 JVM 错误，通常不建议捕获，会导致线程终止。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下 Java 中 Exception 和 Error 有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "共同祖先 -> Exception定义与分类 -> Error定义与特点 -> 处理建议对比",
+        "scoring_keywords": [
+          "Throwable",
+          "Checked Exception",
+          "Unchecked Exception",
+          "Error",
+          "JVM错误",
+          "线程终止"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_exception_class_not_found_001",
+    "content": "ClassNotFoundException是Exception，在动态加载类失败时抛出，可捕获处理。NoClassDefFoundError是Error，在运行时链接不到编译时存在的类时抛出，通常由环境问题导致，JVM无法继续。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下ClassNotFoundException和NoClassDefFoundError的区别。",
+      "best_answer_model": {
+        "logic_chain": "异常类型 -> 发生时机 -> 根本原因 -> 处理方式",
+        "scoring_keywords": [
+          "Exception",
+          "Error",
+          "动态加载",
+          "运行时链接",
+          "可捕获",
+          "环境问题"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_exception_checked_vs_unchecked_001",
+    "content": "Checked Exception是编译时检查的异常，必须被捕获或声明抛出，否则编译不通过，如IOException。Unchecked Exception是运行时异常，编译时不强制处理，如NullPointerException，通常由程序逻辑错误引起。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中Checked Exception和Unchecked Exception的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "定义与分类 -> 编译期处理要求 -> 典型代表与常见场景",
+        "scoring_keywords": [
+          "编译时检查",
+          "必须捕获或声明",
+          "运行时异常",
+          "RuntimeException",
+          "IOException",
+          "NullPointerException"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_exception_checked_vs_unchecked_001",
+    "content": "默认优先使用 Unchecked Exception，将其视为代码 Bug 并暴露修复。仅在异常属于业务逻辑且调用方必须处理时（如余额不足），才使用 Checked Exception 来强制处理，以保证关键业务完整性。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "在 Java 异常处理中，你更倾向于使用 Checked Exception 还是 Unchecked Exception？",
+      "best_answer_model": {
+        "logic_chain": "默认原则 -> 将 Unchecked Exception 视为 Bug -> 使用 Checked Exception 的业务场景",
+        "scoring_keywords": [
+          "Unchecked Exception",
+          "Checked Exception",
+          "业务逻辑",
+          "强制处理",
+          "代码 Bug"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_exception_throwable_methods_001",
+    "content": "Throwable类提供了获取和打印异常信息的关键方法，包括获取详细信息的getMessage()、获取简要描述的toString()、获取本地化信息的getLocalizedMessage()以及在控制台打印完整异常栈的printStackTrace()。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请介绍一下Throwable类中常用的方法有哪些？",
+      "best_answer_model": {
+        "logic_chain": "核心方法列举 -> 各方法功能描述 -> 本地化信息处理说明",
+        "scoring_keywords": [
+          "getMessage",
+          "toString",
+          "getLocalizedMessage",
+          "printStackTrace",
+          "异常信息",
+          "本地化"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_exception_try_catch_finally_001",
+    "content": "try块用于包裹可能抛出异常的代码，catch块用于捕获并处理特定类型的异常，finally块则无论是否发生异常都会执行，常用于资源清理。注意finally中的return会覆盖try或catch中的返回值。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中try-catch-finally语句块各自的作用以及它们是如何配合使用的？",
+      "best_answer_model": {
+        "logic_chain": "基本语法结构 -> 各块核心职责 -> 执行顺序与返回值覆盖 -> 最佳实践警告",
+        "scoring_keywords": [
+          "try块",
+          "catch块",
+          "finally块",
+          "异常处理",
+          "执行顺序",
+          "返回值覆盖"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_exception_finally_001",
+    "content": "finally块中的代码并非绝对执行。当程序调用System.exit()终止JVM、所在线程死亡或CPU被关闭时，finally块将不会被执行。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请问，finally块中的代码一定会执行吗？",
+      "best_answer_model": {
+        "logic_chain": "常规执行保证 -> 特殊终止场景（System.exit/线程死亡/CPU关闭） -> finally代码不执行",
+        "scoring_keywords": [
+          "System.exit",
+          "线程死亡",
+          "JVM终止",
+          "finally块",
+          "执行保证"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_exception_try_with_resources_001",
+    "content": "try-with-resources 用于自动管理实现了 AutoCloseable 或 Closeable 接口的资源，确保其正确关闭。它通过简洁的语法替代了繁琐的 try-catch-finally 结构，能自动处理多个资源的关闭，且关闭顺序与声明顺序相反，异常信息也更清晰。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下如何使用 try-with-resources 来替代传统的 try-catch-finally 语句进行资源管理？",
+      "best_answer_model": {
+        "logic_chain": "资源定义（AutoCloseable/Closeable） -> 语法结构（try()） -> 自动关闭与执行顺序 -> 相比 try-finally 的优势（简洁、异常清晰、多资源）",
+        "scoring_keywords": [
+          "AutoCloseable",
+          "Closeable",
+          "自动关闭",
+          "执行顺序",
+          "代码简洁",
+          "异常清晰"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_exception_usage_notes_001",
+    "content": "异常使用需注意：避免将异常定义为静态变量以防栈信息错乱；抛出信息应有意义且具体；避免重复记录日志导致信息冗余和问题追踪困难。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "在使用异常处理时，有哪些需要特别注意的地方？",
+      "best_answer_model": {
+        "logic_chain": "异常对象创建 -> 异常信息设计 -> 异常类型具体化 -> 日志记录管理",
+        "scoring_keywords": [
+          "静态变量",
+          "异常栈信息",
+          "具体异常",
+          "重复记录日志"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_generics_basic_001",
+    "content": "Java泛型是JDK5引入的特性，通过类型参数化增强代码可读性和稳定性。编译器能进行类型检测，确保集合等容器只能操作指定类型的对象，并自动处理类型转换，避免运行时类型错误。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能解释一下什么是Java泛型，以及它主要有什么作用吗？",
+      "best_answer_model": {
+        "logic_chain": "定义引入 -> 核心作用（类型安全与可读性） -> 编译器行为（检测与转换） -> 对比非泛型的优势",
+        "scoring_keywords": [
+          "类型参数化",
+          "类型安全",
+          "编译器检测",
+          "自动类型转换",
+          "代码可读性"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_generics_usage_types_001",
+    "content": "泛型主要有三种使用方式：泛型类、泛型接口和泛型方法。泛型类在实例化时指定类型参数；泛型接口可由实现类指定或保留类型；泛型方法在方法签名中独立声明类型参数，静态方法只能使用自身声明的泛型。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "在Java中，泛型的使用方式主要有哪几种？",
+      "best_answer_model": {
+        "logic_chain": "三种核心方式 -> 泛型类定义与实例化 -> 泛型接口的实现方式 -> 泛型方法的声明与静态方法限制",
+        "scoring_keywords": [
+          "泛型类",
+          "泛型接口",
+          "泛型方法",
+          "类型参数",
+          "实例化",
+          "静态泛型方法"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_generics_usage_001",
+    "content": "泛型常用于定义通用接口返回结果、工具类（如Excel处理）和集合操作，以实现类型安全、代码复用和消除强制类型转换。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请结合你的项目经验，具体谈谈你在哪些地方使用过泛型？",
+      "best_answer_model": {
+        "logic_chain": "通用接口定义 -> 工具类封装 -> 集合操作 -> 总结优势",
+        "scoring_keywords": [
+          "类型安全",
+          "代码复用",
+          "消除强制转换",
+          "通用接口",
+          "工具类"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_reflection_basis_001",
+    "content": "反射机制允许程序在运行时获取类的内部信息并动态操作其属性、方法和构造器，是Java实现动态性的核心机制之一。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请谈谈你对Java反射机制的理解。",
+      "best_answer_model": {
+        "logic_chain": "核心概念 -> 获取Class对象 -> 操作成员 -> 优缺点与应用场景",
+        "scoring_keywords": [
+          "运行时",
+          "Class对象",
+          "动态操作",
+          "性能开销",
+          "破坏封装"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_reflection_basis_001",
+    "content": "Java反射是在程序运行时动态获取类的信息并操作类或对象的能力，它允许在运行时探知类的结构、创建对象、调用方法或修改属性，是许多通用框架和库的基石。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下，什么是Java反射？",
+      "best_answer_model": {
+        "logic_chain": "运行时动态能力 -> 获取类信息 -> 操作类或对象 -> 框架基石作用",
+        "scoring_keywords": [
+          "运行时",
+          "动态获取",
+          "类信息",
+          "操作对象",
+          "框架基石"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_reflection_pros_cons_001",
+    "content": "反射的优点是提供运行时动态加载类、创建对象和调用方法的灵活性，是Spring等框架实现依赖注入等功能的基础，并能编写通用解耦代码。缺点是存在性能开销、会绕过访问控制带来安全隐患，且过度使用会降低代码可读性和维护性。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请谈谈Java反射机制有哪些优点和缺点？",
+      "best_answer_model": {
+        "logic_chain": "优点阐述（灵活性->框架基础->解耦） -> 缺点阐述（性能->安全->可维护性）",
+        "scoring_keywords": [
+          "动态性",
+          "框架基础",
+          "性能开销",
+          "访问控制",
+          "封装性破坏",
+          "代码可读性"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_reflection_application_scenarios_001",
+    "content": "反射机制广泛应用于主流框架，实现依赖注入、注解处理、动态代理和对象关系映射等功能，是框架实现灵活性和动态性的核心技术。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请谈谈Java反射机制有哪些典型的应用场景？",
+      "best_answer_model": {
+        "logic_chain": "框架底层支撑 -> 依赖注入与IoC -> 注解处理 -> 动态代理与AOP -> 对象关系映射(ORM)",
+        "scoring_keywords": [
+          "依赖注入",
+          "注解处理",
+          "动态代理",
+          "AOP",
+          "ORM"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_proxy_detailed_intro_001",
+    "content": "Java代理是一种设计模式，用于在不修改原始对象代码的情况下，通过代理对象控制对目标对象的访问，主要分为静态代理和动态代理两大类。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请详细介绍一下Java中的代理模式。",
+      "best_answer_model": {
+        "logic_chain": "代理模式定义 -> 静态代理实现 -> 动态代理（JDK/CGLIB）原理 -> 应用场景与优缺点",
+        "scoring_keywords": [
+          "代理模式",
+          "静态代理",
+          "动态代理",
+          "JDK代理",
+          "CGLIB代理",
+          "InvocationHandler"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_proxy_dynamic_001",
+    "content": "动态代理允许在不修改源码的情况下增强方法功能。Java中主要有两种实现方式：JDK动态代理要求目标类实现接口，通过Proxy和InvocationHandler在运行时生成代理；CGLIB动态代理则通过生成目标类的子类来工作，无需接口，使用MethodInterceptor进行方法拦截和增强。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请介绍一下，在Java中如何实现动态代理？",
+      "best_answer_model": {
+        "logic_chain": "代理概念 -> JDK动态代理原理 -> CGLIB动态代理原理 -> 两者核心区别",
+        "scoring_keywords": [
+          "JDK动态代理",
+          "CGLIB动态代理",
+          "InvocationHandler",
+          "MethodInterceptor",
+          "接口要求",
+          "字节码生成"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_proxy_static_vs_dynamic_001",
+    "content": "静态代理与动态代理的核心区别在于代理关系的确定时机与实现方式。静态代理在编译期确定，需手动编写代理类，与目标类一对一绑定，代码量大。动态代理在运行时动态生成代理类，通过处理器封装增强逻辑，可一对多复用，灵活性强且维护成本低。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能详细说明一下静态代理和动态代理的主要区别吗？",
+      "best_answer_model": {
+        "logic_chain": "代理关系确定时机 -> 实现方式与代码量 -> 接口依赖与维护性 -> 核心优势与应用场景",
+        "scoring_keywords": [
+          "编译期",
+          "运行时",
+          "手动编写代理类",
+          "动态生成",
+          "Handler/Interceptor",
+          "代码复用"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_proxy_jdk_cglib_001",
+    "content": "JDK动态代理要求被代理类实现接口，通过生成接口实现类进行代理；CGLIB不要求接口，通过生成子类进行代理，但无法代理final类或final/private方法。通常JDK动态代理性能更优。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说JDK动态代理和CGLIB动态代理有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "代理要求（接口）-> 实现原理（实现类/子类）-> 使用限制（final）-> 性能对比",
+        "scoring_keywords": [
+          "实现接口",
+          "生成子类",
+          "final限制",
+          "性能更优"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_framework_dynamic_proxy_001",
+    "content": "动态代理的核心应用是Spring AOP，它通过JDK Proxy或Cglib为对象创建代理，将事务、日志、权限等横切关注点与业务逻辑分离，从而降低代码重复和耦合度，提升可维护性。",
+    "metadata": {
+      "category_stack": "Java框架",
+      "interview_point": "请介绍一下动态代理在Spring等框架中的实际应用场景。",
+      "best_answer_model": {
+        "logic_chain": "核心场景（Spring AOP） -> 实现原理（JDK Proxy/Cglib） -> 解决的问题（横切关注点） -> 带来的好处（解耦、可维护）",
+        "scoring_keywords": [
+          "Spring AOP",
+          "JDK Proxy",
+          "Cglib",
+          "横切关注点",
+          "解耦",
+          "可维护性"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_annotation_basis_001",
+    "content": "注解是Java5引入的特殊注释，用于修饰类、方法或变量，为编译或运行时提供元数据信息。其本质是继承Annotation的特殊接口，支持内置注解和自定义注解。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能解释一下什么是Java中的注解吗？",
+      "best_answer_model": {
+        "logic_chain": "基本定义与作用 -> 本质与语法结构 -> 内置与自定义注解",
+        "scoring_keywords": [
+          "元数据",
+          "特殊接口",
+          "编译时",
+          "运行时",
+          "自定义注解"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_annotation_parsing_methods_001",
+    "content": "注解的解析主要有编译期扫描和运行期反射两种方式。编译期扫描由编译器直接处理，如@Override；运行期反射则由框架在程序运行时动态处理，如Spring的@Component。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请问注解的解析方法主要有哪几种？",
+      "best_answer_model": {
+        "logic_chain": "解析时机分类 -> 编译期扫描原理 -> 运行期反射原理 -> 典型应用示例",
+        "scoring_keywords": [
+          "编译期扫描",
+          "运行期反射",
+          "编译器处理",
+          "框架动态处理",
+          "@Override",
+          "@Component"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_spi_mechanism_001",
+    "content": "SPI是Java提供的一种服务发现机制，通过读取META-INF/services目录下的配置文件，动态加载并实例化接口的实现类，实现模块间的解耦和可扩展性。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中的SPI机制是什么，以及它的工作原理。",
+      "best_answer_model": {
+        "logic_chain": "核心定义 -> 配置文件约定 -> 服务加载过程 -> 应用场景与优势",
+        "scoring_keywords": [
+          "服务发现机制",
+          "META-INF/services",
+          "ServiceLoader",
+          "接口与实现解耦",
+          "动态加载"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_spi_basic_001",
+    "content": "SPI（Service Provider Interface）是一种服务提供者接口机制，它将服务接口与具体实现解耦，允许程序在运行时动态加载和替换服务实现，从而提升系统的扩展性和可维护性。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下什么是SPI（Service Provider Interface）？",
+      "best_answer_model": {
+        "logic_chain": "概念定义 -> 核心思想（解耦） -> 机制优势（扩展性） -> 典型应用",
+        "scoring_keywords": [
+          "服务提供者接口",
+          "接口与实现解耦",
+          "运行时动态加载",
+          "扩展性",
+          "可维护性"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_spi_api_difference_001",
+    "content": "SPI与API的核心区别在于接口的归属方。API由服务实现方提供接口和实现，调用方直接使用。SPI则由服务调用方定义接口规则，由不同的服务提供者去实现，从而实现服务的可插拔和扩展。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你解释一下SPI和API有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "接口定义方 -> 实现提供方 -> 核心区别与应用场景",
+        "scoring_keywords": [
+          "接口归属方",
+          "服务调用方",
+          "服务提供者",
+          "可插拔",
+          "扩展机制"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_spi_advantages_disadvantages_001",
+    "content": "SPI机制通过解耦接口与实现，提高了设计的灵活性。其缺点包括无法按需加载所有实现类导致效率较低，以及多个ServiceLoader并发加载时存在线程安全问题。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请谈谈Java SPI机制的优点和缺点。",
+      "best_answer_model": {
+        "logic_chain": "设计灵活性 -> 按需加载缺失 -> 并发加载问题",
+        "scoring_keywords": [
+          "接口解耦",
+          "按需加载",
+          "ServiceLoader",
+          "并发问题",
+          "线程安全"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basis_serialization_001",
+    "content": "序列化是将对象状态转换为可存储或传输的字节流的过程，反序列化则是将字节流恢复为对象。核心在于实现Serializable接口，并理解transient关键字、serialVersionUID的作用及自定义序列化机制。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中的序列化和反序列化是什么，以及它们是如何工作的？",
+      "best_answer_model": {
+        "logic_chain": "核心概念定义 -> Serializable接口作用 -> transient与serialVersionUID -> 自定义序列化机制",
+        "scoring_keywords": [
+          "字节流",
+          "Serializable接口",
+          "transient关键字",
+          "serialVersionUID",
+          "自定义序列化"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_basic_serialization_001",
+    "content": "序列化是将数据结构或对象转换为可存储或传输的格式（如字节流、JSON），反序列化则是将序列化后的数据恢复为原始对象。其核心目的是实现对象的持久化存储和网络传输。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你解释一下，什么是序列化？什么是反序列化？",
+      "best_answer_model": {
+        "logic_chain": "基本定义 -> 核心目的 -> 常见应用场景 -> 在网络协议中的位置",
+        "scoring_keywords": [
+          "二进制字节流",
+          "持久化",
+          "网络传输",
+          "对象状态转换",
+          "应用层"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_serialization_transient_001",
+    "content": "使用 transient 关键字修饰变量可阻止其被序列化，反序列化后该变量值会被置为对应类型的默认值。static 变量本身就不属于对象，无论是否用 transient 修饰都不会被序列化。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "在 Java 序列化中，如果有些字段不想被序列化，应该如何处理？",
+      "best_answer_model": {
+        "logic_chain": "问题引入 -> transient关键字作用 -> 反序列化结果 -> static变量特性",
+        "scoring_keywords": [
+          "transient",
+          "序列化",
+          "反序列化",
+          "默认值",
+          "static变量"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_serialization_protocols_001",
+    "content": "序列化协议主要分为二进制与文本两类。JDK自带方式因效率与安全问题不常用。常用二进制协议包括Hessian、Kryo、Protobuf和ProtoStuff，性能高。JSON和XML为文本协议，可读性好但性能较差，通常不选。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能介绍一下常见的序列化协议有哪些吗？",
+      "best_answer_model": {
+        "logic_chain": "协议分类 -> JDK自带协议缺点 -> 常用二进制协议列举 -> 文本协议特点与缺点",
+        "scoring_keywords": [
+          "二进制协议",
+          "Hessian",
+          "Kryo",
+          "Protobuf",
+          "JSON",
+          "序列化效率"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_serialization_jdk_001",
+    "content": "JDK自带序列化不推荐使用，主要因其不支持跨语言调用、序列化后字节数组体积大导致性能差，以及用户可控的反序列化数据可能被构造恶意输入，引发安全漏洞。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能说说为什么不推荐使用JDK自带的序列化方式吗？",
+      "best_answer_model": {
+        "logic_chain": "跨语言限制 -> 性能问题 -> 安全漏洞",
+        "scoring_keywords": [
+          "跨语言调用",
+          "性能差",
+          "字节数组大",
+          "安全漏洞",
+          "反序列化攻击",
+          "恶意输入"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_io_basis_summary_001",
+    "content": "Java I/O 核心知识体系包括基础概念、设计模式与 I/O 模型。基础部分涵盖字节流与字符流的区别及使用场景。设计模式主要涉及装饰器模式的应用。I/O 模型则详解了 BIO、NIO 和 AIO 的原理与适用场景。",
+    "metadata": {
+      "category_stack": "I/O",
+      "interview_point": "请简要概述一下 Java I/O 的核心知识体系，包括基础、设计模式和 I/O 模型。",
+      "best_answer_model": {
+        "logic_chain": "基础概念（流分类） -> 设计模式（装饰器模式） -> I/O 模型（BIO/NIO/AIO）",
+        "scoring_keywords": [
+          "字节流",
+          "字符流",
+          "装饰器模式",
+          "BIO",
+          "NIO",
+          "AIO"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_io_stream_overview_001",
+    "content": "Java IO流是处理输入输出的核心机制，分为输入流和输出流，以及基于数据类型的字节流和字符流。所有IO类都派生自InputStream、OutputStream、Reader和Writer这四个抽象基类。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能介绍一下Java IO流的基本概念和分类吗？",
+      "best_answer_model": {
+        "logic_chain": "IO定义 -> 输入输出流分类 -> 字节流与字符流分类 -> 四大抽象基类",
+        "scoring_keywords": [
+          "输入流",
+          "输出流",
+          "字节流",
+          "字符流",
+          "抽象基类"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_io_byte_char_stream_001",
+    "content": "I/O流分为字节流和字符流，主要因为字符流由JVM将字节转换而来，转换过程耗时；且直接使用字节流时若不清楚编码类型，极易导致乱码问题。",
+    "metadata": {
+      "category_stack": "I/O",
+      "interview_point": "I/O流为什么要分为字节流和字符流呢？",
+      "best_answer_model": {
+        "logic_chain": "信息最小单元是字节 -> 字符流转换耗时 -> 字节流易乱码",
+        "scoring_keywords": [
+          "字节流",
+          "字符流",
+          "JVM转换",
+          "编码类型",
+          "乱码"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_io_design_patterns_001",
+    "content": "Java IO 主要运用了装饰器模式，通过包装类动态扩展流对象的功能；适配器模式用于转换不同数据接口；工厂模式用于创建特定类型的流对象。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请介绍一下，在 Java 的 I/O 体系中，主要应用了哪些设计模式？",
+      "best_answer_model": {
+        "logic_chain": "核心模式识别 -> 装饰器模式详解 -> 适配器与工厂模式补充",
+        "scoring_keywords": [
+          "装饰器模式",
+          "适配器模式",
+          "工厂模式",
+          "流对象",
+          "功能扩展"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_io_model_bio_nio_aio_001",
+    "content": "BIO是同步阻塞IO，每个连接需独立线程处理。NIO是同步非阻塞IO，通过选择器实现单线程多路复用。AIO是异步非阻塞IO，由操作系统完成后主动回调通知，无需应用线程等待。",
+    "metadata": {
+      "category_stack": "I/O",
+      "interview_point": "请解释一下Java中BIO、NIO和AIO这三种IO模型的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "核心概念定义 -> 同步/异步与阻塞/非阻塞辨析 -> 各自实现原理与典型应用场景",
+        "scoring_keywords": [
+          "同步阻塞",
+          "同步非阻塞",
+          "异步非阻塞",
+          "多路复用",
+          "选择器",
+          "回调通知"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_syntactic_sugar_001",
+    "content": "语法糖是编程语言中一种简化代码书写、提升可读性的特殊语法，其本身不增加语言功能。Java编译器会在编译阶段将语法糖转换为JVM可识别的基本语法，例如for-each循环会被解糖为普通for循环和迭代器。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能解释一下什么是Java中的语法糖吗？",
+      "best_answer_model": {
+        "logic_chain": "定义与目的 -> 编译时处理（解糖） -> 举例说明",
+        "scoring_keywords": [
+          "语法糖",
+          "编译器",
+          "解糖",
+          "可读性",
+          "JVM"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_syntactic_sugar_001",
+    "content": "Java 常见的语法糖包括泛型、自动拆装箱、变长参数、枚举、内部类、增强 for 循环、try-with-resources 以及 lambda 表达式，它们在编译期被转换为标准语法，简化代码编写。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能列举一下 Java 中常见的语法糖吗？",
+      "best_answer_model": {
+        "logic_chain": "常见类型列举 -> 编译期转换本质 -> 简化代码的目的",
+        "scoring_keywords": [
+          "泛型",
+          "自动拆装箱",
+          "变长参数",
+          "枚举",
+          "lambda 表达式",
+          "编译期转换"
+        ]
+      },
+      "source_ref": "java-basic-questions-03.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_overview_001",
+    "content": "Java集合框架主要由Collection和Map两大接口派生。Collection用于存放单一元素，其下包含List、Set和Queue三个主要子接口，分别管理有序可重复、无序唯一和队列元素。Map则专门用于存储键值对映射关系。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请简要概述一下Java集合框架的主要组成部分。",
+      "best_answer_model": {
+        "logic_chain": "两大根接口 -> Collection的子接口分类 -> 各接口核心用途",
+        "scoring_keywords": [
+          "Collection接口",
+          "Map接口",
+          "List",
+          "Set",
+          "Queue",
+          "键值对"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_four_interfaces_001",
+    "content": "List有序可重复，Set元素唯一，Queue按规则有序可重复，Map为键值对存储，键唯一值可重复。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说List、Set、Queue和Map这四者之间的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "存储元素的有序性 -> 存储元素的可重复性 -> 数据结构与用途",
+        "scoring_keywords": [
+          "有序可重复",
+          "元素唯一",
+          "键值对",
+          "键唯一"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_framework_data_structure_summary_001",
+    "content": "Java集合框架中，List接口下ArrayList和Vector基于数组，LinkedList基于双向链表。Set接口下HashSet和LinkedHashSet基于HashMap，TreeSet基于红黑树。Queue接口下PriorityQueue基于数组堆，ArrayDeque基于动态双向数组。Map接口下HashMap和Hashtable为数组加链表/红黑树，LinkedHashMap额外有双向链表，TreeMap基于红黑树。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能总结一下Java集合框架中主要集合类的底层数据结构吗？",
+      "best_answer_model": {
+        "logic_chain": "接口分类 -> 各接口下具体实现类 -> 每个实现类的核心数据结构",
+        "scoring_keywords": [
+          "数组",
+          "双向链表",
+          "HashMap",
+          "红黑树",
+          "数组+链表",
+          "小顶堆"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_selection_001",
+    "content": "根据数据访问需求选择集合接口：需键值对用Map，需排序选TreeMap，否则用HashMap，要线程安全用ConcurrentHashMap。仅存放元素用Collection，需唯一性用Set如HashSet或TreeSet，否则用List如ArrayList或LinkedList，再根据具体实现特性细化选择。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "在Java中，如何根据不同的需求来选择合适的集合类？",
+      "best_answer_model": {
+        "logic_chain": "需求分析 -> 选择顶层接口 -> 根据特性选择具体实现类",
+        "scoring_keywords": [
+          "Map接口",
+          "Collection接口",
+          "Set接口",
+          "List接口",
+          "线程安全",
+          "排序"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_overview_001",
+    "content": "集合解决了数组存储固定类型和固定大小的局限性，提供了大小可变、支持泛型、内置丰富算法等特性，能灵活存储和处理多样化的数据对象，提升开发效率与代码质量。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "在Java开发中，我们为什么要使用集合而不是数组呢？",
+      "best_answer_model": {
+        "logic_chain": "数组的局限性 -> 集合的灵活性 -> 核心优势列举 -> 总结价值",
+        "scoring_keywords": [
+          "大小可变",
+          "支持泛型",
+          "内建算法",
+          "存储灵活",
+          "类型多样"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_list_arraylist_vs_array_001",
+    "content": "ArrayList基于动态数组实现，可动态扩容缩容，支持泛型确保类型安全，只能存储对象并提供丰富的API操作。Array是固定长度的静态数组，创建时需指定大小，可直接存储基本类型或对象，但缺乏动态操作能力。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说ArrayList和Array（数组）之间有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "底层实现 -> 容量可变性 -> 类型安全与泛型 -> 存储数据类型 -> API功能丰富度",
+        "scoring_keywords": [
+          "动态数组",
+          "动态扩容",
+          "泛型",
+          "类型安全",
+          "固定长度",
+          "基本类型"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_list_arraylist_vector_001",
+    "content": "ArrayList是List的主要实现类，底层为Object数组，查询效率高但线程不安全。Vector是古老的实现类，底层结构类似，但通过同步方法实现了线程安全。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说ArrayList和Vector的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "实现类定位 -> 底层数据结构 -> 线程安全性 -> 性能与适用场景",
+        "scoring_keywords": [
+          "Object数组",
+          "线程不安全",
+          "线程安全",
+          "同步方法",
+          "查询效率"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_vector_stack_diff_001",
+    "content": "Vector是线程安全的动态数组，Stack继承自Vector，是后进先出的栈结构。两者均因性能问题被淘汰，推荐使用并发集合类实现线程安全。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请简述一下Vector和Stack的区别。",
+      "best_answer_model": {
+        "logic_chain": "线程安全实现 -> 继承关系 -> 数据结构差异 -> 现代替代方案",
+        "scoring_keywords": [
+          "线程安全",
+          "synchronized",
+          "继承",
+          "栈",
+          "淘汰",
+          "并发集合"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_arraylist_null_001",
+    "content": "ArrayList可以存储null值，因为其底层实现允许任何对象引用。但添加null值可能导致代码难以维护，如忘记判空会引发空指针异常，因此不建议使用。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请问，ArrayList可以添加null值吗？",
+      "best_answer_model": {
+        "logic_chain": "底层实现允许 -> 可以存储null -> 实际使用风险 -> 不建议添加",
+        "scoring_keywords": [
+          "存储null值",
+          "对象引用",
+          "判空处理",
+          "空指针异常",
+          "代码维护"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_list_arraylist_time_complexity_001",
+    "content": "ArrayList的插入和删除操作时间复杂度取决于操作位置。头部或指定位置操作需移动元素，为O(n)；尾部操作通常为O(1)，但扩容时涉及数组复制为O(n)。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说ArrayList在插入和删除元素时的时间复杂度是怎样的？",
+      "best_answer_model": {
+        "logic_chain": "底层数组结构 -> 不同位置插入分析 -> 不同位置删除分析 -> 扩容影响",
+        "scoring_keywords": [
+          "时间复杂度O(n)",
+          "时间复杂度O(1)",
+          "数组扩容",
+          "元素移动",
+          "尾部操作"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_linkedlist_time_complexity_001",
+    "content": "LinkedList在头部或尾部插入/删除元素的时间复杂度为O(1)，因为只需修改头尾指针。在指定位置操作时，需要遍历链表定位，平均时间复杂度为O(n)。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说LinkedList在插入和删除元素时的时间复杂度是怎样的？",
+      "best_answer_model": {
+        "logic_chain": "数据结构特性 -> 头尾操作分析 -> 指定位置操作分析 -> 时间复杂度结论",
+        "scoring_keywords": [
+          "双向链表",
+          "时间复杂度O(1)",
+          "时间复杂度O(n)",
+          "头尾指针",
+          "遍历定位"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_linkedlist_randomaccess_001",
+    "content": "RandomAccess是标记接口，表明支持通过索引快速随机访问。LinkedList底层为链表，内存不连续，访问元素需顺序遍历指针，无法快速定位，故不能实现此接口。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下，为什么LinkedList不能实现RandomAccess接口？",
+      "best_answer_model": {
+        "logic_chain": "接口定义 -> 底层数据结构 -> 访问方式差异 -> 结论",
+        "scoring_keywords": [
+          "RandomAccess",
+          "标记接口",
+          "链表",
+          "内存不连续",
+          "顺序访问"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_list_001",
+    "content": "ArrayList基于数组，支持快速随机访问，但中间插入删除效率低；LinkedList基于双向链表，头尾操作高效，但不支持快速随机访问。两者均非线程安全。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请详细说明一下ArrayList和LinkedList的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "线程安全性 -> 底层数据结构 -> 插入删除效率分析 -> 随机访问能力 -> 内存占用特点",
+        "scoring_keywords": [
+          "数组",
+          "双向链表",
+          "线程不安全",
+          "随机访问",
+          "时间复杂度",
+          "内存空间"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_list_arraylist_resize_001",
+    "content": "ArrayList 基于数组实现，当添加元素导致容量不足时，会触发扩容。默认初始容量为10，扩容时通常创建原容量1.5倍的新数组，并将旧数组元素复制到新数组中。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请详细说一说 ArrayList 的扩容机制是怎样的？",
+      "best_answer_model": {
+        "logic_chain": "底层数据结构 -> 默认初始容量 -> 触发扩容条件 -> 新容量计算规则 -> 数据迁移过程",
+        "scoring_keywords": [
+          "数组",
+          "默认容量10",
+          "1.5倍扩容",
+          "System.arraycopy"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_fail_fast_safe_001",
+    "content": "fail-fast（快速失败）机制在迭代时检测到并发修改会立即抛出异常，防止数据不一致。fail-safe（安全失败）机制通过写时复制等技术避免并发修改异常，允许迭代继续但可能无法反映最新数据。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java集合中的fail-fast和fail-safe机制是什么？",
+      "best_answer_model": {
+        "logic_chain": "设计哲学定义 -> 典型实现类与机制 -> 优缺点对比",
+        "scoring_keywords": [
+          "快速失败",
+          "安全失败",
+          "ConcurrentModificationException",
+          "写时复制",
+          "modCount",
+          "CopyOnWriteArrayList"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_comparable_comparator_001",
+    "content": "Comparable是对象内部实现的自然排序接口，定义compareTo方法。Comparator是外部比较器接口，定义compare方法，提供更灵活的定制排序策略，支持多种排序规则。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中Comparable接口和Comparator接口的区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "接口定义与归属 -> 方法签名与调用方式 -> 排序策略的耦合度 -> 应用场景与灵活性",
+        "scoring_keywords": [
+          "Comparable接口",
+          "Comparator接口",
+          "compareTo方法",
+          "compare方法",
+          "自然排序",
+          "定制排序"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_set_unordered_unique_001",
+    "content": "无序性指元素存储顺序由哈希值决定，而非添加顺序；不可重复性指通过equals()方法判断元素是否已存在，需同时重写equals()和hashCode()方法。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Set集合的无序性和不可重复性具体指的是什么？",
+      "best_answer_model": {
+        "logic_chain": "无序性定义 -> 哈希值决定存储 -> 不可重复性定义 -> equals()与hashCode()方法重写",
+        "scoring_keywords": [
+          "无序性",
+          "哈希值",
+          "不可重复性",
+          "equals()",
+          "hashCode()",
+          "重写"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_set_comparison_001",
+    "content": "HashSet、LinkedHashSet和TreeSet均为Set接口实现，保证元素唯一且非线程安全。核心区别在于底层数据结构：HashSet基于哈希表，无序；LinkedHashSet结合链表与哈希表，保持插入顺序；TreeSet基于红黑树，支持自然或定制排序。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请比较一下HashSet、LinkedHashSet和TreeSet这三者的异同。",
+      "best_answer_model": {
+        "logic_chain": "共同特性 -> 底层数据结构差异 -> 排序与顺序特性 -> 适用场景",
+        "scoring_keywords": [
+          "哈希表",
+          "链表",
+          "红黑树",
+          "元素唯一",
+          "插入顺序",
+          "排序"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_queue_deque_difference_001",
+    "content": "Queue是单端队列，遵循先进先出规则，仅支持一端插入另一端删除。Deque是双端队列，两端均可插入和删除，功能更全面，并可模拟栈。两者都提供了操作失败时抛出异常或返回特殊值的方法。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下Java中Queue和Deque的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "基本定义与结构 -> 操作方向与规则 -> 方法分类与失败处理 -> 功能扩展与关系",
+        "scoring_keywords": [
+          "单端队列",
+          "双端队列",
+          "先进先出",
+          "抛出异常",
+          "返回特殊值",
+          "模拟栈"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_arraydeque_linkedlist_001",
+    "content": "ArrayDeque基于可变长数组实现，不支持存储null，插入时存在扩容但均摊性能为O(1)。LinkedList基于链表实现，支持null，每次插入需申请新空间。通常ArrayDeque作为队列或栈性能更优。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请谈谈ArrayDeque和LinkedList作为Deque实现的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "底层数据结构 -> 对null值的支持 -> 历史版本引入 -> 插入与扩容的性能分析 -> 应用场景建议",
+        "scoring_keywords": [
+          "可变长数组",
+          "链表",
+          "不支持null",
+          "扩容",
+          "均摊O(1)",
+          "性能更优"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_priorityqueue_001",
+    "content": "PriorityQueue是基于二叉堆实现的优先级队列，出队顺序由元素优先级决定。底层使用可变长数组，通过元素上浮和下沉操作，保证插入和删除堆顶元素的时间复杂度为O(logn)。它非线程安全，不支持存储null或不可比较对象，默认是小顶堆，可通过Comparator自定义优先级。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请说一说你对PriorityQueue的理解。",
+      "best_answer_model": {
+        "logic_chain": "核心特性（优先级出队）-> 底层数据结构（二叉堆与数组）-> 关键操作与复杂度（上浮/下沉，O(logn)）-> 重要限制（线程安全、null、Comparator）",
+        "scoring_keywords": [
+          "二叉堆",
+          "优先级出队",
+          "O(logn)",
+          "非线程安全",
+          "Comparator",
+          "小顶堆"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_blockingqueue_001",
+    "content": "BlockingQueue是一个支持阻塞操作的队列接口，当队列为空时获取操作会阻塞，当队列满时插入操作会阻塞，常用于实现生产者-消费者模型。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能解释一下什么是BlockingQueue吗？",
+      "best_answer_model": {
+        "logic_chain": "接口定义 -> 阻塞特性 -> 典型应用场景",
+        "scoring_keywords": [
+          "阻塞队列",
+          "生产者-消费者模型",
+          "队列为空阻塞",
+          "队列已满阻塞"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_queue_blockingqueue_implementations_001",
+    "content": "Java中BlockingQueue的主要实现类包括：基于数组的有界队列ArrayBlockingQueue、基于链表的可选有界队列LinkedBlockingQueue、支持优先级排序的无界队列PriorityBlockingQueue、不存储元素的同步队列SynchronousQueue以及延迟队列DelayQueue。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请列举一下Java中BlockingQueue的主要实现类，并简要说明它们的特点。",
+      "best_answer_model": {
+        "logic_chain": "核心接口 -> 有界队列实现 -> 无界/特殊队列实现 -> 典型应用场景",
+        "scoring_keywords": [
+          "ArrayBlockingQueue",
+          "LinkedBlockingQueue",
+          "PriorityBlockingQueue",
+          "SynchronousQueue",
+          "DelayQueue",
+          "有界队列"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_queue_001",
+    "content": "ArrayBlockingQueue基于数组，有界，使用单锁；LinkedBlockingQueue基于链表，默认无界，使用分离锁（生产消费各一把），内存动态分配。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请你说说ArrayBlockingQueue和LinkedBlockingQueue有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "底层数据结构 -> 队列边界性 -> 锁机制 -> 内存占用",
+        "scoring_keywords": [
+          "数组实现",
+          "链表实现",
+          "有界队列",
+          "分离锁",
+          "内存预分配",
+          "动态分配"
+        ]
+      },
+      "source_ref": "java-collection-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_map_hashmap_vs_hashtable_001",
+    "content": "HashMap非线程安全，效率高，支持null键值，默认容量16且总为2的幂次方，JDK1.8后链表过长会转红黑树。Hashtable线程安全但效率低，不支持null，默认容量11，扩容为2n+1，数据结构较简单。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请详细阐述一下HashMap和Hashtable之间的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "线程安全性 -> 效率对比 -> 对null的支持 -> 初始与扩容机制 -> 底层数据结构 -> 哈希函数实现",
+        "scoring_keywords": [
+          "线程安全",
+          "null支持",
+          "2的幂次方",
+          "红黑树",
+          "synchronized",
+          "哈希冲突"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_map_hashmap_hashset_diff_001",
+    "content": "HashSet底层基于HashMap实现，但两者接口与用途不同。HashMap实现Map接口存储键值对，使用键计算哈希；HashSet实现Set接口仅存储对象，使用对象本身计算哈希并通过equals确保唯一性。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请你说说HashMap和HashSet的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "底层实现关系 -> 接口与数据结构差异 -> 存储元素类型 -> 核心方法（put/add） -> 哈希计算与唯一性保证机制",
+        "scoring_keywords": [
+          "底层基于HashMap",
+          "Map接口",
+          "Set接口",
+          "键值对",
+          "存储对象",
+          "equals方法"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_map_hashmap_treemap_001",
+    "content": "HashMap基于哈希表，无序且支持null键值，提供O(1)的快速访问。TreeMap基于红黑树，实现了SortedMap和NavigableMap接口，元素按键自然顺序或自定义比较器排序，支持范围搜索和有序操作，访问时间复杂度为O(log n)。",
+    "metadata": {
+      "category_stack": "Map",
+      "interview_point": "请详细说明一下HashMap和TreeMap的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "底层数据结构 -> 元素顺序性 -> 接口与功能 -> 性能时间复杂度",
+        "scoring_keywords": [
+          "哈希表",
+          "红黑树",
+          "无序",
+          "有序",
+          "NavigableMap",
+          "O(log n)"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_hashset_duplicate_check",
+    "content": "HashSet通过计算对象的hashcode确定存储位置，并与已有元素的hashcode比较。若hashcode不同则直接插入；若相同则调用equals方法进一步验证对象是否真正相同，以此判断是否重复。其底层依赖于HashMap的put方法实现。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下HashSet是如何检查并避免重复元素的？",
+      "best_answer_model": {
+        "logic_chain": "底层依赖HashMap -> 计算hashcode定位 -> 比较hashcode -> 冲突时调用equals -> 根据结果决定是否插入",
+        "scoring_keywords": [
+          "hashcode",
+          "equals方法",
+          "HashMap",
+          "put方法",
+          "重复判断"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_map_hashmap_implementation_001",
+    "content": "HashMap底层采用数组+链表/红黑树结构。通过扰动函数优化哈希值，使用(n-1)&hash计算索引。发生哈希冲突时，JDK1.8前使用拉链法，JDK1.8后链表长度超过8且数组长度大于等于64时，链表转为红黑树以提升查询效率。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请描述一下HashMap的底层实现原理。",
+      "best_answer_model": {
+        "logic_chain": "数据结构演进 -> 哈希计算与索引定位 -> 冲突解决机制 -> 树化条件与优化",
+        "scoring_keywords": [
+          "数组链表",
+          "扰动函数",
+          "拉链法",
+          "红黑树",
+          "树化阈值"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_hashmap_length_power_of_two_001",
+    "content": "HashMap长度设计为2的幂次方，核心是为了提升存取效率与数据分布的均匀性。这允许用高效的位与运算替代取余操作来计算索引，并使得扩容时元素能更均匀地重新分布，简化了扩容逻辑。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能解释一下为什么HashMap的数组长度要设计成2的幂次方吗？",
+      "best_answer_model": {
+        "logic_chain": "索引计算效率 -> 位运算替代取余 -> 扩容时均匀分布 -> 简化扩容机制",
+        "scoring_keywords": [
+          "2的幂次方",
+          "位与运算",
+          "取余运算",
+          "均匀分布",
+          "扩容机制",
+          "哈希值高位"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_hashmap_deadloop_001",
+    "content": "JDK1.7及之前HashMap在多线程扩容时，因头插法操作链表可能导致节点指向错乱，形成环形链表，引发查询死循环。JDK1.8改用尾插法避免此问题，但多线程下仍有数据覆盖风险，推荐使用ConcurrentHashMap。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下，为什么在JDK1.7及之前，HashMap在多线程环境下操作可能会导致死循环问题？",
+      "best_answer_model": {
+        "logic_chain": "问题版本定位 -> 头插法操作链表 -> 多线程并发扩容 -> 形成环形链表 -> 导致查询死循环 -> JDK1.8的改进与最终建议",
+        "scoring_keywords": [
+          "JDK1.7",
+          "头插法",
+          "环形链表",
+          "死循环",
+          "尾插法",
+          "ConcurrentHashMap"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_hashmap_thread_unsafe_001",
+    "content": "HashMap线程不安全主要体现在并发写操作时可能导致数据丢失和JDK1.7及以前版本扩容时可能引发无限循环。数据丢失源于多个线程put时可能覆盖彼此的数据或导致size计数错误。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "你能解释一下为什么HashMap是线程不安全的吗？",
+      "best_answer_model": {
+        "logic_chain": "线程不安全定义 -> 数据丢失场景分析（哈希冲突覆盖、size计数错误） -> JDK1.7无限循环问题 -> 总结根本原因",
+        "scoring_keywords": [
+          "数据丢失",
+          "并发写操作",
+          "哈希冲突",
+          "size计数错误",
+          "无限循环",
+          "头插法"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_map_hashmap_traversal_001",
+    "content": "HashMap遍历方式包括迭代器、for-each循环、Lambda表达式和Stream API。性能分析表明，在非阻塞场景下，entrySet和Lambda方式效率较高，而parallelStream因线程开销性能最低；存在阻塞时，parallelStream的并行优势才能体现。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请介绍一下HashMap常见的遍历方式有哪些，以及它们的性能特点？",
+      "best_answer_model": {
+        "logic_chain": "遍历方式枚举 -> 核心API（迭代器/for-each/Lambda/Stream） -> 性能关键因素（阻塞与非阻塞场景） -> 适用场景总结",
+        "scoring_keywords": [
+          "entrySet",
+          "keySet",
+          "Lambda表达式",
+          "Stream API",
+          "parallelStream",
+          "性能分析"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_concurrenthashmap_vs_hashtable_001",
+    "content": "ConcurrentHashMap与Hashtable的核心区别在于线程安全的实现机制。ConcurrentHashMap在JDK1.7采用分段锁，在JDK1.8采用synchronized+CAS锁住链表头或树根，实现细粒度并发。Hashtable则使用全局synchronized锁，效率低下。两者底层数据结构也随版本演进有所不同。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请详细说明一下ConcurrentHashMap和Hashtable之间的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "线程安全实现方式 -> 底层数据结构演变 -> 具体并发控制机制 -> 性能对比",
+        "scoring_keywords": [
+          "分段锁",
+          "synchronized+CAS",
+          "全局锁",
+          "并发粒度",
+          "数据结构"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_concurrenthashmap_implementation_001",
+    "content": "JDK1.8前采用Segment分段锁机制，每个Segment继承ReentrantLock，锁住一段HashEntry数组。JDK1.8后取消Segment，数据结构变为数组+链表/红黑树，使用Node、CAS和synchronized锁住链表或红黑树的首节点来保证并发安全，锁粒度更细，效率更高。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请详细说明一下ConcurrentHashMap是如何实现线程安全的，它的底层具体实现是怎样的？",
+      "best_answer_model": {
+        "logic_chain": "版本对比 -> JDK1.7 Segment分段锁 -> JDK1.8 Node+CAS+synchronized -> 数据结构演进 -> 锁粒度变化",
+        "scoring_keywords": [
+          "Segment分段锁",
+          "ReentrantLock",
+          "Node",
+          "CAS",
+          "synchronized",
+          "锁粒度"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrenthashmap_jdk7_vs_jdk8_001",
+    "content": "JDK 1.7使用Segment分段锁实现线程安全，JDK 1.8改用Node数组+CAS+synchronized，锁粒度更细。JDK 1.8在哈希冲突时引入了红黑树优化链表过长问题，从而提升了并发性能。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请对比一下JDK 1.7和JDK 1.8中ConcurrentHashMap的实现有哪些主要区别？",
+      "best_answer_model": {
+        "logic_chain": "线程安全机制 -> 数据结构与锁粒度 -> 哈希冲突解决 -> 并发度对比",
+        "scoring_keywords": [
+          "Segment分段锁",
+          "Node+CAS+synchronized",
+          "锁粒度",
+          "红黑树",
+          "并发度"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrenthashmap_null_restriction_001",
+    "content": "ConcurrentHashMap禁止key和value为null，主要是为了避免多线程环境下的二义性问题。当get方法返回null时，无法区分是键不存在还是值本身为null。单线程的HashMap可通过containsKey判断，但并发场景下其他线程可能修改map，导致此判断失效。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请解释一下，为什么ConcurrentHashMap不允许key和value为null？",
+      "best_answer_model": {
+        "logic_chain": "二义性问题 -> get返回null的两种场景 -> 多线程下containsKey判断失效 -> 与HashMap单线程容忍度的对比",
+        "scoring_keywords": [
+          "二义性",
+          "get返回null",
+          "多线程",
+          "containsKey失效",
+          "ConcurrentHashMap"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collection_concurrenthashmap_atomicity_001",
+    "content": "ConcurrentHashMap本身是线程安全的，但无法保证由多个基本操作组成的复合操作的原子性。例如先检查后插入的操作可能被其他线程打断。应使用其提供的原子性复合操作方法，如putIfAbsent或computeIfAbsent，来确保线程安全。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "ConcurrentHashMap能保证复合操作的原子性吗？",
+      "best_answer_model": {
+        "logic_chain": "线程安全定义 -> 复合操作非原子性风险 -> 原子性复合操作方法 -> 使用建议",
+        "scoring_keywords": [
+          "线程安全",
+          "复合操作",
+          "原子性",
+          "putIfAbsent",
+          "computeIfAbsent"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collections_utility_methods_001",
+    "content": "Collections工具类提供静态方法用于集合操作，主要包括排序、查找替换和同步控制。其中同步控制方法已不推荐，建议使用JUC并发集合实现线程安全。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请介绍一下Collections工具类有哪些常用的方法？",
+      "best_answer_model": {
+        "logic_chain": "核心功能分类 -> 排序方法 -> 查找替换方法 -> 同步控制方法（不推荐） -> 替代方案（JUC并发集合）",
+        "scoring_keywords": [
+          "排序",
+          "查找替换",
+          "同步控制",
+          "JUC并发集合",
+          "线程安全",
+          "静态方法"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collections_sort_operations_001",
+    "content": "Collections工具类提供了多种排序操作，包括反转列表、随机打乱、自然升序排序、自定义比较器排序、交换指定位置元素以及旋转列表元素。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请介绍一下Collections工具类中提供的排序相关操作有哪些？",
+      "best_answer_model": {
+        "logic_chain": "操作分类 -> 功能描述 -> 典型应用场景",
+        "scoring_keywords": [
+          "reverse",
+          "shuffle",
+          "sort",
+          "Comparator",
+          "swap",
+          "rotate"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collections_utility_002",
+    "content": "Collections工具类提供了查找、替换等静态方法，包括二分查找、最大最小值、填充列表、统计频率、查找子列表和替换所有元素等操作，用于高效处理集合数据。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请介绍一下Collections工具类中常用的查找和替换操作有哪些？",
+      "best_answer_model": {
+        "logic_chain": "方法分类 -> 核心功能描述 -> 使用注意事项",
+        "scoring_keywords": [
+          "二分查找",
+          "自然排序",
+          "定制排序",
+          "频率统计",
+          "替换元素",
+          "子列表索引"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_collections_synchronized_001",
+    "content": "Collections工具类提供synchronizedXxx()方法，可将线程不安全的集合包装为同步版本以实现线程安全，但性能较低，推荐使用JUC并发集合。",
+    "metadata": {
+      "category_stack": "Java基础",
+      "interview_point": "请介绍一下Collections工具类是如何进行同步控制的？",
+      "best_answer_model": {
+        "logic_chain": "线程不安全集合 -> Collections.synchronizedXxx包装 -> 实现线程安全 -> 性能问题 -> 推荐JUC并发集合",
+        "scoring_keywords": [
+          "synchronizedXxx",
+          "线程安全",
+          "包装",
+          "性能低",
+          "JUC并发集合"
+        ]
+      },
+      "source_ref": "java-collection-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_thread_basis_001",
+    "content": "进程是程序的一次执行过程，是系统资源分配的基本单位。线程是进程内的执行单元，共享进程的堆和方法区资源，但拥有独立的程序计数器、虚拟机栈和本地方法栈，因此线程是更轻量级的执行单位。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请解释一下什么是线程和进程，以及它们之间的关系和区别。",
+      "best_answer_model": {
+        "logic_chain": "进程定义 -> 线程定义 -> 资源分配对比 -> 线程轻量级特性",
+        "scoring_keywords": [
+          "进程",
+          "线程",
+          "资源分配",
+          "执行单位",
+          "轻量级"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_thread_model_001",
+    "content": "JDK 1.2后，Java线程基于操作系统原生内核线程实现，采用一对一模型，由内核调度管理，可直接利用多核CPU。早期版本则使用用户级绿色线程，无法利用多核。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请解释一下Java线程和操作系统线程有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "历史演进（绿色线程 -> 原生线程） -> 用户线程与内核线程定义 -> 一对一模型 -> 内核调度与多核利用",
+        "scoring_keywords": [
+          "绿色线程",
+          "原生线程",
+          "内核线程",
+          "一对一模型",
+          "线程调度"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_thread_process_001",
+    "content": "线程是进程内更小的执行单元，共享进程的堆和方法区资源，但拥有私有的程序计数器、虚拟机栈和本地方法栈。线程开销小但资源管理弱，进程则相反，独立性更强。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请简要描述一下线程与进程之间的关系、区别以及它们各自的优缺点。",
+      "best_answer_model": {
+        "logic_chain": "定义关系 -> 核心区别（资源分配） -> 私有区域原因 -> 共享区域原因 -> 优缺点对比",
+        "scoring_keywords": [
+          "进程",
+          "线程",
+          "线程私有",
+          "线程共享",
+          "程序计数器",
+          "执行开销"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_thread_creation_001",
+    "content": "Java中创建线程的唯一底层方式是new Thread().start()。其他如继承Thread类、实现Runnable或Callable接口、使用线程池等方法，都是在代码层面使用多线程的编程模型，最终都依赖于这一底层机制来启动线程。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "在Java中，有哪些方式可以创建线程？",
+      "best_answer_model": {
+        "logic_chain": "使用方式列举 -> 底层唯一性揭示 -> 最终依赖关系说明",
+        "scoring_keywords": [
+          "new Thread().start()",
+          "Thread类",
+          "Runnable接口",
+          "Callable接口",
+          "线程池",
+          "底层机制"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_thread_lifecycle_001",
+    "content": "Java线程生命周期包含NEW、RUNNABLE、BLOCKED、WAITING、TIME_WAITING和TERMINATED六种状态。线程随代码执行在这些状态间切换，JVM层面将操作系统的READY和RUNNING统一为RUNNABLE状态。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请详细描述一下Java线程的生命周期和它包含的几种状态？",
+      "best_answer_model": {
+        "logic_chain": "六种状态定义 -> 状态间切换条件 -> JVM与操作系统状态映射 -> 核心状态（如RUNNABLE）的特殊说明",
+        "scoring_keywords": [
+          "NEW",
+          "RUNNABLE",
+          "BLOCKED",
+          "WAITING",
+          "TIME_WAITING",
+          "TERMINATED"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_thread_context_switch_001",
+    "content": "线程上下文切换是指CPU从一个线程切换到另一个线程时，需要保存当前线程的运行状态（如程序计数器、栈信息），并加载下一个线程的状态。这会消耗系统资源，频繁切换会降低程序效率。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "你能解释一下什么是线程上下文切换吗？",
+      "best_answer_model": {
+        "logic_chain": "上下文定义 -> 触发场景 -> 切换过程 -> 性能影响",
+        "scoring_keywords": [
+          "程序计数器",
+          "栈信息",
+          "保存与恢复",
+          "系统资源",
+          "性能损耗"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_thread_sleep_wait_001",
+    "content": "sleep()是Thread的静态方法，不释放锁，用于暂停执行，时间到自动恢复。wait()是Object的实例方法，会释放锁，用于线程间通信，需notify/notifyAll唤醒或超时自动苏醒。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请对比一下Thread类的sleep()方法和Object类的wait()方法。",
+      "best_answer_model": {
+        "logic_chain": "方法所属类 -> 锁的释放行为 -> 主要用途 -> 唤醒机制",
+        "scoring_keywords": [
+          "不释放锁",
+          "释放锁",
+          "线程暂停",
+          "线程通信",
+          "自动苏醒",
+          "需唤醒"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_wait_not_in_thread_001",
+    "content": "wait()方法用于让持有对象锁的线程进入等待状态并释放锁，其操作对象是锁资源本身，因此定义在Object类中。sleep()方法仅暂停当前线程的执行，不涉及锁操作，故定义在Thread类中。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请你解释一下，为什么Java中的wait()方法没有定义在Thread类里，而是定义在Object类中？",
+      "best_answer_model": {
+        "logic_chain": "wait()方法的作用 -> 操作对象是锁 -> 锁属于Object -> 与sleep()方法对比",
+        "scoring_keywords": [
+          "对象锁",
+          "释放锁",
+          "WAITING状态",
+          "Object类",
+          "sleep()方法"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_thread_run_001",
+    "content": "不能直接调用Thread类的run方法以实现多线程。调用start()方法会启动新线程并自动执行run()方法中的任务，而直接调用run()方法则会在当前线程中将其作为普通方法执行，无法创建新线程。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "在Java中，我们可以直接调用Thread类的run方法来启动线程吗？",
+      "best_answer_model": {
+        "logic_chain": "方法调用区别 -> 线程状态变化 -> 执行线程分析",
+        "scoring_keywords": [
+          "start()方法",
+          "run()方法",
+          "新建状态",
+          "就绪状态",
+          "多线程工作",
+          "普通方法"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_concurrency_vs_parallelism_001",
+    "content": "并发指多个任务在同一时间段内交替执行，宏观上看似同时；并行指多个任务在同一时刻真正同时执行，依赖于多核处理器等硬件支持。核心区别在于是否同时执行。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请你解释一下并发与并行的区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "定义核心概念 -> 强调时间维度差异 -> 指出硬件依赖关系 -> 总结关键区别",
+        "scoring_keywords": [
+          "时间段",
+          "时刻",
+          "交替执行",
+          "同时执行",
+          "多核处理器"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_sync_async_001",
+    "content": "同步调用发出后必须等待结果返回才能继续执行，是阻塞的；异步调用发出后立即返回，不等待结果，通过回调或通知机制处理结果，是非阻塞的。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请解释一下同步和异步的区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "调用发起 -> 等待行为 -> 结果处理方式 -> 程序执行流影响",
+        "scoring_keywords": [
+          "阻塞",
+          "非阻塞",
+          "立即返回",
+          "等待结果",
+          "回调机制"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_multithreading_001",
+    "content": "多线程通过轻量级线程切换提升CPU与IO资源利用率，单核时代避免IO阻塞，多核时代并行利用多核心，是构建高并发系统、提升整体性能的基础。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请你谈谈，在程序开发中，我们为什么要使用多线程？",
+      "best_answer_model": {
+        "logic_chain": "计算机底层效率 -> 高并发系统需求 -> 单核时代资源利用 -> 多核时代并行计算",
+        "scoring_keywords": [
+          "轻量级线程",
+          "上下文切换",
+          "高并发",
+          "IO阻塞",
+          "多核CPU",
+          "并行计算"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_single_core_multithreading_001",
+    "content": "单核CPU通过操作系统的时间片轮转调度支持Java多线程，实现并发执行。Java采用抢占式调度，由操作系统基于优先级和时间片管理线程切换，确保公平性和资源利用率。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "单核CPU是否支持Java多线程？请解释其原理。",
+      "best_answer_model": {
+        "logic_chain": "单核CPU并发原理 -> 操作系统时间片轮转 -> Java抢占式调度机制",
+        "scoring_keywords": [
+          "时间片轮转",
+          "抢占式调度",
+          "线程切换",
+          "操作系统调度",
+          "并发执行"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "concurrent_cpu_thread_efficiency_001",
+    "content": "在单核CPU上，多线程效率取决于任务类型。CPU密集型任务会因线程切换开销而降低效率；IO密集型任务则可利用CPU等待IO的空闲时间，提升效率。线程数量需适度。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "在单核CPU上运行多个线程，效率一定会更高吗？",
+      "best_answer_model": {
+        "logic_chain": "线程类型区分 -> CPU密集型任务分析 -> IO密集型任务分析 -> 线程数量与系统开销总结",
+        "scoring_keywords": [
+          "CPU密集型",
+          "IO密集型",
+          "线程切换",
+          "时间片",
+          "系统开销"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_multithreading_issues_001",
+    "content": "多线程旨在提升程序效率，但并非总能加速，反而可能引入内存泄漏、死锁、线程不安全等典型并发问题，增加程序复杂性和风险。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "在使用多线程进行开发时，可能会带来哪些问题？",
+      "best_answer_model": {
+        "logic_chain": "并发目的 -> 潜在副作用 -> 典型问题枚举 -> 风险总结",
+        "scoring_keywords": [
+          "内存泄漏",
+          "死锁",
+          "线程不安全",
+          "执行效率",
+          "程序复杂性"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_thread_safety_001",
+    "content": "线程安全指多线程并发访问共享数据时，能始终保持数据的正确性和一致性；线程不安全则会导致数据混乱、错误或丢失。核心在于对共享资源访问的同步控制。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请谈谈你对线程安全和线程不安全的理解。",
+      "best_answer_model": {
+        "logic_chain": "基本定义 -> 安全与不安全的后果对比 -> 核心原因（共享数据访问）",
+        "scoring_keywords": [
+          "线程安全",
+          "线程不安全",
+          "正确性",
+          "一致性",
+          "共享数据",
+          "同步控制"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_deadlock_001",
+    "content": "线程死锁指多个线程因互相持有并等待对方释放所需资源，导致所有线程被无限期阻塞，程序无法正常终止的状态。其产生必须同时满足互斥、请求与保持、不剥夺和循环等待四个必要条件。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请你解释一下，什么是线程死锁？",
+      "best_answer_model": {
+        "logic_chain": "死锁定义 -> 典型场景描述 -> 四个必要条件",
+        "scoring_keywords": [
+          "互相等待",
+          "无限期阻塞",
+          "互斥条件",
+          "请求与保持",
+          "不剥夺条件",
+          "循环等待"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_deadlock_detection_001",
+    "content": "死锁检测主要通过JVM工具和监控工具实现。使用jstack命令分析线程栈，若发现死锁会明确提示。也可使用JConsole、VisualVM等图形化工具连接程序，在线程界面直接检测死锁状态。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "在Java并发编程中，有哪些方法可以检测程序是否发生了死锁？",
+      "best_answer_model": {
+        "logic_chain": "命令行工具检测 -> 图形化工具检测 -> 系统资源监控",
+        "scoring_keywords": [
+          "jstack",
+          "死锁提示",
+          "JConsole",
+          "VisualVM",
+          "线程栈分析"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "java_concurrent_deadlock_prevention_001",
+    "content": "预防死锁需破坏其必要条件：一次性申请所有资源、申请失败时主动释放、按固定顺序申请资源。避免死锁则通过银行家算法等，在分配前计算评估，确保系统处于安全状态，存在安全序列。",
+    "metadata": {
+      "category_stack": "并发编程",
+      "interview_point": "请谈谈在Java并发编程中，如何预防和避免线程死锁？",
+      "best_answer_model": {
+        "logic_chain": "死锁必要条件 -> 破坏条件的具体策略 -> 避免死锁的算法思想 -> 安全状态与安全序列",
+        "scoring_keywords": [
+          "请求与保持条件",
+          "不剥夺条件",
+          "循环等待条件",
+          "银行家算法",
+          "安全状态",
+          "安全序列"
+        ]
+      },
+      "source_ref": "java-concurrent-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_basis_intro_001",
+    "content": "本内容参考了MongoDB官方文档的描述，旨在说明其权威性，是数据库相关面试的背景信息。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请说明一下，你在准备这个MongoDB相关问题时，参考了哪些权威资料？",
+      "best_answer_model": {
+        "logic_chain": "问题背景说明 -> 引用官方文档 -> 强调内容权威性",
+        "scoring_keywords": [
+          "官方文档",
+          "权威性",
+          "参考说明",
+          "背景信息"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_basis_intro_001",
+    "content": "MongoDB是一个开源的NoSQL数据库，采用分布式文件存储和面向文档的数据模型，支持无模式设计，擅长处理复杂数据类型和高并发场景，天然具备水平扩展和高可用能力。",
+    "metadata": {
+      "category_stack": "MongoDB基础",
+      "interview_point": "请简单介绍一下MongoDB是什么，以及它的主要特点。",
+      "best_answer_model": {
+        "logic_chain": "数据库类型 -> 数据模型 -> 核心特性 -> 适用场景",
+        "scoring_keywords": [
+          "NoSQL",
+          "分布式文件存储",
+          "面向文档",
+          "无模式",
+          "水平扩展",
+          "高可用"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_basis_storage_structure_001",
+    "content": "MongoDB的存储结构由文档、集合和数据库三个核心单元构成。文档是BSON格式的基本数据单元，集合是文档的无模式容器，数据库则是集合的物理与逻辑分组。",
+    "metadata": {
+      "category_stack": "MongoDB基础",
+      "interview_point": "请描述一下MongoDB的存储结构是怎样的？",
+      "best_answer_model": {
+        "logic_chain": "核心单元构成 -> 文档（BSON） -> 集合（无模式） -> 数据库（分组与权限）",
+        "scoring_keywords": [
+          "文档",
+          "集合",
+          "数据库",
+          "BSON",
+          "无模式"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_basis_features_001",
+    "content": "MongoDB作为NoSQL数据库，核心特点包括以BSON文档存储数据、模式自由、支持多种查询与索引、提供ACID事务保证、具备高效二进制存储与压缩、支持自动故障恢复与分片集群扩展，并能通过GridFS处理大文件。",
+    "metadata": {
+      "category_stack": "MongoDB基础",
+      "interview_point": "请介绍一下MongoDB的主要特点有哪些？",
+      "best_answer_model": {
+        "logic_chain": "数据存储形式 -> 模式设计 -> 查询与事务能力 -> 存储效率与扩展性 -> 高可用与大数据处理",
+        "scoring_keywords": [
+          "BSON文档",
+          "模式自由",
+          "ACID事务",
+          "分片集群",
+          "GridFS",
+          "自动故障恢复"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_basis_scenario_001",
+    "content": "MongoDB适合需要灵活数据模型、水平扩展能力以及强大索引支持的应用场景，如处理大数据量、快速迭代的项目。",
+    "metadata": {
+      "category_stack": "MongoDB基础",
+      "interview_point": "MongoDB适合什么样的应用场景？",
+      "best_answer_model": {
+        "logic_chain": "数据模型灵活性 -> 水平扩展性 -> 索引支持多样性 -> 结合项目需求评估",
+        "scoring_keywords": [
+          "灵活数据模型",
+          "水平扩展",
+          "分片集群",
+          "多种索引",
+          "BSON文档"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_storage_engine_001",
+    "content": "MongoDB采用插件式存储引擎架构，支持多种引擎以适应不同场景。当前主流引擎是默认的WiredTiger，提供文档级并发和压缩等功能；企业版还提供In-Memory引擎，将数据完全保留在内存中以实现低延迟。",
+    "metadata": {
+      "category_stack": "MongoDB存储引擎",
+      "interview_point": "MongoDB支持哪些存储引擎？",
+      "best_answer_model": {
+        "logic_chain": "插件式架构 -> 历史引擎MMAPv1 -> 当前主流引擎WiredTiger -> 企业版In-Memory引擎 -> 第三方引擎支持",
+        "scoring_keywords": [
+          "插件式架构",
+          "WiredTiger",
+          "In-Memory",
+          "文档级并发",
+          "数据压缩",
+          "可插拔API"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_storage_engine_wiredtiger_001",
+    "content": "MongoDB的WiredTiger存储引擎默认使用B+树作为其核心存储结构，内部节点仅存储键，叶子节点存储键值对。它也支持LSM树作为可选项，但标准配置是基于B+树实现的。",
+    "metadata": {
+      "category_stack": "MongoDB存储引擎",
+      "interview_point": "MongoDB的WiredTiger存储引擎是基于LSM Tree还是B+ Tree实现的？",
+      "best_answer_model": {
+        "logic_chain": "主流引擎背景 -> WiredTiger默认选择 -> B+树结构解析 -> LSM树作为可选支持",
+        "scoring_keywords": [
+          "WiredTiger",
+          "B+树",
+          "LSM树",
+          "默认存储引擎",
+          "叶子节点"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_aggregation_usage_001",
+    "content": "MongoDB聚合操作用于对多个文档或集合的数据进行汇总、计算和分析，例如求和、求最大值，以返回处理后的结果集。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请解释一下MongoDB中的聚合操作有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "核心定义 -> 数据处理目的 -> 典型应用场景",
+        "scoring_keywords": [
+          "聚合操作",
+          "文档组合",
+          "数据运算",
+          "分析数据"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_aggregation_methods_001",
+    "content": "MongoDB 主要提供两种聚合方法：首选且功能强大的聚合管道，以及单一目的的聚合函数如 count() 和 distinct()。虽然历史上有 map-reduce，但自 5.0 版本起已不推荐使用。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "MongoDB 提供了哪几种执行聚合的方法？",
+      "best_answer_model": {
+        "logic_chain": "方法分类 -> 首选方法详解 -> 历史方法状态",
+        "scoring_keywords": [
+          "聚合管道",
+          "单一目的聚合",
+          "map-reduce",
+          "阶段操作符",
+          "不推荐使用"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_transaction_basis_001",
+    "content": "MongoDB事务支持多文档ACID操作，具备原子性、一致性、隔离性和持久性。从4.0版本开始支持副本集事务，4.2版本扩展至分片集群的分布式事务，但性能成本较高，通常建议优先使用数据建模来减少事务需求。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请介绍一下MongoDB事务的基本原理和特性。",
+      "best_answer_model": {
+        "logic_chain": "ACID特性概述 -> 单文档与多文档事务区别 -> 版本演进与部署模式支持 -> 性能考量与最佳实践",
+        "scoring_keywords": [
+          "ACID",
+          "多文档事务",
+          "分布式事务",
+          "WiredTiger",
+          "副本集",
+          "分片集群"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_data_compression_001",
+    "content": "MongoDB 借助 WiredTiger 存储引擎支持对集合、索引和日志进行压缩，以存储空间换取 CPU 开销。默认使用 Snappy 算法，也支持 zlib 和 Zstandard 等算法，用户可根据场景在压缩比与性能间权衡。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请介绍一下 MongoDB 中的数据压缩机制，特别是 WiredTiger 存储引擎是如何支持的？",
+      "best_answer_model": {
+        "logic_chain": "存储引擎支持 -> 默认压缩算法 -> 可选算法对比 -> 日志压缩规则",
+        "scoring_keywords": [
+          "WiredTiger",
+          "Snappy",
+          "zlib",
+          "Zstandard",
+          "块压缩",
+          "前缀压缩"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_amazon_documentdb_diff_001",
+    "content": "Amazon DocumentDB 是 AWS 提供的完全托管、与 MongoDB 协议兼容的数据库服务，强调云端的易用性、可靠性和可扩展性，但其底层实现与开源 MongoDB 不同。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请介绍一下 Amazon DocumentDB 与 MongoDB 的差异。",
+      "best_answer_model": {
+        "logic_chain": "服务定义 -> 兼容性说明 -> 核心特性 -> 底层实现差异",
+        "scoring_keywords": [
+          "完全托管",
+          "MongoDB 兼容",
+          "云端服务",
+          "可扩展性",
+          "底层实现"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_vectorsearch_operator_001",
+    "content": "Amazon DocumentDB 不支持独立的 $vectorSearch 运算符，而是通过 $search 运算符内部的 vectorSearch 功能来实现向量搜索。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请解释一下 Amazon DocumentDB 与 MongoDB 在 $vectorSearch 运算符支持上的主要差异。",
+      "best_answer_model": {
+        "logic_chain": "运算符支持差异 -> 功能实现方式 -> 官方文档指引",
+        "scoring_keywords": [
+          "$vectorSearch",
+          "$search",
+          "vectorSearch",
+          "Amazon DocumentDB",
+          "向量搜索"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_amazondocumentdb_opcounterscommand_001",
+    "content": "Amazon DocumentDB的OpCountersCommand在统计命令时，排除了find命令并计入了内部管理命令，而MongoDB的opcounters.command则统计除增删改外的所有命令，不包含内部命令。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请解释一下Amazon DocumentDB的OpCountersCommand与MongoDB的opcounters.command在行为上有哪些主要差异？",
+      "best_answer_model": {
+        "logic_chain": "MongoDB统计范围 -> Amazon DocumentDB统计范围 -> 核心差异点（find命令与内部命令）",
+        "scoring_keywords": [
+          "opcounters.command",
+          "OpCountersCommand",
+          "排除find命令",
+          "计入内部命令",
+          "命令统计差异"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_amazondocumentdb_differences_001",
+    "content": "Amazon DocumentDB 在数据库和集合管理层面存在限制，不支持 MongoDB 中的本地数据库、`system.*` 系统集合以及 `startup_log` 集合。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请谈谈 Amazon DocumentDB 与 MongoDB 在数据库和集合管理方面有哪些主要差异？",
+      "best_answer_model": {
+        "logic_chain": "管理功能对比 -> 本地数据库支持 -> 系统集合支持",
+        "scoring_keywords": [
+          "Amazon DocumentDB",
+          "本地数据库",
+          "system.* 集合",
+          "startup_log",
+          "管理限制"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_cursor_maxtimems_001",
+    "content": "Amazon DocumentDB 的 cursor.maxTimeMS 为每个独立操作（查询或 getMore）设置超时，而非累计整个游标生命周期。超时检查以5分钟为间隔运行，单个操作耗时超过设定值才会触发超时。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请解释一下 Amazon DocumentDB 中 cursor.maxTimeMS 参数的行为机制。",
+      "best_answer_model": {
+        "logic_chain": "参数定义 -> 独立操作计时 -> 非累计超时机制 -> 扫描器检查间隔",
+        "scoring_keywords": [
+          "maxTimeMS",
+          "独立操作",
+          "getMore",
+          "非累计超时",
+          "5分钟间隔"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_explain_amazon_documentdb_001",
+    "content": "Amazon DocumentDB 模拟 MongoDB 4.0 API，但其底层存储引擎不同，导致查询计划和 `explain()` 输出可能与 MongoDB 存在差异。客户可通过 `$hint` 运算符强制选择索引来控制查询计划。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请解释一下 Amazon DocumentDB 和 MongoDB 在 `explain()` 命令输出和查询计划上可能存在的差异。",
+      "best_answer_model": {
+        "logic_chain": "底层架构差异 -> 查询计划与explain输出不同 -> 使用$hint控制索引选择",
+        "scoring_keywords": [
+          "模拟API",
+          "存储引擎",
+          "查询计划",
+          "explain输出",
+          "$hint运算符",
+          "索引选择"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_field_name_restrictions_001",
+    "content": "Amazon DocumentDB 对字段名称有额外限制，不支持包含点号（.）和以美元符号（$）开头的字段名，而 MongoDB 则允许这些命名。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请谈谈 Amazon DocumentDB 与 MongoDB 在字段名称限制方面有哪些主要差异？",
+      "best_answer_model": {
+        "logic_chain": "字段名称限制概述 -> 点号（.）限制 -> 美元符号（$）前缀限制 -> 对比 MongoDB 的兼容性",
+        "scoring_keywords": [
+          "字段名称限制",
+          "点号不支持",
+          "$前缀不支持",
+          "MongoDB 允许",
+          "DocumentDB 错误"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_index_purpose_001",
+    "content": "MongoDB索引的核心作用是提升查询效率，避免全集合扫描。它通过限制需要检查的文档数量来加速查询，并能支持排序操作。但索引的维护会带来写入性能开销，因此在写多读少的场景下需谨慎使用。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "你能解释一下MongoDB中索引的主要作用是什么吗？",
+      "best_answer_model": {
+        "logic_chain": "查询效率提升 -> 避免集合扫描 -> 支持排序结果 -> 权衡写入开销",
+        "scoring_keywords": [
+          "查询效率",
+          "集合扫描",
+          "限制文档数量",
+          "排序结果",
+          "写入性能开销",
+          "写多读少"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_index_types_001",
+    "content": "MongoDB支持多种索引类型以适应不同场景，包括单字段、复合、多键、哈希、文本、地理位置、唯一和TTL索引，每种索引针对特定数据结构和查询需求设计。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请介绍一下MongoDB支持哪些类型的索引？",
+      "best_answer_model": {
+        "logic_chain": "基本类型列举 -> 复合与多键索引 -> 特殊功能索引 -> 使用场景总结",
+        "scoring_keywords": [
+          "单字段索引",
+          "复合索引",
+          "多键索引",
+          "哈希索引",
+          "文本索引",
+          "地理位置索引"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_index_composite_order_001",
+    "content": "复合索引中字段的顺序至关重要，它决定了索引的排序规则和查询匹配效率。索引首先按第一个字段排序，再在每个相同值内按后续字段排序。查询的排序条件必须与索引的排序方向（前缀）匹配才能有效利用该索引，否则可能导致索引失效或全表扫描。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "在MongoDB的复合索引中，字段的先后顺序会对查询性能产生影响吗？",
+      "best_answer_model": {
+        "logic_chain": "索引排序规则 -> 查询匹配原则 -> 性能影响分析",
+        "scoring_keywords": [
+          "字段顺序",
+          "排序规则",
+          "前缀匹配",
+          "索引失效",
+          "查询性能"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_index_compound_leftprefix_001",
+    "content": "MongoDB 复合索引遵循左前缀原则，即索引支持所有以最左字段开头的字段组合查询，但无法支持不包含最左字段的查询条件。",
+    "metadata": {
+      "category_stack": "MongoDB 索引",
+      "interview_point": "MongoDB 的复合索引是否遵循左前缀原则？请解释一下。",
+      "best_answer_model": {
+        "logic_chain": "复合索引定义 -> 左前缀原则解释 -> 支持与不支持的查询场景",
+        "scoring_keywords": [
+          "复合索引",
+          "左前缀原则",
+          "最左字段",
+          "前缀组合",
+          "查询支持"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_index_ttl_001",
+    "content": "TTL索引是MongoDB的一种特殊索引，通过为文档设置过期时间实现自动清理。它适用于日志、会话等临时数据，后台线程定期扫描删除过期文档，但删除操作存在延迟且受副本集架构影响。",
+    "metadata": {
+      "category_stack": "MongoDB索引",
+      "interview_point": "你能解释一下MongoDB中的TTL索引是什么吗？",
+      "best_answer_model": {
+        "logic_chain": "核心定义与目的 -> 适用场景 -> 后台运行机制与延迟说明 -> 副本集行为 -> 关键限制条件",
+        "scoring_keywords": [
+          "过期机制",
+          "expireAfterSeconds",
+          "后台线程",
+          "副本集主节点",
+          "单字段索引",
+          "上限集合"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_index_covering_query_001",
+    "content": "覆盖索引查询是指查询条件和返回字段都包含在同一个索引中，数据库无需回表查询数据文档，直接从内存中的索引获取结果，从而极大提升查询性能。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "你能解释一下什么是MongoDB中的覆盖索引查询吗？",
+      "best_answer_model": {
+        "logic_chain": "定义与条件 -> 性能优势 -> 使用注意事项",
+        "scoring_keywords": [
+          "查询字段在索引中",
+          "返回字段在索引中",
+          "无需回表",
+          "索引在内存",
+          "性能提升",
+          "排除_id字段"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_high_availability_replica_set_001",
+    "content": "MongoDB复制集群是一组维护相同数据集的进程，包含主节点、从节点和可选的仲裁节点。主节点负责所有写操作并通过oplog同步数据给从节点，实现自动故障转移和读写分离，确保高可用性。",
+    "metadata": {
+      "category_stack": "MongoDB高可用",
+      "interview_point": "请解释一下什么是MongoDB的复制集群（副本集）？",
+      "best_answer_model": {
+        "logic_chain": "集群定义与组成 -> 节点角色与职责 -> 数据同步机制(oplog) -> 核心价值（故障转移与读写分离）",
+        "scoring_keywords": [
+          "副本集",
+          "主节点",
+          "从节点",
+          "oplog",
+          "故障转移",
+          "读写分离"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_sharding_cluster_001",
+    "content": "分片集群是MongoDB实现水平扩展的分布式架构，由配置服务器、路由服务和多个分片组成，旨在突破单机存储与性能瓶颈。其核心机制包括基于分片键的数据分布、Chunk的分裂与迁移以及自动负载均衡。",
+    "metadata": {
+      "category_stack": "MongoDB高可用",
+      "interview_point": "请介绍一下MongoDB的分片集群，包括它的核心组件和工作原理。",
+      "best_answer_model": {
+        "logic_chain": "集群定义与目标 -> 三大核心组件 -> 分片键与数据分布 -> 分片策略 -> Chunk存储与平衡机制",
+        "scoring_keywords": [
+          "水平扩展",
+          "Config Servers",
+          "Mongos",
+          "分片键",
+          "Chunk",
+          "Balancer"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mongodb_learning_resources_001",
+    "content": "推荐 MongoDB 官方中文手册、7天初学者教程以及 SpringBoot 整合实战文章，涵盖官方文档、快速入门和 Java 客户端操作等核心学习路径。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "如果要学习 MongoDB，你会推荐哪些学习资料或途径？",
+      "best_answer_model": {
+        "logic_chain": "官方文档 -> 快速入门教程 -> 实战整合文章",
+        "scoring_keywords": [
+          "官方文档",
+          "中文手册",
+          "初学者教程",
+          "SpringBoot整合",
+          "Java客户端"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_basis_rdb_001",
+    "content": "关系型数据库是基于关系模型组织数据的数据库，数据以表格形式存储，表间通过关系（如一对一、一对多）关联。它通常使用SQL语言进行操作，并支持事务的ACID特性以保证数据一致性。",
+    "metadata": {
+      "category_stack": "MySQL基础",
+      "interview_point": "请解释一下什么是关系型数据库？",
+      "best_answer_model": {
+        "logic_chain": "关系模型定义 -> 表格化数据存储 -> 表间关系类型 -> SQL操作语言 -> ACID事务支持 -> 常见产品举例",
+        "scoring_keywords": [
+          "关系模型",
+          "表格存储",
+          "SQL",
+          "ACID",
+          "事务"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_basis_sql_001",
+    "content": "SQL是一种专门用于与数据库交互的结构化查询语言，主要用于数据的增删改查、库表管理以及数据分析等操作，具有广泛的适用性。",
+    "metadata": {
+      "category_stack": "MySQL基础",
+      "interview_point": "请你介绍一下什么是SQL？",
+      "best_answer_model": {
+        "logic_chain": "语言定义与目的 -> 主要功能与应用场景 -> 广泛的适用性",
+        "scoring_keywords": [
+          "结构化查询语言",
+          "数据库交互",
+          "增删改查",
+          "关系数据库",
+          "数据分析"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_basis_intro_001",
+    "content": "MySQL是一种开源的关系型数据库管理系统，用于持久化存储系统数据。它在GPL协议下可免费使用和修改，默认端口号为3306，因其成熟稳定而被广泛应用于各类系统。",
+    "metadata": {
+      "category_stack": "MySQL基础",
+      "interview_point": "请简单介绍一下什么是MySQL？",
+      "best_answer_model": {
+        "logic_chain": "数据库类型 -> 核心用途 -> 开源特性 -> 应用普及度",
+        "scoring_keywords": [
+          "关系型数据库",
+          "开源",
+          "GPL协议",
+          "持久化存储",
+          "默认端口3306"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_basis_advantages_001",
+    "content": "MySQL 的流行得益于其在生态成本、核心功能与运维体验上的综合优势。生态上开源免费且社区庞大，功能上具备强大的事务支持与优秀的可扩展性，运维上则简单易用且维护成本低。",
+    "metadata": {
+      "category_stack": "MySQL基础",
+      "interview_point": "请谈谈 MySQL 有哪些主要的优点？",
+      "best_answer_model": {
+        "logic_chain": "生态与成本优势 -> 核心功能优势 -> 运维与使用优势",
+        "scoring_keywords": [
+          "开源免费",
+          "社区庞大",
+          "事务支持",
+          "可扩展性",
+          "运维简单",
+          "维护成本低"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_field_types_overview_001",
+    "content": "MySQL字段类型主要分为数值、字符串和日期时间三大类。数值型包括整型、浮点型和定点型；字符串型以CHAR和VARCHAR最常用；日期时间型包含YEAR、DATE、DATETIME等。理解这些类型是数据库设计和优化的基础。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请介绍一下MySQL中主要的字段类型有哪些，并简单说明它们的分类。",
+      "best_answer_model": {
+        "logic_chain": "三大分类概述 -> 数值类型细分 -> 字符串类型细分 -> 日期时间类型细分 -> 总结与优化提示",
+        "scoring_keywords": [
+          "数值类型",
+          "字符串类型",
+          "日期时间类型",
+          "CHAR",
+          "VARCHAR",
+          "DECIMAL"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_field_type_unsigned_001",
+    "content": "UNSIGNED属性用于定义无符号整数，禁止存储负值，从而将正整数的取值范围上限扩大一倍，适用于从0开始递增的ID列等场景。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "MySQL整数类型的UNSIGNED属性有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "属性定义 -> 取值范围变化 -> 适用场景",
+        "scoring_keywords": [
+          "无符号整数",
+          "禁止负值",
+          "取值范围扩大",
+          "ID列"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_field_type_char_varchar_001",
+    "content": "CHAR是定长字符串，存储时会填充空格，检索时去除，适合存储长度固定或较短的字符串。VARCHAR是变长字符串，存储时需额外字节记录长度，适合存储长度不确定或差异较大的字符串。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请解释一下 MySQL 中 CHAR 和 VARCHAR 这两种字段类型的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "存储方式（定长 vs 变长） -> 存储机制（填充空格 vs 记录长度） -> 检索处理 -> 适用场景",
+        "scoring_keywords": [
+          "定长字符串",
+          "变长字符串",
+          "填充空格",
+          "额外长度字节",
+          "适用场景"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_field_type_varchar_001",
+    "content": "VARCHAR(100)与VARCHAR(10)均为变长字符串类型，最大存储字符数不同。存储相同字符串时磁盘空间占用相同，但VARCHAR(100)在内存操作（如排序）时会分配更大内存块，消耗更多内存资源。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请解释一下，在MySQL中，VARCHAR(100)和VARCHAR(10)这两种字段类型有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "定义与最大长度 -> 磁盘存储空间特性 -> 内存占用与操作影响",
+        "scoring_keywords": [
+          "变长字符串",
+          "最大字符数",
+          "磁盘空间相同",
+          "内存分配",
+          "排序操作",
+          "内存消耗"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_field_type_decimal_float_difference_001",
+    "content": "DECIMAL是定点数，用于存储精确的小数值，如货币数据，避免精度损失。FLOAT/DOUBLE是浮点数，存储的是近似值，可能存在精度误差。在Java中，DECIMAL通常对应BigDecimal类。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "你能解释一下MySQL中DECIMAL类型和FLOAT/DOUBLE类型的主要区别是什么吗？",
+      "best_answer_model": {
+        "logic_chain": "数据类型本质 -> 精度特性 -> 适用场景 -> 编程语言映射",
+        "scoring_keywords": [
+          "定点数",
+          "浮点数",
+          "精确值",
+          "近似值",
+          "精度损失",
+          "BigDecimal"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_field_types_text_blob_001",
+    "content": "TEXT和BLOB类型用于存储大文本或二进制数据，但不推荐使用。主要缺点包括：不能设置默认值、无法使用内存临时表、检索效率低、创建索引需指定前缀长度、消耗大量网络和IO带宽，并可能导致DML操作变慢。若数据长度可用VARCHAR满足，应优先使用VARCHAR。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在MySQL数据库设计中，为什么不推荐使用TEXT和BLOB类型来存储数据？",
+      "best_answer_model": {
+        "logic_chain": "类型定义与用途 -> 核心缺点列举 -> 性能影响分析 -> 替代方案建议",
+        "scoring_keywords": [
+          "默认值限制",
+          "内存临时表",
+          "检索效率低",
+          "前缀长度索引",
+          "网络IO消耗",
+          "DML操作变慢"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_datetime_timestamp_001",
+    "content": "DATETIME与时区无关，存储空间大，时间范围广。TIMESTAMP与时区相关，存储空间小，支持自动时区转换，但存在2038年时间范围限制。选择取决于应用是否需要时区处理以及对未来时间的需求。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请详细说明一下 MySQL 中 DATETIME 和 TIMESTAMP 这两种时间类型的区别，以及在项目中应该如何选择？",
+      "best_answer_model": {
+        "logic_chain": "存储空间差异 -> 时间范围差异 -> 时区处理机制 -> 应用场景选择依据",
+        "scoring_keywords": [
+          "时区",
+          "存储空间",
+          "时间范围",
+          "2038年问题",
+          "UTC转换",
+          "自动管理"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_field_type_null_vs_empty_string_001",
+    "content": "NULL代表缺失或未知的数据，不等于任何值，比较运算结果为NULL，聚合函数通常忽略它。空字符串''是一个已知存在的值，可正常比较，聚合函数会将其纳入计算。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在MySQL中，NULL值和空字符串''有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "核心含义差异 -> 存储空间占用 -> 比较运算行为 -> 聚合函数处理",
+        "scoring_keywords": [
+          "NULL",
+          "空字符串",
+          "IS NULL",
+          "聚合函数",
+          "未知数据",
+          "比较运算"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_field_type_boolean_001",
+    "content": "MySQL 没有专门的布尔类型，而是使用 TINYINT(1) 来模拟，其中 0 表示 false，1 表示 true。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在 MySQL 中，布尔类型是如何表示的？",
+      "best_answer_model": {
+        "logic_chain": "类型缺失 -> 替代方案 -> 映射关系",
+        "scoring_keywords": [
+          "TINYINT(1)",
+          "布尔类型",
+          "0 表示 false",
+          "1 表示 true"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_field_type_phone_storage_001",
+    "content": "存储手机号应使用 VARCHAR 类型，因其能完整保留前导零、国家代码前缀等格式信息，支持按号段高效查询，并兼容加密存储后的字符串密文，更符合手机号作为标识符而非数值的数据性质。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在 MySQL 中存储手机号，你会选择使用 INT 类型还是 VARCHAR 类型？为什么？",
+      "best_answer_model": {
+        "logic_chain": "数据性质分析 -> 格式完整性要求 -> 查询灵活性需求 -> 加密存储兼容性",
+        "scoring_keywords": [
+          "VARCHAR",
+          "前导零",
+          "格式兼容性",
+          "号段查询",
+          "加密存储",
+          "标识符"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_basis_architecture_001",
+    "content": "MySQL 基础架构主要包括连接器、查询缓存、分析器、优化器、执行器和插件式存储引擎。连接器负责身份认证与权限管理，分析器检查语法语义，优化器生成最优执行计划，执行器调用存储引擎完成数据读写。",
+    "metadata": {
+      "category_stack": "MySQL基础",
+      "interview_point": "请简述一条 SQL 语句在 MySQL 中的完整执行流程。",
+      "best_answer_model": {
+        "logic_chain": "连接建立与权限校验 -> 查询缓存检查 -> 语法语义分析 -> 执行计划优化 -> 执行器调用存储引擎 -> 返回结果",
+        "scoring_keywords": [
+          "连接器",
+          "查询缓存",
+          "分析器",
+          "优化器",
+          "执行器",
+          "存储引擎"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_storage_engine_001",
+    "content": "MySQL的核心在于其可插拔的存储引擎架构，不同的存储引擎如InnoDB和MyISAM在事务支持、锁机制、外键和索引实现上各有特点，决定了数据库的性能、可靠性和适用场景。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请谈谈你对MySQL存储引擎的理解，以及不同存储引擎的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "架构概述 -> 核心引擎对比 -> 特性与适用场景",
+        "scoring_keywords": [
+          "可插拔架构",
+          "InnoDB",
+          "MyISAM",
+          "事务支持",
+          "锁机制",
+          "索引实现"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_storage_engine_overview_001",
+    "content": "MySQL支持多种存储引擎，可通过SHOW ENGINES命令查看。InnoDB是当前默认且唯一支持事务的存储引擎。MySQL 5.5.5版本后，默认引擎从MyISAM切换为InnoDB。",
+    "metadata": {
+      "category_stack": "MySQL存储引擎",
+      "interview_point": "请介绍一下MySQL支持哪些存储引擎，以及默认使用的是哪一个？",
+      "best_answer_model": {
+        "logic_chain": "引擎列表 -> 默认引擎 -> 版本变迁 -> 事务支持",
+        "scoring_keywords": [
+          "InnoDB",
+          "MyISAM",
+          "SHOW ENGINES",
+          "默认存储引擎",
+          "事务性存储引擎",
+          "MySQL 5.5.5"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_storage_engine_architecture_001",
+    "content": "MySQL采用插件式架构，支持多种存储引擎，且引擎是基于表而非数据库的。用户可为不同表选择不同引擎以适应场景，甚至可遵循标准接口开发自定义的第三方存储引擎。",
+    "metadata": {
+      "category_stack": "MySQL存储引擎",
+      "interview_point": "你能介绍一下MySQL存储引擎的架构吗？",
+      "best_answer_model": {
+        "logic_chain": "插件式架构 -> 引擎与表绑定 -> 多引擎支持场景适配 -> 自定义引擎接口",
+        "scoring_keywords": [
+          "插件式架构",
+          "基于表",
+          "多种存储引擎",
+          "自定义引擎",
+          "标准接口"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_storage_engine_myisam_innodb_001",
+    "content": "MyISAM与InnoDB的核心区别在于事务、锁、恢复机制与索引实现。InnoDB支持事务、行级锁、MVCC、外键及崩溃安全恢复，其索引与数据文件一体。MyISAM仅支持表级锁，无事务与MVCC，索引与数据文件分离，且崩溃后无法安全恢复。",
+    "metadata": {
+      "category_stack": "MySQL存储引擎",
+      "interview_point": "请对比说明MySQL中MyISAM和InnoDB存储引擎的主要区别。",
+      "best_answer_model": {
+        "logic_chain": "锁粒度对比 -> 事务支持性 -> 外键与MVCC -> 崩溃恢复机制 -> 索引实现差异 -> 性能与适用场景",
+        "scoring_keywords": [
+          "行级锁",
+          "事务支持",
+          "MVCC",
+          "外键",
+          "崩溃恢复",
+          "聚簇索引"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_storage_engine_choice_001",
+    "content": "InnoDB 支持事务、行级锁和崩溃恢复，适用于大多数业务场景。MyISAM 仅适用于读密集且不要求事务一致性的特定情况，但现代应用中已很少使用。",
+    "metadata": {
+      "category_stack": "MySQL 存储引擎",
+      "interview_point": "在实际项目中，你会如何选择 MyISAM 和 InnoDB 存储引擎？",
+      "best_answer_model": {
+        "logic_chain": "核心特性对比 -> 适用场景分析 -> 现代实践推荐",
+        "scoring_keywords": [
+          "事务支持",
+          "行级锁",
+          "崩溃恢复",
+          "读密集",
+          "聚簇索引",
+          "默认引擎"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_index_overview_001",
+    "content": "索引是数据库中用于快速查找数据的数据结构，能显著提升查询效率。其核心原理包括B+树结构、聚簇与非聚簇索引、索引覆盖与最左前缀原则等。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请介绍一下你对MySQL索引的理解。",
+      "best_answer_model": {
+        "logic_chain": "索引定义与目的 -> B+树核心数据结构 -> 聚簇索引与非聚簇索引区别 -> 索引覆盖与最左前缀原则",
+        "scoring_keywords": [
+          "B+树",
+          "聚簇索引",
+          "非聚簇索引",
+          "索引覆盖",
+          "最左前缀原则",
+          "查询优化"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_index_basis_001",
+    "content": "索引是用于快速查询和检索数据的排序数据结构，其核心作用是减少数据扫描量、加速数据定位。它通过B+树等结构实现，能提升查询、排序和分组效率，但会占用存储空间并增加数据维护成本。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "你能解释一下数据库中的索引是什么吗？",
+      "best_answer_model": {
+        "logic_chain": "核心定义与类比 -> 底层数据结构 -> 主要优点 -> 主要缺点 -> 使用注意事项",
+        "scoring_keywords": [
+          "数据结构",
+          "B+树",
+          "查询加速",
+          "维护成本",
+          "存储空间",
+          "优化器"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_index_performance_001",
+    "content": "索引通过有序的B+树数据结构，大幅减少磁盘I/O次数。其矮胖结构使千万级数据查询仅需3-4次I/O，且叶子节点链表便于顺序读取，避免全表扫描，从而极大提升查询速度。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "你能解释一下数据库索引为什么能显著提升查询速度吗？",
+      "best_answer_model": {
+        "logic_chain": "减少磁盘I/O -> 有序数据结构 -> B+树矮胖结构 -> 叶子节点链表顺序读取",
+        "scoring_keywords": [
+          "磁盘I/O",
+          "B+树",
+          "矮胖结构",
+          "叶子节点链表",
+          "顺序读取",
+          "全表扫描"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_index_b+tree_001",
+    "content": "MySQL 的 MyISAM 和 InnoDB 存储引擎均采用 B+Tree 作为其索引的底层数据结构，以实现高效的数据检索。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请问，MySQL 索引的底层数据结构是什么？",
+      "best_answer_model": {
+        "logic_chain": "索引类型 -> B+Tree结构 -> MyISAM与InnoDB实现",
+        "scoring_keywords": [
+          "B+Tree",
+          "MyISAM",
+          "InnoDB",
+          "索引结构",
+          "数据检索"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_index_innodb_hash_001",
+    "content": "哈希索引虽在等值查询上效率高，但因其无序性，无法支持数据库常见的范围查询、排序操作以及部分索引键查询，且存在哈希冲突问题，故InnoDB未将其作为默认的通用索引结构。",
+    "metadata": {
+      "category_stack": "MySQL 索引",
+      "interview_point": "为什么 InnoDB 存储引擎没有选择哈希作为索引的数据结构？",
+      "best_answer_model": {
+        "logic_chain": "哈希索引优点 -> 不支持范围查询 -> 不支持排序 -> 不支持部分索引键 -> 哈希冲突 -> 通用性不足",
+        "scoring_keywords": [
+          "等值查询",
+          "范围查询",
+          "排序",
+          "部分索引键",
+          "哈希冲突",
+          "通用性"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_index_innodb_bplus_tree_001",
+    "content": "InnoDB选择B+树而非B树作为索引结构，主要因为B+树通过非叶子节点仅存储索引键来增大扇出、降低树高，减少磁盘I/O次数。其所有数据存储在叶子节点并通过链表连接，确保了查询性能稳定，并极大优化了范围查询的效率。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "为什么InnoDB没有使用B树，而是选择了B+树作为索引的数据结构？",
+      "best_answer_model": {
+        "logic_chain": "数据结构对比 -> 扇出与I/O效率 -> 查询稳定性 -> 范围查询优化",
+        "scoring_keywords": [
+          "B+树",
+          "非叶子节点",
+          "扇出",
+          "磁盘I/O",
+          "范围查询",
+          "双向链表"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_index_covering_index_001",
+    "content": "覆盖索引是指一个索引包含了查询语句所需的所有字段值，使得查询可以直接从索引中获取数据，避免了通过主键索引再次查找完整行数据的回表操作，从而提升查询性能。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "你能解释一下什么是覆盖索引吗？",
+      "best_answer_model": {
+        "logic_chain": "定义覆盖索引 -> 解释回表操作 -> 对比说明覆盖索引如何避免回表 -> 总结性能优势",
+        "scoring_keywords": [
+          "覆盖索引",
+          "回表",
+          "叶子节点",
+          "查询字段",
+          "性能提升"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_index_compound_leftmost_001",
+    "content": "联合索引是在多个列上创建的索引，遵循最左前缀原则。查询时，MySQL会从索引最左列开始向右匹配，直到遇到范围查询。查询条件必须包含最左列才能有效利用索引，优化器可能对条件重排序以匹配索引顺序。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "请你解释一下MySQL的联合索引以及它的最左前缀匹配原则。",
+      "best_answer_model": {
+        "logic_chain": "联合索引定义 -> 最左前缀原则核心 -> 匹配规则与范围查询 -> 查询优化器重排序",
+        "scoring_keywords": [
+          "联合索引",
+          "最左前缀原则",
+          "范围查询",
+          "索引匹配",
+          "查询优化器"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_index_select_star_001",
+    "content": "SELECT * 本身不会直接导致索引失效，索引是否生效主要取决于WHERE条件。但使用它会带来性能损耗，如增加网络传输与数据处理负担，且无法利用覆盖索引进行优化。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "在MySQL中，使用SELECT *会导致索引失效吗？",
+      "best_answer_model": {
+        "logic_chain": "索引失效的直接原因 -> SELECT * 的潜在性能影响 -> 覆盖索引的利用",
+        "scoring_keywords": [
+          "索引失效",
+          "WHERE条件",
+          "性能损耗",
+          "覆盖索引",
+          "网络传输"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_index_suitable_fields_001",
+    "content": "适合创建索引的字段包括：非空字段、频繁查询或作为WHERE条件的字段、需要排序的字段以及常用于表连接的字段，以提升查询和连接效率。",
+    "metadata": {
+      "category_stack": "MySQL 索引",
+      "interview_point": "在MySQL中，哪些字段适合创建索引？",
+      "best_answer_model": {
+        "logic_chain": "非空原则 -> 查询频率 -> 条件筛选 -> 排序需求 -> 连接优化",
+        "scoring_keywords": [
+          "非空字段",
+          "频繁查询",
+          "WHERE条件",
+          "排序字段",
+          "连接字段",
+          "外键列"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_index_failure_causes_001",
+    "content": "索引失效的常见原因包括：未遵守组合索引的最左匹配原则；在索引列上使用计算、函数或类型转换；使用以%开头的LIKE模糊查询；OR条件中部分列无索引；IN或NOT IN的取值范围过大；以及查询时发生隐式类型转换。",
+    "metadata": {
+      "category_stack": "MySQL索引",
+      "interview_point": "在MySQL中，有哪些常见的操作会导致索引失效，从而影响查询性能？",
+      "best_answer_model": {
+        "logic_chain": "组合索引原则 -> 列上操作 -> 模糊查询 -> OR条件 -> 范围查询 -> 隐式转换",
+        "scoring_keywords": [
+          "最左匹配原则",
+          "索引列计算",
+          "LIKE %开头",
+          "OR条件无索引",
+          "IN范围过大",
+          "隐式转换"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_query_cache_001",
+    "content": "MySQL查询缓存是存储查询结果的机制，命中时直接返回结果。其匹配条件极为严格，语句、数据库等细微差异都会导致不命中。涉及表数据或结构变更时，相关缓存会失效。由于带来额外开销，写密集应用需谨慎开启，且MySQL 8.0已移除该功能。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请介绍一下MySQL的查询缓存机制。",
+      "best_answer_model": {
+        "logic_chain": "基本概念与作用 -> 开启与配置方式 -> 缓存命中与失效的严格条件 -> 潜在开销与使用注意事项 -> 版本演进与现状",
+        "scoring_keywords": [
+          "查询结果缓存",
+          "缓存命中",
+          "严格匹配",
+          "表变更失效",
+          "额外开销",
+          "MySQL 8.0移除"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_logs_001",
+    "content": "MySQL 日志主要包括错误日志、查询日志、慢查询日志、二进制日志、中继日志和重做日志。它们分别用于记录数据库运行错误、客户端操作、执行缓慢的SQL、数据更改、主从复制以及事务的持久性保证。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请介绍一下 MySQL 中有哪些主要的日志，以及它们各自的作用是什么？",
+      "best_answer_model": {
+        "logic_chain": "日志分类 -> 核心功能 -> 应用场景",
+        "scoring_keywords": [
+          "错误日志",
+          "慢查询日志",
+          "二进制日志",
+          "重做日志",
+          "中继日志",
+          "事务持久性"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_transaction_basis_001",
+    "content": "事务是数据库操作的最小逻辑单元，它确保一组相关的操作要么全部成功执行，要么全部失败回滚，从而维护数据的一致性和完整性。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请你解释一下，什么是数据库中的事务？",
+      "best_answer_model": {
+        "logic_chain": "核心定义 -> ACID特性 -> 应用场景（如转账） -> 一致性保障",
+        "scoring_keywords": [
+          "逻辑单元",
+          "全部成功",
+          "全部失败",
+          "一致性",
+          "原子性",
+          "回滚"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_transaction_basis_001",
+    "content": "数据库事务确保多个SQL操作构成一个逻辑整体，遵循原子性原则，即要么全部成功执行，要么全部不执行，以维护数据一致性。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "你能解释一下什么是数据库事务吗？",
+      "best_answer_model": {
+        "logic_chain": "事务定义 -> 核心作用 -> 原子性原则 -> 数据一致性保障",
+        "scoring_keywords": [
+          "原子性",
+          "逻辑整体",
+          "数据一致性",
+          "SQL操作"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_transaction_acid_001",
+    "content": "COMMIT是提交事务的SQL命令，确保事务的ACID特性生效。ACID包括原子性、一致性、隔离性和持久性，其中AID是数据库保障的手段，C是应用层面的目的。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请解释一下数据库事务中的COMMIT命令以及ACID特性。",
+      "best_answer_model": {
+        "logic_chain": "COMMIT定义 -> ACID特性详解 -> AID与C的关系澄清",
+        "scoring_keywords": [
+          "COMMIT",
+          "原子性",
+          "一致性",
+          "隔离性",
+          "持久性",
+          "ACID"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_transaction_concurrency_issues_001",
+    "content": "并发事务可能导致数据不一致问题，主要包括脏读、丢失修改、不可重复读和幻读。脏读是读取到未提交的数据，丢失修改是更新被覆盖，不可重复读是同一事务内两次读取结果不同，幻读是同一查询返回了新增的行。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "你能详细说明一下并发事务通常会带来哪些问题吗？",
+      "best_answer_model": {
+        "logic_chain": "问题定义 -> 脏读 -> 丢失修改 -> 不可重复读 -> 幻读",
+        "scoring_keywords": [
+          "脏读",
+          "丢失修改",
+          "不可重复读",
+          "幻读",
+          "数据不一致",
+          "并发控制"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_transaction_isolation_001",
+    "content": "不可重复读指同一事务内多次读取同一数据，发现内容被修改或删除。幻读指同一事务内多次执行相同查询，发现结果集新增了记录。解决不可重复读通常使用记录锁，而解决幻读需要间隙锁或临键锁。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请解释一下不可重复读和幻读有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "定义不可重复读 -> 定义幻读 -> 区分核心差异（修改/删除 vs 新增） -> 解决方案差异（记录锁 vs 间隙锁/临键锁）",
+        "scoring_keywords": [
+          "不可重复读",
+          "幻读",
+          "记录锁",
+          "间隙锁",
+          "临键锁",
+          "事务隔离"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_concurrency_control_001",
+    "content": "MySQL通过锁和MVCC控制并发事务。锁是悲观控制，分为共享锁与排他锁，以及表级锁和行级锁。MVCC是乐观控制，通过隐藏字段、Read View和Undo Log实现多版本数据管理，确保事务隔离性。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在MySQL中，控制并发事务的主要方式有哪些？",
+      "best_answer_model": {
+        "logic_chain": "两种核心模式 -> 锁的分类与粒度 -> MVCC的实现原理",
+        "scoring_keywords": [
+          "锁",
+          "MVCC",
+          "共享锁",
+          "排他锁",
+          "行级锁",
+          "Read View"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_transaction_isolation_levels_001",
+    "content": "SQL标准定义了四种事务隔离级别，用于平衡数据一致性与并发性能。从低到高依次为：读取未提交、读取已提交、可重复读和可串行化。级别越高，隔离性越强，能防止的并发问题越多，但并发性能通常越低。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请介绍一下SQL标准中定义的事务隔离级别有哪些？",
+      "best_answer_model": {
+        "logic_chain": "定义与目的 -> 四种级别名称 -> 各级别特性与问题 -> 默认级别与实现",
+        "scoring_keywords": [
+          "READ-UNCOMMITTED",
+          "READ-COMMITTED",
+          "REPEATABLE-READ",
+          "SERIALIZABLE",
+          "脏读",
+          "幻读"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_transaction_isolation_default_001",
+    "content": "MySQL InnoDB存储引擎的默认事务隔离级别是可重复读（REPEATABLE READ），它保证了在同一事务中多次读取同一数据的结果是一致的。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请问，MySQL的默认事务隔离级别是什么？",
+      "best_answer_model": {
+        "logic_chain": "存储引擎 -> 默认级别 -> 级别特性 -> 查看命令",
+        "scoring_keywords": [
+          "InnoDB",
+          "REPEATABLE READ",
+          "可重复读",
+          "事务隔离级别",
+          "默认"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_transaction_isolation_001",
+    "content": "MySQL的隔离级别由锁和MVCC共同实现。SERIALIZABLE级别完全依赖锁，READ-COMMITTED和REPEATABLE-READ级别主要基于MVCC，但在特定场景如当前读时仍需使用锁来保证一致性。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "MySQL的隔离级别是完全基于锁来实现的吗？",
+      "best_answer_model": {
+        "logic_chain": "总体实现机制 -> SERIALIZABLE级别实现 -> READ-COMMITTED/REPEATABLE-READ级别实现 -> 特定场景的补充说明",
+        "scoring_keywords": [
+          "锁",
+          "MVCC",
+          "SERIALIZABLE",
+          "当前读",
+          "幻读"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_lock_basis_001",
+    "content": "锁是数据库管理系统用于控制并发事务访问共享资源，防止数据不一致的核心机制，通过协调事务的读写顺序来保证隔离性。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请谈谈你对数据库锁的理解，它在并发事务中起什么作用？",
+      "best_answer_model": {
+        "logic_chain": "并发控制需求 -> 锁的基本定义与目的 -> 保证数据一致性 -> 实现事务隔离",
+        "scoring_keywords": [
+          "并发控制",
+          "事务隔离",
+          "数据一致性",
+          "共享资源",
+          "读写顺序"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_lock_table_vs_row_001",
+    "content": "表级锁锁定整张表，实现简单但并发性能差；行级锁针对索引字段锁定特定行，并发度高但开销大。InnoDB支持行级锁，MyISAM仅支持表级锁。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "请谈谈你对MySQL中表级锁和行级锁的理解，它们的主要区别是什么？",
+      "best_answer_model": {
+        "logic_chain": "锁粒度定义 -> 实现与开销对比 -> 支持引擎与适用场景",
+        "scoring_keywords": [
+          "表级锁",
+          "行级锁",
+          "锁定粒度",
+          "并发性能",
+          "索引字段",
+          "存储引擎"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_lock_row_001",
+    "content": "InnoDB行锁基于索引实现，若UPDATE或DELETE的WHERE条件未命中有效索引，将导致全表扫描并升级为表级锁。即使使用索引，优化器也可能选择全表扫描，需注意索引有效性以避免锁冲突。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在使用行级锁时，有哪些需要特别注意的地方？",
+      "best_answer_model": {
+        "logic_chain": "锁的实现基础 -> 索引失效的后果 -> 优化器的影响 -> 实践注意事项",
+        "scoring_keywords": [
+          "索引字段",
+          "全表扫描",
+          "表级锁",
+          "优化器",
+          "索引失效"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_lock_innodb_row_lock_types_001",
+    "content": "InnoDB行锁基于索引实现，主要包含记录锁、间隙锁和临键锁三种类型。临键锁是前两者的组合，用于防止幻读。在可重复读隔离级别下，默认使用临键锁，但对唯一索引或主键操作时会优化为记录锁。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "你能介绍一下 InnoDB 中有哪几类行锁吗？",
+      "best_answer_model": {
+        "logic_chain": "锁的实现基础 -> 三种具体类型定义 -> 临键锁的作用 -> 默认使用与优化场景",
+        "scoring_keywords": [
+          "记录锁",
+          "间隙锁",
+          "临键锁",
+          "幻读",
+          "唯一索引",
+          "Next-Key Lock"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_lock_shared_exclusive_001",
+    "content": "共享锁（S锁）允许多个事务并发读取同一记录，锁兼容；排他锁（X锁）在事务修改记录时获取，独占且与任何锁都不兼容。InnoDB默认SELECT不加锁，但可通过特定语句显式加锁。",
+    "metadata": {
+      "category_stack": "MySQL 锁",
+      "interview_point": "请解释一下MySQL中的共享锁和排他锁。",
+      "best_answer_model": {
+        "logic_chain": "锁的基本定义 -> 共享锁特性 -> 排他锁特性 -> 锁兼容性 -> 显式加锁方式",
+        "scoring_keywords": [
+          "共享锁",
+          "排他锁",
+          "锁兼容",
+          "读锁",
+          "写锁",
+          "FOR UPDATE"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_lock_intention_lock_001",
+    "content": "意向锁是表级锁，用于快速判断表是否可加表锁，无需遍历行锁。分为意向共享锁（IS）和意向排他锁（IX），由引擎自动维护，与行锁不互斥，但与表级S/X锁存在互斥关系。",
+    "metadata": {
+      "category_stack": "MySQL 锁",
+      "interview_point": "请你解释一下，MySQL中的意向锁具体有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "问题背景（表锁效率） -> 意向锁定义与分类 -> 兼容性与互斥性 -> 引擎自动管理",
+        "scoring_keywords": [
+          "表级锁",
+          "意向共享锁",
+          "意向排他锁",
+          "快速判断",
+          "兼容互斥",
+          "引擎维护"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_lock_current_vs_snapshot_read_001",
+    "content": "快照读是普通SELECT，读取历史版本，在RC和RR隔离级别下工作，RC读最新快照，RR读事务开始时的版本。当前读通过SELECT FOR UPDATE/LOCK IN SHARE MODE等语句加锁，读取记录最新版本并保证一致性。",
+    "metadata": {
+      "category_stack": "MySQL 锁",
+      "interview_point": "请解释一下MySQL中当前读和快照读有什么区别？",
+      "best_answer_model": {
+        "logic_chain": "定义快照读 -> 定义当前读 -> 对比读取机制 -> 对比适用场景与隔离级别",
+        "scoring_keywords": [
+          "快照读",
+          "当前读",
+          "一致性非锁定读",
+          "一致性锁定读",
+          "历史版本",
+          "加锁"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_lock_auto_inc_001",
+    "content": "自增锁是InnoDB中用于管理AUTO_INCREMENT列的表级锁，确保自增值的唯一性和连续性。其行为由innodb_autoinc_lock_mode参数控制，包括传统、连续和交错模式。交错模式使用轻量级锁提升并发性能，但在基于语句的复制中需注意数据一致性问题。",
+    "metadata": {
+      "category_stack": "MySQL 锁",
+      "interview_point": "你能介绍一下MySQL中的自增锁吗？",
+      "best_answer_model": {
+        "logic_chain": "锁定义与作用 -> 参数innodb_autoinc_lock_mode -> 三种模式区别 -> 并发性能与数据一致性考量",
+        "scoring_keywords": [
+          "AUTO-INC Locks",
+          "innodb_autoinc_lock_mode",
+          "表级锁",
+          "交错模式",
+          "主从同步",
+          "数据一致性"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_performance_optimization_001",
+    "content": "MySQL性能优化涉及数据库设计、索引策略、查询语句优化、服务器配置及硬件资源等多个层面，旨在提升系统吞吐量、降低响应时间并保障高并发下的稳定性。",
+    "metadata": {
+      "category_stack": "MySQL性能优化",
+      "interview_point": "请谈谈你对MySQL性能优化有哪些主要的建议和思路？",
+      "best_answer_model": {
+        "logic_chain": "数据库设计规范 -> 索引创建与使用 -> SQL语句优化 -> 服务器参数调优 -> 硬件与架构考量",
+        "scoring_keywords": [
+          "数据库设计",
+          "索引策略",
+          "查询优化",
+          "配置调优",
+          "高并发"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_performance_storage_001",
+    "content": "理论上可将文件二进制数据存入MySQL，但不推荐。这会严重消耗数据库性能与存储空间。最佳实践是使用云存储或自建文件服务存储文件，数据库仅保存其地址信息。",
+    "metadata": {
+      "category_stack": "MySQL 性能优化",
+      "interview_point": "请问，我们是否可以直接用 MySQL 来存储文件，比如图片呢？",
+      "best_answer_model": {
+        "logic_chain": "可行性说明 -> 性能弊端分析 -> 推荐方案（云存储/自建服务） -> 职责分离（库存地址，服务存文件）",
+        "scoring_keywords": [
+          "二进制数据",
+          "数据库性能",
+          "存储空间",
+          "文件存储服务",
+          "存储地址"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_performance_ip_storage_001",
+    "content": "将 IP 地址转换为无符号整型存储，可提升查询性能并减少存储空间。MySQL 提供 INET_ATON() 和 INET_NTOA() 函数进行转换与还原。",
+    "metadata": {
+      "category_stack": "MySQL 性能优化",
+      "interview_point": "在 MySQL 中，如何高效地存储 IP 地址？",
+      "best_answer_model": {
+        "logic_chain": "存储方式选择 -> 转换函数使用 -> 性能与空间优势",
+        "scoring_keywords": [
+          "无符号整型",
+          "INET_ATON",
+          "INET_NTOA",
+          "性能优化",
+          "空间占用"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_performance_optimization_001",
+    "content": "SQL优化手段包括使用索引避免全表扫描、优化查询语句结构、避免SELECT *、使用连接代替子查询、分析执行计划、以及通过分库分表处理大数据量。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "在MySQL性能优化中，有哪些常见的SQL优化手段可以和我们分享一下？",
+      "best_answer_model": {
+        "logic_chain": "索引优化 -> 查询语句重构 -> 执行计划分析 -> 数据库架构调整",
+        "scoring_keywords": [
+          "索引",
+          "避免全表扫描",
+          "执行计划",
+          "分库分表",
+          "查询优化"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_performance_sql_analysis_001",
+    "content": "使用EXPLAIN命令分析SQL的执行计划，了解查询优化器选择的执行方式，包括访问方法、索引使用、预计扫描行数等关键信息，以评估和优化查询性能。",
+    "metadata": {
+      "category_stack": "MySQL性能优化",
+      "interview_point": "在MySQL中，你通常如何分析一条SQL语句的性能？",
+      "best_answer_model": {
+        "logic_chain": "核心工具介绍 -> 执行计划解读 -> 关键字段分析 -> 性能瓶颈定位",
+        "scoring_keywords": [
+          "EXPLAIN",
+          "执行计划",
+          "查询优化器",
+          "索引",
+          "访问方法",
+          "扫描行数"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_performance_optimization_read_write_separation_sharding_001",
+    "content": "读写分离通过主库处理写操作、从库处理读操作来分摊数据库压力。分库分表则通过水平或垂直拆分数据到不同数据库或表中，以解决单库单表数据量过大导致的性能瓶颈。两者都是提升数据库扩展性和性能的核心架构方案。",
+    "metadata": {
+      "category_stack": "MySQL 性能优化",
+      "interview_point": "你对数据库的读写分离和分库分表方案有了解吗？可以谈谈它们的作用和区别。",
+      "best_answer_model": {
+        "logic_chain": "读写分离原理 -> 分库分表原理 -> 适用场景与区别 -> 带来的挑战",
+        "scoring_keywords": [
+          "主从复制",
+          "读写分摊",
+          "水平拆分",
+          "垂直拆分",
+          "数据分片",
+          "扩展性"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_performance_deep_pagination_001",
+    "content": "深度分页优化的核心在于避免使用LIMIT offset, size带来的巨大性能开销，主要策略包括使用覆盖索引、记录上次查询位置、或利用子查询先定位ID再关联数据。",
+    "metadata": {
+      "category_stack": "MySQL性能优化",
+      "interview_point": "当遇到深度分页查询导致性能瓶颈时，你会如何进行优化？",
+      "best_answer_model": {
+        "logic_chain": "问题分析 -> 覆盖索引优化 -> 游标/ID定位法 -> 业务层面规避",
+        "scoring_keywords": [
+          "覆盖索引",
+          "LIMIT性能开销",
+          "游标分页",
+          "子查询优化",
+          "业务规避"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_performance_cold_hot_separation_001",
+    "content": "数据冷热分离通过将访问频率高的热数据与访问频率低的冷数据分开存储，以优化查询性能和降低存储成本。核心在于制定合理的冷热数据划分标准，并利用数据库分区、归档表或不同存储介质等技术实现物理分离。",
+    "metadata": {
+      "category_stack": "MySQL性能优化",
+      "interview_point": "在MySQL性能优化中，数据冷热分离具体是如何实现的？",
+      "best_answer_model": {
+        "logic_chain": "概念定义与价值 -> 冷热数据划分标准 -> 物理分离实现技术 -> 应用场景与收益",
+        "scoring_keywords": [
+          "访问频率",
+          "划分标准",
+          "物理分离",
+          "查询性能",
+          "存储成本",
+          "归档表"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_performance_optimization_001",
+    "content": "MySQL性能优化遵循系统性思路，核心是定位并分析慢SQL，通过EXPLAIN分析查询计划。优化手段包括索引设计、表结构规范、SQL编写技巧。进阶方案涉及读写分离、分库分表、缓存等架构调整，并辅以连接池和硬件配置优化。",
+    "metadata": {
+      "category_stack": "MySQL性能优化",
+      "interview_point": "请谈谈你对MySQL性能优化的整体思路和具体方法。",
+      "best_answer_model": {
+        "logic_chain": "慢SQL定位 -> 索引与SQL优化 -> 架构调整 -> 其他配置优化",
+        "scoring_keywords": [
+          "慢查询日志",
+          "EXPLAIN",
+          "索引优化",
+          "读写分离",
+          "分库分表",
+          "连接池"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "mysql_learning_resources_001",
+    "content": "推荐系统学习MySQL的书籍与高质量文章，涵盖基础、SQL优化、InnoDB锁机制、自增主键特性及索引底层原理等核心知识点。",
+    "metadata": {
+      "category_stack": "MySQL",
+      "interview_point": "如果要系统学习MySQL，你会推荐哪些书籍和文章？",
+      "best_answer_model": {
+        "logic_chain": "学习路径规划 -> 书籍推荐 -> 系列教程推荐 -> 专题文章推荐",
+        "scoring_keywords": [
+          "书籍推荐",
+          "系列教程",
+          "SQL优化",
+          "InnoDB锁",
+          "自增主键",
+          "索引原理"
+        ]
+      },
+      "source_ref": "mysql-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_basis_intro_001",
+    "content": "Redis 是一个基于内存、键值存储的开源 NoSQL 数据库，读写速度快，支持多种数据结构、事务、持久化及集群方案，常用于分布式缓存。",
+    "metadata": {
+      "category_stack": "Redis基础",
+      "interview_point": "请简单介绍一下什么是 Redis？",
+      "best_answer_model": {
+        "logic_chain": "基本定义 -> 核心特性（内存存储/速度快） -> 数据结构与功能 -> 典型应用场景",
+        "scoring_keywords": [
+          "内存数据库",
+          "键值对",
+          "NoSQL",
+          "数据结构",
+          "持久化",
+          "分布式缓存"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_basis_performance_001",
+    "content": "Redis 高性能主要源于四点：纯内存操作实现纳秒级访问；单线程事件循环配合 I/O 多路复用，避免上下文切换与锁竞争；内部数据结构高度优化，根据数据动态选择编码；采用简洁高效的 RESP 通信协议，序列化开销小。",
+    "metadata": {
+      "category_stack": "Redis基础",
+      "interview_point": "请谈谈 Redis 为什么能实现这么高的性能？",
+      "best_answer_model": {
+        "logic_chain": "核心原因 -> 内存操作 -> I/O模型 -> 数据结构 -> 通信协议",
+        "scoring_keywords": [
+          "纯内存操作",
+          "I/O多路复用",
+          "单线程事件循环",
+          "优化的数据结构",
+          "RESP协议"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_basis_distributed_cache_alternatives_001",
+    "content": "分布式缓存方案除Redis外，还包括Memcached、Tendis、Dragonfly和KeyDB。选择Redis通常基于其成熟生态、高性能和广泛验证，而其他方案各有侧重，如兼容性或特定性能优化。",
+    "metadata": {
+      "category_stack": "Redis基础",
+      "interview_point": "除了Redis，你还了解哪些其他的分布式缓存方案吗？",
+      "best_answer_model": {
+        "logic_chain": "主流方案列举 -> 历史演进与现状 -> 新兴替代品简介 -> 选择Redis的核心理由",
+        "scoring_keywords": [
+          "Memcached",
+          "Tendis",
+          "Dragonfly",
+          "KeyDB",
+          "生态成熟",
+          "高性能"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_basis_memcached_comparison_001",
+    "content": "Redis与Memcached均是基于内存的高性能缓存数据库，支持过期策略。主要区别在于Redis支持更丰富的数据结构、数据持久化、原生集群、发布订阅等高级功能，而Memcached仅支持简单的键值对且无持久化。",
+    "metadata": {
+      "category_stack": "Redis基础",
+      "interview_point": "请你说一下Redis和Memcached有哪些区别和共同点？",
+      "best_answer_model": {
+        "logic_chain": "共同点概述 -> 核心区别（数据类型、持久化、集群、线程模型、特性） -> 技术选型结论",
+        "scoring_keywords": [
+          "内存数据库",
+          "数据类型丰富",
+          "数据持久化",
+          "原生集群",
+          "单线程模型",
+          "惰性删除"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_basis_why_use_001",
+    "content": "使用Redis主要基于其内存存储带来的极快访问速度、远超传统数据库的高并发处理能力，以及其功能全面，可应用于缓存、分布式锁、限流、消息队列等多种场景。",
+    "metadata": {
+      "category_stack": "Redis基础",
+      "interview_point": "在项目中，我们为什么要使用Redis？",
+      "best_answer_model": {
+        "logic_chain": "访问速度更快 -> 高并发支持 -> 功能全面",
+        "scoring_keywords": [
+          "内存存储",
+          "访问速度快",
+          "高并发",
+          "缓存",
+          "分布式锁",
+          "功能全面"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_basis_cache_selection_001",
+    "content": "Redis作为分布式缓存，相比本地缓存，在多服务器部署时能保证数据一致性，独立部署内存更大，支持持久化降低数据丢失风险，且提供集中管理和更丰富的数据结构与功能。",
+    "metadata": {
+      "category_stack": "Redis基础",
+      "interview_point": "在项目中，为什么选择使用Redis而不是本地缓存呢？",
+      "best_answer_model": {
+        "logic_chain": "数据一致性对比 -> 内存与部署方式对比 -> 数据持久化与可靠性 -> 管理与功能丰富性",
+        "scoring_keywords": [
+          "数据一致性",
+          "分布式缓存",
+          "持久化",
+          "集中管理",
+          "数据结构"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_basis_cache_strategy_001",
+    "content": "常见的缓存读写策略主要包括旁路缓存、读写穿透和异步写入三种模式，分别适用于不同的数据一致性与性能要求场景。",
+    "metadata": {
+      "category_stack": "Redis基础",
+      "interview_point": "你能介绍一下常见的缓存读写策略有哪些吗？",
+      "best_answer_model": {
+        "logic_chain": "策略分类 -> 旁路缓存模式 -> 读写穿透模式 -> 异步写入模式",
+        "scoring_keywords": [
+          "旁路缓存",
+          "读写穿透",
+          "异步写入",
+          "缓存策略",
+          "数据一致性"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_basis_module_001",
+    "content": "Redis Module是Redis 4.0引入的动态扩展机制，允许以动态链接库形式加载自定义功能，如搜索引擎、JSON处理、图形数据库等，极大地增强了Redis的灵活性和应用场景。",
+    "metadata": {
+      "category_stack": "Redis基础",
+      "interview_point": "请介绍一下什么是Redis Module，以及它有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "版本引入 -> 实现形式 -> 核心作用 -> 典型应用",
+        "scoring_keywords": [
+          "动态扩展",
+          "动态链接库",
+          "RediSearch",
+          "RedisJSON",
+          "官方推荐"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_application_use_cases_001",
+    "content": "Redis 除了缓存，还可用于实现分布式锁、限流、消息队列、延时队列、分布式 Session 以及通过其丰富数据结构支持复杂业务场景如统计和排行榜。",
+    "metadata": {
+      "category_stack": "Redis 应用",
+      "interview_point": "Redis 除了做缓存，还能在哪些场景下发挥作用？",
+      "best_answer_model": {
+        "logic_chain": "核心功能列举 -> 数据结构支撑 -> 扩展库应用",
+        "scoring_keywords": [
+          "分布式锁",
+          "限流",
+          "消息队列",
+          "延时队列",
+          "分布式 Session",
+          "复杂业务场景"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_distributed_lock_001",
+    "content": "基于Redis实现分布式锁的核心是使用SET命令的NX和PX参数确保互斥性与超时，并通过唯一值验证和Lua脚本保证解锁操作的原子性，以避免误删和死锁。",
+    "metadata": {
+      "category_stack": "Redis应用",
+      "interview_point": "你能详细说明一下如何基于Redis来实现一个分布式锁吗？",
+      "best_answer_model": {
+        "logic_chain": "互斥性获取 -> 设置超时避免死锁 -> 唯一值验证防误删 -> Lua脚本保证原子性解锁",
+        "scoring_keywords": [
+          "SET NX PX",
+          "互斥性",
+          "超时机制",
+          "唯一值",
+          "Lua脚本",
+          "原子性操作"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_mq_implementation_001",
+    "content": "Redis 可作为轻量级消息队列，主要通过 List 或 Stream 数据结构实现。适用于业务简单、数据量小且能容忍极低概率丢失的场景。对于要求高可靠性的金融级或海量数据业务，应选用 Kafka 等专业消息队列。",
+    "metadata": {
+      "category_stack": "Redis 应用",
+      "interview_point": "Redis 可以用来做消息队列吗？如果可以的话，通常是怎么实现的？",
+      "best_answer_model": {
+        "logic_chain": "适用场景分析 -> 核心实现数据结构（List/Stream） -> 与专业消息队列（Kafka/RabbitMQ）的对比选型",
+        "scoring_keywords": [
+          "Redis Stream",
+          "List",
+          "消息队列",
+          "数据丢失",
+          "Kafka",
+          "RabbitMQ"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_application_delayed_task_001",
+    "content": "实现Redis延时任务主要有两种方案：监听键过期事件或使用Redisson内置的延时队列。前者存在时效性差、易丢消息和重复消费问题，不推荐。后者通过持久化机制减少了消息丢失风险，并解决了多实例下的重复消费问题。",
+    "metadata": {
+      "category_stack": "Redis应用",
+      "interview_point": "请描述一下如何基于Redis来实现一个延时任务的功能，比如订单超时未支付自动取消？",
+      "best_answer_model": {
+        "logic_chain": "方案对比 -> 过期事件监听缺点 -> Redisson延时队列优点 -> 持久化与重复消费",
+        "scoring_keywords": [
+          "过期事件监听",
+          "Redisson延时队列",
+          "持久化机制",
+          "重复消费",
+          "时效性差"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_data_types_overview_001",
+    "content": "Redis核心数据类型包括五种基础类型和三种特殊类型。基础类型为String、List、Hash、Set和Sorted Set，分别用于存储字符串、列表、哈希、无序集合和有序集合。特殊类型包括Bitmaps、HyperLogLogs和Geospatial，用于处理位图、基数统计和地理位置信息。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "请介绍一下Redis支持哪些主要的数据类型，并简要说明它们各自的用途。",
+      "best_answer_model": {
+        "logic_chain": "基础数据类型列举 -> 各自核心用途 -> 特殊数据类型列举 -> 各自适用场景",
+        "scoring_keywords": [
+          "String",
+          "Hash",
+          "Sorted Set",
+          "Bitmaps",
+          "HyperLogLog",
+          "Geospatial"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_data_types_001",
+    "content": "Redis提供五种基础数据类型：String、List、Set、Hash、Zset，以及三种特殊类型：HyperLogLog、Bitmap、Geospatial，用于满足不同场景下的数据存储与处理需求。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "请介绍一下Redis中常用的数据类型有哪些？",
+      "best_answer_model": {
+        "logic_chain": "基础数据类型列举 -> 特殊数据类型列举 -> 简要说明用途",
+        "scoring_keywords": [
+          "String",
+          "List",
+          "Set",
+          "Hash",
+          "Zset",
+          "HyperLogLog"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_data_types_string_001",
+    "content": "String是Redis最基础的数据类型，二进制安全，可存储字符串、数字、序列化对象等。主要应用场景包括常规数据缓存、计数器、分布式锁实现等。",
+    "metadata": {
+      "category_stack": "Redis 数据类型",
+      "interview_point": "请介绍一下Redis中String类型的常见应用场景有哪些？",
+      "best_answer_model": {
+        "logic_chain": "数据类型定义 -> 二进制安全特性 -> 存储内容举例 -> 核心应用场景列举",
+        "scoring_keywords": [
+          "二进制安全",
+          "数据缓存",
+          "计数器",
+          "分布式锁",
+          "SETNX命令"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_data_types_string_vs_hash_001",
+    "content": "String存储序列化后的整个对象，操作简单直接，适合整体读写。Hash将对象字段单独存储，便于部分字段操作和节省内存，适合字段频繁变动或单独查询的场景。",
+    "metadata": {
+      "category_stack": "Redis 数据类型",
+      "interview_point": "在Redis中，使用String还是Hash来存储对象数据，哪个更好呢？",
+      "best_answer_model": {
+        "logic_chain": "存储方式对比 -> 内存消耗分析 -> 适用场景总结",
+        "scoring_keywords": [
+          "序列化",
+          "字段单独存储",
+          "节省内存",
+          "整体读写",
+          "部分字段操作"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_data_type_string_001",
+    "content": "Redis的String类型底层使用SDS（简单动态字符串）实现，而非C语言原生字符串。SDS通过记录长度、预分配空间等机制，实现了O(1)复杂度获取长度、避免缓冲区溢出、二进制安全及减少内存分配次数等优势。",
+    "metadata": {
+      "category_stack": "Redis 数据类型",
+      "interview_point": "请介绍一下Redis中String数据类型的底层实现是什么？",
+      "best_answer_model": {
+        "logic_chain": "底层数据结构 -> 核心属性 -> 相比C字符串的优势",
+        "scoring_keywords": [
+          "SDS",
+          "简单动态字符串",
+          "二进制安全",
+          "空间预分配",
+          "惰性空间释放",
+          "O(1)复杂度"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_data_types_shopping_cart_001",
+    "content": "购物车信息建议使用Hash存储，以用户ID为key，商品ID为field，商品数量为value。这便于对单个商品进行增删改查，操作效率高且结构清晰，比String类型更适合频繁变动的场景。",
+    "metadata": {
+      "category_stack": "Redis数据类型",
+      "interview_point": "在Redis中存储购物车信息，你觉得使用String类型好，还是Hash类型更好？为什么？",
+      "best_answer_model": {
+        "logic_chain": "数据类型选择依据 -> Hash结构优势 -> 具体操作映射 -> 与String的对比",
+        "scoring_keywords": [
+          "Hash存储",
+          "用户ID为key",
+          "商品ID为field",
+          "增删改查效率高",
+          "结构清晰"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_datatype_leaderboard_001",
+    "content": "使用Redis的Sorted Set（有序集合）实现排行榜，通过分数（score）对成员进行排序，并利用ZRANGE、ZREVRANGE等命令进行排名查询和范围获取。",
+    "metadata": {
+      "category_stack": "Redis 数据类型",
+      "interview_point": "如果让你使用Redis来实现一个排行榜功能，你会怎么做？",
+      "best_answer_model": {
+        "logic_chain": "数据结构选择 -> 分数映射与更新 -> 排名查询与范围获取",
+        "scoring_keywords": [
+          "Sorted Set",
+          "有序集合",
+          "分数（score）",
+          "ZRANGE",
+          "ZREVRANGE",
+          "排名查询"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_data_types_zset_skiplist_001",
+    "content": "跳表相比平衡树、红黑树或B+树，实现更简单，插入删除无需复杂的旋转或分裂操作。它采用概率平衡而非强制平衡，维护成本低。作为内存数据结构，跳表在范围查询上效率高，且更节省内存，非常适合Redis有序集合的实现场景。",
+    "metadata": {
+      "category_stack": "Redis 数据类型",
+      "interview_point": "Redis的有序集合底层为什么要用跳表，而不用平衡树、红黑树或者B+树呢？",
+      "best_answer_model": {
+        "logic_chain": "时间复杂度对比 -> 实现复杂度分析 -> 范围查询效率 -> 内存与维护成本",
+        "scoring_keywords": [
+          "跳表",
+          "概率平衡",
+          "实现简单",
+          "范围查询",
+          "内存数据库",
+          "O(log n)"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_data_types_set_001",
+    "content": "Redis Set是无序唯一集合，适用于数据去重、集合运算和随机元素获取。典型场景包括UV统计、点赞、共同好友/粉丝计算、好友推荐以及抽奖系统。",
+    "metadata": {
+      "category_stack": "Redis数据类型",
+      "interview_point": "Redis中Set类型有哪些典型的应用场景？",
+      "best_answer_model": {
+        "logic_chain": "数据结构特性 -> 去重场景 -> 集合运算场景 -> 随机获取场景",
+        "scoring_keywords": [
+          "无序集合",
+          "元素唯一",
+          "去重",
+          "交集并集差集",
+          "随机获取",
+          "UV统计"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_datatype_set_lottery_001",
+    "content": "使用Redis Set实现抽奖系统，核心是利用其无序且元素唯一的特性。通过SADD添加参与者，SPOP随机移除并返回元素实现不重复抽奖，SRANDMEMBER随机返回元素实现可重复抽奖。",
+    "metadata": {
+      "category_stack": "Redis 数据类型",
+      "interview_point": "如果让你使用Redis的Set数据类型来实现一个抽奖系统，你会怎么做？",
+      "best_answer_model": {
+        "logic_chain": "数据结构特性 -> 添加参与者 -> 不重复抽奖实现 -> 可重复抽奖实现",
+        "scoring_keywords": [
+          "Set",
+          "SADD",
+          "SPOP",
+          "SRANDMEMBER",
+          "无序唯一",
+          "随机抽取"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_data_type_bitmap_active_user_001",
+    "content": "Bitmap 是一种基于二进制位（0/1）的紧凑数据结构，通过日期作为 key，用户 ID 作为偏移量（offset）来标记用户活跃状态。利用 SETBIT 设置状态，BITOP 进行位运算（AND/OR）可实现多日活跃用户的交集与并集统计，最后通过 BITCOUNT 命令获取结果用户数。",
+    "metadata": {
+      "category_stack": "Redis 数据类型",
+      "interview_point": "如果让你使用 Redis 的 Bitmap 来统计活跃用户，你会怎么设计和实现？",
+      "best_answer_model": {
+        "logic_chain": "数据结构理解 -> 键与偏移量设计 -> 状态设置（SETBIT） -> 多日统计（BITOP） -> 结果计数（BITCOUNT）",
+        "scoring_keywords": [
+          "Bitmap",
+          "二进制位",
+          "偏移量（offset）",
+          "SETBIT",
+          "BITOP",
+          "BITCOUNT"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_datatype_hyperloglog_scenario_001",
+    "content": "HyperLogLog是一种概率数据结构，用于以极小内存估算海量数据集合的基数（不重复元素数量），通过牺牲少量精确度换取巨大的内存节省，适合统计独立访客数等场景。",
+    "metadata": {
+      "category_stack": "Redis 数据类型",
+      "interview_point": "HyperLogLog 适合用在什么样的业务场景下？",
+      "best_answer_model": {
+        "logic_chain": "核心权衡（精度换空间） -> 适用特征（海量数据、内存敏感、接受近似） -> 典型应用场景（UV统计、关键词统计）",
+        "scoring_keywords": [
+          "概率数据结构",
+          "基数估算",
+          "内存节省",
+          "近似值",
+          "独立访客统计"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_data_types_hyperloglog_uv_001",
+    "content": "使用 Redis 的 HyperLogLog 数据结构统计页面独立访客数，通过 PFADD 命令添加用户标识，PFCOUNT 命令获取近似唯一计数，具有占用内存小、误差率低的特点。",
+    "metadata": {
+      "category_stack": "Redis 数据类型",
+      "interview_point": "如果让你使用 Redis 的 HyperLogLog 来统计一个页面的 UV（独立访客数），你会怎么做？",
+      "best_answer_model": {
+        "logic_chain": "数据结构选择 -> 核心命令使用 -> 操作流程 -> 特性优势",
+        "scoring_keywords": [
+          "HyperLogLog",
+          "PFADD",
+          "PFCOUNT",
+          "近似计数",
+          "内存高效",
+          "独立访客"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_data_type_bloom_filter_001",
+    "content": "布隆过滤器用于高效判断元素是否不在海量集合中，具有极高空间效率但存在误判率。它通过多个哈希函数映射位数组，确保元素不存在时绝对准确，但元素存在时可能误判。",
+    "metadata": {
+      "category_stack": "Redis 数据类型",
+      "interview_point": "如果我想判断一个元素是否不在海量元素集合中，应该使用哪种 Redis 数据类型？",
+      "best_answer_model": {
+        "logic_chain": "应用场景 -> 核心特性 -> 基本原理 -> 误判分析",
+        "scoring_keywords": [
+          "布隆过滤器",
+          "海量集合",
+          "空间效率",
+          "误判率",
+          "哈希函数",
+          "位数组"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_persistence_mechanism_001",
+    "content": "Redis 持久化机制主要包括 RDB 和 AOF 两种方式。RDB 通过生成数据快照实现，AOF 则记录所有写操作命令。两者各有优劣，通常结合使用混合持久化模式以平衡性能和数据安全性。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "请介绍一下 Redis 的持久化机制，包括 RDB 和 AOF 以及它们的混合模式。",
+      "best_answer_model": {
+        "logic_chain": "RDB 快照原理 -> AOF 日志原理 -> 两者优缺点对比 -> 混合持久化模式",
+        "scoring_keywords": [
+          "RDB 持久化",
+          "AOF 持久化",
+          "数据快照",
+          "写操作日志",
+          "混合持久化"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_thread_model_001",
+    "content": "Redis 核心读写命令采用单线程模型，确保原子性和高性能。4.0 版本引入多线程用于异步删除大键值对，6.0 版本引入多线程处理网络请求以提升网络 I/O 性能。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "请介绍一下 Redis 的线程模型，以及它在不同版本中的演进。",
+      "best_answer_model": {
+        "logic_chain": "核心单线程模型 -> 4.0引入异步删除多线程 -> 6.0引入网络I/O多线程",
+        "scoring_keywords": [
+          "单线程模型",
+          "原子性",
+          "异步删除",
+          "网络I/O",
+          "Redis 4.0",
+          "Redis 6.0"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_thread_model_single_001",
+    "content": "Redis采用基于Reactor模式的单线程文件事件处理器，通过I/O多路复用程序监听多个套接字，高效处理网络事件，避免了多线程的资源消耗和复杂性，保持了内部设计的简洁性。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "你能介绍一下Redis的单线程模型吗？",
+      "best_answer_model": {
+        "logic_chain": "Reactor模式 -> 文件事件处理器 -> I/O多路复用监听 -> 单线程运行优势",
+        "scoring_keywords": [
+          "Reactor模式",
+          "文件事件处理器",
+          "I/O多路复用",
+          "单线程",
+          "套接字监听",
+          "高性能"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_thread_model_001",
+    "content": "Redis 6.0 前主要采用单线程模型，因为其性能瓶颈在于内存和网络而非CPU，单线程避免了多线程的上下文切换、死锁等复杂性，且易于开发和维护。",
+    "metadata": {
+      "category_stack": "Redis 线程模型",
+      "interview_point": "在 Redis 6.0 版本之前，为什么主要采用单线程模型而不是多线程？",
+      "best_answer_model": {
+        "logic_chain": "性能瓶颈定位 -> 单线程优势 -> 多线程潜在问题",
+        "scoring_keywords": [
+          "性能瓶颈",
+          "内存和网络",
+          "上下文切换",
+          "死锁",
+          "易于维护"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_thread_model_001",
+    "content": "Redis 6.0 引入多线程主要为了提升网络IO读写性能，以突破网络瓶颈。其多线程仅用于处理网络数据读写，核心命令执行仍保持单线程，从而保证了线程安全。多线程功能默认关闭，需在配置文件中手动开启并设置线程数。",
+    "metadata": {
+      "category_stack": "Redis 线程模型",
+      "interview_point": "Redis 6.0 之后为什么要引入多线程呢？",
+      "best_answer_model": {
+        "logic_chain": "性能瓶颈分析 -> 多线程应用范围 -> 核心执行模型 -> 配置与建议",
+        "scoring_keywords": [
+          "网络IO瓶颈",
+          "多线程读写",
+          "单线程执行",
+          "线程安全",
+          "配置文件开启"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_thread_model_background_threads_001",
+    "content": "Redis核心逻辑为单线程，但包含后台线程处理耗时操作：bio_close_file释放临时文件，bio_aof_fsync刷盘AOF数据，bio_lazy_free异步释放大对象内存。",
+    "metadata": {
+      "category_stack": "Redis线程模型",
+      "interview_point": "除了主线程，你了解Redis的后台线程吗？它们主要负责什么？",
+      "best_answer_model": {
+        "logic_chain": "单线程模型澄清 -> 引入后台线程概念 -> 列举三类后台线程及其职责",
+        "scoring_keywords": [
+          "bio_close_file",
+          "bio_aof_fsync",
+          "bio_lazy_free",
+          "异步释放",
+          "临时文件",
+          "刷盘"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_memory_management_expiration_001",
+    "content": "设置过期时间可自动清理过期数据，防止内存无限增长导致OOM，并满足业务场景对数据时效性的要求，如验证码和登录Token的有效期管理。",
+    "metadata": {
+      "category_stack": "Redis内存管理",
+      "interview_point": "在Redis中，给缓存数据设置过期时间主要有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "内存资源有限性 -> 防止OOM -> 自动清理机制 -> 满足业务时效需求",
+        "scoring_keywords": [
+          "内存管理",
+          "过期时间",
+          "OOM",
+          "自动删除",
+          "业务时效性"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_memory_management_expiration_001",
+    "content": "Redis通过过期字典（hash表）存储键的过期时间戳。查询时，先检查键是否在过期字典中，若存在则判断时间戳是否过期，过期则删除并返回空值。",
+    "metadata": {
+      "category_stack": "Redis内存管理",
+      "interview_point": "Redis是如何判断一个键的数据是否已经过期的？",
+      "best_answer_model": {
+        "logic_chain": "过期字典结构 -> 存储内容（键与时间戳） -> 查询时的检查与删除流程",
+        "scoring_keywords": [
+          "过期字典",
+          "过期时间戳",
+          "O(1)查询",
+          "惰性删除"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_memory_expire_key_deletion_001",
+    "content": "Redis采用定期删除与惰性删除相结合的策略管理过期键。定期删除周期性随机抽查部分过期键进行清理，惰性删除则在访问键时检查其是否过期。两者结合旨在平衡CPU使用与内存回收效率。",
+    "metadata": {
+      "category_stack": "Redis内存管理",
+      "interview_point": "请介绍一下Redis中过期key的删除策略。",
+      "best_answer_model": {
+        "logic_chain": "策略概述 -> 惰性删除原理 -> 定期删除原理 -> 两者结合的优势",
+        "scoring_keywords": [
+          "惰性删除",
+          "定期删除",
+          "随机抽查",
+          "hz参数",
+          "内存回收",
+          "性能平衡"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_memory_management_expire_001",
+    "content": "大量key集中过期会导致CPU占用升高和内存占用过高，从而增加请求延迟。解决方案包括避免设置集中过期时间，以及开启lazy free机制进行后台异步删除，以降低对主线程性能的影响。",
+    "metadata": {
+      "category_stack": "Redis内存管理",
+      "interview_point": "如果Redis中存在大量key在同一时间点集中过期，可能会导致什么问题，以及如何解决？",
+      "best_answer_model": {
+        "logic_chain": "问题现象（延迟与内存） -> 根本原因（CPU与清理机制） -> 解决方案（分散过期与异步删除）",
+        "scoring_keywords": [
+          "请求延迟",
+          "CPU占用",
+          "内存占用",
+          "集中过期",
+          "lazy free",
+          "异步删除"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_memory_eviction_policy_001",
+    "content": "Redis内存淘汰策略在达到maxmemory阈值时触发，用于管理内存。核心策略包括针对所有键或仅过期键的LRU、LFU、TTL、Random算法，以及默认的no-eviction（禁止驱逐并报错）。",
+    "metadata": {
+      "category_stack": "Redis内存管理",
+      "interview_point": "请介绍一下Redis的内存淘汰策略。",
+      "best_answer_model": {
+        "logic_chain": "触发条件 -> 策略分类（volatile/allkeys） -> 核心算法（LRU/LFU/TTL/Random） -> 默认策略与配置",
+        "scoring_keywords": [
+          "maxmemory阈值",
+          "volatile-lru",
+          "allkeys-lfu",
+          "no-eviction",
+          "LRU算法",
+          "LFU算法"
+        ]
+      },
+      "source_ref": "redis-questions-01.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_transaction_basis_001",
+    "content": "Redis事务是将多个命令打包并按顺序执行的机制，但执行过程不会被其他命令打断。它不满足原子性和持久性，且每条命令单独交互，资源效率较低，因此在实际开发中不常用。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "你能解释一下什么是Redis事务吗？",
+      "best_answer_model": {
+        "logic_chain": "核心定义 -> 执行特性 -> 与关系型数据库的差异 -> 主要缺陷 -> 使用建议",
+        "scoring_keywords": [
+          "命令打包",
+          "顺序执行",
+          "不被打断",
+          "不满足原子性",
+          "网络交互浪费",
+          "不常用"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_transaction_usage_001",
+    "content": "Redis事务通过MULTI、EXEC、DISCARD和WATCH命令实现。MULTI开启事务，命令入队，EXEC批量执行。DISCARD取消事务，WATCH用于乐观锁，监视键值变化以保证事务原子性。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "请介绍一下如何使用Redis的事务功能？",
+      "best_answer_model": {
+        "logic_chain": "核心命令介绍 -> 基本执行流程 -> 事务取消与回滚 -> 乐观锁机制（WATCH）",
+        "scoring_keywords": [
+          "MULTI",
+          "EXEC",
+          "DISCARD",
+          "WATCH",
+          "命令入队",
+          "乐观锁"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_transaction_atomicity_001",
+    "content": "Redis事务不满足严格的原子性。它不支持回滚操作，即使在执行过程中出现错误命令，其他命令仍会继续执行，这与关系型数据库的原子性保证不同。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "Redis的事务支持原子性吗？",
+      "best_answer_model": {
+        "logic_chain": "事务四大特性定义 -> Redis事务执行机制 -> 错误处理与回滚缺失 -> 结论与官方解释",
+        "scoring_keywords": [
+          "原子性",
+          "不支持回滚",
+          "命令错误",
+          "事务执行",
+          "关系型数据库"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_transaction_durability_001",
+    "content": "Redis事务不保证持久性。其持久化依赖RDB、AOF或混合模式，AOF的fsync策略（always/everysec/no）在性能和可靠性间权衡，always策略虽可基本满足但性能差，实际很少使用，因此事务数据仍有丢失风险。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "Redis的事务机制能保证数据的持久性吗？",
+      "best_answer_model": {
+        "logic_chain": "持久化定义 -> 三种持久化方式介绍 -> AOF策略分析 -> 事务持久性结论",
+        "scoring_keywords": [
+          "持久性",
+          "RDB",
+          "AOF",
+          "fsync策略",
+          "数据丢失",
+          "性能权衡"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_transaction_lua_001",
+    "content": "Redis事务存在原子性缺陷，可通过Lua脚本批量执行命令来模拟事务，减少网络开销并保证执行隔离，但脚本执行出错时无法回滚已执行命令，仍不完全满足原子性。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "Redis事务存在一些缺陷，有哪些方法可以解决或规避这些缺陷呢？",
+      "best_answer_model": {
+        "logic_chain": "事务缺陷 -> Lua脚本方案 -> 执行隔离性 -> 原子性不足分析",
+        "scoring_keywords": [
+          "Lua脚本",
+          "原子性",
+          "批量执行",
+          "网络开销",
+          "执行隔离",
+          "无法回滚"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_performance_optimization_002",
+    "content": "Redis性能优化需关注慢查询、内存碎片、AOF重写、大Key、网络延迟及持久化阻塞等核心因素，通过监控、配置调优和架构设计来保障服务稳定与高效。",
+    "metadata": {
+      "category_stack": "Redis性能优化",
+      "interview_point": "除了常见方法，你能再谈谈Redis性能优化的关键点吗？",
+      "best_answer_model": {
+        "logic_chain": "问题诊断 -> 内部机制分析 -> 外部因素排查 -> 优化策略实施",
+        "scoring_keywords": [
+          "慢查询",
+          "内存碎片",
+          "AOF重写",
+          "大Key",
+          "网络延迟",
+          "持久化阻塞"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_performance_batch_001",
+    "content": "通过批量操作（如原生MGET/MSET命令、Pipeline、Lua脚本）减少网络往返次数（RTT）和Socket I/O成本，是提升Redis性能的关键。在Redis Cluster中需注意key的哈希槽分布问题。",
+    "metadata": {
+      "category_stack": "Redis性能优化",
+      "interview_point": "在Redis中，有哪些方法可以通过批量操作来减少网络传输开销？",
+      "best_answer_model": {
+        "logic_chain": "性能瓶颈分析（RTT与I/O） -> 原生批量命令 -> Pipeline流水线 -> Lua脚本 -> 集群环境下的注意事项",
+        "scoring_keywords": [
+          "RTT往返时间",
+          "原生批量命令",
+          "Pipeline",
+          "Lua脚本",
+          "哈希槽",
+          "网络开销"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_performance_expired_keys_001",
+    "content": "Redis 定期删除过期 key 时若遇到大量集中过期，会阻塞主线程导致客户端请求延迟。解决方案包括为 key 设置随机过期时间以分散压力，以及从 Redis 4.0 开始可开启 lazy-free 特性，通过子线程异步释放内存来避免主线程阻塞。",
+    "metadata": {
+      "category_stack": "Redis 性能优化",
+      "interview_point": "在 Redis 中，如果遇到大量 key 集中过期的情况，可能会导致什么问题？有哪些常见的解决方案？",
+      "best_answer_model": {
+        "logic_chain": "问题根源（定期删除阻塞主线程） -> 核心解决方案一（设置随机过期时间） -> 核心解决方案二（开启 lazy-free 异步释放）",
+        "scoring_keywords": [
+          "定期删除",
+          "惰性删除",
+          "主线程阻塞",
+          "随机过期时间",
+          "lazy-free",
+          "异步释放"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_performance_bigkey_001",
+    "content": "Bigkey指占用内存过大的键，如String类型超过1MB或复合类型元素超5000个。它由不当设计或数据激增产生，会消耗更多内存与带宽，并引发客户端超时、网络阻塞、删除时工作线程阻塞等性能问题，影响主从同步与集群扩容。",
+    "metadata": {
+      "category_stack": "Redis性能优化",
+      "interview_point": "请解释一下Redis中的bigkey（大Key）是什么，它有哪些危害，以及我们如何发现和处理它？",
+      "best_answer_model": {
+        "logic_chain": "定义与判定标准 -> 产生原因 -> 主要危害（内存/带宽/阻塞） -> 发现方法 -> 处理与优化策略",
+        "scoring_keywords": [
+          "内存占用大",
+          "网络阻塞",
+          "客户端超时",
+          "异步删除",
+          "惰性删除",
+          "SCAN命令"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_performance_hotkey_001",
+    "content": "热Key指访问频率显著高于其他键的Key，通常由热点事件或秒杀活动引发。其危害在于消耗大量CPU与带宽，可能导致Redis实例或后端数据库宕机。解决方案包括读写分离、使用Redis Cluster分散数据、以及采用本地二级缓存等。",
+    "metadata": {
+      "category_stack": "Redis 性能优化",
+      "interview_point": "请解释一下什么是Redis的热Key（hotkey），它有什么危害，以及如何发现和解决热Key问题？",
+      "best_answer_model": {
+        "logic_chain": "热Key定义 -> 产生原因与危害 -> 发现方法 -> 解决方案",
+        "scoring_keywords": [
+          "访问频率过高",
+          "CPU带宽消耗",
+          "服务宕机风险",
+          "读写分离",
+          "Redis Cluster",
+          "二级缓存"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_performance_slow_query_001",
+    "content": "Redis慢查询命令指执行时间过长的命令，主要由O(n)或更高时间复杂度的命令（如KEYS、HGETALL）引起。Redis通过内置慢查询日志功能记录这些命令，可通过配置阈值和最大记录条数进行监控与管理。",
+    "metadata": {
+      "category_stack": "Redis性能优化",
+      "interview_point": "请解释一下Redis中为什么会出现慢查询命令，以及如何找到它们？",
+      "best_answer_model": {
+        "logic_chain": "命令执行步骤 -> O(n)复杂度命令分析 -> 慢查询日志配置与使用 -> 日志内容解读",
+        "scoring_keywords": [
+          "O(n)时间复杂度",
+          "慢查询日志",
+          "slowlog-log-slower-than",
+          "slowlog-max-len",
+          "SLOWLOG GET"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_performance_memory_fragmentation_001",
+    "content": "内存碎片是已分配内存块之间无法被利用的小块空闲内存。Redis中产生碎片的主要原因是键值对的频繁修改、删除和过期，导致内存分配和释放不连续。可通过配置`activedefrag`自动清理或手动执行`MEMORY PURGE`命令来整理碎片，回收内存。",
+    "metadata": {
+      "category_stack": "Redis 性能优化",
+      "interview_point": "请解释一下什么是Redis内存碎片，它是如何产生的，以及我们有哪些方法来清理它？",
+      "best_answer_model": {
+        "logic_chain": "碎片定义 -> 产生原因（增删改/过期） -> 清理方法（自动/手动）",
+        "scoring_keywords": [
+          "内存碎片",
+          "分配释放不连续",
+          "activedefrag",
+          "MEMORY PURGE",
+          "内存回收"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_production_cache_penetration_001",
+    "content": "缓存穿透指大量请求查询数据库中也不存在的key，导致请求绕过缓存直接冲击数据库，造成巨大压力。核心解决方案包括参数校验、缓存空值、使用布隆过滤器预先拦截非法请求，以及接口限流。",
+    "metadata": {
+      "category_stack": "Redis 生产问题",
+      "interview_point": "请你解释一下什么是缓存穿透，以及有哪些常见的解决方案？",
+      "best_answer_model": {
+        "logic_chain": "问题定义 -> 根本原因 -> 解决方案（参数校验 -> 缓存空值 -> 布隆过滤器 -> 接口限流）",
+        "scoring_keywords": [
+          "缓存穿透",
+          "布隆过滤器",
+          "缓存空值",
+          "参数校验",
+          "接口限流",
+          "数据库压力"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_production_cache_breakdown_001",
+    "content": "缓存击穿指热点数据在缓存中过期失效，导致瞬时大量请求直接穿透到数据库，造成巨大压力。核心解决方案包括热点数据预热、设置合理的过期时间或使用互斥锁控制数据库查询。",
+    "metadata": {
+      "category_stack": "Redis 生产问题",
+      "interview_point": "你能解释一下什么是缓存击穿，以及有哪些常见的解决办法吗？",
+      "best_answer_model": {
+        "logic_chain": "问题定义 -> 核心原因 -> 典型场景 -> 解决方案",
+        "scoring_keywords": [
+          "热点数据",
+          "缓存过期",
+          "数据库压力",
+          "数据预热",
+          "互斥锁"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_production_cache_avalanche_001",
+    "content": "缓存雪崩指大量缓存数据在同一时间失效或缓存服务宕机，导致海量请求直接冲击数据库，造成数据库压力激增甚至宕机的现象。核心解决思路包括集群化、多级缓存、设置随机过期时间以及数据预热。",
+    "metadata": {
+      "category_stack": "Redis 生产问题",
+      "interview_point": "请你解释一下什么是缓存雪崩，以及有哪些常见的解决方案？",
+      "best_answer_model": {
+        "logic_chain": "问题定义 -> 核心原因分析 -> 服务不可用解决方案 -> 缓存同时失效解决方案 -> 与缓存击穿的区别",
+        "scoring_keywords": [
+          "大面积失效",
+          "数据库压力",
+          "Redis集群",
+          "多级缓存",
+          "随机过期时间",
+          "缓存预热"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_cache_database_consistency_001",
+    "content": "保证缓存与数据库数据一致性需权衡性能与准确性，常用Cache Aside模式：读时缓存未命中则查库并回填，写时先更新数据库再删除缓存。若删除缓存失败，可通过消息队列实现异步重试机制。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "在实际项目中，你是如何保证缓存和数据库数据一致性的？",
+      "best_answer_model": {
+        "logic_chain": "一致性挑战与权衡 -> Cache Aside模式读写流程 -> 删除缓存失败处理方案",
+        "scoring_keywords": [
+          "Cache Aside模式",
+          "先更新数据库",
+          "再删除缓存",
+          "缓存未命中",
+          "异步重试",
+          "消息队列"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_production_blocking_causes_001",
+    "content": "Redis阻塞主要由O(n)命令、持久化操作、大Key处理、内存交换、网络问题及集群数据迁移等引起，这些因素会导致主线程或I/O操作延迟，影响服务响应。",
+    "metadata": {
+      "category_stack": "Redis 生产问题",
+      "interview_point": "在实际生产环境中，哪些情况可能会导致 Redis 服务发生阻塞？",
+      "best_answer_model": {
+        "logic_chain": "命令复杂度 -> 持久化机制 -> 大Key影响 -> 内存与网络 -> 集群操作",
+        "scoring_keywords": [
+          "O(n)命令",
+          "持久化阻塞",
+          "大Key",
+          "内存Swap",
+          "网络延迟",
+          "数据迁移"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_cluster_sentinel_001",
+    "content": "Sentinel是Redis高可用的监控与故障转移系统，负责检测主从节点状态、实现客观下线判定、选举新主节点并协调故障转移。Redis Cluster是分布式解决方案，通过哈希槽分片实现数据分区、高可用与水平扩展，节点间通过Gossip协议通信。",
+    "metadata": {
+      "category_stack": "Redis集群",
+      "interview_point": "请介绍一下Redis Sentinel和Redis Cluster的核心概念与工作机制。",
+      "best_answer_model": {
+        "logic_chain": "Sentinel功能与角色 -> 主观下线与客观下线 -> 故障转移与选举机制 -> Cluster分片与哈希槽 -> 节点通信与扩展性",
+        "scoring_keywords": [
+          "Sentinel",
+          "客观下线",
+          "故障转移",
+          "哈希槽",
+          "Gossip协议",
+          "水平扩展"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  },
+  {
+    "id": "redis_usage_specification_001",
+    "content": "Redis使用规范包括使用连接池避免频繁创建连接，慎用O(n)命令并关注数据量，推荐批量操作减少网络开销，用Lua脚本替代事务，禁止长时间开启monitor，并控制key的生命周期以避免存储过多冷数据。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "在实际使用Redis时，我们应该遵循哪些常见的性能与规范准则？",
+      "best_answer_model": {
+        "logic_chain": "连接管理 -> 命令复杂度控制 -> 批量操作优化 -> 事务替代方案 -> 监控规避 -> 数据生命周期管理",
+        "scoring_keywords": [
+          "连接池",
+          "O(n)命令",
+          "批量操作",
+          "Lua脚本",
+          "key生命周期"
+        ]
+      },
+      "source_ref": "redis-questions-02.md",
+      "type": "tech"
+    }
+  }
+]
