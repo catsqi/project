@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text } from '../components/ReactBits/Text';
-import { Button } from '../components/ReactBits/Button';
+import { Text } from '../components/ui/Text';
+import { Button } from '../components/ui/Button';
 import { useNavigate } from 'react-router-dom';
 
 const jobs = [
@@ -41,7 +41,7 @@ const JobSelect: React.FC = () => {
                 <Button 
                   variant="outline" 
                   className="group-hover:border-white group-hover:text-white group-hover:bg-transparent hover:!bg-neon-green hover:!text-black hover:!border-neon-green"
-                  onClick={() => navigate(`/interview?role=${job.id}`)}
+                  onClick={() => navigate('/resume-upload', { state: { jobTitle: job.title } })}
                 >
                   SELECT & CONTINUE
                 </Button>

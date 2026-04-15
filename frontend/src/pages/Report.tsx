@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text } from '../components/ReactBits/Text';
-import { Button } from '../components/ReactBits/Button';
-import { RadarChartComponent, BarChartComponent } from '../components/ReactBits/Chart';
+import { Text } from '../components/ui/Text';
+import { Button } from '../components/ui/Button';
+import { RadarChartComponent, BarChartComponent } from '../components/ui/Chart';
 import { useNavigate } from 'react-router-dom';
 
 const radarData = [

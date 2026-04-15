@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
-import LoginRegister from './pages/LoginRegister';
+import AuthPage from './pages/AuthPage';
 import JobSelect from './pages/JobSelect';
 import InterviewRoom from './pages/InterviewRoom';
 import Report from './pages/Report';
 import Profile from './pages/Profile';
-import Antigravity from './components/ReactBits/Antigravity';
+import ResumeUpload from './pages/ResumeUpload';
+import Antigravity from './components/ui/Antigravity';
 
 // 粒子背景控制器：根据路由决定是否显示
 const BackgroundLayer = ({ mouse }: { mouse: { x: number; y: number } }) => {
@@ -65,8 +66,9 @@ function App() {
         <div className="relative z-10 w-full">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<LoginRegister />} />
+            <Route path="/login" element={<AuthPage />} />
             <Route path="/jobs" element={<JobSelect />} />
+            <Route path="/resume-upload" element={<ResumeUpload />} />
             <Route path="/interview" element={<InterviewRoom />} />
             <Route path="/report" element={<Report />} />
             <Route path="/profile" element={<Profile />} />

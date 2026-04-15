@@ -1,5 +1,6 @@
 from app import create_app
-
+import sys
+sys.stdout.reconfigure(line_buffering=True)
 app = create_app()
 
 if __name__ == "__main__":

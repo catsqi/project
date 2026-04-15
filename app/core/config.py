@@ -1,39 +1,24 @@
-from functools import lru_cache
+"""
+RAG系统配置
+"""
+import os
+from dotenv import load_dotenv
+# from dashscope import TextEmbedding
 
-from pydantic import Field
-from pydantic_settings import BaseSettings, SettingsConfigDict
+load_dotenv()
 
+# 数据库配置
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://cats:130151@localhost:5433/cats_interview"
+)
 
-class Settings(BaseSettings):
-    app_name: str = Field(default="AI Interview Platform", description="Application name")
-    app_version: str = Field(default="0.1.0", description="Application version")
-    api_prefix: str = Field(default="/api/v1", description="API prefix")
+# 用于生成embedding
 
-    deepseek_api_key: str = Field(default="", description="DeepSeek API key")
-    deepseek_base_url: str = Field(
-        default="https://api.deepseek.com/v1",
-        description="DeepSeek OpenAI-compatible API base URL",
-    )
-    deepseek_model: str = Field(default="deepseek-chat", description="Default DeepSeek model")
-    deepseek_timeout: float = Field(default=30.0, description="LLM request timeout in seconds")
+EMBEDDING_API_KEY = os.getenv("DASHSCOPE_API_KEY")
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL")
+EMBEDDING_BASE_URL = os.getenv("EMBEDDING_BASE_URL")
 
-    groq_api_key: str = Field(default="", description="Groq API key")
-    groq_model: str = Field(default="llama-3.3-70b-versatile", description="Default Groq model")
-    llm_provider: str = Field(default="groq", description="Preferred LLM provider (deepseek, groq)")
-
-    deepgram_api_key: str = Field(default="", description="Deepgram API key")
-
-    model_config = SettingsConfigDict(
-        env_file=".env",
-        env_file_encoding="utf-8",
-        case_sensitive=False,
-        extra="ignore",
-    )
-
-
-@lru_cache
-def get_settings() -> Settings:
-    return Settings()
-
-
-settings = get_settings()
+# RAG配置
+RAG_TOP_K = 3  # 默认检索数量
+RAG_SIMILARITY_THRESHOLD = 0.7  # 相似度阈值

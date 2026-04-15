@@ -1,22 +1,19 @@
 import os
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
 
-from app.api import api_router
-from app.core.config import settings
-from app.services.voice_service import stream, process_interaction
+from app.services.voice_service import stream
+from app.api.resume import router as resume_router
+from app.api.chat import router as chat_router
 
-class TextInput(BaseModel):
-    text: str
 
 def create_app() -> FastAPI:
     app = FastAPI(
-        title=settings.app_name,
-        version=settings.app_version,
+        title="AI Interview Platform",
+        version="0.1.0",
         docs_url="/docs",
         redoc_url="/redoc",
     )
@@ -33,11 +30,8 @@ def create_app() -> FastAPI:
     # 2. 健康检查
     @app.get("/health", tags=["system"], summary="Health check")
     async def health_check() -> dict[str, str]:
-        return {"status": "ok", "app": settings.app_name}
-
-    # 3. 业务 API
-    app.include_router(api_router, prefix=settings.api_prefix)
-
+        return {"status": "ok", "app": "AI Interview Platform"}
+    
     # 4. 静态文件挂载
     static_dir = os.path.join(os.path.dirname(__file__), "static")
     os.makedirs(static_dir, exist_ok=True)
@@ -58,33 +52,11 @@ def create_app() -> FastAPI:
             ]
         }
 
-    # 4.6. Text Input Multimodal Endpoint (Streaming)
-    @app.post("/api/chat/text", tags=["multimodal"], summary="Text Input with streaming response")
-    async def text_chat(input_data: TextInput):
-        """
-        接收普通文本输入，交由全局 Voice Service 处理。
-        通过 StreamingResponse 实时返还文字和音频分片。
-        """
-        from app.services.voice_service import process_interaction_stream
-        import json
+    # 5. 注册 API 路由
+    app.include_router(resume_router)
+    app.include_router(chat_router)
 
-        async def generate():
-            async for chunk in process_interaction_stream(input_type='text', content=input_data.text):
-                # 以换行符分隔的 JSON 流，方便前端解析
-                yield json.dumps(chunk, ensure_ascii=False) + "\n"
-
-        from fastapi.responses import StreamingResponse
-        return StreamingResponse(
-            generate(), 
-            media_type="text/event-stream",
-            headers={
-                "Cache-Control": "no-cache",
-                "X-Accel-Buffering": "no",
-                "Connection": "keep-alive",
-            }
-        )
-
-    # 5. 【关键】挂载 FastRTC 语音流（放在最后）
+    # 6. 【关键】挂载 FastRTC 语音流（放在最后）
     print(">>> [DEBUG] Mounting FastRTC Stream at /voice ...")
     stream.mount(app, path="/voice")
 
@@ -93,5 +65,5 @@ def create_app() -> FastAPI:
         methods = getattr(route, "methods", None)
         methods_text = ",".join(sorted(methods)) if methods else "MOUNT"
         print(f"    {methods_text:20s} {route.path}")
-    
+
     return app

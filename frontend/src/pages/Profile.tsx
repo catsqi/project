@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text } from '../components/ReactBits/Text';
-import { Button } from '../components/ReactBits/Button';
+import { Text } from '../components/ui/Text';
+import { Button } from '../components/ui/Button';
 import { useNavigate } from 'react-router-dom';
 
 const history = [
