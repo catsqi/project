@@ -1,0 +1,179 @@
+[
+  {
+    "id": "mongodb_index_purpose_001",
+    "content": "MongoDB索引的核心作用是提升查询效率，避免全集合扫描。它通过限制需要检查的文档数量来加速查询，并能支持排序操作。但索引的维护会带来写入性能开销，因此在写多读少的场景下需谨慎使用。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "你能解释一下MongoDB中索引的主要作用是什么吗？",
+      "best_answer_model": {
+        "logic_chain": "查询效率提升 -> 避免集合扫描 -> 支持排序结果 -> 权衡写入开销",
+        "scoring_keywords": [
+          "查询效率",
+          "集合扫描",
+          "限制文档数量",
+          "排序结果",
+          "写入性能开销",
+          "写多读少"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md"
+    }
+  },
+  {
+    "id": "mongodb_index_types_001",
+    "content": "MongoDB支持多种索引类型以适应不同场景，包括单字段、复合、多键、哈希、文本、地理位置、唯一和TTL索引，每种索引针对特定数据结构和查询需求设计。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请介绍一下MongoDB支持哪些类型的索引？",
+      "best_answer_model": {
+        "logic_chain": "基本类型列举 -> 复合与多键索引 -> 特殊功能索引 -> 使用场景总结",
+        "scoring_keywords": [
+          "单字段索引",
+          "复合索引",
+          "多键索引",
+          "哈希索引",
+          "文本索引",
+          "地理位置索引"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md"
+    }
+  },
+  {
+    "id": "mongodb_index_composite_order_001",
+    "content": "复合索引中字段的顺序至关重要，它决定了索引的排序规则和查询匹配效率。索引首先按第一个字段排序，再在每个相同值内按后续字段排序。查询的排序条件必须与索引的排序方向（前缀）匹配才能有效利用该索引，否则可能导致索引失效或全表扫描。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "在MongoDB的复合索引中，字段的先后顺序会对查询性能产生影响吗？",
+      "best_answer_model": {
+        "logic_chain": "索引排序规则 -> 查询匹配原则 -> 性能影响分析",
+        "scoring_keywords": [
+          "字段顺序",
+          "排序规则",
+          "前缀匹配",
+          "索引失效",
+          "查询性能"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md"
+    }
+  },
+  {
+    "id": "mongodb_index_compound_leftprefix_001",
+    "content": "MongoDB 复合索引遵循左前缀原则，即索引支持所有以最左字段开头的字段组合查询，但无法支持不包含最左字段的查询条件。",
+    "metadata": {
+      "category_stack": "MongoDB 索引",
+      "interview_point": "MongoDB 的复合索引是否遵循左前缀原则？请解释一下。",
+      "best_answer_model": {
+        "logic_chain": "复合索引定义 -> 左前缀原则解释 -> 支持与不支持的查询场景",
+        "scoring_keywords": [
+          "复合索引",
+          "左前缀原则",
+          "最左字段",
+          "前缀组合",
+          "查询支持"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md"
+    }
+  },
+  {
+    "id": "mongodb_index_ttl_001",
+    "content": "TTL索引是MongoDB的一种特殊索引，通过为文档设置过期时间实现自动清理。它适用于日志、会话等临时数据，后台线程定期扫描删除过期文档，但删除操作存在延迟且受副本集架构影响。",
+    "metadata": {
+      "category_stack": "MongoDB索引",
+      "interview_point": "你能解释一下MongoDB中的TTL索引是什么吗？",
+      "best_answer_model": {
+        "logic_chain": "核心定义与目的 -> 适用场景 -> 后台运行机制与延迟说明 -> 副本集行为 -> 关键限制条件",
+        "scoring_keywords": [
+          "过期机制",
+          "expireAfterSeconds",
+          "后台线程",
+          "副本集主节点",
+          "单字段索引",
+          "上限集合"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md"
+    }
+  },
+  {
+    "id": "mongodb_index_covering_query_001",
+    "content": "覆盖索引查询是指查询条件和返回字段都包含在同一个索引中，数据库无需回表查询数据文档，直接从内存中的索引获取结果，从而极大提升查询性能。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "你能解释一下什么是MongoDB中的覆盖索引查询吗？",
+      "best_answer_model": {
+        "logic_chain": "定义与条件 -> 性能优势 -> 使用注意事项",
+        "scoring_keywords": [
+          "查询字段在索引中",
+          "返回字段在索引中",
+          "无需回表",
+          "索引在内存",
+          "性能提升",
+          "排除_id字段"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md"
+    }
+  },
+  {
+    "id": "mongodb_high_availability_replica_set_001",
+    "content": "MongoDB复制集群是一组维护相同数据集的进程，包含主节点、从节点和可选的仲裁节点。主节点负责所有写操作并通过oplog同步数据给从节点，实现自动故障转移和读写分离，确保高可用性。",
+    "metadata": {
+      "category_stack": "MongoDB高可用",
+      "interview_point": "请解释一下什么是MongoDB的复制集群（副本集）？",
+      "best_answer_model": {
+        "logic_chain": "集群定义与组成 -> 节点角色与职责 -> 数据同步机制(oplog) -> 核心价值（故障转移与读写分离）",
+        "scoring_keywords": [
+          "副本集",
+          "主节点",
+          "从节点",
+          "oplog",
+          "故障转移",
+          "读写分离"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md"
+    }
+  },
+  {
+    "id": "mongodb_sharding_cluster_001",
+    "content": "分片集群是MongoDB实现水平扩展的分布式架构，由配置服务器、路由服务和多个分片组成，旨在突破单机存储与性能瓶颈。其核心机制包括基于分片键的数据分布、Chunk的分裂与迁移以及自动负载均衡。",
+    "metadata": {
+      "category_stack": "MongoDB高可用",
+      "interview_point": "请介绍一下MongoDB的分片集群，包括它的核心组件和工作原理。",
+      "best_answer_model": {
+        "logic_chain": "集群定义与目标 -> 三大核心组件 -> 分片键与数据分布 -> 分片策略 -> Chunk存储与平衡机制",
+        "scoring_keywords": [
+          "水平扩展",
+          "Config Servers",
+          "Mongos",
+          "分片键",
+          "Chunk",
+          "Balancer"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md"
+    }
+  },
+  {
+    "id": "mongodb_learning_resources_001",
+    "content": "推荐 MongoDB 官方中文手册、7天初学者教程以及 SpringBoot 整合实战文章，涵盖官方文档、快速入门和 Java 客户端操作等核心学习路径。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "如果要学习 MongoDB，你会推荐哪些学习资料或途径？",
+      "best_answer_model": {
+        "logic_chain": "官方文档 -> 快速入门教程 -> 实战整合文章",
+        "scoring_keywords": [
+          "官方文档",
+          "中文手册",
+          "初学者教程",
+          "SpringBoot整合",
+          "Java客户端"
+        ]
+      },
+      "source_ref": "mongodb-questions-02.md"
+    }
+  }
+]

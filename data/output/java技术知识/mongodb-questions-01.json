@@ -1,0 +1,348 @@
+[
+  {
+    "id": "mongodb_basis_intro_001",
+    "content": "本内容参考了MongoDB官方文档的描述，旨在说明其权威性，是数据库相关面试的背景信息。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请说明一下，你在准备这个MongoDB相关问题时，参考了哪些权威资料？",
+      "best_answer_model": {
+        "logic_chain": "问题背景说明 -> 引用官方文档 -> 强调内容权威性",
+        "scoring_keywords": [
+          "官方文档",
+          "权威性",
+          "参考说明",
+          "背景信息"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_basis_intro_001",
+    "content": "MongoDB是一个开源的NoSQL数据库，采用分布式文件存储和面向文档的数据模型，支持无模式设计，擅长处理复杂数据类型和高并发场景，天然具备水平扩展和高可用能力。",
+    "metadata": {
+      "category_stack": "MongoDB基础",
+      "interview_point": "请简单介绍一下MongoDB是什么，以及它的主要特点。",
+      "best_answer_model": {
+        "logic_chain": "数据库类型 -> 数据模型 -> 核心特性 -> 适用场景",
+        "scoring_keywords": [
+          "NoSQL",
+          "分布式文件存储",
+          "面向文档",
+          "无模式",
+          "水平扩展",
+          "高可用"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_basis_storage_structure_001",
+    "content": "MongoDB的存储结构由文档、集合和数据库三个核心单元构成。文档是BSON格式的基本数据单元，集合是文档的无模式容器，数据库则是集合的物理与逻辑分组。",
+    "metadata": {
+      "category_stack": "MongoDB基础",
+      "interview_point": "请描述一下MongoDB的存储结构是怎样的？",
+      "best_answer_model": {
+        "logic_chain": "核心单元构成 -> 文档（BSON） -> 集合（无模式） -> 数据库（分组与权限）",
+        "scoring_keywords": [
+          "文档",
+          "集合",
+          "数据库",
+          "BSON",
+          "无模式"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_basis_features_001",
+    "content": "MongoDB作为NoSQL数据库，核心特点包括以BSON文档存储数据、模式自由、支持多种查询与索引、提供ACID事务保证、具备高效二进制存储与压缩、支持自动故障恢复与分片集群扩展，并能通过GridFS处理大文件。",
+    "metadata": {
+      "category_stack": "MongoDB基础",
+      "interview_point": "请介绍一下MongoDB的主要特点有哪些？",
+      "best_answer_model": {
+        "logic_chain": "数据存储形式 -> 模式设计 -> 查询与事务能力 -> 存储效率与扩展性 -> 高可用与大数据处理",
+        "scoring_keywords": [
+          "BSON文档",
+          "模式自由",
+          "ACID事务",
+          "分片集群",
+          "GridFS",
+          "自动故障恢复"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_basis_scenario_001",
+    "content": "MongoDB适合需要灵活数据模型、水平扩展能力以及强大索引支持的应用场景，如处理大数据量、快速迭代的项目。",
+    "metadata": {
+      "category_stack": "MongoDB基础",
+      "interview_point": "MongoDB适合什么样的应用场景？",
+      "best_answer_model": {
+        "logic_chain": "数据模型灵活性 -> 水平扩展性 -> 索引支持多样性 -> 结合项目需求评估",
+        "scoring_keywords": [
+          "灵活数据模型",
+          "水平扩展",
+          "分片集群",
+          "多种索引",
+          "BSON文档"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_storage_engine_001",
+    "content": "MongoDB采用插件式存储引擎架构，支持多种引擎以适应不同场景。当前主流引擎是默认的WiredTiger，提供文档级并发和压缩等功能；企业版还提供In-Memory引擎，将数据完全保留在内存中以实现低延迟。",
+    "metadata": {
+      "category_stack": "MongoDB存储引擎",
+      "interview_point": "MongoDB支持哪些存储引擎？",
+      "best_answer_model": {
+        "logic_chain": "插件式架构 -> 历史引擎MMAPv1 -> 当前主流引擎WiredTiger -> 企业版In-Memory引擎 -> 第三方引擎支持",
+        "scoring_keywords": [
+          "插件式架构",
+          "WiredTiger",
+          "In-Memory",
+          "文档级并发",
+          "数据压缩",
+          "可插拔API"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_storage_engine_wiredtiger_001",
+    "content": "MongoDB的WiredTiger存储引擎默认使用B+树作为其核心存储结构，内部节点仅存储键，叶子节点存储键值对。它也支持LSM树作为可选项，但标准配置是基于B+树实现的。",
+    "metadata": {
+      "category_stack": "MongoDB存储引擎",
+      "interview_point": "MongoDB的WiredTiger存储引擎是基于LSM Tree还是B+ Tree实现的？",
+      "best_answer_model": {
+        "logic_chain": "主流引擎背景 -> WiredTiger默认选择 -> B+树结构解析 -> LSM树作为可选支持",
+        "scoring_keywords": [
+          "WiredTiger",
+          "B+树",
+          "LSM树",
+          "默认存储引擎",
+          "叶子节点"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_aggregation_usage_001",
+    "content": "MongoDB聚合操作用于对多个文档或集合的数据进行汇总、计算和分析，例如求和、求最大值，以返回处理后的结果集。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请解释一下MongoDB中的聚合操作有什么作用？",
+      "best_answer_model": {
+        "logic_chain": "核心定义 -> 数据处理目的 -> 典型应用场景",
+        "scoring_keywords": [
+          "聚合操作",
+          "文档组合",
+          "数据运算",
+          "分析数据"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_aggregation_methods_001",
+    "content": "MongoDB 主要提供两种聚合方法：首选且功能强大的聚合管道，以及单一目的的聚合函数如 count() 和 distinct()。虽然历史上有 map-reduce，但自 5.0 版本起已不推荐使用。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "MongoDB 提供了哪几种执行聚合的方法？",
+      "best_answer_model": {
+        "logic_chain": "方法分类 -> 首选方法详解 -> 历史方法状态",
+        "scoring_keywords": [
+          "聚合管道",
+          "单一目的聚合",
+          "map-reduce",
+          "阶段操作符",
+          "不推荐使用"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_transaction_basis_001",
+    "content": "MongoDB事务支持多文档ACID操作，具备原子性、一致性、隔离性和持久性。从4.0版本开始支持副本集事务，4.2版本扩展至分片集群的分布式事务，但性能成本较高，通常建议优先使用数据建模来减少事务需求。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请介绍一下MongoDB事务的基本原理和特性。",
+      "best_answer_model": {
+        "logic_chain": "ACID特性概述 -> 单文档与多文档事务区别 -> 版本演进与部署模式支持 -> 性能考量与最佳实践",
+        "scoring_keywords": [
+          "ACID",
+          "多文档事务",
+          "分布式事务",
+          "WiredTiger",
+          "副本集",
+          "分片集群"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_data_compression_001",
+    "content": "MongoDB 借助 WiredTiger 存储引擎支持对集合、索引和日志进行压缩，以存储空间换取 CPU 开销。默认使用 Snappy 算法，也支持 zlib 和 Zstandard 等算法，用户可根据场景在压缩比与性能间权衡。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请介绍一下 MongoDB 中的数据压缩机制，特别是 WiredTiger 存储引擎是如何支持的？",
+      "best_answer_model": {
+        "logic_chain": "存储引擎支持 -> 默认压缩算法 -> 可选算法对比 -> 日志压缩规则",
+        "scoring_keywords": [
+          "WiredTiger",
+          "Snappy",
+          "zlib",
+          "Zstandard",
+          "块压缩",
+          "前缀压缩"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_amazon_documentdb_diff_001",
+    "content": "Amazon DocumentDB 是 AWS 提供的完全托管、与 MongoDB 协议兼容的数据库服务，强调云端的易用性、可靠性和可扩展性，但其底层实现与开源 MongoDB 不同。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请介绍一下 Amazon DocumentDB 与 MongoDB 的差异。",
+      "best_answer_model": {
+        "logic_chain": "服务定义 -> 兼容性说明 -> 核心特性 -> 底层实现差异",
+        "scoring_keywords": [
+          "完全托管",
+          "MongoDB 兼容",
+          "云端服务",
+          "可扩展性",
+          "底层实现"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_vectorsearch_operator_001",
+    "content": "Amazon DocumentDB 不支持独立的 $vectorSearch 运算符，而是通过 $search 运算符内部的 vectorSearch 功能来实现向量搜索。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请解释一下 Amazon DocumentDB 与 MongoDB 在 $vectorSearch 运算符支持上的主要差异。",
+      "best_answer_model": {
+        "logic_chain": "运算符支持差异 -> 功能实现方式 -> 官方文档指引",
+        "scoring_keywords": [
+          "$vectorSearch",
+          "$search",
+          "vectorSearch",
+          "Amazon DocumentDB",
+          "向量搜索"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_amazondocumentdb_opcounterscommand_001",
+    "content": "Amazon DocumentDB的OpCountersCommand在统计命令时，排除了find命令并计入了内部管理命令，而MongoDB的opcounters.command则统计除增删改外的所有命令，不包含内部命令。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请解释一下Amazon DocumentDB的OpCountersCommand与MongoDB的opcounters.command在行为上有哪些主要差异？",
+      "best_answer_model": {
+        "logic_chain": "MongoDB统计范围 -> Amazon DocumentDB统计范围 -> 核心差异点（find命令与内部命令）",
+        "scoring_keywords": [
+          "opcounters.command",
+          "OpCountersCommand",
+          "排除find命令",
+          "计入内部命令",
+          "命令统计差异"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_amazondocumentdb_differences_001",
+    "content": "Amazon DocumentDB 在数据库和集合管理层面存在限制，不支持 MongoDB 中的本地数据库、`system.*` 系统集合以及 `startup_log` 集合。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请谈谈 Amazon DocumentDB 与 MongoDB 在数据库和集合管理方面有哪些主要差异？",
+      "best_answer_model": {
+        "logic_chain": "管理功能对比 -> 本地数据库支持 -> 系统集合支持",
+        "scoring_keywords": [
+          "Amazon DocumentDB",
+          "本地数据库",
+          "system.* 集合",
+          "startup_log",
+          "管理限制"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_cursor_maxtimems_001",
+    "content": "Amazon DocumentDB 的 cursor.maxTimeMS 为每个独立操作（查询或 getMore）设置超时，而非累计整个游标生命周期。超时检查以5分钟为间隔运行，单个操作耗时超过设定值才会触发超时。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请解释一下 Amazon DocumentDB 中 cursor.maxTimeMS 参数的行为机制。",
+      "best_answer_model": {
+        "logic_chain": "参数定义 -> 独立操作计时 -> 非累计超时机制 -> 扫描器检查间隔",
+        "scoring_keywords": [
+          "maxTimeMS",
+          "独立操作",
+          "getMore",
+          "非累计超时",
+          "5分钟间隔"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_explain_amazon_documentdb_001",
+    "content": "Amazon DocumentDB 模拟 MongoDB 4.0 API，但其底层存储引擎不同，导致查询计划和 `explain()` 输出可能与 MongoDB 存在差异。客户可通过 `$hint` 运算符强制选择索引来控制查询计划。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请解释一下 Amazon DocumentDB 和 MongoDB 在 `explain()` 命令输出和查询计划上可能存在的差异。",
+      "best_answer_model": {
+        "logic_chain": "底层架构差异 -> 查询计划与explain输出不同 -> 使用$hint控制索引选择",
+        "scoring_keywords": [
+          "模拟API",
+          "存储引擎",
+          "查询计划",
+          "explain输出",
+          "$hint运算符",
+          "索引选择"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  },
+  {
+    "id": "mongodb_field_name_restrictions_001",
+    "content": "Amazon DocumentDB 对字段名称有额外限制，不支持包含点号（.）和以美元符号（$）开头的字段名，而 MongoDB 则允许这些命名。",
+    "metadata": {
+      "category_stack": "MongoDB",
+      "interview_point": "请谈谈 Amazon DocumentDB 与 MongoDB 在字段名称限制方面有哪些主要差异？",
+      "best_answer_model": {
+        "logic_chain": "字段名称限制概述 -> 点号（.）限制 -> 美元符号（$）前缀限制 -> 对比 MongoDB 的兼容性",
+        "scoring_keywords": [
+          "字段名称限制",
+          "点号不支持",
+          "$前缀不支持",
+          "MongoDB 允许",
+          "DocumentDB 错误"
+        ]
+      },
+      "source_ref": "mongodb-questions-01.md"
+    }
+  }
+]

@@ -1,0 +1,1064 @@
+[
+  {
+    "id": "beh_custom_solution_01",
+    "content": "请描述一个您必须为客户/用户定制解决方案的情境或项目。",
+    "metadata": {
+      "category": "以客户为中心 / 用户导向",
+      "interview_point": "考察候选人识别客户需求、定制解决方案、有效执行并评估结果的能力，以体现以客户为中心的理念。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了客户或用户的具体背景、需求或挑战，以及定制解决方案的必要性？",
+          "Task": "候选人是否明确说明了需要完成的任务、目标或期望的定制化成果？",
+          "Action": "候选人是否详细阐述了如何分析需求、设计解决方案、与客户协作、克服障碍，并采取具体行动来定制方案？",
+          "Result": "候选人是否量化或具体说明了解决方案的效果、客户满意度、业务影响或从中学习的经验？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_client_decision",
+    "content": "请谈谈您如何确保在做决策时，始终将客户需求放在核心位置。",
+    "metadata": {
+      "category": "以客户为中心 / 用户导向",
+      "interview_point": "考察候选人在决策过程中如何系统性地识别、分析和优先考虑客户需求，并将其作为决策的核心依据，以确保最终结果符合客户期望并创造价值。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的决策场景，例如产品功能开发、服务流程优化或业务策略调整，其中涉及多方利益或复杂权衡，需要确保客户需求得到优先考虑。",
+          "Task": "请说明在该场景中，您的主要任务是什么？例如，需要平衡客户需求与内部资源限制、成本压力或技术约束，同时确保决策结果能有效满足客户核心诉求。",
+          "Action": "请详细阐述您采取了哪些具体行动来确保客户需求在决策中处于核心位置？例如，如何收集和分析客户反馈、建立客户需求评估框架、与跨部门团队协作以整合客户视角，或使用数据驱动方法验证需求优先级。",
+          "Result": "请说明决策的最终结果如何？例如，客户满意度是否提升、业务指标（如留存率、收入）是否改善，或是否获得了客户正面反馈？请量化结果或提供具体证据。"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_difficult_client_01",
+    "content": "能否分享一次您必须让难缠客户满意的经历？ 您当时是如何处理的？ 结果成功了吗？ 您从中吸取了什么教训？",
+    "metadata": {
+      "category": "以客户为中心 / 用户导向",
+      "interview_point": "考察候选人在面对难缠客户时，如何运用客户导向思维、沟通技巧和问题解决能力来满足客户需求，并从中反思学习的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体的、涉及难缠客户的真实工作场景，包括客户的身份、问题的性质、当时的紧迫性或挑战性？",
+          "Task": "候选人是否明确说明自己在该情境中的具体职责和目标，特别是如何定义“让客户满意”这一任务，以及面临的约束或困难？",
+          "Action": "候选人是否详细阐述自己采取的具体行动步骤，例如如何倾听客户诉求、分析问题根源、制定解决方案、进行有效沟通、协调资源或调整策略，以体现客户导向和问题解决能力？",
+          "Result": "候选人能否量化或具体说明行动的结果，包括客户是否满意、问题是否解决、业务影响如何，以及从中学到了什么教训或如何应用于未来工作？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_client_innovation",
+    "content": "能否举例说明您曾为客户开发过的一项创新解决方案？",
+    "metadata": {
+      "category": "以客户为中心 / 用户导向",
+      "interview_point": "考察候选人识别客户需求、运用创新思维设计解决方案、有效执行并评估成果的能力，体现以客户为中心的价值导向。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了客户的具体背景、面临的挑战或需求场景？",
+          "Task": "候选人是否明确说明了需要解决的核心问题、目标以及创新解决方案的预期价值？",
+          "Action": "候选人是否详细阐述了如何设计、开发和实施创新方案，包括创意来源、关键步骤、资源利用和应对障碍的策略？",
+          "Result": "候选人是否量化或具体说明了解决方案带来的成果，如客户满意度提升、效率改进、成本节约等，并反思了经验教训？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_client_culture_01",
+    "content": "是否曾有一次您主动推动了“以客户为中心”的团队文化？ 您具体做了什么？ 如何确保同事和利益相关方达成共识并参与其中？",
+    "metadata": {
+      "category": "以客户为中心 / 用户导向",
+      "interview_point": "考察候选人是否具备主动推动团队文化变革的能力，特别是围绕客户中心理念，包括具体行动、共识建立和利益相关方参与的策略。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体情境，如团队文化缺乏客户导向、客户反馈不佳或业务需求变化，需要推动文化变革？",
+          "Task": "候选人是否明确说明其主动承担的任务，如倡导客户中心文化、设计变革方案或领导相关倡议？",
+          "Action": "候选人是否详细阐述具体行动，例如组织培训、建立反馈机制、沟通策略或协作活动，并说明如何确保同事和利益相关方（如管理层、跨部门团队）达成共识和参与？",
+          "Result": "候选人能否量化或定性展示结果，如团队文化改善、客户满意度提升、业务指标增长或利益相关方反馈积极？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_client_understanding",
+    "content": "请举例说明：当客户难以理解您的产品，或不认可产品价值时，您采取了什么行动？ 最终成单了吗？ 现在回想起来，您会有不同的做法吗？",
+    "metadata": {
+      "category": "以客户为中心 / 用户导向",
+      "interview_point": "考察候选人在面对客户不理解或不认可产品价值时，如何通过沟通、调整策略或提供额外支持来解决问题，并反思改进能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了客户难以理解或不认可产品价值的具体场景，包括客户背景、产品特点和遇到的障碍？",
+          "Task": "候选人是否明确说明了在此情境下需要完成的任务，例如帮助客户理解产品、改变客户看法或达成销售目标？",
+          "Action": "候选人是否详细阐述了采取的具体行动，如调整沟通方式、提供演示、定制解决方案或寻求反馈，并解释这些行动如何针对客户需求？",
+          "Result": "候选人是否说明了行动的结果，包括是否成单、客户反馈如何，以及现在回想起来是否有不同的做法，并解释原因？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_client_conflict_01",
+    "content": "请分享一个与客户发生冲突升级的案例。 您是如何解决的？ 会有不同的处理方式吗？",
+    "metadata": {
+      "category": "团队优先心态",
+      "interview_point": "考察候选人在客户冲突升级时，如何平衡客户需求与团队利益，通过协作、沟通和问题解决来维护团队优先心态，同时反思和改进处理方式。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了冲突升级的具体背景，包括客户身份、冲突原因、时间地点和涉及的关键团队或资源？",
+          "Task": "候选人是否明确说明了在冲突中需要达成的目标，例如解决客户问题、维护团队声誉、避免资源浪费或促进长期合作？",
+          "Action": "候选人是否详细阐述了采取的步骤，如倾听客户、协调团队内部沟通、制定解决方案、执行干预措施，并展示如何优先考虑团队整体利益而非个人或单一客户需求？",
+          "Result": "候选人是否量化或具体说明了冲突解决的结果，包括客户满意度、团队效率提升、避免的负面影响，以及从中学到的经验或可替代的处理方式？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_team_collab_01",
+    "content": "请分享一次您作为团队成员，必须建立内部协作关系的经历。 您在团队中扮演什么角色，采取了哪些行动，对业务结果产生了什么影响，您是如何与其他成员互动的？",
+    "metadata": {
+      "category": "团队优先心态",
+      "interview_point": "考察候选人在团队环境中主动建立和维护协作关系的能力，包括角色定位、具体行动、对业务结果的贡献以及团队互动方式，以评估其团队优先心态和合作精神。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述一个需要建立内部协作关系的具体团队场景，包括团队背景、项目目标、面临的挑战或机会？",
+          "Task": "候选人是否明确说明自己在团队中的角色和职责，以及为促进协作需要完成的具体任务或目标？",
+          "Action": "候选人是否详细阐述为建立协作关系采取的具体行动，如沟通策略、协调方法、解决冲突或促进信任的措施，以及如何与其他成员互动？",
+          "Result": "候选人是否能量化或具体说明这些行动对业务结果的影响，如项目成功、效率提升、团队凝聚力增强等，并反思个人在协作中的成长？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_team_alignment_01",
+    "content": "谈谈您必须协调或对齐不同团队/利益相关方的经历。 当时面临哪些挑战？ 您是如何克服的？",
+    "metadata": {
+      "category": "团队优先心态",
+      "interview_point": "考察候选人在跨团队协作中识别挑战、采取有效行动以实现目标的能力，以及是否具备以团队利益为优先的思维模式。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了需要协调或对齐不同团队/利益相关方的具体背景？例如，项目涉及多个部门、存在资源冲突、目标不一致或沟通障碍等情境。",
+          "Task": "候选人是否明确说明了在该情境下需要完成的具体任务或目标？例如，确保项目按时交付、统一各方期望、解决分歧或优化协作流程等。",
+          "Action": "候选人是否详细阐述了为克服挑战所采取的具体行动？例如，如何促进沟通、建立共识、调整计划、分配资源或处理冲突，并体现团队优先的决策过程。",
+          "Result": "候选人是否量化或具体描述了行动的结果？例如，项目成功完成、团队效率提升、利益相关方满意度提高或长期协作关系改善等。"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_team_disappointment_01",
+    "content": "描述一次您在项目团队中遭遇挫折或失望的场景。 发生了什么——您是如何应对的？ 学到了什么？ 未来会如何改进？",
+    "metadata": {
+      "category": "团队优先心态",
+      "interview_point": "考察候选人在团队挫折中的情绪管理、问题解决能力、团队协作反思及持续改进意识",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了具体的团队项目背景、挫折事件的时间、地点、涉及人员及具体情境？",
+          "Task": "候选人是否明确了在挫折中需要解决的核心问题、个人承担的角色以及团队面临的共同挑战？",
+          "Action": "候选人是否详细说明了应对挫折的具体步骤，包括情绪调节、沟通协调、问题分析、团队协作等方面的实际行动？",
+          "Result": "候选人是否客观评估了应对措施的效果，总结了从挫折中学到的关键教训，并提出了具体可行的未来改进方案？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_team_conflict_01",
+    "content": "谈谈您与同事产生意见分歧的一次经历。 当时情况如何？ 您是如何解决冲突的？ 您从中吸取了什么教训？",
+    "metadata": {
+      "category": "团队优先心态",
+      "interview_point": "考察候选人在团队冲突中如何平衡个人观点与团队目标，通过有效沟通和协作解决分歧，并从中反思成长，体现团队优先的价值观。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述与同事产生意见分歧的具体情境，包括项目背景、双方角色、分歧焦点及潜在影响？",
+          "Task": "候选人是否明确识别出解决冲突的核心任务，如维护团队和谐、达成共识或推进项目，而非单纯坚持己见？",
+          "Action": "候选人是否采取了积极、建设性的行动来解决冲突，例如主动沟通、倾听对方观点、寻求共同点、妥协或引入第三方协调？",
+          "Result": "候选人是否说明了冲突解决后的具体成果，如团队协作改善、项目进展、个人或团队收获的教训，以及如何应用这些经验促进团队优先心态？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_team_priority_01",
+    "content": "请回忆一次：当同事没有履行承诺，或交付的工作质量较差，导致项目面临风险时，您是如何处理的？ 您与这位同事如何沟通？ 最终结果如何？",
+    "metadata": {
+      "category": "团队优先心态",
+      "interview_point": "考察候选人在面对同事工作失误导致项目风险时，如何以团队优先的心态进行有效沟通、协作和问题解决，以维护项目目标和团队和谐。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述具体情境，包括项目背景、同事未履行承诺或工作质量差的具体表现，以及由此导致的项目风险（如时间延误、成本超支或质量下降）？",
+          "Task": "候选人是否明确说明自己在此情境中的任务和责任，例如需要解决项目风险、与同事沟通以改进工作，并确保团队整体目标的达成？",
+          "Action": "候选人是否详细阐述采取的行动，包括如何与同事进行建设性沟通（如私下交流、表达关切、提供支持）、如何协作解决问题（如重新分配任务、提供培训或资源）、以及如何优先考虑团队利益而非个人指责？",
+          "Result": "候选人是否具体说明最终结果，包括项目风险是否得到缓解（如按时交付、质量提升）、同事关系是否改善、团队协作是否增强，以及从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_team_cohesion_01",
+    "content": "您是否曾主动增强团队凝聚力，或在团队内推动知识共享？ 您具体做了什么？",
+    "metadata": {
+      "category": "团队优先心态",
+      "interview_point": "考察候选人是否具备主动提升团队凝聚力和促进知识共享的能力，以评估其团队优先心态和协作精神。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体情境，例如团队面临凝聚力不足、知识孤岛或协作效率低下的挑战？",
+          "Task": "候选人是否明确说明自己主动承担的任务，如增强团队凝聚力或推动知识共享，并设定具体目标？",
+          "Action": "候选人是否详细阐述采取的具体行动，例如组织团队活动、建立知识分享机制或促进沟通，并展示其主动性和创新性？",
+          "Result": "候选人能否量化或定性说明行动的结果，如团队凝聚力提升、知识共享效率提高或整体绩效改善？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_team_collab_01",
+    "content": "团队协作中的问题解决：假设您正在负责一个非常棒的新项目，需要另一个团队的协助才能完成。 但对方看起来缺乏配合意愿。 您会怎么做？",
+    "metadata": {
+      "category": "团队优先心态",
+      "interview_point": "考察候选人在跨团队协作中遇到阻力时，如何主动沟通、理解对方立场、寻求共赢解决方案，并展现团队优先的思维模式，而非单方面施压或抱怨。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述项目背景、自身角色、对另一个团队协助的具体需求，以及对方缺乏配合意愿的具体表现（如沟通冷淡、拖延回复、资源不配合等）？",
+          "Task": "候选人是否明确识别出核心任务是解决协作障碍，确保项目顺利推进，同时维护良好的跨团队关系，而非仅仅完成自身工作？",
+          "Action": "候选人是否采取了主动、建设性的行动，例如：首先尝试理解对方团队的压力或优先级（如通过私下沟通、了解其工作负载），然后基于共同利益提出协作方案（如调整时间表、明确分工、争取上级支持），并保持开放沟通和灵活调整？",
+          "Result": "候选人是否描述了协作问题如何得到解决（如对方团队转为积极配合、项目按计划推进），并反思了从中学到的团队协作经验或对长期关系的积极影响？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_ownership_collaboration",
+    "content": "谈谈您需要借助另一个团队或同事的专业知识来解决问题的经历。 当时情况如何？ 您做了什么？ 这种处理方式有什么需要改变的吗？",
+    "metadata": {
+      "category": "主人翁精神",
+      "interview_point": "考察候选人在面对跨团队或跨专业问题时，是否展现出主动寻求资源、有效协作、反思改进的主人翁精神，而非被动等待或推卸责任。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述一个具体的工作场景，其中涉及需要借助外部专业知识来解决的复杂问题，并说明问题的紧迫性、影响范围以及自身职责？",
+          "Task": "候选人是否明确阐述自己在此情境中承担的核心任务或目标，例如需要整合多方资源、确保问题高效解决、维护团队协作关系等？",
+          "Action": "候选人是否详细说明自己如何主动识别专业知识缺口、联系并协调相关团队或同事、有效沟通需求、共同制定解决方案，并在此过程中展现出责任感与领导力？",
+          "Result": "候选人是否能量化或具体描述问题解决的效果（如效率提升、成本节约、关系加强等），并客观反思处理方式的优缺点，提出有建设性的改进建议？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_ownership_01",
+    "content": "谈谈您主动为某个项目或想法承担责任并对业务成功产生影响的经历。 您做了什么？ 是否发动了其他人？ 影响是什么？",
+    "metadata": {
+      "category": "主人翁精神",
+      "interview_point": "考察候选人主动承担责任、推动项目或想法落地、动员他人参与并对业务产生积极影响的能力，体现其主人翁精神和领导力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了当时的具体情境，包括项目或想法的背景、面临的挑战或机会，以及为什么需要主动承担责任？",
+          "Task": "候选人是否明确说明了在该情境下需要完成的具体任务或目标，以及其主动承担的责任范围？",
+          "Action": "候选人是否详细阐述了为完成任务所采取的具体行动，包括如何主动承担责任、如何发动他人参与、如何克服困难，以及使用了哪些策略或方法？",
+          "Result": "候选人是否量化或具体说明了行动的结果，包括对业务成功的影响（如提升效率、增加收入、降低成本等），以及是否反思了经验教训？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_ownership_commitment",
+    "content": "您如何确保自己能够达成承诺？ 请结合过往工作经验举例说明。",
+    "metadata": {
+      "category": "主人翁精神",
+      "interview_point": "考察候选人是否具备强烈的责任感和承诺意识，能否通过系统性的方法和实际行动来确保承诺的达成，体现主人翁精神中的可靠性和执行力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了过往工作中一个具体的承诺场景，包括背景、相关方和承诺的具体内容？",
+          "Task": "候选人是否明确说明了在该情境下需要完成的任务或目标，以及承诺达成的具体要求和标准？",
+          "Action": "候选人是否详细阐述了为确保承诺达成所采取的具体行动、方法和策略，如计划制定、资源协调、风险应对等？",
+          "Result": "候选人是否说明了承诺达成的最终结果，包括量化成果、影响评估以及从中学到的经验或改进措施？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_ownership_01",
+    "content": "描述一个您必须克服障碍才能完成工作并达到预期的场景。 您是独立找到解决方案的还是寻求了他人帮助？ 结果如何？ 学到了什么？",
+    "metadata": {
+      "category": "主人翁精神",
+      "interview_point": "考察候选人在面对工作障碍时，是否展现出主动承担责任、积极解决问题、并从中学习和成长的主人翁精神，包括独立性和协作性的平衡。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了具体的场景，包括时间、地点、相关人物和面临的障碍（如资源限制、技术难题、团队冲突等），以展示其主人翁精神的背景？",
+          "Task": "候选人是否明确说明了在该场景中需要完成的工作任务或目标，以及预期的标准或要求，以体现其对职责的认知和承诺？",
+          "Action": "候选人是否详细阐述了为克服障碍所采取的具体行动，包括如何分析问题、制定解决方案、独立工作或寻求帮助的过程，以及如何平衡自主性和协作性，以展示其主动性和责任感？",
+          "Result": "候选人是否客观陈述了行动的结果，包括是否成功完成工作、达到预期目标、对团队或组织的影响，以及从中学到的经验教训，以体现其成长和反思能力？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_commitment_failure_01",
+    "content": "谈谈您没能兑现承诺的一次经历。 您当时是如何处理的，您采取该处理方式背后的逻辑是什么？",
+    "metadata": {
+      "category": "主人翁精神",
+      "interview_point": "考察候选人在未能兑现承诺时的责任感、问题解决能力、反思意识以及主动承担后果的意愿，评估其是否具备主人翁精神，包括诚实面对失败、积极补救和从经验中学习的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了未能兑现承诺的具体情境，包括承诺的内容、相关背景、涉及的人员以及导致无法兑现的关键因素（如时间压力、资源不足、意外事件等）？",
+          "Task": "候选人是否明确说明了在未能兑现承诺后需要承担的任务或责任，例如如何向相关方沟通、评估影响范围、制定补救措施或重新设定目标？",
+          "Action": "候选人是否详细阐述了采取的具体行动步骤，包括如何及时通知受影响方、分析失败原因、实施补救计划（如重新安排、寻求帮助、调整策略）、以及如何确保类似问题不再发生？",
+          "Result": "候选人是否客观评估了处理结果，包括补救措施的效果、相关方的反馈、对个人或团队的长期影响，以及从中学到的关键教训和改进措施？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_ownership_01",
+    "content": "请分享一个既具挑战性又非常消耗精力的项目。 您是如何保持动力和投入度并坚持到底的？",
+    "metadata": {
+      "category": "主人翁精神",
+      "interview_point": "考察候选人在面对高难度、高强度项目时，如何主动承担责任、保持内在驱动力、克服困难并坚持完成，体现其主人翁意识和自我激励能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了项目的具体背景、挑战性（如技术复杂度、时间压力、资源限制等）以及精力消耗大的原因（如长期加班、多任务并行、高压环境等）？",
+          "Task": "候选人是否明确说明了自身在该项目中的角色、职责以及需要达成的具体目标或交付成果？",
+          "Action": "候选人是否详细阐述了如何主动采取措施保持动力和投入度（如设定小目标、寻求反馈、调整心态、团队协作、平衡工作与休息等），并展示了持续坚持的具体行为？",
+          "Result": "候选人是否说明了项目的最终成果（如成功交付、达成目标、获得认可等），以及个人从中学到的经验或对团队/组织的积极影响？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_ownership_new_company",
+    "content": "谈谈当您刚进入一家新公司时的经历。 您是如何获取业务部门知识并了解公司业务流程的？",
+    "metadata": {
+      "category": "主人翁精神",
+      "interview_point": "考察候选人在新环境中主动学习、融入团队和掌握业务知识的主动性、适应性和责任感，体现其主人翁精神。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了刚进入新公司时的具体情境，包括公司背景、职位角色、面临的挑战或机会？",
+          "Task": "候选人是否明确说明了在新环境中需要完成的任务，如快速获取业务部门知识、理解公司流程、融入团队或提升工作效率？",
+          "Action": "候选人是否详细阐述了采取的具体行动，例如主动与同事沟通、参加培训、阅读文档、观察实践或制定学习计划，以展示其主动性和策略性？",
+          "Result": "候选人是否量化或具体说明了行动的结果，如成功掌握关键业务流程、提升工作绩效、获得团队认可或为公司带来积极影响？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_workload_management_01",
+    "content": "您如何进行工作量管理？ 请举例说明您必须根据实际情况调整计划的经历。",
+    "metadata": {
+      "category": "主人翁精神",
+      "interview_point": "考察候选人在面对工作量变化或计划调整时，是否具备主动承担责任、灵活应对和确保目标达成的能力，体现其主人翁精神。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了具体的工作场景，包括初始的工作量、计划安排以及导致调整的关键因素（如突发任务、资源变化、优先级调整等）？",
+          "Task": "候选人是否明确说明了在情境中需要完成的核心任务或目标，以及调整计划的具体需求（如按时交付、保证质量、优化资源等）？",
+          "Action": "候选人是否详细阐述了如何主动评估情况、制定调整策略（如重新分配任务、沟通协调、优化流程等），并采取了哪些具体行动来管理工作量？",
+          "Result": "候选人是否说明了调整后的结果，包括是否达成目标、效率提升、问题解决情况，以及从中学到的经验或改进措施？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_challenging_project_01",
+    "content": "请分享您成功管理过的最具挑战性的项目。 难点在哪里？ 您如何确保项目圆满完成？ 下次会有什么不同做法？ 您如何监控和衡量成功？",
+    "metadata": {
+      "category": "开放心态",
+      "interview_point": "考察候选人在面对复杂项目挑战时的开放心态，包括识别难点、采取适应性行动、反思改进以及客观衡量成果的能力，以评估其学习成长和灵活应对变化的素质。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体、真实且具有显著挑战性的项目背景，包括项目目标、时间框架、团队构成和初始条件，以展示其面对复杂情境的开放认知？",
+          "Task": "候选人能否准确识别项目的核心难点（如资源限制、技术障碍、利益相关者冲突或不确定性），并明确阐述项目成功的关键任务和期望成果，以体现其问题分析和目标设定的开放性？",
+          "Action": "候选人能否详细说明为确保项目圆满完成所采取的具体、适应性行动，包括如何调整策略、沟通协调、风险管理或创新解决方案，并解释这些行动如何体现开放心态（如接纳反馈、尝试新方法或协作学习）？",
+          "Result": "候选人能否客观描述项目的最终成果（如是否达成目标、量化效益或团队成长），并基于反思提出下次的不同做法（如改进流程、优化工具或增强灵活性），同时说明如何监控和衡量成功（如设定指标、收集反馈或持续评估），以展示其从经验中学习并开放调整的持续改进能力？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_open_mind_01",
+    "content": "回想一次您与同事在达成共同目标的最佳路径上产生分歧的经历。 您如何处理该情况？ 如何尝试解决冲突？ 最终选择了哪种方案，为什么？ 您学到了什么？",
+    "metadata": {
+      "category": "开放心态",
+      "interview_point": "考察候选人在面对分歧时，能否保持开放心态，积极倾听不同观点，通过有效沟通和协作解决冲突，最终达成共识并从中学习成长的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述与同事在达成共同目标的最佳路径上产生分歧的具体情境，包括项目背景、目标、分歧点以及双方立场的差异？",
+          "Task": "候选人是否明确说明自己在此情境中的任务或责任，即需要解决分歧、促进团队协作并确保共同目标的实现？",
+          "Action": "候选人如何具体处理该情况？是否展示了开放心态，如主动倾听同事观点、尊重不同意见、寻求共同点？采取了哪些具体行动来尝试解决冲突，例如沟通协商、数据支持、试点验证或引入第三方调解？",
+          "Result": "最终选择了哪种方案，为什么？该方案的实施效果如何，是否成功达成共同目标？候选人从中学到了什么，例如对开放心态、团队协作或问题解决的新见解，以及如何应用于未来工作？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_cross_culture_01",
+    "content": "描述您在跨文化环境下工作的经历及面临的挑战。 您采取了什么方法，结果如何？",
+    "metadata": {
+      "category": "开放心态",
+      "interview_point": "考察候选人在跨文化环境中展现的适应能力、文化敏感度、沟通技巧以及解决文化差异带来的挑战的能力，评估其开放心态和包容性。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了具体的跨文化工作环境（如国家、团队组成、文化背景差异）以及面临的主要挑战（如沟通障碍、工作习惯冲突、价值观差异等）？",
+          "Task": "候选人是否明确说明了在该跨文化环境中需要完成的任务或目标，以及如何应对文化差异带来的具体问题？",
+          "Action": "候选人是否详细阐述了采取的具体方法或策略（如学习当地文化、调整沟通方式、建立信任、寻求共同点等），以促进跨文化合作和解决问题？",
+          "Result": "候选人是否说明了行动的结果，包括如何克服挑战、改善工作关系、达成目标，以及从中学到的经验或对个人开放心态的提升？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_open_feedback_culture",
+    "content": "举例说明您过去如何主动建立并强化开放反馈的文化。",
+    "metadata": {
+      "category": "开放心态",
+      "interview_point": "考察候选人主动建立和强化开放反馈文化的能力，包括识别问题、采取具体行动、鼓励双向沟通、评估效果，以展示开放心态和领导力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述您过去在何种情境下识别到需要建立或强化开放反馈的文化，例如团队沟通不畅、反馈机制缺失或文化封闭等具体背景。",
+          "Task": "请说明您在此情境下的具体任务或目标是什么，例如旨在提升团队透明度、促进持续改进或增强员工参与度。",
+          "Action": "请详细阐述您采取了哪些主动措施来建立和强化开放反馈的文化，例如引入反馈工具、组织定期会议、以身作则鼓励反馈或提供培训等具体行动。",
+          "Result": "请描述这些行动带来的具体结果，例如反馈频率增加、团队满意度提升、问题解决效率提高或文化改善的可量化或定性证据。"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_open_mind_01",
+    "content": "谈谈您向主管公开表达不同意见或异议的一次经历。",
+    "metadata": {
+      "category": "开放心态",
+      "interview_point": "考察候选人在面对不同意见或异议时，是否能够以开放、建设性的方式与主管沟通，展现尊重、专业和解决问题的能力，同时保持积极的工作关系。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了当时的具体情境，包括项目背景、团队环境、主管的角色以及产生不同意见的具体问题或决策？",
+          "Task": "候选人是否明确说明了当时需要完成的任务或目标，以及为什么需要向主管表达不同意见，包括潜在的风险、机会或改进点？",
+          "Action": "候选人是否详细阐述了表达不同意见的具体行动，包括如何准备、沟通方式（如私下或公开场合）、语言表达、倾听主管反馈、以及是否提出替代方案或建议？",
+          "Result": "候选人是否说明了表达不同意见后的结果，包括主管的反应、决策的最终影响、对项目或团队的贡献、以及从中学到的经验或如何维护了工作关系？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_difficult_message",
+    "content": "谈谈您必须传达艰难/负面信息的经历。 内容是什么，您是如何沟通的？",
+    "metadata": {
+      "category": "开放心态",
+      "interview_point": "考察候选人在面对负面信息传达时的开放心态、沟通技巧、同理心以及处理困难情境的能力，包括如何准备、执行和跟进，以确保信息被有效理解和接受，同时维护关系。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了传达艰难/负面信息的具体情境，包括背景、相关方（如团队成员、客户、上级）以及信息的性质（如绩效问题、项目失败、预算削减等），以展示情境的复杂性和挑战性？",
+          "Task": "候选人是否明确说明了在此情境下的任务和目标，例如需要传达的信息内容、期望达成的沟通效果（如保持透明度、减少负面影响、促进改进）以及面临的约束（如时间压力、情绪管理）？",
+          "Action": "候选人是否详细阐述了沟通的具体行动，包括如何准备（如收集事实、规划沟通方式、选择时机和地点）、如何执行（如使用清晰语言、表达同理心、倾听反馈、保持冷静）以及如何跟进（如提供支持、监控反应、调整策略），以体现开放心态和有效沟通？",
+          "Result": "候选人是否客观评估了沟通的结果，包括短期效果（如信息被理解、负面情绪得到缓解）和长期影响（如关系维护、问题解决、个人成长），并反思了经验教训和改进点？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_open_mind_01",
+    "content": "谈谈您面对不确定性并适应不断变化的环境的经历。 您是如何应对的？",
+    "metadata": {
+      "category": "开放心态",
+      "interview_point": "考察候选人在面对不确定性和环境变化时，是否具备开放心态、适应能力和积极应对策略，包括如何分析变化、调整心态、采取行动并取得积极成果。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了面临的具体不确定或变化环境，例如市场波动、技术变革、组织重组或项目方向调整？",
+          "Task": "候选人是否明确了在该情境下需要应对的关键挑战或目标，例如适应新要求、解决未知问题或维持团队稳定？",
+          "Action": "候选人是否详细说明了如何以开放心态应对变化，包括分析变化影响、调整个人或团队策略、学习新技能或寻求支持的具体行动？",
+          "Result": "候选人是否量化或具体描述了应对措施带来的积极成果，例如提升效率、达成目标、增强团队韧性或个人成长？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_high_pressure_01",
+    "content": "谈谈您在高压环境下工作的经历。 您如何处理？ 如何确保自己保持动力和干劲？",
+    "metadata": {
+      "category": "开放心态",
+      "interview_point": "考察候选人在高压环境下的适应能力、压力管理策略、自我激励方法以及保持积极心态的能力，评估其开放心态面对挑战和变化的应对方式。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体的高压工作环境，包括时间紧迫、任务复杂、资源有限或团队冲突等压力来源？",
+          "Task": "候选人是否明确说明在该高压环境下需要完成的具体任务、目标或挑战，以及个人承担的责任？",
+          "Action": "候选人如何具体处理高压环境，包括压力管理技巧（如时间管理、优先级排序、情绪调节）、如何保持动力和干劲（如设定小目标、寻求支持、自我激励），以及是否展现出开放心态（如接受反馈、调整策略、学习新方法）？",
+          "Result": "候选人的行动带来了什么具体成果，如任务完成情况、效率提升、团队协作改善或个人成长，以及如何从高压经历中总结经验和保持积极心态？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_open_mind_announce_change",
+    "content": "分享一个您必须向团队宣布一项会影响他们工作的重大变革（如组织重组、新系统上线、办公地点搬迁等）的场景。",
+    "metadata": {
+      "category": "开放心态",
+      "interview_point": "考察候选人在面对重大变革时，如何以开放心态向团队传达信息、管理情绪、促进适应，并展现对变革的积极态度和团队协作能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了变革的背景、原因和具体情境（如组织重组、系统上线、搬迁等），以及其对团队工作的潜在影响？",
+          "Task": "候选人是否明确说明了宣布变革的任务目标，包括传达信息、安抚团队、促进接受和确保平稳过渡？",
+          "Action": "候选人是否详细阐述了采取的具体行动，如如何准备宣布内容、选择沟通方式、倾听团队反馈、提供支持资源，并展现开放和透明的态度？",
+          "Result": "候选人是否说明了宣布后的结果，包括团队的反应、变革的接受程度、问题解决情况，以及如何评估和跟进变革的长期影响？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_open_mind_diversity_01",
+    "content": "谈谈您在职场中主动实施或加强多元化与包容性文化的经历。",
+    "metadata": {
+      "category": "开放心态",
+      "interview_point": "考察候选人在职场中主动推动多元化与包容性文化的意识、行动和成果，评估其开放心态、领导力、团队协作和问题解决能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述您所在职场中多元化与包容性方面的具体背景或挑战，例如团队构成、文化氛围或相关事件。",
+          "Task": "请说明您主动识别并承担的实施或加强多元化与包容性文化的具体任务或目标。",
+          "Action": "请详细阐述您采取的具体行动，包括策略制定、资源利用、团队协作和沟通方式。",
+          "Result": "请量化或定性描述行动带来的成果，如团队满意度提升、创新增加或文化改善，并反思经验教训。"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_motivation_cultural_adaptation",
+    "content": "您以前在国际化环境中工作过吗？ 请举例说明您必须调整思路以适应不同文化视角的经历。",
+    "metadata": {
+      "category": "动机与驱动力",
+      "interview_point": "考察候选人在跨文化环境中的适应能力、文化敏感性和调整思维以有效协作的动机。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了在特定国际化环境（如跨国团队、海外项目或多元文化客户）中遇到的具体情境，包括涉及的文化差异和挑战？",
+          "Task": "候选人是否明确说明了在该情境中需要完成的任务或目标，例如促进沟通、解决冲突或达成共识，以适应不同文化视角？",
+          "Action": "候选人是否详细阐述了为调整思路和适应文化差异所采取的具体行动，如学习文化规范、调整沟通方式或寻求反馈？",
+          "Result": "候选人是否量化或描述了行动的结果，例如成功完成任务、改善团队协作、提升效率或获得积极反馈？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_motivation_01",
+    "content": "这个岗位的什么特质最吸引您？ 为什么您觉得这些方面能激励到您？",
+    "metadata": {
+      "category": "动机与驱动力",
+      "interview_point": "考察候选人对岗位特质的理解、个人动机与岗位的匹配度，以及这些特质如何激发其工作热情和长期驱动力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个您在选择或评估这个岗位时，具体考虑了哪些岗位特质（如工作内容、团队文化、发展机会等）的情境。",
+          "Task": "请说明您在这个情境中，需要识别和评估哪些岗位特质最能吸引您，并解释为什么这些特质对您个人重要。",
+          "Action": "请详细阐述您如何分析这些特质，包括您如何将它们与您的个人价值观、职业目标或过往经验联系起来，以确定它们能激励您的原因。",
+          "Result": "请说明这些特质如何实际激励了您，例如是否增强了您的工作投入度、提升了绩效或促进了职业成长，并分享一个具体的结果或影响。"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "motivation_drive_01",
+    "content": "描述一段让您感到格外有动力的时光，原因是什么？",
+    "metadata": {
+      "category": "动机与驱动力",
+      "interview_point": "考察候选人的内在驱动力来源、自我激励能力以及价值观与工作目标的匹配度",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了具体的情境背景，如时间、地点、相关人物和事件起因？",
+          "Task": "候选人是否明确说明了在该情境下需要完成的任务或目标，以及该任务对其个人或团队的重要性？",
+          "Action": "候选人是否详细阐述了为达成目标所采取的具体行动步骤，包括如何调动自身动力、克服困难或调整策略？",
+          "Result": "候选人是否客观描述了行动的结果，包括量化成果、个人成长或对团队/组织的影响，并反思了这段经历对其后续动力的启示？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_motivation_recovery",
+    "content": "谈谈您感到动力不足的情况。 您做了什么来找回状态？",
+    "metadata": {
+      "category": "计划与组织能力",
+      "interview_point": "考察候选人在面对动力不足或倦怠时，如何通过自我反思、目标调整、行动计划等方法来重新激发动力、恢复状态，并有效执行计划的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了导致动力不足的具体情境或背景（如工作压力、项目瓶颈、个人因素等），并说明了当时的情绪状态和影响？",
+          "Task": "候选人是否明确了需要解决的核心问题（如恢复工作动力、提升效率、完成特定任务等），并设定了具体的恢复目标或期望结果？",
+          "Action": "候选人是否详细说明了采取的具体行动步骤（如自我反思原因、调整目标或计划、寻求支持、改变工作方法、进行时间管理等），并解释了这些行动如何针对性地解决动力不足问题？",
+          "Result": "候选人是否描述了行动后的实际效果（如动力恢复程度、任务完成情况、效率提升、个人成长等），并提供了可量化的结果或具体事例来证明状态的成功恢复？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_workload_management_01",
+    "content": "您如何管理工作量？",
+    "metadata": {
+      "category": "计划与组织能力",
+      "interview_point": "考察候选人如何有效规划、分配和调整工作量，以及在面对变化或挑战时如何灵活应对和优化计划的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的工作场景，其中您需要管理工作量，例如项目截止日期临近、任务优先级冲突或资源限制等情况。",
+          "Task": "请说明您在该情境下的具体任务或目标是什么，例如需要完成哪些工作、达到什么标准或解决什么问题。",
+          "Action": "请详细阐述您采取了哪些行动来管理工作量，例如如何制定计划、分配时间、使用工具、调整优先级或与他人协作。",
+          "Result": "请说明这些行动的结果如何，例如是否按时完成任务、提高了效率、解决了问题或获得了积极反馈。"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_priority_setting_01",
+    "content": "您如何对任务/项目进行优先级排序？",
+    "metadata": {
+      "category": "优先级设定与大局观",
+      "interview_point": "考察候选人如何系统性地评估任务重要性、紧急性和资源限制，以制定合理的优先级排序策略，体现其大局观和决策能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了需要优先级排序的具体工作场景，例如多任务并行、资源有限、时间紧迫或目标冲突的情况？",
+          "Task": "候选人是否明确说明了在该情境下需要完成的核心任务，例如确定关键目标、平衡短期与长期需求、或协调团队资源？",
+          "Action": "候选人是否详细阐述了采取的优先级排序方法，例如使用矩阵工具（如艾森豪威尔矩阵）、考虑业务影响、风险评估、利益相关者沟通或数据驱动决策？",
+          "Result": "候选人是否说明了优先级排序带来的实际效果，例如提升效率、达成目标、优化资源分配或获得团队认可？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_priority_multi_requests",
+    "content": "谈谈您同时收到来自不同利益相关方的多个紧急请求时的场景。 您是如何排序的？",
+    "metadata": {
+      "category": "优先级设定与大局观",
+      "interview_point": "考察候选人在面对多个紧急请求时，如何有效设定优先级、平衡不同利益相关方的需求，并展示大局观和决策能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体场景，其中您同时收到了来自不同利益相关方（如客户、团队成员、上级等）的多个紧急请求。这些请求的背景、紧急程度和潜在影响是什么？",
+          "Task": "在这个场景中，您的主要任务是什么？您需要如何平衡这些请求，确保关键目标得以实现？",
+          "Action": "您采取了哪些具体步骤来排序这些请求？请详细说明您的决策过程，包括使用的标准（如业务影响、时间敏感性、资源可用性等）、与利益相关方的沟通方式，以及如何调整计划以应对变化。",
+          "Result": "排序决策的结果如何？请量化或具体描述对项目、团队或业务的影响，例如是否按时交付、利益相关方满意度、资源优化情况等，并反思从中获得的经验教训。"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_self_reflection_01",
+    "content": "在处理多个项目时，您如何确保自己依然具备大局观？",
+    "metadata": {
+      "category": "自我反思",
+      "interview_point": "考察候选人在多任务并行环境下，如何通过系统化方法保持对整体目标和优先级的清晰认知，避免陷入细节而失去方向感。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能够描述一个具体的工作场景，涉及同时处理多个项目或任务，且这些项目之间存在时间、资源或目标上的冲突或复杂性？",
+          "Task": "候选人是否明确说明在该情境下，保持大局观的具体挑战是什么，例如需要平衡短期交付与长期目标、协调不同项目的优先级，或避免因细节工作而偏离整体方向？",
+          "Action": "候选人是否详细阐述采取了哪些具体行动来确保大局观，例如定期回顾项目目标、使用工具（如甘特图、看板）进行可视化跟踪、与团队或上级沟通对齐、设置检查点进行反思，或调整工作方法以聚焦关键事项？",
+          "Result": "候选人是否能够说明这些行动带来的积极结果，例如项目按时完成、资源优化分配、团队协作改善、个人效率提升，或整体目标达成情况的改进？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_decision_mistake_01",
+    "content": "能否描述一次由于您的失误影响了项目结果或潜在客户/合作伙伴的场景？",
+    "metadata": {
+      "category": "决策制定",
+      "interview_point": "考察候选人在面对自身失误时的自我反思能力、问题解决能力以及从错误中学习并改进决策过程的能力，评估其责任担当和成长潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了失误发生的具体背景、项目或客户/合作伙伴的关键信息，以及失误发生前的决策环境？",
+          "Task": "候选人是否明确说明了在失误发生后，需要承担的责任、需要解决的问题或需要达成的目标？",
+          "Action": "候选人是否详细阐述了识别失误原因、采取补救措施、与相关方沟通以及调整决策策略的具体行动？",
+          "Result": "候选人是否客观评估了失误对项目结果或客户/合作伙伴的影响，并说明了从中学到的教训以及后续如何应用这些教训改进决策？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_pressure_decision_error",
+    "content": "能否描述您意识到自己做了一个重大错误决策的时刻？",
+    "metadata": {
+      "category": "抗压能力",
+      "interview_point": "考察候选人在面对重大错误决策时的自我认知、压力应对、问题解决和反思学习能力，评估其抗压性、责任心和成长心态。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述当时的具体情境，包括时间、地点、相关人物和背景，以展示决策的复杂性和压力来源？",
+          "Task": "候选人能否明确说明当时需要完成的任务或目标，以及该决策在其中的关键作用和预期影响？",
+          "Action": "候选人能否详细阐述意识到错误后的具体行动，包括如何分析错误原因、采取补救措施、与团队沟通协调，以及如何管理自身压力和情绪？",
+          "Result": "候选人能否客观评估处理结果，包括错误带来的影响、补救措施的效果、从中学到的教训，以及如何应用这些经验改进未来决策？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_high_pressure_01",
+    "content": "谈谈您在高压下工作的经历。 您是如何应对的？",
+    "metadata": {
+      "category": "解决问题与数据驱动方法（创造力）",
+      "interview_point": "考察候选人在高压环境下运用创造性思维和结构化方法解决问题的能力，包括压力管理、优先级判断、创新应对策略及结果导向",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述您面临的具体高压工作情境，包括时间压力、资源限制、复杂问题或意外挑战等背景因素",
+          "Task": "请说明在该高压情境下您需要完成的具体任务或目标，以及面临的约束条件和期望成果",
+          "Action": "请详细阐述您采取的应对措施，包括如何分析问题、制定策略、运用创造性方法、管理压力、协调资源及执行过程",
+          "Result": "请说明您的行动带来的具体成果，包括问题解决程度、效率提升、质量改进、团队影响及个人成长等可量化或可观察的结果"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_creative_solution_01",
+    "content": "请分享一个您用创造性方式解决的项目。 挑战是什么？",
+    "metadata": {
+      "category": "解决问题与数据驱动方法（创造力）",
+      "interview_point": "考察候选人在面对复杂挑战时，运用创造性思维和数据驱动方法解决问题的能力，包括问题识别、创新方案设计、执行监控、结果评估及持续改进的全过程。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述项目背景、面临的挑战或问题情境，包括时间、地点、相关方等具体细节？",
+          "Task": "候选人是否能明确说明在该情境下需要完成的具体任务或目标，以及为什么需要创造性解决方案？",
+          "Action": "候选人是否能详细阐述如何运用创造性思维和数据驱动方法应对问题，包括具体步骤、创新点、数据收集与分析过程，以及如何确保项目执行和监控成功？",
+          "Result": "候选人是否能量化或具体描述项目成果，包括成功指标、实际效果、经验教训，以及基于反思提出的改进建议？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_initiative_challenge",
+    "content": "（如果候选人想不出创造性的解决方案 → 谈谈最具挑战性的项目）",
+    "metadata": {
+      "category": "主动性",
+      "interview_point": "考察候选人在面对困难或缺乏明确解决方案时，是否能够主动承担责任、积极应对挑战，并推动项目进展，体现其自我驱动和问题解决能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了项目背景、面临的复杂环境或具体困难，例如资源限制、时间压力、技术难题或团队协作问题？",
+          "Task": "候选人是否明确说明了在该项目中需要完成的具体任务、目标或责任，以及这些任务为何具有挑战性？",
+          "Action": "候选人是否详细阐述了为应对挑战所采取的具体主动行动，例如如何分析问题、寻求资源、协调团队、尝试新方法或坚持推进，而非被动等待？",
+          "Result": "候选人是否说明了行动带来的具体成果，例如项目是否成功完成、问题是否解决、效率是否提升，以及从中学到了什么或如何体现了主动性？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_initiative_01",
+    "content": "谈谈您主动为某个项目或想法承担责任并对业务成功产生影响的经历。 您做了什么？ 是否发动了其他人？ 影响是什么？",
+    "metadata": {
+      "category": "主动性",
+      "interview_point": "考察候选人主动承担责任、推动项目或想法实施、动员他人参与以及产生积极业务影响的能力，评估其领导力、协作精神和结果导向。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了当时的具体情境，包括项目或想法的背景、面临的挑战或机会，以及为什么需要主动承担责任？",
+          "Task": "候选人是否明确说明了他们主动承担的具体任务或目标，以及这个任务如何与业务成功相关联？",
+          "Action": "候选人是否详细阐述了他们采取的具体行动步骤，包括如何主动承担责任、如何发动他人参与、使用了哪些策略或方法，以及如何处理遇到的障碍？",
+          "Result": "候选人是否量化或具体说明了行动的结果，包括对业务成功的直接影响、个人或团队的成长，以及是否反思了经验教训？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_initiative_process_improvement",
+    "content": "谈谈您改进内部流程的一次经历。 您做了什么？ 结果如何？",
+    "metadata": {
+      "category": "主动性",
+      "interview_point": "考察候选人在识别流程问题、主动提出改进方案、推动实施并取得可衡量成果方面的能力，体现其主动性和问题解决能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了需要改进的具体内部流程背景、存在的问题及其对团队或组织的影响？",
+          "Task": "候选人是否明确说明了改进该流程的目标、挑战以及需要完成的具体任务？",
+          "Action": "候选人是否详细阐述了主动采取的改进步骤，包括分析问题、设计方案、协调资源、克服障碍等具体行动？",
+          "Result": "候选人是否提供了可量化的改进成果，如效率提升、成本节约、质量改善等，并说明了该改进对团队或组织的长期影响？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_reliability_onboarding",
+    "content": "谈谈您刚入职一家新公司时的经历。 您是如何获取有关产品、业务部门和公司业务流程知识的？ 如果重来一次，您会有不同的做法吗？",
+    "metadata": {
+      "category": "可靠性",
+      "interview_point": "考察候选人在新环境中的主动学习能力、适应性和反思改进能力，以评估其可靠性和持续成长潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述入职新公司时的具体情境，如公司规模、行业、职位角色以及面临的初始挑战（如信息缺乏、团队陌生等）？",
+          "Task": "候选人是否明确说明在新环境中需要快速掌握产品知识、业务部门结构和公司流程的任务目标，以及这些任务对个人和团队绩效的重要性？",
+          "Action": "候选人是否详细阐述采取的具体行动来获取知识，例如主动与同事沟通、参加培训、阅读文档、观察实践或利用外部资源，并展示其系统性和主动性？",
+          "Result": "候选人能否量化或具体说明学习成果，如缩短适应时间、提升工作效率、贡献团队项目或获得正面反馈，并基于反思提出改进措施（如果重来一次的不同做法）？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_reliability_kpi_failure",
+    "content": "请分享一个您意识到自己无法达成 KPI / 目标的时刻。 您采取了什么行动？ 学到了什么经验？",
+    "metadata": {
+      "category": "可靠性",
+      "interview_point": "考察候选人在面对无法达成目标时的自我认知、应对策略、责任担当以及从失败中学习的能力，以评估其可靠性和成长潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述一个具体的工作场景，包括时间、背景、相关KPI或目标，以及导致无法达成的关键因素（如资源限制、外部变化、个人失误等）？",
+          "Task": "候选人是否明确说明在该情境下需要完成的任务或责任，以及意识到无法达成目标时的具体时间点和触发因素？",
+          "Action": "候选人是否详细阐述采取的行动，包括如何分析问题、寻求帮助、调整策略、沟通进展，以及是否体现了主动性和责任感？",
+          "Result": "候选人是否能客观评估行动的结果，包括短期影响（如目标达成程度、团队反馈）、长期经验教训，以及如何应用这些经验改进未来工作？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_reliability_01",
+    "content": "请举例说明您未能兑现对客户或利益相关方的承诺（如截止日期、个性化产品设置等）的经历。 您作何反应？",
+    "metadata": {
+      "category": "可靠性",
+      "interview_point": "考察候选人在面对未能兑现承诺时的诚实度、责任感、问题解决能力和后续改进措施，评估其如何管理失误、维护关系并从中学习。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了具体的背景，包括承诺的内容（如截止日期、产品设置）、涉及的利益相关方（如客户、团队）以及未能兑现的原因（如资源不足、技术问题、沟通失误）？",
+          "Task": "候选人是否明确说明了在失误发生后需要完成的任务，例如如何向利益相关方沟通、如何补救承诺、如何防止问题扩大？",
+          "Action": "候选人是否详细阐述了采取的具体行动，包括如何承认错误、与利益相关方沟通、制定补救计划、协调资源、实施解决方案以及保持透明度？",
+          "Result": "候选人是否说明了行动的结果，包括问题是否得到解决、利益相关方的反馈、关系是否修复、是否避免了类似失误、以及个人或团队从中学到的教训？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_development_knowledge_01",
+    "content": "您如何保持在该领域的最新知识储备？",
+    "metadata": {
+      "category": "促进发展与成长",
+      "interview_point": "考察候选人主动学习和持续更新专业知识的策略、方法和效果，以评估其自我驱动能力和适应行业变化的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否描述了当前行业快速变化、知识更新频繁的背景，或自身在特定领域面临知识过时的具体情境？",
+          "Task": "候选人是否明确了保持最新知识储备的目标，如提升专业能力、应对新挑战或支持团队发展？",
+          "Action": "候选人是否详细说明了采取的具体行动，如参加培训、阅读文献、参与行业活动、利用在线资源或建立学习网络？",
+          "Result": "候选人是否展示了行动带来的积极成果，如技能提升、问题解决、绩效改进或知识分享，并提供了可量化的证据或具体案例？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_dev_growth_01",
+    "content": "能否举例说明您促进团队或某位团队成员成长/发展的经历？",
+    "metadata": {
+      "category": "促进发展与成长",
+      "interview_point": "考察候选人是否具备识别团队成员发展需求、制定有效培养计划、提供支持与反馈，并最终实现个人或团队能力提升的能力，以及其领导力、辅导技巧和结果导向思维。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体的团队或成员面临发展挑战或成长机会的背景？例如，团队技能不足、成员绩效停滞、新项目要求能力提升等。",
+          "Task": "候选人是否明确说明自己在此情境中承担的责任或目标？例如，需要提升团队整体能力、帮助某成员突破瓶颈、培养后备人才等。",
+          "Action": "候选人是否详细阐述自己采取了哪些具体行动来促进成长？例如，进行技能培训、制定个人发展计划、提供辅导与反馈、分配挑战性任务、创造学习机会等。",
+          "Result": "候选人是否量化或具体说明行动带来的积极成果？例如，团队绩效提升、成员获得晋升、技能指标改善、项目成功交付、反馈满意度高等。"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_learning_culture_01",
+    "content": "您是如何主动改善公司学习文化的？ 您做了什么？ 产生了什么影响？",
+    "metadata": {
+      "category": "流程管理",
+      "interview_point": "考察候选人主动识别和改善组织学习流程的能力，包括创新、执行和影响评估。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了公司原有学习文化的具体问题或不足，如缺乏系统培训、员工参与度低或知识共享不畅？",
+          "Task": "候选人是否明确说明了改善学习文化的具体目标或任务，如提升员工技能、增强团队协作或优化学习资源？",
+          "Action": "候选人是否详细阐述了主动采取的措施，如设计新培训项目、引入学习平台、组织分享活动或调整流程，并说明其创新性和执行步骤？",
+          "Result": "候选人是否量化或具体说明了改善措施带来的影响，如员工满意度提升、技能增长、效率提高或文化转变的证据？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_partnership_steps_01",
+    "content": "您能带我们回顾一个具体的项目，并讲解您经历的所有不同步骤吗？",
+    "metadata": {
+      "category": "建立合作伙伴关系与谈判技巧",
+      "interview_point": "考察候选人在项目中建立合作伙伴关系、进行谈判和协调不同步骤的能力，包括如何识别需求、与各方沟通、解决冲突和达成共识，以展示其系统性思维和执行力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了项目的背景、涉及的关键合作伙伴（如内部团队、外部供应商或客户）、项目目标以及面临的初始挑战或机会？",
+          "Task": "候选人是否明确说明了在项目中需要完成的具体任务，例如建立合作关系、谈判条款、协调资源或管理项目步骤，以及这些任务如何与整体目标相关？",
+          "Action": "候选人是否详细解释了为完成任务所采取的具体行动，包括如何与合作伙伴沟通、进行谈判、解决分歧、规划步骤、分配职责以及应对意外情况？",
+          "Result": "候选人是否量化或定性地说明了项目的结果，例如合作关系是否成功建立、谈判目标是否达成、项目步骤是否按时完成，以及从中学到的经验或改进措施？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_persuade_difficult_client",
+    "content": "谈谈您成功说服一位难缠的客户/合作伙伴认可您产品价值的经历。",
+    "metadata": {
+      "category": "建立合作伙伴关系与谈判技巧",
+      "interview_point": "考察候选人如何通过建立关系、有效说服和谈判技巧，成功让难缠的客户或合作伙伴认可产品价值，体现合作伙伴关系建立与谈判能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述一个具体的、涉及难缠客户或合作伙伴的情境，包括客户/合作伙伴的背景、难点（如抗拒、质疑或高要求），以及产品/服务的相关背景？",
+          "Task": "候选人是否能明确说明在该情境下的核心任务，即说服客户/合作伙伴认可产品价值，并可能涉及建立关系、克服阻力或进行谈判的具体目标？",
+          "Action": "候选人是否能详细阐述如何建立关系（如通过沟通、了解需求、建立信任）、如何说服（如使用数据、案例、定制方案），以及如有谈判，如何准备和执行（如分析利益点、制定策略、灵活应对）？",
+          "Result": "候选人是否能具体说明说服或谈判的结果，包括客户/合作伙伴是否认可产品价值、达成合作、量化成果（如销售额、满意度提升），以及从中学到的经验或对关系的长期影响？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_tech_persuade_stakeholder",
+    "content": "（如果候选人没有客户案例，请思考一个必须说服利益相关方的场景）",
+    "metadata": {
+      "category": "技术行为规范",
+      "interview_point": "考察候选人在技术场景中说服利益相关方（如团队成员、管理层或客户）的能力，包括沟通技巧、逻辑论证、问题解决和影响力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述一个具体的技术相关场景，涉及需要说服利益相关方（如推动技术方案、变更流程或解决冲突），并说明背景、相关方和挑战？",
+          "Task": "候选人是否能明确阐述在该场景中的具体任务或目标，例如说服利益相关方采纳建议、达成共识或解决技术分歧？",
+          "Action": "候选人是否能详细说明采取的行动步骤，如如何分析问题、准备论据、沟通策略、处理反对意见，以及展示技术行为规范（如遵循标准、考虑风险）？",
+          "Result": "候选人是否能量化或具体描述说服的结果，如利益相关方是否被说服、项目进展如何、技术规范是否被采纳，以及从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_code_quality_performance",
+    "content": "您采取哪些步骤来确保代码的高质量和高性能？",
+    "metadata": {
+      "category": "技术行为规范",
+      "interview_point": "考察候选人在软件开发过程中，如何系统性地实施质量保证和性能优化措施，包括代码规范、测试、评审、监控和持续改进等方面的实践能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的软件开发项目或任务，其中代码质量和性能是关键要求，例如涉及高并发、复杂业务逻辑或严格性能指标的场景。",
+          "Task": "在该项目中，您的主要职责是什么？您需要确保代码达到哪些具体的质量和性能标准（如可维护性、可读性、响应时间、资源利用率等）？",
+          "Action": "您采取了哪些具体步骤来确保代码的高质量和高性能？请详细说明，例如：制定编码规范、实施代码审查、编写自动化测试（单元测试、集成测试、性能测试）、使用静态代码分析工具、进行性能调优（如算法优化、缓存策略、数据库查询优化）、监控生产环境性能、以及持续集成/持续部署（CI/CD）流程中的质量门禁等。",
+          "Result": "这些措施带来了什么具体成果？例如：代码缺陷率降低多少、性能指标（如响应时间、吞吐量）提升多少、团队开发效率提高、客户满意度改善等。请提供量化数据或具体证据。"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_code_maintenance_boundary",
+    "content": "开发者维护代码的责任边界在哪里（什么时候算结束）？",
+    "metadata": {
+      "category": "技术行为规范",
+      "interview_point": "考察开发者对代码维护责任的理解，包括何时开始、何时结束、如何界定边界，以及是否考虑团队协作、项目生命周期和最佳实践。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个你参与的项目或任务，其中涉及代码维护，并说明当时的背景，如项目阶段、团队结构或代码库状态。",
+          "Task": "在这个情境中，你的具体职责是什么？你如何定义代码维护的起始点和结束点？",
+          "Action": "你采取了哪些行动来明确和维护代码的责任边界？例如，如何与团队沟通、制定文档、使用工具或遵循流程？",
+          "Result": "这些行动带来了什么结果？例如，是否提高了代码质量、减少了冲突、明确了责任归属，或对项目产生了积极影响？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "tech_framework_selection",
+    "content": "您上一次选择的技术框架是什么？ 为什么选择它？",
+    "metadata": {
+      "category": "技术行为规范",
+      "interview_point": "考察候选人在技术选型中的决策能力、评估框架的全面性、反思改进意识，以及是否符合技术行为规范，如合理性、可持续性和团队协作考量。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述选择技术框架时的具体情境，如项目背景、团队规模、业务需求、时间约束或技术债务？",
+          "Task": "候选人是否明确阐述选择技术框架的目标，如提升开发效率、确保系统性能、满足可扩展性要求、降低维护成本或遵循团队标准？",
+          "Action": "候选人是否详细说明评估和选择框架的过程，包括比较多个选项、分析优缺点（如社区支持、文档质量、学习曲线）、团队讨论、原型测试或风险评估？",
+          "Result": "候选人是否能客观总结选择框架后的实际效果，包括项目成功指标、团队反馈、遇到的挑战，以及对追问中不满意之处的反思和改进计划？"
+        }
+      },
+      "source_ref": "https://github.com/gregorojstersek/behavioral-interview-list-of-questions",
+      "type": "behavioral"
+    }
+  }
+]

@@ -1,0 +1,377 @@
+[
+  {
+    "id": "redis_transaction_basis_001",
+    "content": "Redis事务是将多个命令打包并按顺序执行的机制，但执行过程不会被其他命令打断。它不满足原子性和持久性，且每条命令单独交互，资源效率较低，因此在实际开发中不常用。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "你能解释一下什么是Redis事务吗？",
+      "best_answer_model": {
+        "logic_chain": "核心定义 -> 执行特性 -> 与关系型数据库的差异 -> 主要缺陷 -> 使用建议",
+        "scoring_keywords": [
+          "命令打包",
+          "顺序执行",
+          "不被打断",
+          "不满足原子性",
+          "网络交互浪费",
+          "不常用"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_transaction_usage_001",
+    "content": "Redis事务通过MULTI、EXEC、DISCARD和WATCH命令实现。MULTI开启事务，命令入队，EXEC批量执行。DISCARD取消事务，WATCH用于乐观锁，监视键值变化以保证事务原子性。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "请介绍一下如何使用Redis的事务功能？",
+      "best_answer_model": {
+        "logic_chain": "核心命令介绍 -> 基本执行流程 -> 事务取消与回滚 -> 乐观锁机制（WATCH）",
+        "scoring_keywords": [
+          "MULTI",
+          "EXEC",
+          "DISCARD",
+          "WATCH",
+          "命令入队",
+          "乐观锁"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_transaction_atomicity_001",
+    "content": "Redis事务不满足严格的原子性。它不支持回滚操作，即使在执行过程中出现错误命令，其他命令仍会继续执行，这与关系型数据库的原子性保证不同。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "Redis的事务支持原子性吗？",
+      "best_answer_model": {
+        "logic_chain": "事务四大特性定义 -> Redis事务执行机制 -> 错误处理与回滚缺失 -> 结论与官方解释",
+        "scoring_keywords": [
+          "原子性",
+          "不支持回滚",
+          "命令错误",
+          "事务执行",
+          "关系型数据库"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_transaction_durability_001",
+    "content": "Redis事务不保证持久性。其持久化依赖RDB、AOF或混合模式，AOF的fsync策略（always/everysec/no）在性能和可靠性间权衡，always策略虽可基本满足但性能差，实际很少使用，因此事务数据仍有丢失风险。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "Redis的事务机制能保证数据的持久性吗？",
+      "best_answer_model": {
+        "logic_chain": "持久化定义 -> 三种持久化方式介绍 -> AOF策略分析 -> 事务持久性结论",
+        "scoring_keywords": [
+          "持久性",
+          "RDB",
+          "AOF",
+          "fsync策略",
+          "数据丢失",
+          "性能权衡"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_transaction_lua_001",
+    "content": "Redis事务存在原子性缺陷，可通过Lua脚本批量执行命令来模拟事务，减少网络开销并保证执行隔离，但脚本执行出错时无法回滚已执行命令，仍不完全满足原子性。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "Redis事务存在一些缺陷，有哪些方法可以解决或规避这些缺陷呢？",
+      "best_answer_model": {
+        "logic_chain": "事务缺陷 -> Lua脚本方案 -> 执行隔离性 -> 原子性不足分析",
+        "scoring_keywords": [
+          "Lua脚本",
+          "原子性",
+          "批量执行",
+          "网络开销",
+          "执行隔离",
+          "无法回滚"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_performance_optimization_002",
+    "content": "Redis性能优化需关注慢查询、内存碎片、AOF重写、大Key、网络延迟及持久化阻塞等核心因素，通过监控、配置调优和架构设计来保障服务稳定与高效。",
+    "metadata": {
+      "category_stack": "Redis性能优化",
+      "interview_point": "除了常见方法，你能再谈谈Redis性能优化的关键点吗？",
+      "best_answer_model": {
+        "logic_chain": "问题诊断 -> 内部机制分析 -> 外部因素排查 -> 优化策略实施",
+        "scoring_keywords": [
+          "慢查询",
+          "内存碎片",
+          "AOF重写",
+          "大Key",
+          "网络延迟",
+          "持久化阻塞"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_performance_batch_001",
+    "content": "通过批量操作（如原生MGET/MSET命令、Pipeline、Lua脚本）减少网络往返次数（RTT）和Socket I/O成本，是提升Redis性能的关键。在Redis Cluster中需注意key的哈希槽分布问题。",
+    "metadata": {
+      "category_stack": "Redis性能优化",
+      "interview_point": "在Redis中，有哪些方法可以通过批量操作来减少网络传输开销？",
+      "best_answer_model": {
+        "logic_chain": "性能瓶颈分析（RTT与I/O） -> 原生批量命令 -> Pipeline流水线 -> Lua脚本 -> 集群环境下的注意事项",
+        "scoring_keywords": [
+          "RTT往返时间",
+          "原生批量命令",
+          "Pipeline",
+          "Lua脚本",
+          "哈希槽",
+          "网络开销"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_performance_expired_keys_001",
+    "content": "Redis 定期删除过期 key 时若遇到大量集中过期，会阻塞主线程导致客户端请求延迟。解决方案包括为 key 设置随机过期时间以分散压力，以及从 Redis 4.0 开始可开启 lazy-free 特性，通过子线程异步释放内存来避免主线程阻塞。",
+    "metadata": {
+      "category_stack": "Redis 性能优化",
+      "interview_point": "在 Redis 中，如果遇到大量 key 集中过期的情况，可能会导致什么问题？有哪些常见的解决方案？",
+      "best_answer_model": {
+        "logic_chain": "问题根源（定期删除阻塞主线程） -> 核心解决方案一（设置随机过期时间） -> 核心解决方案二（开启 lazy-free 异步释放）",
+        "scoring_keywords": [
+          "定期删除",
+          "惰性删除",
+          "主线程阻塞",
+          "随机过期时间",
+          "lazy-free",
+          "异步释放"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_performance_bigkey_001",
+    "content": "Bigkey指占用内存过大的键，如String类型超过1MB或复合类型元素超5000个。它由不当设计或数据激增产生，会消耗更多内存与带宽，并引发客户端超时、网络阻塞、删除时工作线程阻塞等性能问题，影响主从同步与集群扩容。",
+    "metadata": {
+      "category_stack": "Redis性能优化",
+      "interview_point": "请解释一下Redis中的bigkey（大Key）是什么，它有哪些危害，以及我们如何发现和处理它？",
+      "best_answer_model": {
+        "logic_chain": "定义与判定标准 -> 产生原因 -> 主要危害（内存/带宽/阻塞） -> 发现方法 -> 处理与优化策略",
+        "scoring_keywords": [
+          "内存占用大",
+          "网络阻塞",
+          "客户端超时",
+          "异步删除",
+          "惰性删除",
+          "SCAN命令"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_performance_hotkey_001",
+    "content": "热Key指访问频率显著高于其他键的Key，通常由热点事件或秒杀活动引发。其危害在于消耗大量CPU与带宽，可能导致Redis实例或后端数据库宕机。解决方案包括读写分离、使用Redis Cluster分散数据、以及采用本地二级缓存等。",
+    "metadata": {
+      "category_stack": "Redis 性能优化",
+      "interview_point": "请解释一下什么是Redis的热Key（hotkey），它有什么危害，以及如何发现和解决热Key问题？",
+      "best_answer_model": {
+        "logic_chain": "热Key定义 -> 产生原因与危害 -> 发现方法 -> 解决方案",
+        "scoring_keywords": [
+          "访问频率过高",
+          "CPU带宽消耗",
+          "服务宕机风险",
+          "读写分离",
+          "Redis Cluster",
+          "二级缓存"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_performance_slow_query_001",
+    "content": "Redis慢查询命令指执行时间过长的命令，主要由O(n)或更高时间复杂度的命令（如KEYS、HGETALL）引起。Redis通过内置慢查询日志功能记录这些命令，可通过配置阈值和最大记录条数进行监控与管理。",
+    "metadata": {
+      "category_stack": "Redis性能优化",
+      "interview_point": "请解释一下Redis中为什么会出现慢查询命令，以及如何找到它们？",
+      "best_answer_model": {
+        "logic_chain": "命令执行步骤 -> O(n)复杂度命令分析 -> 慢查询日志配置与使用 -> 日志内容解读",
+        "scoring_keywords": [
+          "O(n)时间复杂度",
+          "慢查询日志",
+          "slowlog-log-slower-than",
+          "slowlog-max-len",
+          "SLOWLOG GET"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_performance_memory_fragmentation_001",
+    "content": "内存碎片是已分配内存块之间无法被利用的小块空闲内存。Redis中产生碎片的主要原因是键值对的频繁修改、删除和过期，导致内存分配和释放不连续。可通过配置`activedefrag`自动清理或手动执行`MEMORY PURGE`命令来整理碎片，回收内存。",
+    "metadata": {
+      "category_stack": "Redis 性能优化",
+      "interview_point": "请解释一下什么是Redis内存碎片，它是如何产生的，以及我们有哪些方法来清理它？",
+      "best_answer_model": {
+        "logic_chain": "碎片定义 -> 产生原因（增删改/过期） -> 清理方法（自动/手动）",
+        "scoring_keywords": [
+          "内存碎片",
+          "分配释放不连续",
+          "activedefrag",
+          "MEMORY PURGE",
+          "内存回收"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_production_cache_penetration_001",
+    "content": "缓存穿透指大量请求查询数据库中也不存在的key，导致请求绕过缓存直接冲击数据库，造成巨大压力。核心解决方案包括参数校验、缓存空值、使用布隆过滤器预先拦截非法请求，以及接口限流。",
+    "metadata": {
+      "category_stack": "Redis 生产问题",
+      "interview_point": "请你解释一下什么是缓存穿透，以及有哪些常见的解决方案？",
+      "best_answer_model": {
+        "logic_chain": "问题定义 -> 根本原因 -> 解决方案（参数校验 -> 缓存空值 -> 布隆过滤器 -> 接口限流）",
+        "scoring_keywords": [
+          "缓存穿透",
+          "布隆过滤器",
+          "缓存空值",
+          "参数校验",
+          "接口限流",
+          "数据库压力"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_production_cache_breakdown_001",
+    "content": "缓存击穿指热点数据在缓存中过期失效，导致瞬时大量请求直接穿透到数据库，造成巨大压力。核心解决方案包括热点数据预热、设置合理的过期时间或使用互斥锁控制数据库查询。",
+    "metadata": {
+      "category_stack": "Redis 生产问题",
+      "interview_point": "你能解释一下什么是缓存击穿，以及有哪些常见的解决办法吗？",
+      "best_answer_model": {
+        "logic_chain": "问题定义 -> 核心原因 -> 典型场景 -> 解决方案",
+        "scoring_keywords": [
+          "热点数据",
+          "缓存过期",
+          "数据库压力",
+          "数据预热",
+          "互斥锁"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_production_cache_avalanche_001",
+    "content": "缓存雪崩指大量缓存数据在同一时间失效或缓存服务宕机，导致海量请求直接冲击数据库，造成数据库压力激增甚至宕机的现象。核心解决思路包括集群化、多级缓存、设置随机过期时间以及数据预热。",
+    "metadata": {
+      "category_stack": "Redis 生产问题",
+      "interview_point": "请你解释一下什么是缓存雪崩，以及有哪些常见的解决方案？",
+      "best_answer_model": {
+        "logic_chain": "问题定义 -> 核心原因分析 -> 服务不可用解决方案 -> 缓存同时失效解决方案 -> 与缓存击穿的区别",
+        "scoring_keywords": [
+          "大面积失效",
+          "数据库压力",
+          "Redis集群",
+          "多级缓存",
+          "随机过期时间",
+          "缓存预热"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_cache_database_consistency_001",
+    "content": "保证缓存与数据库数据一致性需权衡性能与准确性，常用Cache Aside模式：读时缓存未命中则查库并回填，写时先更新数据库再删除缓存。若删除缓存失败，可通过消息队列实现异步重试机制。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "在实际项目中，你是如何保证缓存和数据库数据一致性的？",
+      "best_answer_model": {
+        "logic_chain": "一致性挑战与权衡 -> Cache Aside模式读写流程 -> 删除缓存失败处理方案",
+        "scoring_keywords": [
+          "Cache Aside模式",
+          "先更新数据库",
+          "再删除缓存",
+          "缓存未命中",
+          "异步重试",
+          "消息队列"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_production_blocking_causes_001",
+    "content": "Redis阻塞主要由O(n)命令、持久化操作、大Key处理、内存交换、网络问题及集群数据迁移等引起，这些因素会导致主线程或I/O操作延迟，影响服务响应。",
+    "metadata": {
+      "category_stack": "Redis 生产问题",
+      "interview_point": "在实际生产环境中，哪些情况可能会导致 Redis 服务发生阻塞？",
+      "best_answer_model": {
+        "logic_chain": "命令复杂度 -> 持久化机制 -> 大Key影响 -> 内存与网络 -> 集群操作",
+        "scoring_keywords": [
+          "O(n)命令",
+          "持久化阻塞",
+          "大Key",
+          "内存Swap",
+          "网络延迟",
+          "数据迁移"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_cluster_sentinel_001",
+    "content": "Sentinel是Redis高可用的监控与故障转移系统，负责检测主从节点状态、实现客观下线判定、选举新主节点并协调故障转移。Redis Cluster是分布式解决方案，通过哈希槽分片实现数据分区、高可用与水平扩展，节点间通过Gossip协议通信。",
+    "metadata": {
+      "category_stack": "Redis集群",
+      "interview_point": "请介绍一下Redis Sentinel和Redis Cluster的核心概念与工作机制。",
+      "best_answer_model": {
+        "logic_chain": "Sentinel功能与角色 -> 主观下线与客观下线 -> 故障转移与选举机制 -> Cluster分片与哈希槽 -> 节点通信与扩展性",
+        "scoring_keywords": [
+          "Sentinel",
+          "客观下线",
+          "故障转移",
+          "哈希槽",
+          "Gossip协议",
+          "水平扩展"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  },
+  {
+    "id": "redis_usage_specification_001",
+    "content": "Redis使用规范包括使用连接池避免频繁创建连接，慎用O(n)命令并关注数据量，推荐批量操作减少网络开销，用Lua脚本替代事务，禁止长时间开启monitor，并控制key的生命周期以避免存储过多冷数据。",
+    "metadata": {
+      "category_stack": "Redis",
+      "interview_point": "在实际使用Redis时，我们应该遵循哪些常见的性能与规范准则？",
+      "best_answer_model": {
+        "logic_chain": "连接管理 -> 命令复杂度控制 -> 批量操作优化 -> 事务替代方案 -> 监控规避 -> 数据生命周期管理",
+        "scoring_keywords": [
+          "连接池",
+          "O(n)命令",
+          "批量操作",
+          "Lua脚本",
+          "key生命周期"
+        ]
+      },
+      "source_ref": "redis-questions-02.md"
+    }
+  }
+]

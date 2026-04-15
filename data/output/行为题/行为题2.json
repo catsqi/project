@@ -1,0 +1,2108 @@
+[
+  {
+    "id": "beh_company_motivation_01",
+    "content": "为什么你想在 X 公司工作？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人对公司的了解程度、职业动机、价值观匹配度以及长期职业规划，评估其是否基于充分研究和真实兴趣做出求职决策。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否描述了在求职过程中，如何识别和评估不同公司的机会，包括对 X 公司的初步认知或接触？",
+          "Task": "候选人是否明确了选择 X 公司的具体目标，例如寻求职业发展、文化契合、技能应用或行业影响？",
+          "Action": "候选人是否采取了行动来深入了解 X 公司，如研究公司文化、产品、使命、价值观、行业地位或与员工交流？",
+          "Result": "候选人是否得出了基于研究的结论，说明 X 公司如何满足其职业目标和个人价值观，并表达了明确的求职意愿？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_leave_reason_01",
+    "content": "为什么你想离开当前或上一家公司？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的职业动机、自我认知、对工作环境的期望，以及离职决策的合理性和成熟度，以评估其稳定性和与公司文化的匹配度。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述在上一家公司或当前公司的具体工作环境、角色职责和面临的挑战，例如团队结构、公司文化或职业发展限制？",
+          "Task": "候选人是否明确说明自己需要解决的问题或目标，如寻求职业成长、改善工作生活平衡或应对特定工作障碍？",
+          "Action": "候选人采取了哪些具体行动来应对离职决策，例如与上级沟通、探索内部机会或进行自我反思，以展示主动性和责任感？",
+          "Result": "候选人如何评估离职决策的结果，包括是否实现了个人目标、学到了经验教训，以及如何将这次经历应用于未来的职业规划？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_next_role_traits",
+    "content": "你在寻找下一个职位的什么特质？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的职业规划、自我认知、与公司/岗位的匹配度，以及其价值观和动机。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述当前职业阶段或寻求新机会的背景，如职业瓶颈、技能提升需求或行业变化？",
+          "Task": "候选人是否明确阐述在寻找下一个职位时需要达成的目标，如职业发展、技能应用或工作环境改善？",
+          "Action": "候选人是否具体说明如何识别和评估职位特质，如通过研究公司文化、岗位职责或与行业人士交流？",
+          "Result": "候选人是否展示这些特质如何与个人职业目标对齐，并可能带来积极成果，如提升绩效、满足感或长期成长？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_conflict_colleague",
+    "content": "请讲一次你与同事产生冲突的经历。",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人在职场冲突中的情绪管理、沟通能力、问题解决技巧以及团队合作精神，评估其处理人际关系冲突的成熟度和职业素养。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了冲突发生的具体背景、涉及的人员、时间、地点以及冲突的起因？",
+          "Task": "候选人是否明确了在冲突中需要解决的核心问题、自己的角色和责任，以及期望达成的目标？",
+          "Action": "候选人采取了哪些具体行动来处理冲突，例如沟通方式、情绪控制、寻求解决方案或第三方介入？这些行动是否体现了主动性和建设性？",
+          "Result": "冲突的最终结果如何，例如是否得到解决、对团队或个人关系的影响、以及候选人从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_conflict_influence_01",
+    "content": "请讲一次你遇到冲突并需要去影响/说服他人的经历。",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人在冲突情境下的沟通、说服、问题解决和影响力能力，以及如何通过有效行动达成共识或积极结果。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述冲突发生的具体背景、涉及的人员和核心矛盾点？",
+          "Task": "候选人是否明确说明自己在此冲突中的角色、需要达成的目标以及面临的挑战？",
+          "Action": "候选人是否详细阐述了自己采取的步骤，如倾听、分析、沟通策略、妥协或创新方案，以影响或说服他人？",
+          "Result": "候选人是否能具体说明冲突的解决程度、达成的共识、对团队或项目的积极影响，以及从中学到的经验？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_current_project",
+    "content": "你目前正在做的项目是什么？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的项目经验、角色定位、问题解决能力、团队协作以及成果导向，评估其专业能力和职业素养。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述当前项目的背景、环境和关键挑战？",
+          "Task": "候选人是否能明确说明自己在项目中的具体职责、目标和期望成果？",
+          "Action": "候选人是否能详细阐述采取的行动、策略、工具使用以及如何应对困难和协作？",
+          "Result": "候选人是否能量化或具体说明项目成果、个人贡献、学习收获以及对业务的影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_project_challenge_01",
+    "content": "你目前项目中挑战性最大的方面是什么？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人在面对项目挑战时的识别能力、问题解决策略、执行力和结果导向思维，评估其应对复杂性和压力的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述当前或最近项目中的具体挑战情境，包括项目背景、团队构成、时间限制或资源约束等关键因素？",
+          "Task": "候选人是否明确说明在该挑战情境下需要完成的具体任务或目标，以及这些任务如何与项目整体目标相关联？",
+          "Action": "候选人是否详细阐述为应对挑战所采取的具体行动步骤，包括个人决策、团队协作、资源调配或创新方法的应用？",
+          "Result": "候选人能否量化或定性描述行动带来的结果，如项目进展、效率提升、问题解决程度，以及从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_bug_fix_01",
+    "content": "过去 6 个月里你修复过的最难的 Bug 是什么？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的问题解决能力、技术深度、调试技巧、以及在压力下的应对策略和团队协作能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体的、复杂的 Bug 发生的背景和环境，包括相关系统、时间、团队角色和影响范围？",
+          "Task": "候选人是否明确说明修复该 Bug 的具体目标、挑战和优先级，以及个人在此任务中的职责？",
+          "Action": "候选人是否详细阐述采取的调试步骤、使用的工具、分析方法、与团队的协作方式，以及如何克服遇到的障碍？",
+          "Result": "候选人能否量化或定性说明 Bug 修复后的效果，如性能提升、稳定性改善、用户反馈，以及从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_challenge_response",
+    "content": "你如何应对挑战？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人在面对困难或压力时的应对策略、问题解决能力、适应性和学习成长能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体的挑战情境，包括背景、相关方和关键难点？",
+          "Task": "候选人是否明确说明在该情境下需要完成的任务或目标，以及面临的约束或期望？",
+          "Action": "候选人是否详细阐述自己采取的步骤、策略、资源利用和决策过程，以应对挑战？",
+          "Result": "候选人能否量化或定性描述行动的结果，包括问题解决程度、个人成长或对团队的影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_project_challenge_01",
+    "content": "请举例说明你在项目中遇到的一个困难挑战，你是如何克服的，以及学到了什么？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人在面对项目困难时的应对能力、问题解决技巧、学习能力和反思总结能力，以评估其抗压性、创新思维和成长潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述项目背景、具体困难挑战的起因和情境，例如时间紧迫、资源不足、技术障碍或团队冲突？",
+          "Task": "候选人是否明确说明在困难挑战中需要完成的具体任务或目标，以及面临的约束条件或风险？",
+          "Action": "候选人是否详细阐述采取的步骤、策略和行动，包括如何分析问题、制定解决方案、协调资源、沟通协作或创新方法？",
+          "Result": "候选人是否能量化或具体说明克服挑战后的成果，如项目成功交付、效率提升、成本节约，以及从中学到的关键教训或技能？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_excitement_01",
+    "content": "哪些事情会让你感到兴奋？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的内在动机、工作热情、价值观与职业兴趣，评估其与岗位及公司文化的匹配度，以及是否具备持续学习和成长的驱动力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否描述一个具体的情境或背景，说明在何种环境下（如工作、学习、项目）某些事情会引发其兴奋感？",
+          "Task": "候选人是否明确识别出在该情境中，激发兴奋感的核心任务、挑战或目标是什么？",
+          "Action": "候选人采取了哪些具体行动来追求或应对这些兴奋点，例如主动学习、创新尝试、团队协作或解决问题？",
+          "Result": "这些行动带来了什么可衡量的结果，如个人成长、项目成功、效率提升或积极影响，以及候选人如何反思和持续应用这种兴奋感？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_frustration_01",
+    "content": "哪些事情会让你感到沮丧？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的情绪管理能力、自我认知、应对挫折的策略以及工作适应性和团队协作中的问题处理方式。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否描述一个具体的情境，例如在工作中遇到技术难题、团队冲突、项目延误或资源不足等导致沮丧的事件？",
+          "Task": "候选人是否明确说明在该情境中需要完成的任务或目标，以及沮丧情绪如何影响其职责和期望？",
+          "Action": "候选人采取了哪些具体行动来应对沮丧情绪，例如寻求帮助、调整策略、沟通解决或自我调节？",
+          "Result": "候选人的行动带来了什么结果，例如问题是否解决、情绪是否得到控制、是否从中学习并改进未来表现？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_first_day_01",
+    "content": "想象一下你在公司的第一天，你想要着手处理什么？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的主动性、适应能力、对新环境的快速融入能力，以及是否具备清晰的优先事项设定和初步工作计划能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述入职第一天面临的新环境、团队氛围、公司文化等具体情境？",
+          "Task": "候选人是否明确识别出第一天需要完成的关键任务，如熟悉团队、了解工作流程、建立初步人际关系等？",
+          "Action": "候选人采取了哪些具体行动来快速适应新环境，例如主动与同事沟通、学习公司资料、参与团队会议等？",
+          "Result": "候选人的行动带来了哪些积极结果，如快速融入团队、获得同事认可、初步掌握工作职责等？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_improve_functionality",
+    "content": "你会改进哪些功能？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的批判性思维、产品意识、创新能力和持续改进的主动性，评估其是否能够识别现有产品或流程中的不足，并提出具体、可行的改进方案。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个你曾经使用或参与过的具体产品或流程，包括其背景、主要功能和当前状态。",
+          "Task": "请说明你识别出的需要改进的功能或方面，以及为什么你认为这些改进是必要的。",
+          "Action": "请详细阐述你提出的改进方案，包括具体的步骤、方法、资源利用和如何克服可能的障碍。",
+          "Result": "请说明改进方案实施后的效果，包括量化指标、用户反馈或效率提升等具体成果。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_interesting_project_01",
+    "content": "你参与过的最有趣的项目是什么？它们与本公司的环境有何关联？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的项目经验、兴趣驱动、问题解决能力，以及如何将过往经验与目标公司环境（如文化、技术、业务）相关联，评估适应性和价值贡献潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体、有趣的项目背景，包括时间、团队、行业或技术环境，以及项目的有趣之处（如创新性、挑战性、学习机会）？",
+          "Task": "候选人能否明确说明在该项目中的角色、职责和核心目标，以及项目如何与个人兴趣或职业发展相关？",
+          "Action": "候选人能否详细阐述在项目中采取的具体行动、策略、技能应用（如技术、协作、领导力），以及如何应对挑战或推动项目进展？",
+          "Result": "候选人能否量化或具体说明项目的成果、影响（如效率提升、成本节约、用户满意度），并反思从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_manager_disagreement_01",
+    "content": "请讲一次你与经理（主管）意见不一的经历。",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人在面对与上级意见分歧时的沟通能力、冲突解决技巧、职业素养以及结果导向思维，评估其是否能在维护关系的同时有效推动工作进展。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述与经理意见不一的具体情境，包括时间、背景、相关人物和核心分歧点？",
+          "Task": "候选人是否明确说明在此情境下需要完成的任务或目标，以及分歧如何影响工作进程或团队协作？",
+          "Action": "候选人是否详细阐述为解决分歧所采取的具体行动，如主动沟通、寻求数据支持、提出替代方案或妥协策略，并展示尊重和职业态度？",
+          "Result": "候选人是否能客观评估行动的结果，包括分歧是否得到解决、对工作或团队的影响，以及从中学到的经验或改进措施？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_passion_project_01",
+    "content": "谈谈一个你最有热情的项目，或者是你认为做得最好的项目。",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的热情、主动性、项目执行能力、问题解决能力、团队协作以及成果导向，通过具体案例评估其职业动机和成就。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述项目的背景、环境、挑战或机会，包括时间、地点、相关团队或组织？",
+          "Task": "候选人能否明确说明自己在项目中的角色、职责、目标或需要完成的具体任务？",
+          "Action": "候选人能否详细阐述自己采取的具体行动、策略、决策过程、如何克服困难、以及如何与团队协作？",
+          "Result": "候选人能否量化或具体说明项目的成果、影响、学到的经验教训，以及如何评估成功？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_best_work_day",
+    "content": "对你来说，“状态最好的一天工作”是什么样的？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的工作动力、自我管理能力、职业价值观以及对高效工作状态的理解，以评估其与岗位和团队文化的匹配度。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体的工作日背景，包括时间、地点、团队环境或项目阶段，以展示其工作状态的最佳情境？",
+          "Task": "候选人能否明确说明在那一天需要完成的主要任务或目标，以及这些任务如何与个人或团队优先级对齐？",
+          "Action": "候选人能否详细阐述在那一天采取的具体行动，如时间管理、协作方式、问题解决策略或技能应用，以体现其高效工作状态？",
+          "Result": "候选人能否量化或定性描述那一天的成果，如任务完成度、效率提升、团队贡献或个人成长，并反思其对后续工作的影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_push_implementation",
+    "content": "在之前的项目中，有什么事情是你必须极力推动（Push）才能实现的？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人在面对阻力或挑战时，如何主动、坚持地推动项目或变革，包括沟通、说服、解决问题和领导能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述一个具体项目或情境，其中存在需要推动的障碍或变革，例如资源限制、团队分歧、流程僵化或外部阻力？",
+          "Task": "候选人是否明确说明自己在此情境中的角色和责任，以及需要达成的具体目标或任务，例如实施新方案、争取支持或克服反对？",
+          "Action": "候选人是否详细阐述自己采取的推动行动，例如如何沟通说服、制定策略、协调资源、处理冲突或坚持努力，并展示主动性和韧性？",
+          "Result": "候选人是否能量化或具体说明推动的结果，例如项目成功、效率提升、团队共识达成或积极反馈，并反思经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_constructive_feedback_01",
+    "content": "你职业生涯中收到的最有建设性的反馈是什么？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人接受反馈、自我反思、学习和改进的能力，以及如何将反馈转化为实际行动以提升绩效或技能。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述收到反馈的具体情境，例如项目、任务或工作环境，以及反馈的来源（如上级、同事或客户）？",
+          "Task": "候选人能否说明反馈的核心内容或目标，例如需要改进的技能、行为或绩效指标？",
+          "Action": "候选人能否详细阐述他们如何分析反馈、制定改进计划，并采取具体行动来应对反馈，例如学习新技能、调整工作方法或寻求指导？",
+          "Result": "候选人能否量化或具体说明改进后的成果，例如绩效提升、技能增强、项目成功或获得正面评价，并反思这一过程对个人成长的影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_perseverance_01",
+    "content": "有什么事情是你必须坚持努力了几个月才完成的？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的毅力、目标设定、时间管理、克服挑战的能力以及长期坚持的成果导向思维。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个需要长期努力的具体情境，包括背景、时间跨度和初始挑战？",
+          "Task": "候选人是否明确说明在该情境中需要达成的具体目标或任务，以及为什么需要坚持几个月？",
+          "Action": "候选人是否详细阐述在几个月期间采取的具体行动步骤，如计划制定、资源分配、应对障碍的策略和持续调整？",
+          "Result": "候选人能否量化或具体描述坚持努力后的成果，包括目标达成度、个人成长、对团队或组织的影响，以及从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_deadline_effort_01",
+    "content": "描述一次你为了赶上紧迫的截止日期（Deadline）而努力的经历。",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人在时间压力下的应对能力、优先级管理、问题解决技巧、团队协作（如适用）以及结果导向，评估其抗压性和执行力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述当时的具体情境，包括截止日期的紧迫性、项目或任务的背景、面临的挑战（如资源限制、意外障碍）以及相关利益方？",
+          "Task": "候选人是否明确说明自己在此情境中的具体职责、目标或需要完成的任务，以及如何设定优先级来应对截止日期？",
+          "Action": "候选人是否详细阐述所采取的行动步骤，包括如何规划时间、分配资源、解决问题、与团队沟通或调整策略，以展示其主动性和决策能力？",
+          "Result": "候选人能否量化或具体说明努力的结果，如是否按时完成任务、达到的质量标准、学到的经验教训，以及对团队或项目的积极影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_first_year_review",
+    "content": "如果这是你在我们公司的第一次年终回顾，你觉得我会对你说什么？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的自我反思能力、对工作表现的认知、适应性和成长潜力，以及是否能够客观评估自身在团队中的贡献和不足。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否描述在公司的第一年工作中所处的具体环境，例如团队角色、项目背景或公司文化？",
+          "Task": "候选人能否明确在年终回顾中需要展示的关键任务或目标，如绩效指标、个人发展计划或团队协作期望？",
+          "Action": "候选人能否详细说明在过去一年中采取的具体行动，例如如何学习新技能、解决挑战或主动贡献？",
+          "Result": "候选人能否量化或具体描述这些行动带来的结果，如完成的项目、获得的反馈、个人成长或对团队的影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_time_management_01",
+    "content": "时间管理已成为生产力的必要因素。请举例说明你在工作中学习并应用的一种时间管理技巧。",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的时间管理能力、学习能力和实际应用能力，包括如何识别时间管理需求、学习新技巧、实施并评估效果。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的工作场景，其中时间管理成为关键挑战，例如项目截止日期紧迫、任务繁多或效率低下。",
+          "Task": "请说明你在这个场景中需要完成的具体任务或目标，例如提高工作效率、按时交付项目或优化工作流程。",
+          "Action": "请详细阐述你如何学习并应用一种时间管理技巧，包括学习来源（如书籍、课程、同事建议）、具体实施步骤（如使用工具、制定计划、优先级排序）以及如何调整适应。",
+          "Result": "请量化或具体描述应用该技巧后的结果，例如时间节省百分比、任务完成率提升、项目提前交付或反馈改进，并反思其长期影响。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_colleague_conflict_01",
+    "content": "讲讲你与同事相处时遇到的问题。",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人在团队合作中处理人际关系冲突、沟通协作和问题解决的能力，以及自我反思和成长潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述与同事相处时遇到的具体问题情境，包括背景、涉及人员、时间地点和冲突或挑战的性质？",
+          "Task": "候选人是否明确说明在该情境下需要完成的任务或目标，例如解决分歧、改善关系、达成共识或完成共同项目？",
+          "Action": "候选人采取了哪些具体行动来处理问题，如沟通策略、冲突解决技巧、寻求帮助或调整自身行为，并解释其背后的思考过程？",
+          "Result": "候选人能否量化或具体描述行动的结果，包括问题是否解决、关系改善程度、项目进展或从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_criticism_frequency",
+    "content": "你的工作中哪些方面最常受到批评？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的自我认知、接受反馈的能力、改进意愿以及从批评中学习和成长的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否描述一个具体的工作环境或项目，其中他们收到了频繁的批评？",
+          "Task": "候选人是否明确识别出批评针对的工作方面，以及他们需要如何应对这些反馈以改进绩效？",
+          "Action": "候选人采取了哪些具体行动来理解批评、分析原因，并实施改进措施？",
+          "Result": "候选人的行动导致了什么可衡量的结果，如绩效提升、减少批评频率或积极反馈？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_critique_handling",
+    "content": "你是如何处理对他人的工作批评的？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人在面对他人批评时的情绪管理、沟通能力、反思改进和团队协作能力，评估其是否能够积极应对反馈、促进个人和团队成长。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体情境，其中你收到了他人对你工作的批评，包括批评的来源（如上级、同事、客户）、批评的具体内容以及当时的工作环境或项目背景。",
+          "Task": "请说明在该情境中，你需要处理的主要任务或目标是什么，例如如何理解批评、维护工作关系、改进工作表现或解决潜在问题。",
+          "Action": "请详细阐述你采取了哪些具体行动来处理批评，例如如何倾听和确认批评内容、控制情绪、分析批评的合理性、与批评者沟通、制定改进计划或寻求支持。",
+          "Result": "请描述行动的结果，包括批评处理后的效果（如工作改进、关系改善、问题解决）、你从中学到的经验教训，以及如何将反馈应用于未来的工作或个人成长。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_position_strength_01",
+    "content": "你认为对于你的岗位来说，最重要的优势是什么？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人对岗位核心能力的自我认知、匹配度分析以及基于过往经验提炼个人优势的能力",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体的工作场景或项目背景，说明该岗位的关键职责和挑战？",
+          "Task": "候选人是否明确识别出在该场景下，岗位需要完成的核心任务或达成的目标？",
+          "Action": "候选人如何通过具体行动（如技能应用、问题解决、团队协作等）来展现其优势，并解释这些行动为何对岗位至关重要？",
+          "Result": "候选人的行动带来了哪些可量化的成果或积极影响，从而证明其优势的有效性和岗位匹配度？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_colleague_description",
+    "content": "你的同事会用哪些词来形容你？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的自我认知、团队合作能力、沟通风格以及个人特质如何影响工作表现，通过他人视角评估其职业形象和适应性。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的工作或团队环境，例如在项目合作、日常互动或解决冲突时，同事对你的看法是如何形成的？",
+          "Task": "在这个情境中，你的任务是什么？例如，需要展示特定技能、维护团队关系或达成共同目标，以影响同事对你的评价？",
+          "Action": "你采取了哪些行动来塑造同事对你的印象？例如，通过沟通、协作、解决问题或展现领导力，具体行为是什么？",
+          "Result": "这些行动导致了什么结果？例如，同事是否用积极词汇如‘可靠’、‘创新’或‘支持性’来形容你，如何验证这些反馈并应用于职业发展？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_first_six_months_goals",
+    "content": "你希望入职后的前六个月达成什么目标？",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的目标设定能力、规划能力、对岗位和公司的理解、以及自我驱动和适应能力，评估其是否能够快速融入团队并贡献价值。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了入职新公司或新岗位的背景，包括公司文化、团队结构、岗位职责或面临的挑战？",
+          "Task": "候选人是否明确设定了在入职后前六个月需要达成的具体、可衡量的目标，这些目标是否与岗位要求、团队目标或公司战略相关？",
+          "Action": "候选人是否详细说明了为实现这些目标将采取的具体行动计划，包括学习新技能、建立关系、完成任务或解决潜在问题？",
+          "Result": "候选人是否描述了这些目标达成后预期的成果或影响，如提升个人绩效、贡献团队成功、推动项目进展或实现业务指标？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_suitable_candidate",
+    "content": "告诉我们为什么你是这个职位的合适人选。",
+    "metadata": {
+      "category": "最常被问到的 30 道通用行为题",
+      "interview_point": "考察候选人的自我认知、职位匹配度、以及通过具体事例展示相关技能和经验的能力，以评估其是否具备胜任该职位所需的资格和潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述一个与目标职位相关的具体情境，例如过去的工作项目、团队角色或挑战，以展示其背景和环境的理解？",
+          "Task": "候选人是否能明确说明在该情境中需要完成的任务或目标，这些任务是否与目标职位的职责和要求紧密相关？",
+          "Action": "候选人是否能详细阐述他们采取的具体行动，包括使用的技能、策略和决策过程，以证明其具备该职位所需的能力和专业知识？",
+          "Result": "候选人是否能量化或具体说明行动的结果，包括成就、影响或学习成果，以展示其贡献和与职位成功的关联性？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "airbnb_belong_anywhere",
+    "content": "“天涯海角，家在四方 (Belong anywhere)”对你意味着什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人对公司核心价值观的理解、个人价值观与公司文化的契合度，以及如何将抽象理念转化为具体行动和体验的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个你曾经在陌生环境或跨文化情境中，需要适应并找到归属感的经历。",
+          "Task": "在这个情境中，你的主要任务是什么？如何理解并实践'Belong anywhere'的理念？",
+          "Action": "你具体采取了哪些行动来融入环境、建立联系或创造归属感？这些行动如何体现你对'天涯海角，家在四方'的理解？",
+          "Result": "结果如何？你或他人是否感受到了归属感？这次经历如何影响你对Airbnb价值观的认知？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_global_problem",
+    "content": "你今天想解决世界上哪些大问题？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人的愿景、创新思维、社会责任感、问题解决能力和与公司使命的契合度，评估其是否具备推动变革的潜力和对全球性挑战的深刻理解。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否描述一个具体、紧迫的全球性问题（如气候变化、住房短缺、社会不平等），并解释其背景、影响范围和当前挑战？",
+          "Task": "候选人是否明确阐述解决该问题的目标、愿景或理想结果，以及为什么这个问题对他们个人或职业发展至关重要？",
+          "Action": "候选人是否提出创新、可行的解决方案或行动计划，包括具体步骤、资源需求、潜在合作方，并展示如何克服障碍或利用技术/社会趋势？",
+          "Result": "候选人能否预测或描述解决方案的预期影响、可衡量的成果（如改善生活质量、减少碳排放），以及如何评估成功或调整策略？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_preference",
+    "content": "为什么你喜欢 Airbnb？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人对公司文化、产品和价值观的理解与认同，以及个人动机与公司使命的匹配度",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个你作为用户或潜在员工接触Airbnb的具体情境，例如第一次使用其服务、研究公司背景或参与相关活动",
+          "Task": "请说明在该情境下，你需要评估或体验Airbnb的哪些方面，以形成个人偏好或判断",
+          "Action": "请详细阐述你采取了哪些行动来深入了解Airbnb，例如使用其平台、研究公司文化、分析产品特点或与社区互动",
+          "Result": "请总结这些行动如何导致你喜欢Airbnb，包括具体的积极体验、价值观共鸣或业务认同，并说明这种偏好如何影响你的职业选择或行为"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_gift",
+    "content": "如果你有无限的预算，可以给一个人买一件礼物，你会买什么？送给谁？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人的价值观、同理心、创意能力、以及对他人需求的洞察力，评估其是否具备Airbnb强调的社区关怀和人性化服务理念。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了送礼的背景，例如基于特定关系、事件或社会问题，以展示其思考的深度和情境意识？",
+          "Task": "候选人是否明确了送礼的目标，例如解决某个问题、表达情感、促进改变或满足特定需求，以体现其目的性和责任感？",
+          "Action": "候选人是否详细说明了选择礼物的过程，包括如何考虑接收者的喜好、需求、价值观，以及如何利用无限预算发挥创意和影响力？",
+          "Result": "候选人是否预测了送礼的潜在影响，例如对接收者、社区或更广泛社会的积极效果，以展示其远见和成果导向思维？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "airbnb_travel_vision",
+    "content": "如果你有无限的预算并且可以去某个地方，你会去哪里？分享一次你的旅行。",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人的想象力、价值观、个人兴趣、以及如何将创意与Airbnb的品牌理念（如旅行体验、社区连接、独特住宿）相结合的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰地描述了选择该旅行目的地的背景或动机，例如个人兴趣、文化探索、或与Airbnb相关的旅行理念？",
+          "Task": "候选人是否明确阐述了这次旅行的目标或期望，例如体验独特文化、解决某个问题、或创造难忘回忆？",
+          "Action": "候选人是否详细说明了旅行的具体计划和行动，包括如何利用无限预算安排住宿、活动、互动等，并体现创意和Airbnb的价值观？",
+          "Result": "候选人是否描述了旅行的结果或收获，例如个人成长、文化理解、或如何将这次体验与Airbnb的使命（如归属感）联系起来？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_challenging_project",
+    "content": "过去 6 个月你在校内或校外做过的最具挑战性的项目是什么。",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人在近期项目中面对挑战时的应对能力、问题解决技能、团队协作、时间管理以及项目成果的量化评估，以评估其适应性和成长潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述项目背景，包括时间范围（过去6个月内）、地点（校内或校外）、项目类型、涉及的关键利益相关者或团队，以及项目启动时的初始挑战或复杂环境。",
+          "Task": "请说明你在项目中的具体角色和责任，以及项目需要达成的核心目标或关键任务，包括面临的特定障碍或限制条件。",
+          "Action": "请详细阐述你为应对挑战所采取的具体行动步骤，包括如何分析问题、制定策略、协调资源、与团队沟通协作，以及任何创新或调整方法。",
+          "Result": "请量化或具体描述项目的最终成果，包括是否达成目标、对团队或组织的积极影响、个人从中学到的关键经验，以及如何证明项目是“最具挑战性”的。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_avoid",
+    "content": "在上一份实习/工作中，有什么是你以后不想要的？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人的自我认知、职业规划、价值观匹配以及从过往经历中学习成长的能力，通过识别负面经验来评估其未来工作偏好和适应性。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述上一份实习或工作中的具体情境，例如团队环境、项目类型、公司文化或工作流程中的挑战？",
+          "Task": "候选人是否明确识别出在该情境中需要避免或改进的任务、职责或工作方式，并说明其不想要的原因？",
+          "Action": "候选人如何通过反思、分析或实际行动来处理这些不想要的方面，例如寻求反馈、调整策略或学习新技能？",
+          "Result": "候选人能否总结从该经历中学到的教训，并将其转化为对未来职业选择的积极影响，如更明确的工作偏好或改进计划？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_host_01",
+    "content": "给我一个你作为“好房东/东道主”的例子。",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人的客户服务能力、问题解决能力、主动性和同理心，特别是在住宿服务或类似场景中如何超越基本职责，提供卓越体验。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体情境，例如作为房东或东道主时，遇到了什么挑战或机会，比如客人有特殊需求、突发问题或需要额外帮助的情况。",
+          "Task": "请说明在这个情境中，你的主要任务或目标是什么，例如确保客人满意、解决特定问题或提升住宿体验。",
+          "Action": "请详细阐述你采取了哪些具体行动，例如如何沟通、提供资源、调整安排或实施解决方案，以展示你的主动性、同理心和问题解决能力。",
+          "Result": "请描述行动的结果，例如客人反馈如何、问题是否解决、体验是否提升，以及你从中学到了什么或如何量化成功。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_remove_feature",
+    "content": "Airbnb 的体验中，有什么是你想要移除的？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人对产品体验的批判性思维、用户洞察力、以及提出改进建议的能力，评估其是否具备产品优化和创新思维。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体场景，说明你在使用 Airbnb 时遇到了什么问题或不便，例如预订流程、沟通工具、安全措施或社区功能等方面。",
+          "Task": "请解释你在这个场景中的目标是什么，例如想要提升用户体验、解决痛点、或优化产品功能。",
+          "Action": "请详细说明你采取了哪些行动来分析和提出移除建议，例如收集用户反馈、进行竞品分析、或设计替代方案。",
+          "Result": "请阐述你的建议带来的预期或实际结果，例如如何改善用户满意度、提高效率、或增强产品竞争力。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "airbnb_teach_new_skill",
+    "content": "有什么新东西是你可以花几分钟教会面试官的？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人的沟通能力、知识传授技巧、快速学习与适应能力，以及能否在有限时间内清晰、有效地传递信息，体现Airbnb注重用户体验和社区分享的文化。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否描述了选择一个适合在几分钟内教学的新技能或知识的背景，例如基于面试官的潜在兴趣、相关性或日常应用场景？",
+          "Task": "候选人是否明确了教学的目标，例如确保面试官在短时间内理解核心概念、掌握基本操作或激发进一步学习的兴趣？",
+          "Action": "候选人是否详细说明了教学步骤，如使用简单语言、类比、可视化工具或互动演示，并如何调整节奏以适应时间限制和面试官反馈？",
+          "Result": "候选人是否评估了教学效果，例如面试官是否成功学会了技能、表达了理解或提出了相关问题，并反思了教学过程中的改进点？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_motivation",
+    "content": "说明你为什么想在这里工作。",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人对公司文化、价值观、业务模式的了解程度，以及个人职业目标与公司使命的匹配度，评估其求职动机和长期承诺。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否描述了个人背景、职业经历或兴趣点，以及这些如何与Airbnb的特定情境（如公司文化、行业地位或当前挑战）相关联？",
+          "Task": "候选人是否明确了在Airbnb工作的具体目标或期望，例如贡献于某个项目、学习特定技能或推动公司使命？",
+          "Action": "候选人是否采取了行动来深入了解Airbnb，例如研究公司历史、产品、价值观或与员工交流，并基于此阐述个人如何准备或计划融入？",
+          "Result": "候选人是否说明了预期或过往结果，例如个人成长、对公司的影响或如何通过工作实现Airbnb的愿景，以展示动机的真实性和可行性？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_gift_exchange_airbnb",
+    "content": "你送出或收到过的最好的礼物是什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人的同理心、创造力、人际交往能力以及通过礼物传递情感和价值观的能力，以评估其是否适合Airbnb注重社区和用户体验的文化。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述送礼或收礼的具体情境，包括时间、地点、相关人物和背景，以展示对人际互动的敏感性和情境理解？",
+          "Task": "候选人能否明确说明送礼或收礼的目标或意图，例如表达感谢、庆祝成就、解决关系问题或传递特定价值观，以体现其目的性和同理心？",
+          "Action": "候选人能否详细阐述选择或制作礼物的过程，包括如何考虑接收者的需求、偏好和情感，以及如何创新或个性化地执行送礼行为，以展示创造力和人际交往技巧？",
+          "Result": "候选人能否评估礼物的影响，包括接收者的反应、关系的改善、长期效果或学到的教训，以证明其行为如何促进积极结果和符合Airbnb的社区导向？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_uncomfortable_moment",
+    "content": "讲讲你感到不舒服的时刻，以及你是如何应对的。",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人在面对压力、冲突或不适情境时的自我认知、情绪管理、问题解决能力和适应性，以及如何通过积极行动应对挑战并取得积极成果。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的情境，其中你感到不舒服或面临挑战（例如，与同事意见不合、处理紧急问题、适应新环境等），并说明当时的环境、相关人物和关键因素。",
+          "Task": "请明确你在该情境中的目标或责任，以及需要解决的具体问题或克服的障碍。",
+          "Action": "请详细说明你采取了哪些具体步骤来应对不适感或挑战，包括如何管理情绪、分析问题、沟通协调、寻求帮助或实施解决方案。",
+          "Result": "请描述你的行动带来的结果，包括问题是否得到解决、个人或团队有何收获、以及你从中学到了什么或如何改进未来类似情境。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_project_explanation",
+    "content": "解释一个你最近做的项目。",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人的项目经验、问题解决能力、团队协作、成果量化以及沟通表达能力，以评估其是否符合Airbnb的文化和职位要求。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述项目的背景、环境和面临的挑战，例如项目的时间、地点、相关团队或客户，以及初始问题或机会？",
+          "Task": "候选人是否能明确说明自己在项目中的具体职责、目标和期望成果，包括个人或团队需要完成的任务？",
+          "Action": "候选人是否能详细阐述自己采取的关键行动、决策过程、使用的工具或方法，以及如何与团队协作或克服障碍？",
+          "Result": "候选人是否能量化项目成果，如数据指标、业务影响、客户反馈或学习收获，并反思成功或改进之处？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_view",
+    "content": "你对 Airbnb 怎么看？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人对 Airbnb 公司的理解、行业洞察力、战略思维以及个人价值观与公司文化的匹配度，包括对共享经济、用户体验、品牌定位、市场挑战和未来发展的看法。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个你深入了解 Airbnb 或类似共享经济平台的背景，例如在个人使用、行业研究或项目工作中接触到的相关情境。",
+          "Task": "在这个情境中，你的任务是什么？例如，分析 Airbnb 的商业模式、评估其市场竞争力，或提出改进建议。",
+          "Action": "你采取了哪些具体行动来形成对 Airbnb 的看法？例如，通过数据调研、用户访谈、竞品分析或参与相关讨论来收集信息和深入思考。",
+          "Result": "这些行动带来了什么结果？例如，你形成了对 Airbnb 的独特见解、识别了关键成功因素或挑战，或基于此提出了有价值的建议。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_self_intro",
+    "content": "谈谈关于你自己的一些事，以及为什么你适合这个职位。",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人的自我认知、职业动机、与职位和公司文化的匹配度，以及通过具体经历展示相关技能和价值观的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个相关的背景或情境，例如过去的职业经历、项目或挑战，以展示其与职位相关的技能或兴趣？",
+          "Task": "候选人是否明确说明在该情境中需要完成的具体任务或目标，以及这些任务如何与职位要求或公司价值观（如Airbnb的社区驱动、创新等）相关联？",
+          "Action": "候选人是否详细阐述自己采取的具体行动，包括如何运用技能（如技术能力、沟通、领导力）、解决问题的方法，以及这些行动如何体现其适合该职位？",
+          "Result": "候选人能否量化或具体描述行动的结果，包括成就、影响、学习收获，以及这些结果如何证明其能为Airbnb带来价值，并强化其适合该职位的理由？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_customer_service",
+    "content": "列举一个让你对某家公司的客户服务留下深刻印象的情况。",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人对客户服务质量的观察和评价能力，以及是否能从具体案例中提炼出服务亮点和影响。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体情境，涉及哪家公司、何时何地、客户服务问题或需求是什么？",
+          "Task": "在该情境中，客户服务的目标或挑战是什么？",
+          "Action": "客户服务人员采取了哪些具体行动来解决问题或满足需求？",
+          "Result": "这些行动带来了什么积极结果，如客户满意度提升、问题解决、或对公司声誉的影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_collaboration_01",
+    "content": "在大型项目中，你是如何与高级管理层以及多个内部团队合作的？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人在复杂项目环境中与高级管理层和跨部门团队协作的能力，包括沟通、协调、领导力和影响力，以确保项目目标达成和资源有效整合。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个你参与的大型项目，包括项目背景、规模、涉及的高级管理层和内部团队数量，以及面临的初始挑战或复杂性。",
+          "Task": "请说明你在该项目中的具体角色和职责，以及与高级管理层和多个团队合作时需要达成的关键目标或任务。",
+          "Action": "请详细阐述你如何与高级管理层沟通和协调，包括使用的策略、工具或方法；以及你如何管理多个内部团队，例如促进协作、解决冲突、分配资源或确保进度同步的具体行动。",
+          "Result": "请总结项目的结果，包括是否按时完成、预算控制、质量达成情况，以及你与高级管理层和团队合作带来的具体影响，如效率提升、关系改善或业务成果。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_bad_news",
+    "content": "讲一次你不得不向某人传达糟糕消息的经历。",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人在面对困难沟通时的同理心、沟通技巧、情绪管理能力以及问题解决能力，特别是在传达负面信息时如何维护关系并促进积极结果。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了传达糟糕消息的具体背景，例如涉及的人员、时间、地点和事件的紧迫性或敏感性？",
+          "Task": "候选人是否明确说明了需要传达的糟糕消息是什么，以及他们在此情境中的具体职责或目标，例如最小化负面影响或维护信任？",
+          "Action": "候选人是否详细阐述了他们如何准备和传达消息，包括使用的沟通方式、表达同理心的策略、应对对方反应的措施，以及任何支持性行动？",
+          "Result": "候选人是否说明了传达消息后的结果，例如对方的反应、问题的解决程度、关系的维护或改进，以及从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_hamster",
+    "content": "如果你是一只仓鼠，你会是哪一只？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人的自我认知、创造力、价值观以及与公司文化的契合度，通过隐喻方式评估个人特质和适应能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个你选择特定仓鼠类型的情境，例如在团队项目或个人成长中，你如何识别自己的角色或特质？",
+          "Task": "你的任务是什么？例如，你需要展示自己的优势、适应环境或解决特定问题，以体现与仓鼠特性的关联？",
+          "Action": "你采取了哪些具体行动来体现这种仓鼠特性？例如，如何通过行为、决策或互动来展示创造力、协作或韧性？",
+          "Result": "结果如何？例如，你的行动带来了什么积极影响，如提升团队效率、个人成长或问题解决，并如何与Airbnb的文化价值观（如归属感、创新）相契合？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_excitement",
+    "content": "关于公司，最让你兴奋的是什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人对公司文化、使命、产品或服务的理解和热情，以及其个人价值观与公司价值观的匹配度，评估其动机、适应性和长期潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否描述一个具体情境，例如在了解公司背景、使用产品或服务、或参与相关活动时，感受到的兴奋点？",
+          "Task": "候选人是否明确识别出在这个情境中，需要表达对公司某个方面的深刻理解或共鸣，并展示个人兴趣与公司目标的关联？",
+          "Action": "候选人采取了哪些行动来深入了解公司（如研究文化、体验产品、参与社区），并如何将这些行动转化为对公司的具体兴奋点？",
+          "Result": "候选人的兴奋如何导致积极结果，例如增强了对公司的认同感、激发了工作动力、或在实际行为中体现了与公司价值观的一致性？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "airbnb_guest_host_impact",
+    "content": "Airbnb 如何影响我们的租客（Guest）和房东（Host）？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人对Airbnb业务模式的理解，以及分析其对租客和房东影响的能力，包括用户体验、经济收益、社区互动等方面。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体场景，说明Airbnb如何影响租客或房东的体验，例如在旅行预订或房屋出租过程中。",
+          "Task": "在这个场景中，你的任务是什么？例如，分析Airbnb平台如何优化租客的住宿选择或帮助房东提高收入。",
+          "Action": "你采取了哪些行动来评估或改善这种影响？例如，通过数据调研、用户反馈收集或策略建议。",
+          "Result": "结果如何？请量化或具体说明Airbnb对租客和房东的积极或消极影响，如提高满意度、增加收入或引发社区问题。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_airbnb_mission_resonance",
+    "content": "我们使命的哪一部分最能引起你的共鸣？",
+    "metadata": {
+      "category": "知名公司专项题 -> 1. Airbnb (爱彼迎)",
+      "interview_point": "考察候选人对公司使命的理解、个人价值观与公司文化的契合度，以及通过具体经历展示共鸣点的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个你深入了解或体验Airbnb使命（如'创造一个让每个人都能感受到归属感的世界'）的具体情境，例如在旅行、住宿、社区活动或工作中。",
+          "Task": "在这个情境中，你的任务是什么？例如，需要解决住宿问题、促进文化交流、提升归属感，或应对相关挑战。",
+          "Action": "你采取了哪些具体行动来体现对使命部分的共鸣？例如，如何选择住宿、与房东互动、参与社区、或在工作/项目中应用使命理念。",
+          "Result": "这些行动带来了什么结果？例如，是否增强了归属感、改善了体验、促进了理解，或有可量化的积极影响（如满意度提升、问题解决）。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "amazon_deadline_miss",
+    "content": "你如何处理错过截止日期（Deadline）的情况？",
+    "metadata": {
+      "category": "知名公司专项题 -> 2. Amazon (亚马逊)",
+      "interview_point": "考察候选人在面对工作失误（错过截止日期）时的应对能力、责任担当、问题解决能力、沟通协调能力以及从错误中学习的能力，体现亚马逊的领导力原则如“主人翁精神”和“坚持最高标准”。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个你错过截止日期的具体情境，包括项目背景、截止日期的重要性以及导致错过的主要原因（如资源不足、优先级冲突、技术问题等）。",
+          "Task": "请说明你在错过截止日期后需要完成的任务，例如如何评估影响、制定补救计划、与相关方沟通以及确保项目最终成功。",
+          "Action": "请详细阐述你采取的具体行动，包括如何及时通知团队和利益相关者、分析根本原因、调整计划、重新分配资源、寻求帮助或协商新截止日期，以及如何保持透明和负责任的态度。",
+          "Result": "请说明行动的结果，包括是否成功补救项目、对业务或团队的影响、从中学到的教训、后续改进措施，以及如何避免类似问题再次发生。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "amazon_motivation_01",
+    "content": "为什么你想为亚马逊工作？",
+    "metadata": {
+      "category": "知名公司专项题 -> 2. Amazon (亚马逊)",
+      "interview_point": "考察候选人对亚马逊公司文化、价值观和业务的理解，以及个人职业动机与公司使命的匹配度，评估其是否具备长期发展的潜力和对公司忠诚度。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了自己当前或过去的职业背景、个人兴趣或行业趋势，为选择亚马逊提供具体情境？",
+          "Task": "候选人是否明确说明了自己在职业发展中的目标或挑战，以及为何选择亚马逊作为实现这些目标的关键平台？",
+          "Action": "候选人是否详细阐述了自己如何主动了解亚马逊（如研究公司文化、领导力原则、业务模式或产品），并基于此制定申请计划？",
+          "Result": "候选人是否展示了自己与亚马逊的匹配度，包括预期贡献、个人成长或对公司成功的潜在影响，并表达出强烈的入职意愿？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "amazon_team_conflict",
+    "content": "讲讲你与队友发生冲突的情况。",
+    "metadata": {
+      "category": "知名公司专项题 -> 2. Amazon (亚马逊)",
+      "interview_point": "考察候选人在团队合作中处理冲突的能力，包括识别冲突根源、采取有效行动、促进团队协作和达成积极结果，以评估其是否符合亚马逊的领导力原则，如‘主人翁精神’和‘赢得信任’等。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述与队友发生冲突的具体情境，包括项目背景、团队成员角色、冲突发生的具体时间和环境，以及冲突的直接原因（如意见分歧、资源竞争或沟通不畅）？",
+          "Task": "候选人是否明确说明在冲突中需要完成的任务或目标，例如解决分歧以推进项目、维护团队和谐、或达成共识以实现共同目标，并展示其对团队整体利益的关注？",
+          "Action": "候选人采取了哪些具体行动来处理冲突，例如主动沟通、倾听对方观点、寻求第三方调解、提出妥协方案或基于数据做决策，并如何体现亚马逊的领导力原则，如‘坚持最高标准’或‘节俭’？",
+          "Result": "冲突处理的结果如何，包括是否成功解决分歧、项目是否按时完成、团队关系是否改善、以及从中学到的经验教训，是否量化或具体描述积极影响，如提升效率或增强团队凝聚力？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "amazon_unauthorized_work",
+    "content": "在你的专业经验中，是否有在未获得经理批准的情况下开展工作的经历？",
+    "metadata": {
+      "category": "知名公司专项题 -> 2. Amazon (亚马逊)",
+      "interview_point": "考察候选人的自主性、判断力、风险意识和在紧急或模糊情境下的决策能力，以及是否能在不违反公司政策的前提下推动工作进展。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体情境，例如项目面临紧迫截止日期、经理暂时无法联系或出现突发问题，需要你立即采取行动。",
+          "Task": "请说明你的任务是什么，例如需要完成某项关键工作、解决技术故障或推进项目以避免延误。",
+          "Action": "请详细阐述你采取的行动，包括如何评估风险、权衡利弊、确保行动符合公司原则（如客户至上），以及是否尝试过其他沟通方式。",
+          "Result": "请说明行动的结果，例如工作是否成功完成、对项目或团队的积极影响，以及事后如何向经理汇报并获得反馈。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "amazon_decision_improvement",
+    "content": "讲一个你本可以做得更好、或者希望重来一次的决定。",
+    "metadata": {
+      "category": "知名公司专项题 -> 2. Amazon (亚马逊)",
+      "interview_point": "考察候选人的自我反思能力、从失败中学习的能力、决策改进的思维过程，以及是否符合亚马逊的领导力原则（如 Ownership, Learn and Be Curious, Dive Deep）",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述一个具体的、相关的决策情境，包括背景、时间、地点和涉及的关键人物或团队？",
+          "Task": "候选人是否能明确说明在该情境中需要完成的任务、目标或面临的挑战，以及决策的预期目的？",
+          "Action": "候选人是否能详细阐述实际采取的行动步骤、决策过程、使用的资源或方法，以及当时为何选择这些行动？",
+          "Result": "候选人是否能客观评估决策的结果（包括正面和负面后果），并具体说明如何反思、从中学到了什么，以及如果重来会如何改进？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "amazon_mistake_01",
+    "content": "你犯过的最严重的一个错误是什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 2. Amazon (亚马逊)",
+      "interview_point": "考察候选人的自我反思能力、从错误中学习的能力、诚实度、以及在压力或失败情况下的应对策略，符合亚马逊的领导力原则如 Ownership（主人翁精神）和 Learn and Be Curious（好奇求知）。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述错误发生的具体情境，包括时间、地点、相关人物和背景，以展示对错误的深刻理解？",
+          "Task": "候选人能否明确说明在错误情境中需要完成的任务或目标，以及错误如何影响了这些任务？",
+          "Action": "候选人能否详细阐述在发现错误后采取的具体行动，包括如何承认错误、分析原因、制定补救措施，以及如何与他人沟通协作？",
+          "Result": "候选人能否客观评估错误带来的后果，包括短期和长期影响，以及从中学到的教训和改进措施，以证明成长和避免重蹈覆辙的能力？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "amazon_hr_meaning",
+    "content": "描述一下人力资源（HR）对你意味着什么。",
+    "metadata": {
+      "category": "知名公司专项题 -> 2. Amazon (亚马逊)",
+      "interview_point": "考察候选人对人力资源职能的理解、个人与HR的互动经验、以及HR在组织中的战略价值，以评估其团队协作、文化适应和职业发展意识。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体情境，例如你在工作中或求职过程中与HR的互动，包括相关背景如公司环境、团队结构或面临的挑战。",
+          "Task": "请说明在该情境中，你的任务或目标是什么，例如需要HR支持解决冲突、获取资源、促进职业发展或融入公司文化。",
+          "Action": "请详细阐述你采取了哪些行动与HR合作，例如主动沟通、寻求建议、参与HR项目或利用HR工具，并解释你的决策过程。",
+          "Result": "请描述行动的结果，包括对个人、团队或组织的积极影响，如问题解决、效率提升、文化融入或职业成长，并反思从中学到的经验。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_amazon_website_improvement",
+    "content": "你会如何改进亚马逊的网站？",
+    "metadata": {
+      "category": "知名公司专项题 -> 2. Amazon (亚马逊)",
+      "interview_point": "考察候选人的产品思维、创新能力和用户导向，包括分析问题、提出具体改进方案、考虑实施细节和预期效果的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否描述了亚马逊网站当前存在的具体问题或用户痛点，例如界面复杂性、搜索功能不足、个性化推荐不够精准、移动端体验差、或客户服务流程繁琐？",
+          "Task": "候选人是否明确了改进亚马逊网站的具体目标，例如提升用户体验、增加转化率、优化性能、增强可访问性，或解决特定业务挑战？",
+          "Action": "候选人是否提出了具体、可行的改进措施，例如重新设计用户界面、引入AI驱动的功能、优化后端系统、进行A/B测试，或跨团队协作实施？",
+          "Result": "候选人是否预测了改进措施的可能结果，例如量化指标（如用户满意度提升、销售额增长、页面加载时间减少）、用户反馈改善，或长期业务影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_position_knowledge_01",
+    "content": "你对 <某职位> 了解多少？为什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 3. ByteDance (字节跳动)",
+      "interview_point": "考察候选人对目标职位的理解深度、行业认知、职业规划动机以及与公司文化的匹配度",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述你最初是如何接触到这个职位信息的，以及当时你对这个职位的基本认知是什么？",
+          "Task": "你的目标是什么？是为了深入了解这个职位以评估自己的匹配度，还是为了准备面试，或是其他目的？",
+          "Action": "你采取了哪些具体行动来深入了解这个职位？例如，是否研究了职位描述、行业报告、公司文化、团队结构、技术栈、工作流程，或与相关从业者交流？",
+          "Result": "通过你的行动，你获得了哪些关键见解？例如，你是否明确了职位的核心职责、所需技能、挑战、发展前景，以及为什么这个职位适合你或与你的职业目标相符？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_product_lead_01",
+    "content": "带我了解一个你从头到尾主导上线的产品。",
+    "metadata": {
+      "category": "知名公司专项题 -> 3. ByteDance (字节跳动)",
+      "interview_point": "考察候选人在产品开发全流程中的领导力、项目管理能力、问题解决能力、团队协作能力以及结果导向思维，包括从概念到上线的完整经验、关键决策、挑战应对和成果量化。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述产品开发的背景，包括市场环境、用户需求、团队组成和资源限制等初始情境？",
+          "Task": "候选人是否能明确阐述作为主导者的具体职责和目标，例如产品愿景、关键里程碑、预期成果和面临的挑战？",
+          "Action": "候选人是否能详细说明在主导产品上线过程中采取的具体行动，包括规划、执行、团队管理、风险应对和创新策略？",
+          "Result": "候选人是否能量化或具体描述产品上线的成果，如用户增长、业务指标、团队反馈、经验教训和后续影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_byte_achievement_01",
+    "content": "你之前项目中最重大的成就是什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 3. ByteDance (字节跳动)",
+      "interview_point": "考察候选人在过往项目中的成就、贡献、领导力、问题解决能力以及结果导向思维，评估其是否具备在快节奏环境中推动重大成果的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述项目背景、面临的挑战或机遇，以及相关团队和资源情况？",
+          "Task": "候选人是否能明确说明自己在项目中的具体职责、目标或需要完成的关键任务？",
+          "Action": "候选人是否能详细阐述采取的行动步骤、使用的策略、技能或工具，以及如何克服障碍或协调团队？",
+          "Result": "候选人是否能量化或具体说明项目成果、对业务的影响、个人贡献以及从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_failure_learn_01",
+    "content": "谈谈最近的一次失败，以及你从中学到了什么。",
+    "metadata": {
+      "category": "知名公司专项题 -> 3. ByteDance (字节跳动)",
+      "interview_point": "考察候选人的自我反思能力、从失败中学习的能力、问题解决和成长心态，以及诚实和韧性。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述失败发生的具体情境，包括时间、地点、相关人物和背景？",
+          "Task": "候选人能否明确说明在失败情境中需要完成的任务或目标，以及面临的挑战？",
+          "Action": "候选人能否详细阐述在失败过程中采取的行动、决策和应对措施，包括错误或不足？",
+          "Result": "候选人能否客观分析失败的结果和影响，并具体说明从中学到的教训、改进措施和后续成长？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_bytedance_motivation",
+    "content": "为什么想在字节跳动工作？",
+    "metadata": {
+      "category": "知名公司专项题 -> 3. ByteDance (字节跳动)",
+      "interview_point": "考察候选人对字节跳动公司文化、业务、价值观的了解和认同度，以及个人职业动机与公司发展的匹配程度。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了自己当前或过往的职业背景、个人兴趣或行业观察，为选择字节跳动提供具体情境？",
+          "Task": "候选人是否明确表达了自己在职业发展中的目标或挑战，以及如何将字节跳动视为实现这些目标的关键平台？",
+          "Action": "候选人是否详细说明了自己如何主动了解字节跳动的产品、文化、技术或市场地位，并基于此形成加入意愿的具体行动？",
+          "Result": "候选人是否阐述了自己期望在字节跳动取得的职业成果、个人成长或对公司贡献的预期，以及如何评估这种选择的长期价值？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_byte_01",
+    "content": "是什么让你成为这个职位的合适人选？",
+    "metadata": {
+      "category": "知名公司专项题 -> 3. ByteDance (字节跳动)",
+      "interview_point": "考察候选人的自我认知、岗位匹配度、以及如何通过具体经历证明自己具备职位所需的核心能力和价值观，强调在快节奏、创新驱动的环境中如何贡献价值。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否描述了与职位相关的具体背景或挑战，例如在字节跳动这样的科技公司中面临的项目、团队环境或行业趋势？",
+          "Task": "候选人是否明确了在该情境下需要完成的任务或目标，例如如何应用技能解决业务问题、推动创新或适应快速变化？",
+          "Action": "候选人是否详细说明了采取的行动步骤，包括如何利用专业知识、软技能（如协作、学习能力）和字节跳动价值观（如追求极致、务实敢为）来应对任务？",
+          "Result": "候选人是否量化或具体描述了行动带来的成果，例如项目成功、效率提升、团队贡献或对业务的影响，并反思这些结果如何证明自己是职位的合适人选？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_excitement_01",
+    "content": "这个职位的哪些方面让你兴奋？",
+    "metadata": {
+      "category": "知名公司专项题 -> 3. ByteDance (字节跳动)",
+      "interview_point": "考察候选人对职位的兴趣、动机、与公司文化的匹配度，以及是否对工作有深入理解和热情。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否描述了当前职业背景或对字节跳动公司的了解，如行业趋势、公司文化或职位要求？",
+          "Task": "候选人是否明确了识别职位中激发兴趣的具体方面，如技术挑战、团队合作、创新机会或职业发展？",
+          "Action": "候选人是否详细说明了如何通过研究、经验或思考来评估这些方面，并表达个人热情和准备？",
+          "Result": "候选人是否展示了这些兴奋点如何与个人目标、过往成就或未来贡献相关联，以证明匹配度和长期动力？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_favorite_project",
+    "content": "谈谈你最喜欢的项目。",
+    "metadata": {
+      "category": "知名公司专项题 -> 4. Dropbox",
+      "interview_point": "考察候选人的项目经验、技术能力、问题解决能力、团队协作能力以及个人兴趣与职业动机，通过具体项目案例评估其实际工作表现和成长潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述项目的背景、环境和面临的挑战？例如，项目目标是什么？涉及哪些技术栈或业务领域？团队规模如何？项目周期多长？",
+          "Task": "候选人是否能明确说明自己在项目中的具体职责和任务？例如，负责哪些模块或功能？需要解决哪些关键问题？个人目标是什么？",
+          "Action": "候选人是否能详细阐述自己采取的行动和策略？例如，如何设计解决方案？使用了哪些技术或工具？如何与团队协作？遇到困难时如何应对？",
+          "Result": "候选人是否能量化或具体说明项目的成果和影响？例如，项目是否成功交付？性能或效率提升多少？获得了哪些反馈或认可？个人从中学到了什么？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_dropbox_onboarding_plan",
+    "content": "如果你被录用了，你会做什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 4. Dropbox",
+      "interview_point": "考察候选人的主动性、规划能力、对公司文化的理解以及入职后的快速适应和贡献意愿。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述入职初期面临的典型情境，如新环境、团队动态、公司目标或具体项目背景？",
+          "Task": "候选人是否明确阐述入职后的关键任务，如学习公司流程、建立人际关系、理解业务需求或设定个人目标？",
+          "Action": "候选人是否详细说明计划采取的具体行动，如主动沟通、参与培训、制定计划、寻求反馈或贡献想法？",
+          "Result": "候选人是否预测或描述这些行动可能带来的积极结果，如快速融入团队、提升效率、达成目标或为公司创造价值？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_dropbox_tech_problem",
+    "content": "描述一次你解决技术问题的经历（具体到诊断和过程）。",
+    "metadata": {
+      "category": "知名公司专项题 -> 4. Dropbox",
+      "interview_point": "考察候选人在技术问题解决中的诊断能力、系统性思维、行动执行力和结果导向，包括问题识别、分析、实施解决方案和评估成效。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述当时的具体情境，包括技术问题的背景、相关系统或环境，以及问题出现时的紧急程度或影响范围。",
+          "Task": "请说明你在这个情境中需要完成的具体任务或目标，例如诊断问题的根本原因、设计解决方案或恢复服务。",
+          "Action": "请详细阐述你采取的诊断和解决步骤，包括使用的工具、分析方法、与团队的协作，以及如何应对挑战或调整策略。",
+          "Result": "请说明问题解决后的结果，包括技术指标改善、业务影响、经验教训，以及如何验证解决方案的有效性。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_self_intro_01",
+    "content": "请自我介绍。",
+    "metadata": {
+      "category": "知名公司专项题 -> 5. Hired",
+      "interview_point": "考察候选人的自我认知、沟通表达能力、职业经历与岗位匹配度，以及能否在有限时间内清晰、有重点地展示个人优势与价值。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了当前或最近的职业背景、所在行业、公司及职位，为自我介绍提供了具体的情境基础？",
+          "Task": "候选人是否明确了自我介绍的目标，如展示与应聘岗位相关的关键能力、突出职业成就，或解释职业转型的动机？",
+          "Action": "候选人是否采取了结构化方式介绍自己，包括教育背景、工作经历、核心技能、项目成就，并举例说明如何应对挑战或创造价值？",
+          "Result": "候选人是否通过具体成果（如业绩提升、项目成功、奖项获得）量化或质化地证明了自己的贡献，并总结与岗位的匹配度及未来价值？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_self_assessment_01",
+    "content": "你最大的优势和需要成长的领域是什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 5. Hired",
+      "interview_point": "考察候选人的自我认知能力、职业发展规划意识、诚实度以及将个人特质与岗位需求匹配的能力",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能够清晰描述自己当前或过往的职业发展阶段，以及在该阶段中识别自身优势和不足的背景？",
+          "Task": "候选人是否明确认识到需要评估自身优势与成长领域，并将其与职业目标或岗位要求相关联？",
+          "Action": "候选人是否采取了具体行动来发挥优势（如通过项目、学习或实践）并改进成长领域（如培训、反馈或计划）？",
+          "Result": "候选人是否能提供可量化的成果或具体事例，证明优势带来的积极影响，以及成长领域的改进进展或未来计划？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_opportunity_interest",
+    "content": "为什么对这个机会感兴趣？",
+    "metadata": {
+      "category": "知名公司专项题 -> 5. Hired",
+      "interview_point": "考察候选人对该职位和公司的动机、匹配度、职业规划清晰度，以及是否做过充分研究，能否展示出真诚的兴趣和长期承诺。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述当前职业阶段、个人背景或行业环境，说明为什么现在考虑这个机会？",
+          "Task": "候选人是否明确识别出这个机会如何与个人职业目标、技能发展或价值观对齐，以及需要解决哪些职业发展需求？",
+          "Action": "候选人采取了哪些具体行动来了解这个机会（如研究公司文化、产品、团队、行业趋势），并如何将自身经验与职位要求关联？",
+          "Result": "候选人能否展示这个机会如何带来积极成果（如技能提升、职业成长、贡献价值），并表达出强烈的入职意愿和长期承诺？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_salary_expectation",
+    "content": "你的薪资预期是多少？",
+    "metadata": {
+      "category": "知名公司专项题 -> 5. Hired",
+      "interview_point": "考察候选人对自身价值的认知、市场薪资的了解、谈判能力以及职业规划与公司匹配度",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述当前市场薪资水平、个人职业阶段以及公司薪资结构等背景情况？",
+          "Task": "候选人是否明确设定合理的薪资预期目标，并考虑与公司预算和职位要求的匹配？",
+          "Action": "候选人是否展示了对薪资调研、谈判策略的准备，以及如何基于自身技能和经验提出薪资要求？",
+          "Result": "候选人是否最终达成或接近薪资预期，并确保薪资与职业发展、公司文化相协调？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_leave_reason",
+    "content": "为什么想离开当前的公司？",
+    "metadata": {
+      "category": "知名公司专项题 -> 5. Hired",
+      "interview_point": "考察候选人的职业规划、自我认知、离职动机的合理性，以及是否对目标公司有清晰了解和积极态度。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述当前公司的具体情境，如公司文化、团队氛围、工作内容、发展机会等，以及这些因素如何影响其职业发展？",
+          "Task": "候选人是否明确识别出自身职业发展需求与当前公司环境之间的不匹配，并设定寻找新机会的具体目标？",
+          "Action": "候选人采取了哪些行动来评估离职决定，例如自我反思、研究目标公司、准备面试等，以确保决策合理且积极？",
+          "Result": "候选人如何从离职经历中总结收获，并展示对新公司的热情和适应性，以证明其决策的积极影响和未来潜力？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_overwhelming_responsibility",
+    "content": "讲一次你的工作责任变得有些难以承受的经历。你当时是怎么做的？",
+    "metadata": {
+      "category": "知名公司专项题 -> 5. Hired",
+      "interview_point": "考察候选人在面对工作压力和责任过载时的应对能力、问题解决策略、压力管理以及自我调节和寻求支持的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了具体的工作场景，包括时间、地点、角色以及导致责任难以承受的具体因素（如工作量激增、资源不足、时间紧迫等）？",
+          "Task": "候选人是否明确说明了当时面临的核心任务或目标，以及这些责任如何变得难以承受，包括个人职责和团队期望？",
+          "Action": "候选人采取了哪些具体行动来应对责任过载，例如优先级排序、寻求帮助、沟通协调、时间管理或技能提升？这些行动是否体现了主动性和策略性？",
+          "Result": "候选人的行动带来了什么结果，例如是否成功完成任务、减轻压力、改善工作流程或学到经验教训？结果是否可量化或具有积极影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_team_disagreement_01",
+    "content": "举例说明你与团队成员意见分歧的情况。你是如何处理的？",
+    "metadata": {
+      "category": "知名公司专项题 -> 5. Hired",
+      "interview_point": "考察候选人在团队合作中处理分歧的能力，包括沟通技巧、冲突解决、团队协作和问题解决能力，以及是否能够以建设性方式推动团队达成共识。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了与团队成员产生意见分歧的具体情境，包括项目背景、团队成员角色、分歧的具体内容以及可能的影响？",
+          "Task": "候选人是否明确了在处理分歧时需要达成的目标，例如维护团队和谐、确保项目质量、达成共识或优化决策？",
+          "Action": "候选人是否详细说明了采取的具体行动，如主动沟通、倾听对方观点、分析利弊、寻求第三方意见或妥协方案，并展示了建设性和专业的态度？",
+          "Result": "候选人是否说明了处理分歧的结果，包括是否成功解决分歧、对团队和项目的影响（如提升效率、加强合作或达成更好决策），以及从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_recent_challenge",
+    "content": "描述你最近在岗位上遇到的挑战。你是如何应对的？结果如何？",
+    "metadata": {
+      "category": "知名公司专项题 -> 5. Hired",
+      "interview_point": "考察候选人在面对实际工作挑战时的应对能力、问题解决技巧、决策过程以及结果导向思维，评估其适应性和成长潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体的、近期在工作岗位上遇到的挑战，包括背景、相关人物和关键因素？",
+          "Task": "候选人是否明确说明在该挑战中需要完成的任务、目标或责任，以及面临的约束或期望？",
+          "Action": "候选人是否详细阐述自己采取的应对措施、决策过程、使用的技能或资源，以及如何与他人协作或独立解决问题？",
+          "Result": "候选人能否量化或具体说明行动的结果，包括成就、影响、学到的教训，以及如何评估成功或改进？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_career_goal_5y",
+    "content": "五年后你希望达到什么目标？",
+    "metadata": {
+      "category": "知名公司专项题 -> 5. Hired",
+      "interview_point": "考察候选人的职业规划、自我认知、目标设定能力、与公司长期发展的匹配度，以及是否具备清晰的成长路径和实现目标的行动力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述当前职业阶段、行业背景或个人定位，为五年目标提供合理的情境基础？",
+          "Task": "候选人是否明确设定具体、可衡量、与职业发展相关的五年目标，并体现对自身角色或领域的深入思考？",
+          "Action": "候选人是否详细阐述为实现五年目标计划采取的具体步骤、技能提升、资源获取或策略调整，展示主动性和规划能力？",
+          "Result": "候选人是否说明五年目标达成后的预期成果、对个人或组织的贡献，以及如何评估目标实现的有效性？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_unresponsive_info",
+    "content": "讲一次你需要从一个没有回应的人那里获取信息的经历。你做了什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 5. Hired",
+      "interview_point": "考察候选人在面对沟通障碍或资源获取困难时的主动性、问题解决能力、沟通技巧和韧性，特别是在需要从无回应者处获取关键信息的情境下。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的情境，其中你需要从某个没有回应的人那里获取信息。这个情境的背景是什么？为什么这个信息对你或团队很重要？",
+          "Task": "在这个情境中，你的具体任务是什么？你需要获取什么信息？为什么这个任务具有挑战性，特别是由于对方无回应？",
+          "Action": "你采取了哪些具体行动来尝试从无回应的人那里获取信息？例如，你是否尝试了多种沟通渠道（如邮件、电话、即时消息、面对面沟通）？你是否调整了沟通方式或内容以提高回应率？你是否寻求了他人帮助或使用了其他资源？请详细说明你的策略和步骤。",
+          "Result": "最终结果如何？你是否成功获取了所需信息？如果是，信息如何帮助解决问题或推进项目？如果不是，你从中学到了什么，或采取了什么替代方案？请量化或具体描述结果的影响。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "lyft_interesting_challenging_project",
+    "content": "谈谈你迄今为止最有趣/最具挑战性的项目。",
+    "metadata": {
+      "category": "知名公司专项题 -> 6. Lyft",
+      "interview_point": "考察候选人在复杂项目中的问题解决能力、创新思维、团队协作和结果导向，评估其如何应对挑战、驱动项目成功并从中学习成长。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述项目的背景、环境和关键挑战，例如项目目标、团队规模、时间限制或技术障碍？",
+          "Task": "候选人是否明确说明自己在项目中的具体角色、职责和需要达成的目标，以及这些任务如何与项目整体成功相关？",
+          "Action": "候选人是否详细阐述所采取的行动步骤，包括如何分析问题、制定策略、协调资源、克服困难，并展示创新或领导力？",
+          "Result": "候选人能否量化或具体说明项目成果，如性能提升、成本节约、用户增长，并反思个人收获和项目对业务的影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_lyft_choice",
+    "content": "为什么选择 Lyft？",
+    "metadata": {
+      "category": "知名公司专项题 -> 6. Lyft",
+      "interview_point": "考察候选人对Lyft公司的了解、职业动机、价值观匹配度以及长期职业规划，评估其是否对公司有深入研究和真诚兴趣。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否描述自己当前或过去的职业背景、个人兴趣或行业趋势，为选择Lyft提供具体情境？",
+          "Task": "候选人是否明确阐述自己寻找新机会的目标，如寻求特定公司文化、技术挑战或职业发展，并解释为什么Lyft是理想选择？",
+          "Action": "候选人是否采取了行动来了解Lyft，例如研究公司使命、产品、市场地位、文化或技术栈，并基于此形成选择理由？",
+          "Result": "候选人能否说明选择Lyft如何与个人职业目标或价值观相匹配，并预期或已实现积极成果，如技能提升、贡献机会或长期成长？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_next_position_lyft",
+    "content": "你在下一个职位中寻找什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 6. Lyft",
+      "interview_point": "考察候选人的职业规划、自我认知、与公司文化和岗位的匹配度，以及长期发展潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述当前职业阶段或寻求新机会的背景？",
+          "Task": "候选人是否明确阐述在下一个职位中希望达成的具体职业目标或需求？",
+          "Action": "候选人是否详细说明如何通过寻找特定职位要素（如技能发展、团队文化、项目类型等）来实现目标？",
+          "Result": "候选人是否展示这些要素如何与Lyft的岗位、文化或长期发展相契合，并带来积极影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_palantir_01",
+    "content": "有什么事情是 90% 的人都不同意你，但你坚持认为是对的？",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人在面对广泛反对或不同意见时，如何坚持自己的信念、进行独立思考和决策，以及如何通过逻辑、数据或沟通来捍卫观点，同时评估其韧性、批判性思维和说服能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的情境，其中你面临一个观点或决策，而大多数同事、团队成员或利益相关者（约90%）都不同意你的看法。这个情境的背景是什么？涉及哪些关键人物或群体？",
+          "Task": "在这个情境中，你的核心任务或目标是什么？为什么你认为坚持自己的观点是重要的？它如何与团队、项目或组织的目标相关联？",
+          "Action": "你采取了哪些具体行动来分析和捍卫你的观点？例如，你是否收集了数据、进行了研究、构建了逻辑论证，或与反对者进行了沟通和讨论？请详细说明你的思考过程和实施步骤。",
+          "Result": "最终的结果是什么？你的坚持是否导致了积极或消极的后果？例如，它是否验证了你的观点、改变了团队的决定、带来了改进，或引发了反思？请量化或具体描述影响，并总结你从中学到了什么。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "palantir_inefficient_system",
+    "content": "你周围有什么东西是让你觉得“坏掉的/效率低下”的？",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人的问题识别能力、批判性思维、改进意识和行动力，评估其是否能在复杂环境中发现效率低下之处并采取有效措施解决。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体的工作或生活场景，其中存在一个明显效率低下或“坏掉”的系统、流程或工具？",
+          "Task": "候选人是否明确识别出该问题带来的具体挑战或影响，并设定改进目标或任务？",
+          "Action": "候选人采取了哪些具体、可操作的步骤来分析问题根源、设计解决方案并实施改进？是否展示了创新思维或协作能力？",
+          "Result": "改进措施带来了哪些可量化的积极结果（如时间节省、成本降低、效率提升）？候选人是否反思了经验教训或后续优化？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_difficult_colleague_01",
+    "content": "你如何处理难相处的同事？想出你解决冲突的具体实例。你是如何赢得那些难相处员工的信任的？",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人在面对人际冲突时的解决能力、沟通技巧、同理心以及建立信任的策略，特别是在团队协作和高压环境下的行为表现。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的情境，其中你遇到了一个难相处的同事，包括冲突的背景、相关人物和当时的环境。",
+          "Task": "请说明你在该情境中需要完成的任务或目标，例如解决冲突、改善关系或确保团队合作。",
+          "Action": "请详细阐述你采取的具体行动，如沟通方式、问题解决步骤、如何展示同理心或调整策略以赢得信任。",
+          "Result": "请说明行动的结果，包括冲突是否解决、关系改善程度、团队效率提升或任何可量化的成果。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "palantir_analytical_problem",
+    "content": "谈谈你过去处理过的一个分析性问题。",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人在面对复杂、模糊或数据驱动的分析性问题时，如何运用逻辑思维、结构化方法、数据分析和问题解决能力来识别关键问题、制定策略、执行分析并达成有效结果，以评估其分析技能、批判性思维和实际应用能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体的分析性问题情境，包括背景、涉及的数据或信息、面临的挑战或模糊性，以及相关利益方或环境？",
+          "Task": "候选人能否明确说明在该情境中需要完成的具体任务或目标，例如要解决的核心问题、需要达成的分析结果或决策支持需求？",
+          "Action": "候选人能否详细阐述采取的分析步骤和方法，包括如何收集和处理数据、使用的工具或技术、如何结构化问题、假设检验、以及应对不确定性的策略？",
+          "Result": "候选人能否量化或具体说明分析的结果，包括得出的结论、对业务或决策的影响、学到的经验教训，以及如何验证结果的有效性或改进建议？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "palantir_self_assessment",
+    "content": "你的三个优点和三个缺点是什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人的自我认知能力、诚实度、自我改进意识，以及是否能将个人特质与岗位要求、公司文化（如Palantir注重的问题解决、团队协作、创新等）有效结合，展示成长潜力和适应性。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了当前或过去的职业环境、角色职责，以及这些优点和缺点在哪些具体情境中体现或产生影响？",
+          "Task": "候选人是否明确了自我评估的目标，如提升绩效、适应团队需求、克服挑战，或如何将优点应用于工作、改进缺点以支持职业发展？",
+          "Action": "候选人是否详细说明了如何识别和验证这些优点（如通过反馈、成就）和缺点（如通过反思、挫折），并采取了哪些具体行动来发挥优点或改进缺点（如学习、实践、寻求帮助）？",
+          "Result": "候选人是否量化或质化地展示了这些优点带来的积极成果（如提高效率、成功项目）或缺点改进后的效果（如技能提升、问题解决），并反思了持续改进的潜力？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "palantir_project_selection",
+    "content": "如果你负责为 Palantir 挑选项目，你会尝试解决什么问题？",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人对 Palantir 业务模式、技术专长和战略重点的理解，以及其问题识别、优先级排序和战略思维的能力，评估其是否能够选择符合公司使命和市场需求的项目。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否描述了 Palantir 作为一家专注于大数据分析和人工智能的公司，其核心业务涉及政府、金融、医疗等复杂领域，面临数据整合、隐私安全和决策支持等挑战？",
+          "Task": "候选人是否明确了作为项目挑选者的角色，需要识别和优先考虑那些能解决关键问题、符合公司战略、具有高影响力和可行性的项目？",
+          "Action": "候选人是否详细说明了如何基于 Palantir 的技术优势（如数据融合、算法建模）、市场趋势（如数字化转型、监管需求）和客户痛点（如数据孤岛、低效决策）来筛选项目，并举例说明具体问题（如改善公共卫生响应、优化供应链透明度）？",
+          "Result": "候选人是否评估了所选项目可能带来的积极成果，如增强客户价值、提升公司声誉、驱动收入增长或推动技术创新，并考虑了潜在风险和衡量成功的方法？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_palantir_company_assessment",
+    "content": "你目前公司的一些最好和最坏的事情是什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人对当前公司的批判性分析能力、自我反思、以及对公司文化和价值观的理解，评估其是否能在积极和消极方面保持客观平衡，并展示职业成熟度和适应能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述当前公司的背景，包括行业、规模、文化或具体工作环境，以提供回答的上下文？",
+          "Task": "候选人是否明确识别出需要评估公司最好和最坏方面的任务，并展示出分析公司优缺点的意图？",
+          "Action": "候选人如何具体阐述公司的优点（如创新文化、团队合作、成长机会）和缺点（如流程低效、沟通问题、资源限制），并举例说明这些方面如何影响工作或个人发展？",
+          "Result": "候选人能否总结从这些经历中学到的教训，如何利用优点提升自己或团队，以及如何应对或改进缺点，展示出反思和适应能力？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_manager_evaluation",
+    "content": "你的经理会如何评价你？",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人的自我认知、工作表现、团队协作能力以及是否符合公司文化和价值观，通过经理的视角评估其职业素养和贡献。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的工作场景，例如在团队项目中或日常职责中，你的经理可能观察到的你的表现。",
+          "Task": "在这个场景中，你的经理期望你完成什么任务或目标？",
+          "Action": "你采取了哪些具体行动来完成任务，这些行动如何体现你的能力、态度和与经理的互动？",
+          "Result": "这些行动带来了什么可衡量的结果，经理如何评价你的贡献，以及这如何影响团队或项目？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_palantir_explain",
+    "content": "向你的祖母解释一下 Palantir 是做什么的。",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人的沟通能力、简化复杂概念的能力、同理心以及将技术信息转化为通俗易懂语言的能力，以评估其是否能在非技术环境中有效传达信息。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否描述了需要向祖母解释 Palantir 的情境，例如在家庭聚会或日常对话中，祖母询问 Palantir 是什么，而祖母可能对技术或商业概念不熟悉？",
+          "Task": "候选人是否明确了任务目标，即用简单、易懂的语言向祖母解释 Palantir 的核心业务，避免使用专业术语，确保祖母能够理解？",
+          "Action": "候选人是否采取了具体行动，例如使用类比（如将 Palantir 比作帮助组织信息的工具）、举例说明（如 Palantir 如何帮助公司或政府分析数据）、或分步骤解释，同时保持耐心和互动，以确认祖母的理解？",
+          "Result": "候选人是否评估了结果，例如祖母是否表示理解或提出进一步问题，以及候选人是否从反馈中调整解释方式，最终成功传达 Palantir 的基本概念？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "palantir_teach_learned_thing",
+    "content": "教我一件你学到的事情。",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人的学习能力、知识转化能力、沟通表达能力以及是否具备主动学习和分享的精神，评估其能否清晰、结构化地传授知识或技能。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了学习该事情的具体背景或情境，例如在工作中、项目中、个人兴趣中或特定挑战下？",
+          "Task": "候选人是否明确了学习该事情的目标或任务，例如为了解决某个问题、提升技能、适应新环境或满足特定需求？",
+          "Action": "候选人是否详细说明了学习过程中的具体行动，例如如何获取信息、实践方法、寻求帮助、反思调整或克服困难？",
+          "Result": "候选人是否阐述了学习的结果，例如掌握了什么知识或技能、如何应用它、取得了什么成效（如效率提升、问题解决、个人成长），以及是否能够有效传授给他人？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_prediction_success",
+    "content": "讲一次你预测某事成功的经历。",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人的预测能力、数据分析能力、逻辑推理能力、风险评估能力以及基于证据的决策能力，评估其在复杂或不确定环境中如何预测成功并采取行动。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述预测的背景、相关环境、关键挑战或不确定性因素？",
+          "Task": "候选人能否明确说明预测的目标、成功标准以及需要解决的问题或任务？",
+          "Action": "候选人能否详细阐述用于预测的方法、数据收集与分析过程、逻辑推理步骤、风险评估以及采取的决策或行动？",
+          "Result": "候选人能否具体说明预测的结果、成功与否的证据、对项目或组织的影响以及从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "palantir_supervisor_rating",
+    "content": "如果你的主管给你打分（1-10分），他会给你打几分？",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人的自我认知、反思能力、与主管的沟通和协作关系，以及如何基于反馈改进工作表现。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的工作场景，例如你最近完成的一个项目或日常任务，其中涉及与主管的互动和反馈。",
+          "Task": "请说明在这个场景中，你的任务是什么，以及主管对你的期望或目标是什么？",
+          "Action": "请详细阐述你采取了哪些行动来完成任务，包括如何与主管沟通、寻求反馈、调整策略或解决挑战。",
+          "Result": "请描述结果如何，包括主管对你的表现有何反馈、你从中学到了什么，以及你如何基于此改进未来的工作。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_palantir_interesting",
+    "content": "你最近做过的最有趣的事情是什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人的好奇心、创新思维、主动学习能力以及将个人兴趣与工作潜力结合的能力，评估其是否具备Palantir所重视的解决复杂问题的热情和探索精神。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述一个具体的、近期的情境，展示其主动探索或参与有趣活动的背景？",
+          "Task": "候选人是否明确说明在该情境中需要完成的任务或目标，体现其个人驱动力或挑战性？",
+          "Action": "候选人是否详细阐述自己采取的具体行动步骤，包括如何运用技能、克服困难或创新思考？",
+          "Result": "候选人是否能量化或质化描述行动的结果，包括学到的知识、获得的成就或对个人/工作的积极影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "palantir_self_motivation",
+    "content": "讲述你如何成为今天的你，以及是什么让你申请 Palantir。",
+    "metadata": {
+      "category": "知名公司专项题 -> 7. Palantir",
+      "interview_point": "考察候选人的自我认知、职业发展动机、与Palantir公司文化和价值观的契合度，以及申请该职位的具体原因。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述过去的关键经历或背景，如教育、项目、工作或挑战，这些如何塑造了他们的技能和价值观？",
+          "Task": "候选人是否明确说明在这些情境中需要达成的目标或解决的问题，以及这些任务如何引导他们走向当前职业路径？",
+          "Action": "候选人能否详细阐述他们采取的具体行动、决策过程、技能应用或学习经历，以展示个人成长和适应能力？",
+          "Result": "候选人是否量化或定性描述这些行动的结果，如成就、影响、教训，并解释这些结果如何激发他们申请Palantir？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_internship_experience",
+    "content": "谈谈你的实习经历。",
+    "metadata": {
+      "category": "知名公司专项题 -> 8. Slack",
+      "interview_point": "考察候选人的实习经历、学习能力、团队协作、问题解决能力以及职业成长潜力，通过具体事例评估其在真实工作环境中的表现和贡献。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述你在实习期间所处的具体情境，包括公司背景、团队角色、项目或任务的环境，以及面临的挑战或机会是什么？",
+          "Task": "请说明你在实习中承担的具体任务或目标是什么，包括你的职责、期望达成的成果以及任何相关的约束条件？",
+          "Action": "请详细阐述你为完成任务所采取的行动，包括你的思考过程、使用的技能、与团队的合作方式以及如何应对困难或变化？",
+          "Result": "请总结你的行动带来的结果，包括量化成果、对团队或项目的贡献、个人学习收获以及任何后续影响或反馈？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_slack_motivation",
+    "content": "为什么想加入 Slack？",
+    "metadata": {
+      "category": "知名公司专项题 -> 8. Slack",
+      "interview_point": "考察候选人对Slack公司的了解程度、职业动机与公司价值观的匹配度，以及长期职业规划与公司发展的契合性。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了自己当前职业阶段或背景，以及了解Slack的契机？",
+          "Task": "候选人是否明确表达加入Slack的动机目标，如职业发展、技能应用或价值观认同？",
+          "Action": "候选人是否通过具体行动（如研究产品、关注行业动态、参与社区）来深入了解Slack，并展示与岗位的匹配度？",
+          "Result": "候选人是否能说明加入Slack如何实现个人与公司的双赢，并体现长期承诺和贡献潜力？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_slack_project",
+    "content": "谈谈你过去的项目。",
+    "metadata": {
+      "category": "知名公司专项题 -> 8. Slack",
+      "interview_point": "考察候选人在过去项目中的角色、贡献、问题解决能力、团队协作以及项目成果，以评估其实际工作经验和与Slack文化（如协作、创新、用户导向）的匹配度。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述过去项目的背景、团队规模、项目目标以及面临的挑战或约束条件？",
+          "Task": "候选人是否明确说明自己在项目中的具体职责、任务目标以及个人需要达成的关键成果？",
+          "Action": "候选人是否详细阐述自己采取的行动步骤，包括如何解决问题、与团队协作、使用工具（如Slack）沟通，以及应对突发状况的策略？",
+          "Result": "候选人能否量化或具体说明项目成果，如效率提升、用户满意度、业务影响，并反思个人贡献和从中学到的经验教训？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_slack_hardest_project",
+    "content": "解释你最难的项目以及它的工作架构。",
+    "metadata": {
+      "category": "知名公司专项题 -> 8. Slack",
+      "interview_point": "考察候选人在复杂项目中的问题解决能力、技术架构设计、团队协作和成果交付，评估其面对挑战时的应对策略和反思能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否能清晰描述项目的背景、复杂性、面临的挑战（如技术限制、时间压力、团队规模或业务需求）？",
+          "Task": "候选人是否明确说明自己在项目中的具体职责、目标和需要解决的关键问题？",
+          "Action": "候选人是否详细阐述采取的行动，包括技术架构设计、决策过程、团队协作、问题解决策略和使用的工具或方法？",
+          "Result": "候选人是否能量化或具体描述项目的成果、影响、学到的教训以及如何改进或反思？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_slack_learnings",
+    "content": "除了技术知识，你在实习期间还学到了什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 8. Slack",
+      "interview_point": "考察候选人在实习期间的非技术能力成长，如沟通协作、问题解决、职业素养、团队适应性和自我反思能力，以评估其综合软技能和职业发展潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述你在实习期间的具体环境，例如所在团队、公司文化、项目背景或面临的挑战，这如何促使你学习非技术知识？",
+          "Task": "在实习中，你需要完成哪些任务或目标，这些任务如何要求你发展技术之外的能力，如沟通、协作或时间管理？",
+          "Action": "你采取了哪些具体行动来学习或应用非技术技能，例如主动参与团队会议、寻求反馈、处理冲突或改进工作流程？",
+          "Result": "这些行动带来了什么可衡量的结果，例如提高了团队效率、获得了正面反馈、解决了问题，或对个人职业成长有何具体影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_conflict_resolution_01",
+    "content": "如果有人对项目有不同的看法（比如使用不同的编程语言），你会如何处理？",
+    "metadata": {
+      "category": "知名公司专项题 -> 8. Slack",
+      "interview_point": "考察候选人在面对技术分歧或团队冲突时的沟通、协作和问题解决能力，包括倾听不同意见、评估方案、达成共识和推动项目进展的技能。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体情境，其中团队成员对项目技术方案（如编程语言选择）持有不同看法，导致潜在冲突或项目延误。",
+          "Task": "请说明你在该情境中的任务或目标，例如需要协调分歧、确保项目按时推进并选择最优技术方案。",
+          "Action": "请详细阐述你采取的行动，包括如何倾听各方观点、分析利弊、促进讨论、寻求共识或做出决策，以及如何沟通和执行。",
+          "Result": "请描述行动的结果，例如是否成功解决分歧、项目是否按计划完成、团队协作是否改善，以及从中学到的经验教训。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_slack_subject_interest",
+    "content": "你最感兴趣的科目是什么？为什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 8. Slack",
+      "interview_point": "考察候选人的学习热情、自我驱动能力、知识深度以及如何将个人兴趣与职业发展或团队贡献相结合的能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体的学习或研究情境，例如在大学课程、自学项目或工作中遇到的某个学科领域？",
+          "Task": "候选人是否明确说明在该情境下需要掌握的知识、技能或解决的问题，以及个人设定的学习目标或挑战？",
+          "Action": "候选人采取了哪些具体行动来深入学习该科目，例如主动阅读资料、参与实践项目、寻求导师指导或应用所学解决实际问题？",
+          "Result": "候选人通过深入学习取得了什么成果，例如提升了专业技能、完成了相关项目、获得了认证或对团队/组织产生了积极影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_slack_bug_01",
+    "content": "你在 Slack 中发现过 Bug 吗？",
+    "metadata": {
+      "category": "知名公司专项题 -> 8. Slack",
+      "interview_point": "考察候选人在使用 Slack 等协作工具时的问题发现、分析和解决能力，以及主动性和对产品质量的关注。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述你在使用 Slack 时遇到的具体 Bug 情境，包括时间、环境、Slack 版本或功能，以及该 Bug 如何影响你的工作或团队协作。",
+          "Task": "请说明你当时需要完成的任务或目标，以及识别和解决这个 Bug 的重要性，例如确保沟通顺畅、提高工作效率或维护数据准确性。",
+          "Action": "请详细阐述你发现 Bug 后的行动步骤，包括如何复现问题、收集证据、分析原因、与团队或 Slack 支持沟通，以及采取的临时或长期解决方案。",
+          "Result": "请描述 Bug 解决后的具体结果，如问题是否被修复、对团队效率的积极影响、获得的反馈或经验教训，以及如何预防类似问题再次发生。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_slack_favorite_feature",
+    "content": "你最喜欢的功能是什么？为什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 8. Slack",
+      "interview_point": "考察候选人对Slack产品的理解深度、功能偏好背后的逻辑思维、以及是否能从用户或产品角度分析功能价值，反映其产品敏感度和批判性思考能力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述了使用Slack的具体场景或背景，例如在工作团队协作、项目管理、跨部门沟通等情境中的实际应用？",
+          "Task": "候选人是否明确指出了在该场景下需要解决的核心问题或目标，例如提高沟通效率、减少信息遗漏、增强团队协作等？",
+          "Action": "候选人是否详细解释了为什么选择某个特定功能（如频道、线程、集成应用、搜索功能等），并分析了该功能如何操作以应对任务，包括其优势、使用方法和个人体验？",
+          "Result": "候选人是否评估了该功能带来的实际效果，例如是否提升了工作效率、改善了团队协作、减少了错误，或提供了量化或质化的成果证据？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_stackoverflow_build",
+    "content": "你构建过什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 9. Stack Overflow",
+      "interview_point": "考察候选人的技术构建能力、项目经验、问题解决能力、创新思维以及技术深度，评估其在实际工作中从概念到实现的完整流程，包括技术选型、架构设计、团队协作和成果影响。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述构建项目的背景、动机和面临的挑战，例如：项目是为了解决什么具体问题？在什么环境下启动（如公司需求、个人兴趣、技术探索）？涉及哪些关键约束（如时间、资源、技术限制）？",
+          "Task": "候选人能否明确说明在项目中承担的具体职责和目标，例如：个人或团队的任务是什么？需要交付什么成果？如何定义成功标准？是否涉及跨职能协作或领导职责？",
+          "Action": "候选人能否详细阐述采取的具体行动和决策过程，例如：如何进行技术选型和架构设计？使用了哪些工具、框架或方法？如何解决遇到的技术难题？如何管理项目进度和团队沟通？是否有创新或优化措施？",
+          "Result": "候选人能否量化或定性展示项目的成果和影响，例如：项目是否成功交付并达到预期目标？带来了什么业务价值或技术改进（如性能提升、成本节约、用户增长）？从中学到了什么经验教训？是否有后续迭代或扩展？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_tech_challenge_01",
+    "content": "你遇到的最难的技术问题是什么？你是如何解决的？",
+    "metadata": {
+      "category": "知名公司专项题 -> 9. Stack Overflow",
+      "interview_point": "考察候选人在面对复杂技术难题时的分析能力、问题解决策略、技术深度、学习能力和抗压能力，以及通过具体案例展示其技术实践经验和成果。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述一个具体、真实且具有挑战性的技术问题场景，包括问题发生的背景、环境、相关技术栈和关键难点？",
+          "Task": "候选人是否明确说明在该情境下需要达成的具体目标或任务，以及面临的约束条件（如时间、资源、性能要求等）？",
+          "Action": "候选人是否详细阐述其解决问题的步骤，包括如何分析问题根源、尝试的方案、使用的工具或技术、团队协作（如有）、以及如何克服过程中的障碍？",
+          "Result": "候选人能否量化或具体说明问题解决的结果，包括技术指标改进、业务影响、个人学习收获，以及是否有后续优化或反思？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_future_vision_01",
+    "content": "五年后你见到的自己在做什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 9. Stack Overflow",
+      "interview_point": "考察候选人的职业规划、自我认知、目标设定能力，以及对未来发展的前瞻性和与公司文化的契合度。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述当前职业阶段、技能水平或行业背景，为未来愿景提供合理基础？",
+          "Task": "候选人是否明确设定五年后的具体职业目标或角色，并解释其与个人价值观或公司使命的关联？",
+          "Action": "候选人是否详细阐述为实现目标计划采取的行动步骤，如学习新技能、承担项目或建立网络？",
+          "Result": "候选人是否预测五年后可能达成的成果，如职位晋升、技能提升或对团队的贡献，并评估其可衡量性？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_stackoverflow_motivation",
+    "content": "为什么想在这里工作？",
+    "metadata": {
+      "category": "知名公司专项题 -> 9. Stack Overflow",
+      "interview_point": "考察候选人对公司文化、价值观、业务的理解，以及个人职业目标与公司发展的匹配度，评估其求职动机、长期承诺和价值观契合度。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述您当前或过去的职业发展阶段，以及您对Stack Overflow的初步了解和接触情况。",
+          "Task": "请说明您希望通过加入Stack Overflow实现哪些职业目标或个人成长，以及您认为公司能为您提供哪些独特机会。",
+          "Action": "请详细阐述您如何研究Stack Overflow的公司文化、产品、技术栈或社区影响，并说明这些研究如何影响您的求职决策。",
+          "Result": "请总结您认为加入Stack Overflow将如何帮助您实现个人与职业目标，以及您能为公司带来哪些具体价值，以证明长期契合度。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_colleague_disagreement",
+    "content": "你如何处理与同事的分歧？",
+    "metadata": {
+      "category": "知名公司专项题 -> 9. Stack Overflow",
+      "interview_point": "考察候选人在团队协作中处理分歧的能力，包括沟通技巧、冲突解决、同理心、问题解决和团队合作精神。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体情境，说明你与同事在什么项目或任务上产生了分歧，分歧的具体内容是什么？",
+          "Task": "在这个情境中，你的目标是什么？你需要解决的分歧对团队或项目有什么影响？",
+          "Action": "你采取了哪些具体行动来处理分歧？例如，如何与同事沟通、倾听对方观点、寻求共同点、提出解决方案或妥协？",
+          "Result": "结果如何？分歧是否得到解决？对团队合作、项目进展或个人关系产生了什么积极影响？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "stripe_tech_tracking",
+    "content": "你如何跟进最新技术？",
+    "metadata": {
+      "category": "知名公司专项题 -> 10. Stripe",
+      "interview_point": "考察候选人在快速变化的科技环境中，主动学习和适应新技术的能力，包括信息获取、实践应用和持续改进的策略。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "描述一个具体情境，例如在 Stripe 这样的支付技术公司，技术更新迅速，需要保持竞争力或解决特定业务挑战。",
+          "Task": "说明在该情境下，你的任务是什么，例如需要学习一项新技术以优化支付系统、提升安全性或支持新产品开发。",
+          "Action": "详细阐述你采取了哪些行动来跟进最新技术，例如订阅行业新闻、参加技术会议、进行实验项目、与同行交流或使用在线学习平台。",
+          "Result": "说明这些行动的结果，例如成功应用新技术提高了效率、解决了问题、获得了认证或分享了知识给团队。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "stripe_difficult_project",
+    "content": "解释一个你最近参与过的困难项目。",
+    "metadata": {
+      "category": "知名公司专项题 -> 10. Stripe",
+      "interview_point": "考察候选人在面对复杂或挑战性项目时的解决问题能力、团队协作、技术执行和结果导向，评估其如何应对压力、管理资源并达成目标。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人能否清晰描述项目的背景、环境和面临的挑战，例如项目规模、时间限制、技术复杂性或团队动态？",
+          "Task": "候选人能否明确说明自己在项目中的具体角色、职责和需要达成的目标，以及这些任务如何与项目整体困难相关？",
+          "Action": "候选人能否详细阐述为解决项目困难所采取的具体行动、策略和决策，包括如何分析问题、协调资源、克服障碍和应对变化？",
+          "Result": "候选人能否量化或具体说明项目的最终成果、影响和教训，例如是否按时交付、性能提升、成本节约或团队成长？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "stripe_future_vision",
+    "content": "五年后你见到的自己在做什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 10. Stripe",
+      "interview_point": "考察候选人的职业规划、自我认知、目标设定、与公司长期发展的契合度，以及创新和领导潜力。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "候选人是否清晰描述当前职业阶段、技能和兴趣，以及如何与Stripe的业务和技术环境相关联？",
+          "Task": "候选人是否明确设定五年后的具体职业目标，如角色、职责或项目，并解释其与个人成长和公司目标的关联？",
+          "Action": "候选人是否详细阐述为实现目标计划采取的行动步骤，如学习新技能、承担领导责任或推动创新项目？",
+          "Result": "候选人是否预测五年后可能取得的成果，如职业晋升、技术贡献或业务影响，并展示其对Stripe长期价值的理解？"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  },
+  {
+    "id": "beh_twitter_strength_01",
+    "content": "你以前的老板会说你最大的优势是什么？",
+    "metadata": {
+      "category": "知名公司专项题 -> 11. Twitter",
+      "interview_point": "考察候选人的自我认知、优势识别能力，以及如何通过具体事例展示其核心优势，以评估其与公司文化和岗位要求的匹配度。",
+      "best_answer_model": {
+        "star_scoring_criteria": {
+          "Situation": "请描述一个具体的工作场景，其中你的优势发挥了关键作用，例如在团队项目、客户互动或问题解决中。",
+          "Task": "在这个场景中，你需要完成什么任务或目标？请说明任务的具体要求和挑战。",
+          "Action": "你采取了哪些具体行动来运用你的优势？请详细描述你的步骤、策略和决策过程。",
+          "Result": "这些行动带来了什么结果？请量化或具体说明成果，如效率提升、问题解决、团队协作改善或业务增长。"
+        }
+      },
+      "source_ref": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+      "type": "behavioral"
+    }
+  }
+]
