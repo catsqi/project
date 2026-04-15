@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { DigitalInterviewer } from '../components/ui/DigitalInterviewer';
 import { InteractionBar } from '../components/ui/InteractionBar';
 import { useWebRTCStore } from '../store/webrtcStore';
+import { useAudioLevel } from '../hooks/useAudioLevel';  // 新增：音频能量检测
 
 const InterviewRoom: React.FC = () => {
   const navigate = useNavigate();
@@ -24,6 +25,17 @@ const InterviewRoom: React.FC = () => {
     addToQueue,
     disconnect 
   } = useWebRTCStore();
+
+  // 使用音频能量检测
+  const { isSpeaking: isAudioSpeaking, volume } = useAudioLevel(remoteAudioStream, {
+    threshold: 15,      // 音量阈值
+    smoothing: 0.7,     // 平滑系数
+    interval: 50        // 50ms 检测一次
+  });
+
+  // 统一的 AI 说话状态：DataChannel 信号 或 音频能量检测
+  // 用于嘴型动画和麦克风堵塞，确保两者逻辑一致
+  const isAIActuallySpeaking = isAISpeaking || isAudioSpeaking;
   
   const [messages, setMessages] = useState<{id: number, sender: 'ai'|'user', text: string}[]>([
     { id: 1, sender: 'ai', text: 'HELLO. I AM READY. SHALL WE BEGIN?' }
@@ -103,24 +115,25 @@ const InterviewRoom: React.FC = () => {
     }
   }, [isConnected]);
 
-  // 监听 AI 说话状态
+  // 监听 AI 说话状态（使用统一的状态）
   useEffect(() => {
-    if (isAISpeaking) {
+    if (isAIActuallySpeaking) {
       setAiState('speaking');
     } else {
       setAiState(isVoiceActive ? 'listening' : 'idle');
     }
-  }, [isAISpeaking, isVoiceActive]);
+  }, [isAIActuallySpeaking, isVoiceActive]);
 
   // 当 AI 发声时自动堵住耳朵（物理切断麦克风波形发送），防止声音循环被误认为用户发言
   useEffect(() => {
     if (localStream) {
       localStream.getAudioTracks().forEach(track => {
-        track.enabled = isVoiceActive && !isAISpeaking;
+        // 使用统一的 AI 说话状态，确保与嘴型动画逻辑一致
+        track.enabled = isVoiceActive && !isAIActuallySpeaking;
       });
-      console.log(`[Frontend] 麦克风轨道状态已切换: ${isVoiceActive && !isAISpeaking ? '开启接收' : '被堵住（防回音过滤）'}`);
+      console.log(`[Frontend] 麦克风轨道状态已切换: ${isVoiceActive && !isAIActuallySpeaking ? '开启接收' : '被堵住（防回音过滤）'}`);
     }
-  }, [localStream, isVoiceActive, isAISpeaking]);
+  }, [localStream, isVoiceActive, isAIActuallySpeaking]);
 
   // 设置数据通道监听器
   useEffect(() => {
@@ -410,7 +423,10 @@ const InterviewRoom: React.FC = () => {
         
         {/* Left Column: Digital Interviewer */}
         <section className="flex-1 flex flex-col md:w-1/2 min-h-0 bg-gray-50">
-          <DigitalInterviewer isSpeaking={aiState === 'speaking'} />
+          <DigitalInterviewer 
+            isSpeaking={aiState === 'speaking'} 
+            volume={volume}  // 传递音量
+          />
         </section>
 
         {/* Right Column: Chat Console & Interaction */}

@@ -120,7 +120,7 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
                     self.audio_buffer.append(audio_data[i : i + self.frame_size])
                     self.silence_duration += 1
 
-                    if self.silence_duration > 15:
+                    if self.silence_duration > 20:
                         self.is_speaking_user = False
                         full_audio = np.concatenate(self.audio_buffer)
                         self.audio_buffer = []
@@ -271,25 +271,42 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
                 """引导 GLM 进行充分的回应缓冲，为后台争取更多时间"""
                 return original_prompt + """
                 
-【切换到：过渡反馈模式】
-此刻用户刚刚回答完问题，但后台需要时间处理。你现在的唯一任务是进行一段【内容充实、有深度的肯定与反馈】，而不是推进面试。
+【切换到：过渡反馈模式 - 当前阶段禁止提问！】
+此刻用户（候选人）刚刚回答完问题，你的任务只有一个：给予肯定和反馈。
+⚠️ 关键：你的提问工作将在下一阶段进行，现在还不是提问的时候！
 
-请你严格按照以下3个步骤组织这段发言（总共3-5句话）：
-1. 肯定与复述：仔细提炼用户刚才提到的一到两个核心关键点，并用你的话复述出来。（例如：“听到你刚才分享的关于xxx的实践...”）
-2. 专家视角的认同：针对用户的回答，补充你自己的行业观察或专业评价，表现出你在深度思考。
-3. 结尾陈述：**这是最重要的一点，你发言的最后一句话必须是一个陈述句（句号结尾）！** 比如：“确实如此。”、“这反映出你不错的思考。”
+你当前的身份：面试官（评价者，不是被面试者）
+你的当前任务：针对候选人刚才的回答，给出专业的肯定和评价。
 
-🚫 绝对禁止：在这个回合中，不要出现任何疑问号（？），不要试图推进面试，绝对不要提出新的问题！让气氛停留在你的陈述上即可。"""
+📝 必须遵循的结构（共3-4句话，全部以句号结尾）：
+第1句：肯定开场。提炼候选人提到的1个核心点并复述。（例："听到你分享了关于慢查询优化的实践经验，很有价值。"）
+第2句：专业评价。从面试官视角评价这个回答的质量。（例："这种从发现问题到建立索引的思路，体现了系统性的问题解决能力。"）
+第3句：收尾陈述。用肯定性陈述结束，不要留悬念。（例："这是很扎实的技术积累。"）
+
+🚫🚫🚫 绝对禁止事项（违反将导致面试流程错误）：
+- ❌ 禁止使用任何疑问号（？）
+- ❌ 禁止提出任何问题（包括"能详细说说吗"、"是怎么做的？"等）
+- ❌ 禁止使用"接下来"、"然后"等推进性词汇
+- ❌ 禁止以"我作为开发者"的口吻分享个人经验
+- ❌ 禁止引导候选人继续回答（那是下一阶段的事）
+
+✅ 正确示例：
+"听到你分享了后端核心开发中解决慢查询问题的经验。通过建立索引来优化查询性能，这是一个很实际的方案。这种发现问题、定位瓶颈、建立索引的思路体现了不错的工程能力。"
+
+❌ 错误示例（绝对禁止）：
+"听到你分享了慢查询优化的经验。那你们是怎么发现问题的呢？有没有使用什么工具？"
+                                                    ↑ 这里的问号是错误的！"""
 
             # 使用上下文管理器：临时修改 System Prompt，确保恢复
             async with temporary_system_prompt_modifier(short_response_modifier):
-                print("[VAD] GLM生成简短回应...")
+                print("[VAD-阶段一] GLM生成过渡反馈...")
                 await process_interaction(
                     "audio",
                     (audio_data, self.input_sample_rate),
                     self.output_queue,
                     on_text_chunk=send_ai_text,
                     manage_processing_state=False,
+                    skip_history=True,  # 阅后即焚：不写入全局历史，避免污染
                 )
             
             print("[VAD] System Prompt已恢复")
@@ -403,7 +420,9 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
 建议角度：{guidance.suggested_angle}
 {hints}{bank_ref}
 
-请基于以上要求，自然地提出下一个面试问题。保持口语化、简洁、专业。"""
+⚠️ 角色提醒：你是面试官，正在面试候选人。请基于以上要求，以面试官的身份自然地提出下一个面试问题。保持口语化、简洁、专业。
+
+🚫 禁止：不要回答面试问题，不要以求职者身份分享经验，只提出问题。"""
 
         print(f"[VAD] Guidance注入: {guidance.action.value} | {guidance.target_topic}")
 
@@ -452,35 +471,18 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
         同步 ASR 文本到后端记忆
         
         操作逻辑：
-        1. 从后往前遍历 messages
-        2. 找到最后一个 user 消息
-        3. 在其 content 列表中添加转录文本
-        
-        为什么从后往前找？
-        - 确保找到的是当前轮次的 user 消息
-        - 避免误改历史消息
+        阶段一已使用 skip_history=True，音频消息未写入历史。
+        此处直接将 ASR 转录文本作为全新的 user 消息追加到历史中，
+        确保对话历史的完整性和准确性。
         """
-        if not user_transcript or not global_state.messages:
+        if not user_transcript:
             return
-            
-        for i in range(len(global_state.messages) - 1, -1, -1):
-            msg = global_state.messages[i]
-            if msg.get("role") == "user":
-                content = msg.get("content")
-                if isinstance(content, list):
-                    # 检查是否已存在转录文本（避免重复）
-                    has_text = any(
-                        c.get("type") == "text"
-                        and "用户语音转录" in c.get("text", "")
-                        for c in content
-                        if isinstance(c, dict)
-                    )
-                    if not has_text:
-                        content.append(
-                            {"type": "text", "text": f"(用户语音转录: {user_transcript})"}
-                        )
-                        print(f"[VAD] ASR转录已同步到记忆")
-                break
+        
+        # 直接追加全新的 user 消息（不再查找和修改旧消息）
+        global_state.messages.append(
+            {"role": "user", "content": [{"type": "text", "text": user_transcript}]}
+        )
+        print(f"[VAD] ASR转录已同步到记忆: '{user_transcript[:50]}...'")
 
     async def emit(self):
         array = await wait_for_item(self.output_queue, 0.01)
