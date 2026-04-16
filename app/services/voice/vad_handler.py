@@ -68,6 +68,14 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
         self._interview_controller = None
         self._current_guidance = None
 
+    def _is_channel_open(self) -> bool:
+        """检查数据通道是否处于可发送状态"""
+        return (
+            hasattr(self, "channel")
+            and self.channel is not None
+            and getattr(self.channel, "readyState", None) == "open"
+        )
+
     async def receive(self, frame: tuple[int, np.ndarray]):
         current_time = time.time()
 
@@ -146,14 +154,14 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
                 return
             try:
                 print(f"[ASR] 识别结果: '{text}'")
-                if hasattr(self, "channel") and self.channel is not None:
+                if self._is_channel_open():
                     self.channel.send(json.dumps({"type": "user_transcript", "text": text}))
             except Exception as e:
                 print(f"[ASR-Error] 发送失败: {e}")
 
         async def send_ai_text(text: str):
             try:
-                if hasattr(self, "channel") and self.channel is not None:
+                if self._is_channel_open():
                     self.channel.send(json.dumps({"type": "ai_text", "text": text}))
                 preview = text[:30] + '...' if len(text) > 30 else text
                 print(f"[AI-Text] 发送成功: '{preview}'")
@@ -263,48 +271,57 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
         global_state.is_processing = True
 
         try:
+            # 计算音频时长 (16000Hz 采样率)
+            duration = len(audio_data) / 16000.0
+            if duration < 2.5:
+                quality_tier = "short"
+            elif duration < 7.0:
+                quality_tier = "medium"
+            else:
+                quality_tier = "long"
+            print(f"[VAD] 音频时长: {duration:.2f}s, 响应层级: {quality_tier}")
+
             # 启动 ASR 后台任务
             asr_task = asyncio.create_task(run_asr())
             
-            # ========== 阶段一：GLM 简短（扩展）回应（使用上下文管理器）==========
+            # ========== 阶段一：GLM 简短（扩展）回应（物理隔离版）==========
             def short_response_modifier(original_prompt: str) -> str:
-                """引导 GLM 进行充分的回应缓冲，为后台争取更多时间"""
-                return original_prompt + """
+                """引导 GLM 进行回应缓冲，采用全量替换策略彻底隔离提问倾向"""
+                
+                tier_examples = {
+                    "short": "好的，我先记下这部分内容。",
+                    "medium": "好的，收到你的回复，我已经记录下来了。",
+                    "long": "你的分析很详尽，思路非常清晰，我已经完整记录了。"
+                }
+                example = tier_examples.get(quality_tier, tier_examples["medium"])
 
-            【切换到：过渡反馈模式 - 当前阶段禁止提问！】
-            此刻用户（候选人）刚刚回答完问题，你的任务只有一个：给予肯定和反馈。
-            ⚠️ 关键：你的提问工作将在下一阶段进行，现在还不是提问的时候！
+                # 【物理隔离】完全抛弃 original_prompt，构造全新指令
+                # 【关键】将最强约束放在最后，利用末尾偏见确保遵守
+                return f"""你是面试记录助手。你处于过渡反馈阶段。
+你的任务：对用户的回答给出一个自然、专业的简短反馈（1-2句话）。
+你的目标：提供情绪价值，确保用户感到被倾听，为后台处理争取时间。
 
-            你当前的身份：面试官（评价者，不是被面试者）
-            你的当前任务：针对候选人刚才的回答，给出专业的肯定和评价。
+参考回复风格：{example}
 
-            📝 必须遵循的结构（共3-4句话，全部以句号结尾）：
-            第1句：肯定开场。提炼候选人提到的1个核心点并复述。（例："听到你分享了关于慢查询优化的实践经验，很有价值。"）
-            第2句：专业评价。从面试官视角评价这个回答的质量。（例："这种从发现问题到建立索引的思路，体现了系统性的问题解决能力。"）
-            第3句：收尾陈述。用肯定性陈述结束，不要留悬念。（例："这是很扎实的技术积累。"）
+【硬性约束 - 严重违规准则】
+1. 严禁提及任何面试问题或使用问号 (?)。
+2. 严禁使用"接下来"、"继续"、"那么"、"最后一个问题"等引导性词汇。
+3. 严禁以开发者身份分享经验。
+4. 必须以句号 (.) 结束生成。
 
-            🚫🚫🚫 绝对禁止事项（违反将导致面试流程错误）：
-            - ❌ 禁止使用任何疑问号（？）
-            - ❌ 禁止提出任何问题（包括"能详细说说吗"、"是怎么做的？"等）
-            - ❌ 禁止使用"接下来"、"然后"等推进性词汇
-            - ❌ 禁止以"我作为开发者"的口吻分享个人经验
-            - ❌ 禁止引导候选人继续回答（那是下一阶段的事）
-
-            ✅ 正确示例：
-            "听到你分享了后端核心开发中解决慢查询问题的经验。通过建立索引来优化查询性能，这是一个很实际的方案。这种发现问题、定位瓶颈、建立索引的思路体现了不错的工程能力。"
-
-            现在，请严格按照上述要求，直接输出你的过渡反馈（3-4句话，句号结尾）："""
+绝对禁止提问。绝对禁止提问。绝对禁止提问。只给出陈述式反馈。"""
 
             # 使用上下文管理器：临时修改 System Prompt，确保恢复
             async with temporary_system_prompt_modifier(short_response_modifier):
-                print("[VAD-阶段一] GLM生成过渡反馈...")
+                print(f"[VAD-阶段一] GLM生成过渡反馈 ({quality_tier})...")
                 await process_interaction(
                     "audio",
                     (audio_data, self.input_sample_rate),
                     self.output_queue,
                     on_text_chunk=send_ai_text,
                     manage_processing_state=False,
-                    skip_history=True,  # 阅后即焚：不写入全局历史，避免污染
+                    skip_history=True,  # 阅后即焚，不进入对话历史
+                    max_tokens=120,     # 允许生成长一点的垫句，为 DeepSeek 争取思考时间
                 )
             
             print("[VAD] System Prompt已恢复")
@@ -313,23 +330,27 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
             # 等待 ASR 完成
             user_transcript = await asr_task
             
-            if not user_transcript:
-                print("[VAD-Warning] ASR为空")
-                await self._sync_transcript_to_memory("")
+            # ASR 噪音过滤层：清洗识别文本（仅保留汉字、字母、数字、空白）
+            import re
+            cleaned_text = re.sub(r'[^\w\s\u4e00-\u9fa5]', '', user_transcript or "").strip()
+            
+            if not user_transcript or len(cleaned_text) < 2:
+                print(f"[VAD-Warning] ASR结果过短或仅含标点: '{user_transcript}'，拦截后续逻辑")
+                return # 提前结束，防止噪音触发 DeepSeek 和正式提问
+                
+            print(f"[VAD] ASR完成: '{user_transcript[:50]}...'")
+            await self._sync_transcript_to_memory(user_transcript)
+            
+            # DeepSeek 思考
+            guidance = await self._call_deepseek(user_transcript)
+
+            if guidance:
+                self._current_guidance = guidance
+                print("[VAD] GLM继续输出完整问题...")
+                await self._continue_with_guidance(guidance, send_ai_text)
             else:
-                print(f"[VAD] ASR完成: '{user_transcript[:50]}...'")
-                await self._sync_transcript_to_memory(user_transcript)
-                
-                # DeepSeek 思考
-                guidance = await self._call_deepseek(user_transcript)
-                
-                if guidance:
-                    self._current_guidance = guidance
-                    print("[VAD] GLM继续输出完整问题...")
-                    await self._continue_with_guidance(guidance, send_ai_text)
-                else:
-                    print("[VAD-Warning] 使用默认追问")
-                    await self._continue_default(send_ai_text)
+                print("[VAD-Warning] 使用默认追问")
+                await self._continue_default(send_ai_text)
 
             # 等待音频播放完成
             print("[VAD] 等待音频播放...")
@@ -342,7 +363,7 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
 
             # 通知前端本轮交互生成完全结束，可以重置气泡绑定
             try:
-                if hasattr(self, "channel") and self.channel is not None:
+                if self._is_channel_open():
                     self.channel.send(json.dumps({"type": "ai_text_end"}))
             except Exception as e:
                 pass

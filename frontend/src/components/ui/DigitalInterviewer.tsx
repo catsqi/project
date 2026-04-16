@@ -1,117 +1,216 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface DigitalInterviewerProps {
   isSpeaking: boolean;
-  volume?: number;  // 新增：音量参数 (0-255)
+  volume?: number;  // 0-255
 }
+
+// 粒子组件：用于说话时的能量溢出效果
+const Particle: React.FC<{ i: number; power: number }> = ({ i, power }) => {
+  const angle = (i / 12) * Math.PI * 2;
+  return (
+    <motion.div
+      className="absolute w-1 h-1 bg-neon-green rounded-full shadow-[0_0_8px_#CCFF00]"
+      initial={{ x: 0, y: 0, opacity: 0 }}
+      animate={{ 
+        x: Math.cos(angle) * (50 + Math.random() * 100 * power),
+        y: Math.sin(angle) * (50 + Math.random() * 100 * power),
+        opacity: [0, 1, 0],
+        scale: [0, 1.5, 0]
+      }}
+      transition={{ 
+        duration: 0.8 + Math.random() * 0.5, 
+        repeat: Infinity,
+        repeatDelay: Math.random() * 0.2
+      }}
+    />
+  );
+};
 
 export const DigitalInterviewer: React.FC<DigitalInterviewerProps> = ({ 
   isSpeaking,
-  volume = 0  // 默认 0
+  volume = 0 
 }) => {
   const [blink, setBlink] = useState(false);
-
-  // Random blink logic
+  
   useEffect(() => {
     const blinkInterval = setInterval(() => {
       setBlink(true);
-      setTimeout(() => setBlink(false), 150);
-    }, Math.random() * 4000 + 2000); // Blink every 2-6 seconds
+      setTimeout(() => setBlink(false), 200);
+    }, Math.random() * 5000 + 3000);
     return () => clearInterval(blinkInterval);
   }, []);
 
-  // Generate mouth wave segments
-  const numSegments = 12;
-  
-  // 根据音量计算嘴型开合程度 (0-1)
-  const mouthOpenness = Math.min(volume / 100, 1);
+  // 灵敏度增强：将音量映射到 0-1.5 的强度范围
+  const power = Math.min(volume / 80, 1.5); 
+
+  const dataBars = useMemo(() => Array.from({ length: 20 }).map(() => Math.random()), []);
 
   return (
-    <div className="relative w-full h-full min-h-[400px] md:min-h-[600px] bg-black border border-black overflow-hidden flex flex-col justify-center items-center font-mono">
-      {/* Abstract Face Container */}
-      <div className="relative w-64 h-80 flex flex-col items-center justify-center">
+    <div className="relative w-full h-full min-h-[400px] md:min-h-[600px] bg-[#051001]/10 bg-[#000] overflow-hidden flex flex-col justify-center items-center font-mono select-none">
+      
+      {/* 1. 背景层：说话时背景会有轻微闪烁/脉冲 */}
+      <motion.div 
+        className="absolute inset-0 opacity-20 pointer-events-none"
+        animate={{ opacity: isSpeaking ? [0.1, 0.3 * power, 0.1] : 0.1 }}
+        transition={{ duration: 0.2, repeat: isSpeaking ? Infinity : 0 }}
+      >
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(204,255,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(204,255,0,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
+      </motion.div>
+
+      <motion.div 
+        className="absolute inset-0 bg-neon-green/5 pointer-events-none"
+        animate={{ opacity: isSpeaking ? (0.05 + 0.1 * power) : 0 }}
+      />
+
+      {/* 2. 中心核心容器 */}
+      <div className="relative w-96 h-96 flex items-center justify-center">
         
-        {/* Head/Face Outline (Abstract) */}
+        {/* 说话时的外散射光晕 (非常明显的效果) */}
+        <AnimatePresence>
+          {isSpeaking && (
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ 
+                scale: 1 + 0.5 * power, 
+                opacity: 0.4 * power,
+              }}
+              exit={{ opacity: 0 }}
+              className="absolute w-80 h-80 rounded-full bg-neon-green/20 blur-[80px]"
+            />
+          )}
+        </AnimatePresence>
+
+        {/* 旋转圆环：说话时加速旋转 */}
         <motion.div 
-          className="absolute inset-0 border-2 border-white/10 rounded-[40%_40%_50%_50%]"
-          animate={{ scale: isSpeaking ? 1.02 : 1 }}
-          transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse' }}
+          className="absolute w-72 h-72 border-2 border-dashed border-neon-green/30 rounded-full"
+          animate={{ rotate: 360 }}
+          transition={{ duration: isSpeaking ? 5 : 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+          className="absolute w-64 h-64 border-2 border-neon-green/10 rounded-full"
+          animate={{ scale: isSpeaking ? [1, 1.1, 1] : [1, 1.05, 1], rotate: -360 }}
+          transition={{ 
+            scale: { duration: isSpeaking ? 0.4 : 3, repeat: Infinity },
+            rotate: { duration: 25, repeat: Infinity, ease: "linear" }
+          }}
         />
 
-        {/* Eyes Area */}
-        <div className="flex gap-12 mt-8">
-          {/* Left Eye */}
-          <div className="w-12 h-4 relative flex justify-center items-center">
-            <motion.div 
-              className="w-12 h-2 bg-neon-green rounded-full shadow-[0_0_15px_#CCFF00]"
-              animate={{ 
-                height: blink ? 0 : (isSpeaking ? 10 : 4),
-                opacity: blink ? 0 : 1
-              }}
-              transition={{ duration: blink ? 0.05 : 0.2 }}
-            />
+        {/* 粒子放射层 */}
+        {isSpeaking && (
+          <div className="absolute inset-0 pointer-events-none">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <Particle key={i} i={i} power={power} />
+            ))}
           </div>
-          {/* Right Eye */}
-          <div className="w-12 h-4 relative flex justify-center items-center">
-            <motion.div 
-              className="w-12 h-2 bg-neon-green rounded-full shadow-[0_0_15px_#CCFF00]"
-              animate={{ 
-                height: blink ? 0 : (isSpeaking ? 10 : 4),
-                opacity: blink ? 0 : 1
-              }}
-              transition={{ duration: blink ? 0.05 : 0.2 }}
-            />
-          </div>
+        )}
+
+        {/* 圆形波形层 (加粗加长) */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <svg className="w-full h-full rotate-[-90deg] drop-shadow-lg">
+            {Array.from({ length: 72 }).map((_, i) => {
+              const rotation = (i / 72) * 360;
+              const height = isSpeaking 
+                ? 8 + (Math.random() * 60 * power) 
+                : 4 + (Math.random() * 4);
+              
+              return (
+                <motion.rect
+                  key={i}
+                  x="50%"
+                  y="50%"
+                  width={isSpeaking ? "3" : "2"}
+                  height={height}
+                  fill={isSpeaking ? "#CCFF00" : "#CCFF0033"}
+                  className="origin-center"
+                  style={{
+                    transform: `rotate(${rotation}deg) translateY(-110px)`,
+                    filter: isSpeaking ? `drop-shadow(0 0 ${4 * power}px #CCFF00)` : 'none'
+                  }}
+                  animate={{ height }}
+                  transition={{ duration: 0.08 }}
+                />
+              );
+            })}
+          </svg>
         </div>
 
-        {/* Nose abstract line */}
-        <div className="w-[2px] h-12 bg-white/20 mt-8 rounded-full" />
-
-        {/* Mouth Area (Waveform) - 根据音量动态调整 */}
-        <div className="mt-12 flex items-center justify-center gap-1 h-12">
-          {Array.from({ length: numSegments }).map((_, i) => {
-            // Create a curve so center bars are taller
-            const centerDist = Math.abs(i - numSegments / 2);
-            const scaleBase = 1 - (centerDist / (numSegments / 2));
-            
-            // 基础高度 + 音量影响
-            const baseHeight = 4;
-            const maxHeight = 8 + (scaleBase * 24);
-            const currentHeight = isSpeaking 
-              ? baseHeight + (maxHeight - baseHeight) * mouthOpenness * (0.5 + Math.random() * 0.5)
-              : baseHeight;
-
-            return (
-              <motion.div
-                key={i}
-                className="w-1.5 bg-neon-green rounded-full shadow-[0_0_10px_#CCFF00]"
-                animate={{
-                  height: currentHeight
-                }}
-                transition={{
-                  duration: 0.05,  // 快速响应
-                  ease: "linear"
+        {/* 实体核心 (核心震动感调弱) */}
+        <motion.div 
+          className="relative w-40 h-40"
+          animate={{ x: isSpeaking ? [0, -0.5, 0.5, 0] : 0 }}
+          transition={{ duration: 0.2, repeat: isSpeaking ? Infinity : 0 }}
+        >
+          <motion.div 
+            className="absolute inset-0 rounded-full bg-neon-green/20 blur-2xl"
+            animate={{ scale: isSpeaking ? [1, 1.3, 1] : [1, 1.2, 1] }}
+            transition={{ duration: isSpeaking ? 0.4 : 2, repeat: Infinity }}
+          />
+          
+          <motion.div 
+            className="absolute inset-4 rounded-full border-4 border-neon-green bg-black flex items-center justify-center shadow-[0_0_40px_rgba(204,255,0,0.6)]"
+            style={{ zIndex: 10 }}
+            animate={{ 
+              scale: isSpeaking ? [1, 1.05, 1] : 1,
+              boxShadow: isSpeaking 
+                ? [`0 0 30px rgba(204,255,0,0.4)`, `0 0 50px rgba(204,255,0,0.7)`, `0 0 30px rgba(204,255,0,0.4)`] 
+                : `0 0 30px rgba(204,255,0,0.4)`
+            }}
+            transition={{ duration: 0.4, repeat: Infinity }}
+          >
+            <div className="flex gap-4">
+              <motion.div 
+                className="w-8 h-2 bg-neon-green rounded-full shadow-[0_0_10px_#CCFF00]"
+                animate={{ 
+                  height: blink ? 0 : (isSpeaking ? 10 : 3),
+                  opacity: blink ? 0 : 1
                 }}
               />
-            );
-          })}
+              <motion.div 
+                className="w-8 h-2 bg-neon-green rounded-full shadow-[0_0_10px_#CCFF00]"
+                animate={{ 
+                  height: blink ? 0 : (isSpeaking ? 10 : 3),
+                  opacity: blink ? 0 : 1
+                }}
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* 装饰与状态 */}
+      <div className="absolute top-6 left-6 flex flex-col gap-1">
+        <div className="flex items-center gap-2">
+          <div className={`w-2 h-2 rounded-full ${isSpeaking ? 'bg-white animate-ping' : 'bg-gray-700'}`} />
+          <span className={`text-xs font-bold tracking-[0.2em] uppercase ${isSpeaking ? 'text-white' : 'text-neon-green'}`}>
+            {isSpeaking ? 'STATUS: TRANSMITTING_DATA' : 'STATUS: SYSTEM_IDLE'}
+          </span>
+        </div>
+        <div className="h-[1px] w-full bg-neon-green/30" />
+        <div className="text-[9px] text-gray-500 font-mono">ENCRYPTION: AES-256-GCM</div>
+      </div>
+
+      <div className="absolute bottom-6 right-6 w-44 md:w-60 aspect-video rounded-lg overflow-hidden border border-white/20 bg-black/60 backdrop-blur-xl">
+        <div className="absolute inset-0 border-[4px] border-white/5 pointer-events-none" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex flex-col items-center gap-2">
+             <div className="relative">
+                <div className="w-10 h-10 rounded-full border border-neon-green/20" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-neon-green shadow-[0_0_10px_#CCFF00] animate-pulse" />
+                </div>
+             </div>
+            <span className="text-white/40 text-[9px] font-bold tracking-[0.3em] uppercase">Feed_Establishing</span>
+          </div>
+        </div>
+        <div className="absolute top-3 left-3 flex items-center gap-1.5">
+           <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+           <div className="text-[8px] text-white/80 font-mono uppercase tracking-tighter">Live ● 00:00:24</div>
         </div>
       </div>
 
-      {/* Futuristic Scanline Overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(255,255,255,0)_50%,rgba(0,0,0,1)_50%)] bg-[length:100%_4px]" />
-
-      {/* Top Left Label */}
-      <div className="absolute top-4 left-4 flex items-center gap-2">
-        <div className={`w-2 h-2 rounded-full animate-pulse ${isSpeaking ? 'bg-neon-green' : 'bg-gray-500'}`} />
-        <span className="text-neon-green text-xs font-bold tracking-widest">SYS.AI.{isSpeaking ? 'SPEAKING' : 'LISTENING'}</span>
-      </div>
-
-      {/* Video Overlay Placeholder (Bottom Right) */}
-      <div className="absolute bottom-4 right-4 w-40 md:w-56 aspect-[16/9] bg-white/10 border border-white/20 backdrop-blur-sm flex justify-center items-center">
-        <span className="text-white/40 text-[10px] uppercase font-bold tracking-widest">Camera Feed</span>
-      </div>
+      <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_150px_rgba(0,0,0,0.9)]" />
     </div>
   );
 };

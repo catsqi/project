@@ -397,7 +397,7 @@ const InterviewRoom: React.FC = () => {
       
       {/* 连接状态指示器 */}
       {isConnecting && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 rounded-full z-50">
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 z-50">
           正在连接语音服务...
         </div>
       )}
@@ -420,12 +420,12 @@ const InterviewRoom: React.FC = () => {
 
       {/* Main Area: 2-Column Layout */}
       <main className="flex-1 flex flex-col md:flex-row gap-8 min-h-0">
-        
+
         {/* Left Column: Digital Interviewer */}
-        <section className="flex-1 flex flex-col md:w-1/2 min-h-0 bg-gray-50">
-          <DigitalInterviewer 
-            isSpeaking={aiState === 'speaking'} 
-            volume={volume}  // 传递音量
+        <section className="flex-1 flex flex-col md:w-1/2 min-h-0 border border-black bg-black rounded-lg overflow-hidden shadow-2xl">
+          <DigitalInterviewer
+            isSpeaking={isAIActuallySpeaking}
+            volume={volume}
           />
         </section>
 
@@ -438,7 +438,7 @@ const InterviewRoom: React.FC = () => {
               <Text variant="caption">PROGRESS</Text>
               <Text variant="caption">{progress}%</Text>
             </div>
-            <Progress value={progress} color="neon" />
+            <Progress value={progress} />
           </div>
 
           {/* Chat History Flow */}
@@ -446,11 +446,11 @@ const InterviewRoom: React.FC = () => {
             {messages.map(msg => (
               <div key={msg.id} className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}>
                 {msg.sender === 'user' ? (
-                   <Text variant="caption" className="mb-2 text-gray-400">YOU</Text>
+                   <Text variant="caption" className="mb-2 text-gray-500">YOU</Text>
                 ) : (
-                   <Text variant="caption" className="mb-2 text-neon-green font-bold">KAREN.AI</Text>
+                   <Text variant="caption" className="mb-2 text-black font-bold">KAREN.AI</Text>
                 )}
-                <div className={`max-w-[85%] ${msg.sender === 'user' ? 'bg-black text-white p-5' : 'bg-white border-2 border-neon-green shadow-[4px_4px_0px_#000000] p-5'}`}>
+                <div className={`max-w-[85%] ${msg.sender === 'user' ? 'bg-black text-white p-5' : 'bg-white border-2 border-black p-5'}`}>
                   <Text variant="p" className={msg.sender === 'user' ? 'text-white' : 'text-black'}>
                     {msg.text}
                   </Text>

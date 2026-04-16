@@ -47,10 +47,16 @@ export const useWebRTCStore = create<WebRTCState>((set, get) => ({
 
   connect: async () => {
     const state = get();
-    if (state.isConnecting || state.isConnected) return;
-    
+
+    // 【修复】如果存在旧连接，先断开并等待清理完成
+    if (state.pc || state.isConnecting) {
+      console.log('[WebRTC] 检测到旧连接，先断开...');
+      state.disconnect();
+      await new Promise(resolve => setTimeout(resolve, 200));
+    }
+
     set({ isConnecting: true, error: null });
-    
+
     try {
       // 1. 获取麦克风权限
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -121,15 +127,28 @@ export const useWebRTCStore = create<WebRTCState>((set, get) => ({
 
   disconnect: () => {
     const { pc, localStream } = get();
-    if (pc) pc.close();
-    if (localStream) localStream.getTracks().forEach(t => t.stop());
-    set({ 
-      pc: null, 
-      localStream: null, 
+    console.log('[WebRTC] 断开连接...');
+
+    if (pc) {
+      // 先关闭数据通道
+      if (pc.signalingState !== 'closed') {
+        pc.close();
+      }
+    }
+    if (localStream) {
+      localStream.getTracks().forEach(t => t.stop());
+    }
+
+    set({
+      pc: null,
+      localStream: null,
       remoteAudioStream: null,
-      dataChannel: null, 
+      dataChannel: null,
       isConnected: false,
-      isAISpeaking: false 
+      isConnecting: false,
+      isAISpeaking: false,
+      audioQueue: [],
+      isPlaying: false
     });
   },
 

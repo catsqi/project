@@ -13,6 +13,63 @@ from .glm_client import start_voice_stream
 from .state import global_state
 
 
+# ============================================================
+# 音频头部滴滴声裁剪模块
+# ============================================================
+
+def _trim_leading_beep(
+    audio_np: np.ndarray,
+    threshold_ratio: float = 0.08,
+    min_trim_ms: int = 20,
+    max_trim_ms: int = 2000,
+    sample_rate: int = 24000,
+) -> np.ndarray:
+    """
+    裁剪音频开头的滴滴声/低能量噪音
+    
+    原理：
+    - GLM-4-Voice 每次新对话开头可能有 50-150ms 的滴滴声
+    - 通过滑动窗口检测，找到第一个"有声"位置并裁剪前面的部分
+    """
+    if len(audio_np) < 1000:
+        return audio_np
+    
+    min_samples = int(min_trim_ms * sample_rate / 1000)
+    max_samples = int(max_trim_ms * sample_rate / 1000)
+    
+    max_amplitude = np.max(np.abs(audio_np))
+    if max_amplitude < 200:
+        return audio_np
+    
+    threshold = max_amplitude * threshold_ratio
+    window_size = int(5 * sample_rate / 1000)
+    hop_size = window_size // 2
+    
+    first_voice_idx = -1
+    
+    for i in range(0, min(len(audio_np) - window_size, max_samples), hop_size):
+        window = audio_np[i:i + window_size]
+        rms = np.sqrt(np.mean(window.astype(np.float64) ** 2))
+        
+        if rms > threshold:
+            first_voice_idx = i
+            break
+    
+    if first_voice_idx == -1:
+        return audio_np
+    
+    trim_idx = max(0, first_voice_idx - min_samples)
+    
+    if trim_idx == 0:
+        return audio_np
+    
+    trimmed = audio_np[trim_idx:]
+    trimmed_ms = int(trim_idx * 1000 / sample_rate)
+    
+    print(f"[Audio-Trim] 裁剪开头 {trimmed_ms}ms 滴滴声，剩余 {len(trimmed)} 样本")
+    return trimmed
+
+
 def _maybe_get_webrtc_output_queue(output_queue: asyncio.Queue | None) -> asyncio.Queue | None:
     """
     如果调用者没有提供输出队列，尝试使用活跃的 WebRTC 处理器，
@@ -41,6 +98,7 @@ async def process_interaction_stream(
     *,
     manage_processing_state: bool = True,
     skip_history: bool = False,
+    max_tokens: int | None = None,
 ):
     """
     统一流式处理来自语音 (WebRTC) 或文本 (API) 的输入。
@@ -107,7 +165,7 @@ async def process_interaction_stream(
         else:
             messages_to_send = system_prompt + recent_history
 
-        response_iter = await asyncio.to_thread(start_voice_stream, messages_to_send)
+        response_iter = await asyncio.to_thread(start_voice_stream, messages_to_send, max_tokens)
 
         full_text_response = ""
         current_audio_id = None
@@ -160,6 +218,12 @@ async def process_interaction_stream(
                             print(f"[Audio] 剥离 WAV 头，剩余 {len(raw_audio_bytes)} 字节 PCM")
                     
                     audio_np = np.frombuffer(raw_audio_bytes, dtype=np.int16)
+                    
+                    # 只在第一个音频 chunk 裁剪滴滴声
+                    # current_audio_id 为 None 表示这是第一个 chunk
+                    if current_audio_id is None:
+                        audio_np = _trim_leading_beep(audio_np)
+                    
                     await output_queue.put(audio_np)
                     audio_chunk_b64 = None
 
@@ -198,11 +262,13 @@ async def process_interaction(
     *,
     manage_processing_state: bool = True,
     skip_history: bool = False,
+    max_tokens: int | None = None,
 ):
     """
     非流式封装，用于兼容 VAD。支持 on_text_chunk 回调实时推送文本。
-    
+
     skip_history: 透传给 process_interaction_stream，用于幽灵消息。
+    max_tokens: 限制生成 token 数量，用于阶段一限制输出长度。
     """
     full_text = ""
     async for chunk in process_interaction_stream(
@@ -212,14 +278,14 @@ async def process_interaction(
         user_transcript=user_transcript,
         manage_processing_state=manage_processing_state,
         skip_history=skip_history,
+        max_tokens=max_tokens,
     ):
         if "text" in chunk and chunk["text"]:
             text_piece = chunk["text"]
             full_text += text_piece
             if on_text_chunk:
                 if asyncio.iscoroutinefunction(on_text_chunk):
-                    await on_text_chunk(text_piece)  # type: ignore[misc]
+                    await on_text_chunk(text_piece)
                 else:
                     on_text_chunk(text_piece)
     return full_text
-

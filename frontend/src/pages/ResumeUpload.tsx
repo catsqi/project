@@ -226,16 +226,16 @@ const ResumeUpload: React.FC = () => {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className="space-y-8"
     >
-      {/* 拖拽上传区域 - Glassmorphism 风格 */}
+      {/* 拖拽上传区域 */}
       <motion.div
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.1, duration: 0.4 }}
         className={cn(
-          "relative border-2 border-dashed rounded-2xl p-16 transition-all duration-500 cursor-pointer overflow-hidden",
+          "relative border-2 border-dashed p-16 transition-all duration-300 cursor-pointer",
           isDragging 
-            ? "border-cyan-400/60 bg-cyan-400/10 shadow-[0_0_40px_rgba(34,211,238,0.2)]" 
-            : "border-purple-500/30 bg-white/[0.03] backdrop-blur-md hover:border-purple-400/50 hover:bg-white/[0.06] hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]"
+            ? "border-black bg-gray-50" 
+            : "border-gray-300 hover:border-black hover:bg-gray-50"
         )}
         onDragEnter={handleDragEnter}
         onDragLeave={handleDragLeave}
@@ -243,8 +243,6 @@ const ResumeUpload: React.FC = () => {
         onDrop={handleDrop}
         onClick={() => fileInputRef.current?.click()}
       >
-        {/* 背景装饰 */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-cyan-500/5 pointer-events-none" />
         
         <input
           ref={fileInputRef}
@@ -257,13 +255,13 @@ const ResumeUpload: React.FC = () => {
           }}
         />
         
-        <div className="flex flex-col items-center text-center space-y-6 relative z-10">
+        <div className="flex flex-col items-center text-center space-y-6">
           <motion.div 
             className={cn(
-              "p-6 rounded-2xl transition-all duration-500",
+              "p-6 transition-all duration-300",
               isDragging 
-                ? "bg-gradient-to-br from-cyan-400/20 to-blue-500/20 text-cyan-300 shadow-[0_0_30px_rgba(34,211,238,0.3)]" 
-                : "bg-gradient-to-br from-purple-500/10 to-blue-500/10 text-purple-300"
+                ? "bg-black text-white" 
+                : "bg-gray-100 text-black"
             )}
             animate={isDragging ? { scale: 1.1 } : { scale: 1 }}
             transition={{ duration: 0.3 }}
@@ -272,21 +270,21 @@ const ResumeUpload: React.FC = () => {
           </motion.div>
           
           <div>
-            <Text variant="h4" className="text-white mb-2 font-semibold">
+            <Text variant="h4" className="text-black mb-2 font-semibold">
               {isDragging ? '松开以上传文件' : '拖拽简历文件到此处'}
             </Text>
-            <Text variant="p" className="text-gray-400">
+            <Text variant="p" className="text-gray-500">
               或点击选择文件
             </Text>
           </div>
           
           <div className="flex items-center gap-4 text-gray-500 text-sm">
-            <span className="flex items-center gap-2 px-3 py-1.5 bg-white/5 rounded-full">
-              <FileText size={16} className="text-purple-400" />
+            <span className="flex items-center gap-2 px-3 py-1.5 bg-gray-100">
+              <FileText size={16} className="text-black" />
               支持 PDF, DOCX
             </span>
-            <span className="text-gray-600">|</span>
-            <span className="px-3 py-1.5 bg-white/5 rounded-full">最大 10MB</span>
+            <span>|</span>
+            <span className="px-3 py-1.5 bg-gray-100">最大 10MB</span>
           </div>
         </div>
       </motion.div>
@@ -299,24 +297,23 @@ const ResumeUpload: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="bg-gradient-to-r from-gray-800/60 to-gray-900/60 backdrop-blur-md border border-purple-500/20 rounded-xl p-6 shadow-lg"
+            className="border border-black p-6"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-xl text-cyan-300">
+                <div className="p-3 bg-gray-100 text-black">
                   <FileText size={24} />
                 </div>
                 <div>
-                  <Text variant="p" className="text-white font-medium">{selectedFile.name}</Text>
-                  <Text variant="caption" className="text-gray-400">
+                  <Text variant="p" className="text-black font-medium">{selectedFile.name}</Text>
+                  <Text variant="caption" className="text-gray-500">
                     {(selectedFile.size / 1024 / 1024).toFixed(2)} MB
                   </Text>
                 </div>
               </div>
               <Button 
-                variant="neon" 
+                variant="primary" 
                 onClick={handleUpload}
-                className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-black font-semibold shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] transition-all duration-300"
               >
                 <Sparkles size={18} className="mr-2" />
                 开始解析
@@ -333,7 +330,7 @@ const ResumeUpload: React.FC = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 text-red-300 text-center backdrop-blur-sm"
+            className="bg-red-50 border border-red-200 p-4 text-red-600 text-center"
           >
             {error}
           </motion.div>
@@ -358,33 +355,20 @@ const ResumeUpload: React.FC = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="flex items-center gap-4 px-6 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-purple-500/20"
+          className="flex items-center gap-4 px-6 py-3 border border-black"
         >
-          <FileText size={24} className="text-cyan-400" />
-          <Text variant="p" className="text-gray-200">{selectedFile.name}</Text>
+          <FileText size={24} className="text-black" />
+          <Text variant="p" className="text-black">{selectedFile.name}</Text>
         </motion.div>
       )}
 
-      {/* 加载动画 - 渐变旋转环 */}
+      {/* 加载动画 */}
       <div className="relative">
-        {/* 外圈渐变 */}
         <motion.div
-          className="w-24 h-24 rounded-full"
-          style={{
-            background: 'conic-gradient(from 0deg, transparent, rgba(34,211,238,0.8), rgba(168,85,247,0.8), transparent)',
-          }}
+          className="w-24 h-24 border-4 border-gray-200 border-t-black"
           animate={{ rotate: 360 }}
-          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
         />
-        {/* 内圈背景 */}
-        <div className="absolute inset-2 rounded-full bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center">
-          <motion.div
-            animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <Sparkles size={32} className="text-cyan-400" />
-          </motion.div>
-        </div>
       </div>
 
       {/* 进度文字 */}
@@ -395,21 +379,21 @@ const ResumeUpload: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <Text variant="h4" className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+          <Text variant="h4" className="font-semibold">
             {parsingText || '正在解析简历...'}
           </Text>
         </motion.div>
         <div className="w-80 mx-auto">
-          <div className="h-2 bg-gray-700/50 rounded-full overflow-hidden">
+          <div className="h-2 bg-gray-200 overflow-hidden">
             <motion.div 
-              className="h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
+              className="h-full bg-black"
               initial={{ width: 0 }}
               animate={{ width: `${uploadProgress}%` }}
               transition={{ duration: 0.3 }}
             />
           </div>
         </div>
-        <Text variant="caption" className="text-gray-500 font-mono">{uploadProgress}%</Text>
+        <Text variant="caption" className="text-gray-500">{uploadProgress}%</Text>
       </div>
     </motion.div>
   );
@@ -424,41 +408,30 @@ const ResumeUpload: React.FC = () => {
       transition={{ duration: 0.4 }}
       className="flex flex-col items-center justify-center py-24 space-y-8"
     >
-      {/* 加载动画 - 脉冲效果 */}
+      {/* 加载动画 */}
       <div className="relative">
         <motion.div
-          className="w-32 h-32 rounded-full bg-gradient-to-br from-cyan-400/30 to-purple-500/30"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.5, 0.8, 0.5]
-          }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="w-24 h-24 border-4 border-gray-200 border-t-black"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
         />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >
-            <Loader2 size={48} className="text-cyan-400" />
-          </motion.div>
-        </div>
       </div>
 
       {/* 文字提示 */}
       <div className="text-center space-y-4">
-        <Text variant="h4" className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+        <Text variant="h4" className="font-semibold">
           正在建立语音连接...
         </Text>
-        <Text variant="p" className="text-gray-400 max-w-md">
+        <Text variant="p" className="text-gray-500 max-w-md">
           请稍候，我们正在为您准备面试环境。首次连接可能需要几秒钟时间。
         </Text>
       </div>
 
       {/* 进度条 */}
       <div className="w-80">
-        <div className="h-1 bg-gray-700/50 rounded-full overflow-hidden">
+        <div className="h-1 bg-gray-200 overflow-hidden">
           <motion.div 
-            className="h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
+            className="h-full bg-black"
             initial={{ width: "0%", x: "-100%" }}
             animate={{ width: "100%", x: ["-100%", "100%"] }}
             transition={{ 
@@ -499,29 +472,29 @@ const ResumeUpload: React.FC = () => {
         exit={{ opacity: 0, y: -20 }}
         className="space-y-6"
       >
-        {/* 候选人姓名 - Glassmorphism Card */}
+        {/* 候选人姓名 */}
         <motion.div variants={itemVariants}>
-          <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-md border border-purple-500/20 rounded-xl p-8 shadow-lg hover:shadow-purple-500/10 transition-shadow duration-300">
+          <Card className="border border-black p-8">
             <CardHeader>
-              <div className="flex items-center gap-3 text-purple-400 mb-3">
-                <div className="p-2 bg-purple-500/10 rounded-lg">
+              <div className="flex items-center gap-3 text-black mb-3">
+                <div className="p-2 bg-gray-100">
                   <User size={20} />
                 </div>
                 <Text variant="caption" className="uppercase tracking-wider">候选人</Text>
               </div>
-              <Text variant="h2" className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-bold">
+              <Text variant="h2" className="font-bold">
                 {resume.candidate_name}
               </Text>
             </CardHeader>
           </Card>
         </motion.div>
 
-        {/* 技能标签 - 渐变色彩 */}
+        {/* 技能标签 */}
         <motion.div variants={itemVariants}>
-          <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-md border border-cyan-500/20 rounded-xl p-8 shadow-lg">
+          <Card className="border border-black p-8">
             <CardHeader>
-              <div className="flex items-center gap-3 text-cyan-400 mb-4">
-                <div className="p-2 bg-cyan-500/10 rounded-lg">
+              <div className="flex items-center gap-3 text-black mb-4">
+                <div className="p-2 bg-gray-100">
                   <Code size={20} />
                 </div>
                 <Text variant="caption" className="uppercase tracking-wider">技术技能</Text>
@@ -536,7 +509,7 @@ const ResumeUpload: React.FC = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.3 + index * 0.05 }}
                     whileHover={{ scale: 1.05 }}
-                    className="px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 text-cyan-300 text-sm font-medium rounded-lg hover:from-cyan-500/20 hover:to-blue-500/20 hover:border-cyan-400/50 transition-all duration-300 cursor-default"
+                    className="px-4 py-2 border border-black text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 cursor-default"
                   >
                     {skill}
                   </motion.span>
@@ -546,12 +519,12 @@ const ResumeUpload: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* 行为标签 - 紫色渐变 */}
+        {/* 行为标签 */}
         <motion.div variants={itemVariants}>
-          <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-md border border-purple-500/20 rounded-xl p-8 shadow-lg">
+          <Card className="border border-black p-8">
             <CardHeader>
-              <div className="flex items-center gap-3 text-purple-400 mb-4">
-                <div className="p-2 bg-purple-500/10 rounded-lg">
+              <div className="flex items-center gap-3 text-black mb-4">
+                <div className="p-2 bg-gray-100">
                   <Tag size={20} />
                 </div>
                 <Text variant="caption" className="uppercase tracking-wider">行为标签</Text>
@@ -566,7 +539,7 @@ const ResumeUpload: React.FC = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.4 + index * 0.05 }}
                     whileHover={{ scale: 1.05 }}
-                    className="px-4 py-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-400/30 text-purple-300 text-sm rounded-lg hover:from-purple-500/20 hover:to-pink-500/20 hover:border-purple-400/50 transition-all duration-300 cursor-default"
+                    className="px-4 py-2 border border-black text-sm hover:bg-black hover:text-white transition-all duration-300 cursor-default"
                   >
                     {tag}
                   </motion.span>
@@ -576,12 +549,12 @@ const ResumeUpload: React.FC = () => {
           </Card>
         </motion.div>
 
-        {/* 项目经历 - 彩色边条装饰 */}
+        {/* 项目经历 */}
         <motion.div variants={itemVariants}>
-          <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-md border border-gray-700/50 rounded-xl p-8 shadow-lg">
+          <Card className="border border-black p-8">
             <CardHeader>
-              <div className="flex items-center gap-3 text-gray-400 mb-6">
-                <div className="p-2 bg-gray-500/10 rounded-lg">
+              <div className="flex items-center gap-3 text-black mb-6">
+                <div className="p-2 bg-gray-100">
                   <Briefcase size={20} />
                 </div>
                 <Text variant="caption" className="uppercase tracking-wider">项目经历</Text>
@@ -595,21 +568,14 @@ const ResumeUpload: React.FC = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 + index * 0.1 }}
-                    className="relative pl-6 py-3"
+                    className="relative pl-6 py-3 border-l-4 border-black"
                   >
-                    {/* 彩色渐变边条 */}
-                    <div 
-                      className="absolute left-0 top-0 bottom-0 w-1 rounded-full"
-                      style={{
-                        background: `linear-gradient(to bottom, ${index % 2 === 0 ? '#22d3ee' : '#a855f7'}, ${index % 2 === 0 ? '#3b82f6' : '#ec4899'})`
-                      }}
-                    />
                     <div className="flex items-start justify-between mb-2">
-                      <Text variant="h4" className="text-white font-semibold">{project.name}</Text>
-                      <Text variant="caption" className="text-gray-500 bg-gray-800/50 px-3 py-1 rounded-full">{project.time}</Text>
+                      <Text variant="h4" className="text-black font-semibold">{project.name}</Text>
+                      <Text variant="caption" className="text-gray-500 bg-gray-100 px-3 py-1">{project.time}</Text>
                     </div>
-                    <Text variant="caption" className="text-cyan-400 block mb-2 font-medium">{project.role}</Text>
-                    <Text variant="p" className="text-gray-400 text-sm leading-relaxed">{project.description}</Text>
+                    <Text variant="caption" className="text-black block mb-2 font-medium">{project.role}</Text>
+                    <Text variant="p" className="text-gray-600 text-sm leading-relaxed">{project.description}</Text>
                   </motion.div>
                 ))}
               </div>
@@ -624,15 +590,15 @@ const ResumeUpload: React.FC = () => {
         >
           <Button
             variant="outline"
-            className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-800/50 hover:text-white hover:border-gray-500 rounded-lg transition-all duration-300"
+            className="flex-1"
             onClick={handleReupload}
           >
             <RefreshCw size={18} className="mr-2" />
             重新上传
           </Button>
           <Button
-            variant="neon"
-            className="flex-1 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-black font-semibold rounded-lg shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] transition-all duration-300"
+            variant="primary"
+            className="flex-1"
             onClick={handleConfirm}
           >
             <FileCheck size={18} className="mr-2" />
@@ -647,7 +613,7 @@ const ResumeUpload: React.FC = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 text-red-300 text-center backdrop-blur-sm"
+              className="bg-red-50 border border-red-200 p-4 text-red-600 text-center"
             >
               {error}
             </motion.div>
@@ -658,28 +624,8 @@ const ResumeUpload: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen text-white p-8 md:p-16 relative overflow-hidden"
-      style={{
-        background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 25%, #0f172a 50%, #1e1b4b 75%, #0f172a 100%)'
-      }}
-    >
-      {/* 背景装饰 */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* 渐变光晕 */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-        {/* 网格纹理 */}
-        <div 
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
-          }}
-        />
-      </div>
-
-      <div className="max-w-4xl mx-auto relative z-10">
+    <div className="min-h-screen text-black p-8 md:p-24 max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* 页面头部 */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -687,8 +633,8 @@ const ResumeUpload: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <Text variant="caption" className="text-purple-400 mb-2 uppercase tracking-widest text-sm">当前岗位</Text>
-          <Text variant="h2" className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent font-bold">
+          <Text variant="caption" className="text-gray-500 mb-2 uppercase tracking-widest text-sm">当前岗位</Text>
+          <Text variant="h2" className="font-bold">
             {jobTitle}
           </Text>
         </motion.div>
@@ -709,14 +655,14 @@ const ResumeUpload: React.FC = () => {
               <div key={step} className="flex items-center">
                 <div className={cn(
                   "flex items-center gap-2 transition-all duration-300",
-                  isActive ? "text-cyan-400" : isCompleted ? "text-purple-400" : "text-gray-600"
+                  isActive ? "text-black" : isCompleted ? "text-black" : "text-gray-400"
                 )}>
                   <motion.div 
                     className={cn(
-                      "w-10 h-10 flex items-center justify-center rounded-xl text-sm font-bold transition-all duration-300",
-                      isActive && "bg-gradient-to-br from-cyan-400/20 to-blue-500/20 border border-cyan-400/50 shadow-[0_0_20px_rgba(34,211,238,0.2)]",
-                      isCompleted && "bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-400/50",
-                      !isActive && !isCompleted && "bg-gray-800/50 border border-gray-700"
+                      "w-10 h-10 flex items-center justify-center text-sm font-bold transition-all duration-300",
+                      isActive && "border-2 border-black",
+                      isCompleted && "bg-black text-white",
+                      !isActive && !isCompleted && "border border-gray-300"
                     )}
                     whileHover={isActive ? { scale: 1.05 } : {}}
                   >
@@ -724,15 +670,15 @@ const ResumeUpload: React.FC = () => {
                   </motion.div>
                   <Text variant="caption" className={cn(
                     "hidden sm:block font-medium",
-                    isActive ? "text-cyan-400" : isCompleted ? "text-purple-400" : "text-gray-500"
+                    isActive ? "text-black" : isCompleted ? "text-black" : "text-gray-400"
                   )}>{step}</Text>
                 </div>
                 {index < 2 && (
                   <div className={cn(
-                    "w-8 sm:w-16 h-0.5 mx-3 rounded-full transition-all duration-500",
+                    "w-8 sm:w-16 h-0.5 mx-3",
                     index < stepIndex 
-                      ? "bg-gradient-to-r from-purple-400 to-cyan-400" 
-                      : "bg-gray-800"
+                      ? "bg-black" 
+                      : "bg-gray-200"
                   )} />
                 )}
               </div>
