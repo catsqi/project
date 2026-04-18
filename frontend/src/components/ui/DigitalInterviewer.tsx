@@ -191,24 +191,7 @@ export const DigitalInterviewer: React.FC<DigitalInterviewerProps> = ({
         <div className="text-[9px] text-gray-500 font-mono">ENCRYPTION: AES-256-GCM</div>
       </div>
 
-      <div className="absolute bottom-6 right-6 w-44 md:w-60 aspect-video rounded-lg overflow-hidden border border-white/20 bg-black/60 backdrop-blur-xl">
-        <div className="absolute inset-0 border-[4px] border-white/5 pointer-events-none" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex flex-col items-center gap-2">
-             <div className="relative">
-                <div className="w-10 h-10 rounded-full border border-neon-green/20" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-neon-green shadow-[0_0_10px_#CCFF00] animate-pulse" />
-                </div>
-             </div>
-            <span className="text-white/40 text-[9px] font-bold tracking-[0.3em] uppercase">Feed_Establishing</span>
-          </div>
-        </div>
-        <div className="absolute top-3 left-3 flex items-center gap-1.5">
-           <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-           <div className="text-[8px] text-white/80 font-mono uppercase tracking-tighter">Live ● 00:00:24</div>
-        </div>
-      </div>
+
 
       <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_150px_rgba(0,0,0,0.9)]" />
     </div>

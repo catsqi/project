@@ -65,10 +65,10 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
         global_state.active_handler = self
         
         # 初始化 InterviewController（延迟加载，避免启动时失败）
-        self._interview_controller = None
-        self._current_guidance = None
+        self.interview_controller = None
+        self.current_guidance = None
 
-    def _is_channel_open(self) -> bool:
+    def is_channel_open(self) -> bool:
         """检查数据通道是否处于可发送状态"""
         return (
             hasattr(self, "channel")
@@ -140,13 +140,13 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
                             continue
 
                         print("[VAD] 说话结束，解析指令..")
-                        asyncio.create_task(self._process_stream(full_audio))
+                        asyncio.create_task(self.process_stream(full_audio))
                 else:
                     self.speech_counter = max(0, self.speech_counter - 1)
                     if len(self.pre_speech_buffer) > 10:
                         self.pre_speech_buffer.pop(0)
 
-    async def _process_stream(self, audio_data: np.ndarray):
+    async def process_stream(self, audio_data: np.ndarray):
     
 
         async def send_transcript(text: str):
@@ -154,14 +154,14 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
                 return
             try:
                 print(f"[ASR] 识别结果: '{text}'")
-                if self._is_channel_open():
+                if self.is_channel_open():
                     self.channel.send(json.dumps({"type": "user_transcript", "text": text}))
             except Exception as e:
                 print(f"[ASR-Error] 发送失败: {e}")
 
         async def send_ai_text(text: str):
             try:
-                if self._is_channel_open():
+                if self.is_channel_open():
                     self.channel.send(json.dumps({"type": "ai_text", "text": text}))
                 preview = text[:30] + '...' if len(text) > 30 else text
                 print(f"[AI-Text] 发送成功: '{preview}'")
@@ -339,18 +339,18 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
                 return # 提前结束，防止噪音触发 DeepSeek 和正式提问
                 
             print(f"[VAD] ASR完成: '{user_transcript[:50]}...'")
-            await self._sync_transcript_to_memory(user_transcript)
+            await self.sync_transcript_to_memory(user_transcript)
             
             # DeepSeek 思考
-            guidance = await self._call_deepseek(user_transcript)
+            guidance = await self.call_deepseek(user_transcript)
 
             if guidance:
-                self._current_guidance = guidance
+                self.current_guidance = guidance
                 print("[VAD] GLM继续输出完整问题...")
-                await self._continue_with_guidance(guidance, send_ai_text)
+                await self.continue_with_guidance(guidance, send_ai_text)
             else:
                 print("[VAD-Warning] 使用默认追问")
-                await self._continue_default(send_ai_text)
+                await self.continue_default(send_ai_text)
 
             # 等待音频播放完成
             print("[VAD] 等待音频播放...")
@@ -363,7 +363,7 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
 
             # 通知前端本轮交互生成完全结束，可以重置气泡绑定
             try:
-                if self._is_channel_open():
+                if self.is_channel_open():
                     self.channel.send(json.dumps({"type": "ai_text_end"}))
             except Exception as e:
                 pass
@@ -371,30 +371,30 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
         finally:
             global_state.is_processing = False
 
-    def _get_interview_controller(self):
+    def get_interview_controller(self):
         """获取 InterviewController（延迟初始化）"""
-        if self._interview_controller is None:
+        if self.interview_controller is None:
             try:
                 from app.services.interview.interview_controller import InterviewController
-                self._interview_controller = InterviewController()
+                self.interview_controller = InterviewController()
                 print("[VAD] InterviewController 初始化成功")
                 
                 # 如果有候选人ID，加载候选人数据
                 if global_state.candidate_id:
-                    self._interview_controller.load_candidate_with_id(global_state.candidate_id)
+                    self.interview_controller.load_candidate_with_id(global_state.candidate_id)
                     print(f"[VAD] 候选人数据已加载: {global_state.candidate_id[:8]}...")
             except Exception as e:
                 print(f"[VAD-Error] InterviewController 初始化失败: {e}")
-                self._interview_controller = None
-        return self._interview_controller
+                self.interview_controller = None
+        return self.interview_controller
 
-    async def _call_deepseek(self, transcript: str) -> InterviewGuidance | None:
+    async def call_deepseek(self, transcript: str) -> InterviewGuidance | None:
         """
         调用 DeepSeek 生成 InterviewGuidance
         
         这是 ASR → DeepSeek 的关键连接！
         """
-        controller = self._get_interview_controller()
+        controller = self.get_interview_controller()
         if controller is None:
             print("[VAD-Error] InterviewController 不可用，跳过 DeepSeek 调用")
             return None
@@ -416,7 +416,7 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
             traceback.print_exc()
             return None
 
-    async def _continue_with_guidance(self, guidance: InterviewGuidance, send_ai_text):
+    async def continue_with_guidance(self, guidance: InterviewGuidance, send_ai_text):
         """
         阶段三：GLM 根据 Guidance 输出正式问题（零污染版本）
         
@@ -459,7 +459,7 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
 
         print("[VAD] 正式问题输出完成")
 
-    async def _continue_default(self, send_ai_text):
+    async def continue_default(self, send_ai_text):
         """
         DeepSeek 失败时的默认追问
         
@@ -485,7 +485,7 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
             manage_processing_state=False,
         )
 
-    async def _sync_transcript_to_memory(self, user_transcript: str):
+    async def sync_transcript_to_memory(self, user_transcript: str):
         """
         同步 ASR 文本到后端记忆
         
@@ -509,11 +509,11 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
             print(f"[Emit] 发送音频到前端: {len(array)} 采样点, 队列剩余: {self.output_queue.qsize()}")
             return (self.output_sample_rate, array)
         # 每隔一段时间打印一次状态，避免刷屏
-        if not hasattr(self, '_emit_log_counter'):
-            self._emit_log_counter = 0
-        self._emit_log_counter += 1
-        if self._emit_log_counter % 100 == 0:  # 每100次打印一次
-            print(f"[Emit] 队列为空，等待音频数据... (计数: {self._emit_log_counter})")
+        if not hasattr(self, 'emit_log_counter'):
+            self.emit_log_counter = 0
+        self.emit_log_counter += 1
+        if self.emit_log_counter % 100 == 0:  # 每100次打印一次
+            print(f"[Emit] 队列为空，等待音频数据... (计数: {self.emit_log_counter})")
         return None
 
     async def video_receive(self, frame: np.ndarray):
