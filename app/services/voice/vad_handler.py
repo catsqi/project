@@ -284,44 +284,49 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
             # 启动 ASR 后台任务
             asr_task = asyncio.create_task(run_asr())
             
-            # ========== 阶段一：GLM 简短（扩展）回应（物理隔离版）==========
+            # ========== 阶段一：GLM 灵活自然的过渡反馈（物理隔离+去机械化+末尾强约束版）==========
             def short_response_modifier(original_prompt: str) -> str:
-                """引导 GLM 进行回应缓冲，采用全量替换策略彻底隔离提问倾向"""
-                
-                tier_examples = {
-                    "short": "好的，我先记下这部分内容。",
-                    "medium": "好的，收到你的回复，我已经记录下来了。",
-                    "long": "你的分析很详尽，思路非常清晰，我已经完整记录了。"
+
+                # 根据回答长度，仅仅限制它接话的"篇幅"，不再限制结构
+                length_instruction = {
+                    "short": "用 1-2 句话做一个简短的、口语化的回应。",
+                    "medium": "用 3 句话左右自然地发散或共鸣一下用户的回答。",
+                    "long": "用 3-4 句话对用户的长篇回答进行深度的沉思或提炼概括。"
                 }
-                example = tier_examples.get(quality_tier, tier_examples["medium"])
+                instruction = length_instruction.get(quality_tier, length_instruction["medium"])
 
-                # 【物理隔离】完全抛弃 original_prompt，构造全新指令
-                # 【关键】将最强约束放在最后，利用末尾偏见确保遵守
-                return f"""你是面试记录助手。你处于过渡反馈阶段。
-你的任务：对用户的回答给出一个自然、专业的简短反馈（1-2句话）。
-你的目标：提供情绪价值，确保用户感到被倾听，为后台处理争取时间。
+                return f"""你现在是一位技术精湛、性格温和的资深面试官。候选人刚刚回答完一段话。
+你的任务：对候选人【刚刚的语音内容】给出一个自然、口语化、像真人交流一样的回应。
+长度要求：{instruction}
 
-参考回复风格：{example}
+【打破死板！你可以根据语境，自由选择以下一种或多种"接话策略"】：
+1. 沉思与延展 (例如："嗯...你刚才提到的这个点，确实在目前的工业界落地时经常会遇到，这是一个很经典的痛点。")
+2. 提炼与升华 (例如："其实听到这里，我感觉你本质上是在用空间换时间，把底层的逻辑梳理得很透彻。")
+3. 场景代入感 (例如："我完全能想象到那个业务场景，当高并发真的打过来的时候，能想到加这一层兜底，思路是很清晰的。")
+4. 表达专业共鸣 (例如："没错，真正踩过这个坑的人，确实会对底层的这个机制有更深的体会。")
 
-【硬性约束 - 严重违规准则】
-1. 严禁提及任何面试问题或使用问号 (?)。
-2. 严禁使用"接下来"、"继续"、"那么"、"最后一个问题"等引导性词汇。
-3. 严禁以开发者身份分享经验。
-4. 必须以句号 (.) 结束生成。
+【表现得像个真人】
+- 多用口语化的停顿词，比如"嗯"、"确实"、"其实"。
+- 严禁像机器人一样每次都说"好的，我听懂了"、"你的回答很详细"。
+- 顺着候选人的话往下聊半句，假装你在思考。
 
-绝对禁止提问。绝对禁止提问。绝对禁止提问。只给出陈述式反馈。"""
+【最高级红线指令】
+1. 绝对禁止提问！严禁在句尾使用任何形式的问号（？或 ?）。
+2. 必须以坚定的陈述语气结束（使用句号或感叹号）。
+3. 绝对不要引出未来的流程（严禁说"接下来"、"那么"、"我们继续"、"下一个问题"）。
 
-            # 使用上下文管理器：临时修改 System Prompt，确保恢复
+绝对禁止提问。绝对禁止提问。绝对禁止提问。只输出陈述式反馈。"""
+
+            # 依然使用物理隔离，屏蔽一问一答的历史记录
             async with temporary_system_prompt_modifier(short_response_modifier):
-                print(f"[VAD-阶段一] GLM生成过渡反馈 ({quality_tier})...")
+                print(f"[VAD-阶段一] GLM生成自然真人接话 ({quality_tier})...")
                 await process_interaction(
                     "audio",
                     (audio_data, self.input_sample_rate),
                     self.output_queue,
                     on_text_chunk=send_ai_text,
                     manage_processing_state=False,
-                    skip_history=True,  # 阅后即焚，不进入对话历史
-                    max_tokens=120,     # 允许生成长一点的垫句，为 DeepSeek 争取思考时间
+                    skip_history=True
                 )
             
             print("[VAD] System Prompt已恢复")

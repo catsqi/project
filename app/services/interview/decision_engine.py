@@ -43,26 +43,62 @@ class DecisionEngine:
         user_input: str,
         quality: AnswerQuality,
         questions: List[Dict],
-        resume_context: str = ""  # 新增：简历上下文
+        resume_context: str = "",
+        quality_reason: str = ""
     ) -> InterviewGuidance:
         """
         做出决策，生成 InterviewGuidance（思路指令）
-        
+
         **全部走 DeepSeek 进行智能判断**
-        
+
         参数：
         - user_input: 用户回答
         - quality: 回答质量
         - questions: 候选题目列表
-        - resume_context: 简历上下文（新增）
+        - resume_context: 简历上下文
+        - quality_reason: 质量判断依据
         """
         # 缓存简历上下文和用户输入供后续使用
         self._resume_context = resume_context
         self._user_input = user_input
+        self._quality_reason = quality_reason
         
         current_topic = self.state.get_current_topic()
-        # 改进：使用有意义的默认值（多层兜底推断）
+        current_depth = current_topic.depth if current_topic else 0
         topic_name = current_topic.topic if current_topic else self._infer_topic_fallback(questions)
+        
+        # === 前置强制检查：深度已达上限，直接切换，不走 DeepSeek ===
+        if current_depth >= self.state.max_depth:
+            print(f"[DecisionEngine] 前置检查: 深度已达上限 {current_depth}/{self.state.max_depth}，强制切换")
+            next_topic = self.state.get_next_topic()
+            next_topic_info = self.state.get_next_topic_info()
+            next_topic_source = next_topic_info.source if next_topic_info else "简历技能"
+            
+            # 如果有下一个考核点，切换到下一个；否则结束面试
+            if not self.state.is_last_topic() and next_topic != "其他技术点":
+                return InterviewGuidance(
+                    action=ActionType.TRANSITION,
+                    target_topic=next_topic,
+                    question_focus=f"切换到{next_topic}进行考核",
+                    context_hints=[f"当前话题深度已达上限({current_depth}/{self.state.max_depth})", 
+                                  f"下一个考核点来源: {next_topic_source}",
+                                  "必须切换到下一个考核点"],
+                    depth_level=1,
+                    suggested_angle="实践",
+                    brain_intent=f"深度达上限，强制切换到下一个考核点: {next_topic}"
+                )
+            else:
+                # 最后一个考核点且深度达上限，结束面试
+                print(f"[DecisionEngine] 前置检查: 最后一个考核点完成，结束面试")
+                return InterviewGuidance(
+                    action=ActionType.END,
+                    target_topic="面试结束",
+                    question_focus="感谢参与面试，简要总结并道别",
+                    context_hints=["面试已完成", "所有考核点已覆盖", "感谢候选人"],
+                    depth_level=1,
+                    suggested_angle="总结",
+                    brain_intent="最后一个考核点深度达上限，面试结束"
+                )
         
         # 所有情况都走 DeepSeek 智能决策
         return await self._handle_normal(user_input, questions, topic_name, quality)
@@ -249,23 +285,35 @@ class DecisionEngine:
             return {}
     
     def _validate_and_correct_decision(self, data: Dict, topic_name: str) -> Dict:
-        """代码层强制兜底校验"""
+        """代码层强制兜底校验（后置检查，作为第二道防线）"""
         current_topic = self.state.get_current_topic()
         current_depth = current_topic.depth if current_topic else 0
         
-        # 强制校验 1: 深度上限检查
+        # 强制校验 1: 深度上限检查（严格）- 理论上不会触发，因为前置检查已处理
         if current_depth >= self.state.max_depth:
-            print(f"[DecisionEngine] 强制切换: 深度已达上限 {current_depth}/{self.state.max_depth}")
+            print(f"[DecisionEngine] 后置兜底: 深度已达上限 {current_depth}/{self.state.max_depth}")
             data['action'] = 'transition'
-            data['brain_intent'] = data.get('brain_intent', '') + ' [代码强制: 深度达上限]'
+            data['brain_intent'] = data.get('brain_intent', '') + ' [后置兜底: 深度达上限]'
+            next_topic = self.state.get_next_topic()
+            if next_topic and next_topic != "其他技术点":
+                data['target_topic'] = next_topic
         
-        # 强制校验 2: 死循环检测（同一话题追问次数过多）
-        if data.get('action') == 'follow_up' and current_depth >= 3:
-            print(f"[DecisionEngine] 强制切换: 防止死循环")
+        # 强制校验 2: DeepSeek 返回 follow_up 但深度已接近上限
+        elif data.get('action') == 'follow_up' and current_depth >= self.state.max_depth - 1:
+            print(f"[DecisionEngine] 后置兜底: 深度接近上限但DeepSeek要求追问，强制切换")
             data['action'] = 'transition'
-            data['brain_intent'] = data.get('brain_intent', '') + ' [代码强制: 防止死循环]'
+            data['brain_intent'] = data.get('brain_intent', '') + ' [后置兜底: 深度接近上限]'
+            next_topic = self.state.get_next_topic()
+            if next_topic and next_topic != "其他技术点":
+                data['target_topic'] = next_topic
         
-        # 强制校验 3: 必填字段默认值
+        # 强制校验 3: 面试结束检测（演示模式核心）
+        if self.state.is_last_topic() and current_depth >= self.state.max_depth:
+            print(f"[DecisionEngine] 面试结束: 最后一个考核点已完成")
+            data['action'] = 'end'
+            data['brain_intent'] = data.get('brain_intent', '') + ' [代码强制: 面试完成]'
+        
+        # 强制校验 4: 必填字段默认值
         data.setdefault('action', 'next_question')
         data.setdefault('target_topic', topic_name)
         data.setdefault('question_focus', f'了解{topic_name}的使用经验')
@@ -319,6 +367,22 @@ class DecisionEngine:
             question_text = None
             must_use_bank = False
         
+        # === 演示模式：检查是否应该结束面试 ===
+        if self.state.is_last_topic() and self.state.is_depth_limit_reached():
+            print(f"[DecisionEngine] 降级模式：触发面试结束")
+            return InterviewGuidance(
+                action=ActionType.END,
+                target_topic="面试结束",
+                question_focus="感谢参与面试，简要总结并道别",
+                context_hints=["面试已完成", "感谢候选人", "简要总结"],
+                depth_level=1,
+                suggested_angle="总结",
+                must_use_bank_question=False,
+                question_bank_id=None,
+                question_bank_text=None,
+                example_approach="感谢候选人的参与，简要总结面试表现，礼貌道别",
+                brain_intent=f"降级模式触发面试结束: {reason}"
+            )
         
         return InterviewGuidance(
             action=ActionType.NEXT_QUESTION,
@@ -442,6 +506,11 @@ class DecisionEngine:
         # 获取最近 2-3 轮对话历史
         recent_history = self._get_recent_history(3)
         
+        # 获取下一个考核点信息
+        next_topic = self.state.get_next_topic()
+        next_topic_info = self.state.get_next_topic_info()
+        next_topic_source = next_topic_info.source if next_topic_info else "简历技能"
+        
         formatted = []
         for q in questions:
             q_id = q.get('id', 'N/A')
@@ -452,6 +521,10 @@ class DecisionEngine:
         state = {
             "当前考核点": topic_name,
             "当前深度": f"{current_topic.depth if current_topic else 0}/{self.state.max_depth}",
+            "是否是最后一个考核点": self.state.is_last_topic(),
+            "考核点进度": f"{self.state.current_topic_index + 1}/{len(self.state.resume_topics)}",
+            "下一个考核点": next_topic,
+            "下一个考核点来源": next_topic_source,
             "用户回答": user_input,
             "回答质量": quality.value if quality else "unknown",
             "最近对话历史": recent_history,
@@ -487,6 +560,8 @@ class DecisionEngine:
 【输入信息】
 - 当前考核点：正在考核的技术主题
 - 当前深度：当前话题的追问深度（注意：不能超过max_depth）
+- 是否是最后一个考核点：如果是最后一个考核点，需要准备结束面试
+- 考核点进度：当前是第几个/总共几个考核点
 - 用户回答：候选人的回答内容
 - 回答质量：excellent/good/vague/evasive/empty
 - 最近对话历史：最近2-3轮的考核点和动作（用于检测死循环）
@@ -500,24 +575,35 @@ class DecisionEngine:
    - 如果同一话题已经追问 >= 3 次，建议输出 `transition` 或 `next_question`
    - 绝不要在同一话题上无限追问！
 
-2. **根据质量智能决策**
+2. **深度感知切换（演示模式关键）**
+   - 当前深度接近上限时（如 1/2 或 2/3），优先选择 `transition` 切换到下一个考核点
+   - 下一个考核点来源可能是：另一个项目 或 简历技能列表
+   - 切换时要在 context_hints 中说明切换理由，帮助 GLM 自然过渡
+   - **重要**：简历上下文包含【当前】和【下一个】考核点的信息，请根据需要选择使用
+
+3. **根据质量智能决策**
    - EXCELLENT: 深度足够则切换，否则继续深挖亮点
    - GOOD: 从候选题目选一道更深入的问题
    - VAGUE: 追问要求具体案例，但注意深度上限
    - EVASIVE: 温和切换，不要追问（候选人可能真不会）
    - EMPTY: 可能是ASR错误，建议重新提问或澄清
 
-3. **情绪与节奏感知**
+4. **情绪与节奏感知**
    - 如果连续两次 EVASIVE，候选人可能受挫，切换到简单话题缓解压力
    - 如果用户表现出困惑，可以输出 `follow_up` 附带澄清意图
 
-4. **简历上下文智能使用**
-   - 结合候选人真实项目经历提问
+5. **简历上下文智能使用**
+   - 【当前考核点】上下文用于评估用户回答质量和追问
+   - 【下一个考核点】上下文用于准备切换，让过渡更自然
    - 在 context_hints 中引用具体项目名和技术点
+
+6. **面试结束判断（演示模式）**
+   - 如果是最后一个考核点且深度足够，输出 `end` 结束面试
+   - 结束时要感谢候选人，简要总结面试
 
 【输出格式 - 严格JSON】
 {
-    "action": "follow_up|next_question|transition",
+    "action": "follow_up|next_question|transition|end",
     "target_topic": "要考核的技术点",
     "question_focus": "核心要了解什么（给GLM的提示）",
     "context_hints": ["简历相关点", "质量评估依据", "死循环检测提示"],
@@ -532,7 +618,8 @@ class DecisionEngine:
 【重要约束】
 - 必须考虑当前深度和max_depth，绝不能超限
 - 必须参考最近对话历史，避免重复追问同一话题
-- 如果检测到ASR错误（回答无意义），在brain_intent中注明"""
+- 如果检测到ASR错误（回答无意义），在brain_intent中注明
+- 如果是最后一个考核点且回答质量良好，果断输出 `end` 结束面试"""
     
     def _parse_response(self, data: Dict, questions: List[Dict]) -> InterviewGuidance:
         """解析响应 - 生成 InterviewGuidance（思路指令）"""

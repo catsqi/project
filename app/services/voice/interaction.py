@@ -242,7 +242,8 @@ async def process_interaction_stream(
         assistant_msg = {"role": "assistant", "content": assistant_content}
         if current_audio_id:
             assistant_msg["audio"] = {"id": current_audio_id}
-        global_state.messages.append(assistant_msg)
+        if not skip_history:
+            global_state.messages.append(assistant_msg)
         print(f"[AI] 回复完成: '{full_text_response[:50]}...' " if len(full_text_response) > 50 else f"[AI] 回复完成: '{full_text_response}'")
 
     except Exception as e:

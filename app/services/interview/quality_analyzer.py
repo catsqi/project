@@ -32,28 +32,28 @@ class AnswerQualityAnalyzer:
         "万", "百万", "千万", "gb", "mb", "kb"
     ]
     
-    def analyze(self, user_input: str) -> AnswerQuality:
+    def analyze(self, user_input: str) -> tuple[AnswerQuality, str]:
         """
         分析回答质量
         
-        返回质量等级，用于决策分支
+        返回: (质量等级, 判断依据)，用于决策分支
         """
         text = user_input.strip().lower()
         
         # 1. 检测逃避
         if self._has_evasion(text):
-            return AnswerQuality.EVASIVE
+            return AnswerQuality.EVASIVE, "检测到逃避关键词"
         
         # 2. 检测过短且无技术词
         if self._is_vague(text, user_input):
-            return AnswerQuality.VAGUE
+            return AnswerQuality.VAGUE, "回答过短或缺乏技术术语"
         
         # 3. 检测优秀
         if self._is_excellent(text, user_input):
-            return AnswerQuality.EXCELLENT
+            return AnswerQuality.EXCELLENT, "回答详细，包含具体案例或数据指标"
         
         # 4. 默认合格
-        return AnswerQuality.ADEQUATE
+        return AnswerQuality.ADEQUATE, "回答基本合格，有技术内容"
     
     def _has_evasion(self, text: str) -> bool:
         """检测是否有逃避关键词"""

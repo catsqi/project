@@ -20,7 +20,7 @@ InterviewController - AI 面试大脑控制器（精简组装版）
 
 from typing import Dict, List
 
-from .models import InterviewGuidance
+from .models import InterviewGuidance, AnswerQuality
 from .state_manager import InterviewStateManager
 from .quality_analyzer import AnswerQualityAnalyzer
 from .decision_engine import DecisionEngine
@@ -41,11 +41,11 @@ class InterviewController:
     - ResumeRetriever: 简历知识库检索（新增）
     """
     
-    def __init__(self, max_depth_per_topic: int = 3):
+    def __init__(self, max_depth_per_topic: int = 2, max_projects: int = 2, max_skills: int = 3):
         print("[Controller] 初始化 InterviewController...")
         
         # 子模块
-        self.state = InterviewStateManager(max_depth_per_topic)
+        self.state = InterviewStateManager(max_depth_per_topic, max_projects, max_skills)
         self.analyzer = AnswerQualityAnalyzer()
         self.engine = DecisionEngine(self.state)
         self.retriever = get_retriever()
@@ -54,7 +54,7 @@ class InterviewController:
         self.candidate_id: str = None
         self.resume_context: str = ""  # 缓存当前简历上下文
         
-        print("[Controller] 初始化完成")
+        print(f"[Controller] 初始化完成（演示模式: 项目≤{max_projects}, 技能≤{max_skills}）")
     
     def load_candidate(self, resume_json: Dict, candidate_id: str = None):
         """加载候选人简历
@@ -95,40 +95,45 @@ class InterviewController:
         """
         print(f"\n[Controller] 收到回答: {user_input[:60]}...")
         
-        # 步骤 1: 分析质量
-        quality = self.analyzer.analyze(user_input)
-        print(f"[Controller] 质量评估: {quality.value}")
+        # 步骤 1: 分析质量（返回元组：质量标签 + 判断依据）
+        try:
+            quality, quality_reason = self.analyzer.analyze(user_input)
+            quality = quality or AnswerQuality.ADEQUATE
+        except Exception:
+            quality, quality_reason = AnswerQuality.ADEQUATE, "分析异常"
+
+        print(f"[Controller] 质量评估: {quality.value}（{quality_reason}）")
         
-        # 步骤 2: 检索简历上下文（新增）
-        await self._retrieve_resume_context(user_input)
+        # 步骤 2: 检索简历上下文（双重上下文：当前+下一话题）
+        await self._retrieve_resume_context_dual(user_input)
         
         # 步骤 3: 检索题目
         questions = await self._retrieve_questions(user_input)
         print(f"[Controller] 检索到 {len(questions)} 道相关题目")
         
-        # 步骤 4: 做出决策（传入简历上下文）
+        # 步骤 4: 做出决策（传入简历上下文 + 质量判断依据）
         guidance = await self.engine.make_decision(
-            user_input, quality, questions, self.resume_context
+            user_input, quality, questions, self.resume_context, quality_reason
         )
         print(f"[Controller] 决策: {guidance.action.value}")
         print(f"[Controller] 考核点: {guidance.target_topic}")
         print(f"[Controller] 问题焦点: {guidance.question_focus[:60]}...")
         
-        # 步骤 5: 更新状态
-        self.state.update(guidance)
+        # 步骤 5: 更新状态（传入用户回答，供历史记录）
+        self.state.update(guidance, user_answer=user_input)
         
         # 步骤 6: 返回思路指令
         print(f"[Controller] 思路指令已生成，交给 GLM 组织话术")
         return guidance
     
-    async def _retrieve_resume_context(self, query: str):
+    async def _retrieve_resume_context_dual(self, query: str):
         """
-        检索简历上下文（新增方法）
+        检索简历上下文（双重上下文策略）
         
         策略：
-        1. 优先按用户回答内容检索简历
-        2. 如果无结果，按当前考核点检索
-        3. 缓存到 self.resume_context 供后续使用
+        1. 始终先获取当前考核点的上下文（用于质量评估）
+        2. 如果深度接近上限且不是最后一个话题，预获取下一个考核点的上下文
+        3. 拼接双重上下文供决策使用
         """
         if not self.candidate_id:
             self.resume_context = ""
@@ -136,24 +141,58 @@ class InterviewController:
         
         current_topic = self.state.get_current_topic()
         topic_name = current_topic.topic if current_topic else None
+        current_depth = current_topic.depth if current_topic else 0
         
-        # 1. 先按用户回答检索
-        self.resume_context = await self.retriever.get_resume_context(
+        context_parts = []
+        
+        # === 第一层：当前考核点的上下文（必须获取，用于质量评估）===
+        current_context = await self.retriever.get_resume_context(
             candidate_id=self.candidate_id,
-            topic=query,
+            topic=query if query else topic_name,  # 优先用用户回答检索
             max_chunks=2
         )
         
-        # 2. 如果无结果，按当前考核点检索（兜底）
-        if not self.resume_context and topic_name:
-            self.resume_context = await self.retriever.get_resume_context(
+        # 如果用用户回答没检索到，再用当前考核点名称兜底
+        if not current_context and topic_name and query:
+            current_context = await self.retriever.get_resume_context(
                 candidate_id=self.candidate_id,
                 topic=topic_name,
                 max_chunks=2
             )
         
+        if current_context:
+            context_parts.append(f"【当前考核点：{topic_name}】\n{current_context}")
+            print(f"[Controller] 当前考核点简历上下文已加载 ({len(current_context)} 字符)")
+        
+        # === 第二层：下一个考核点的上下文（预加载，用于切换准备）===
+        # 条件：深度接近上限 且 不是最后一个话题
+        should_preload_next = (
+            current_depth >= self.state.max_depth - 1 
+            and not self.state.is_last_topic()
+        )
+        
+        if should_preload_next:
+            next_topic_info = self.state.get_next_topic_info()
+            if next_topic_info:
+                next_topic_name = next_topic_info.topic
+                next_topic_source = next_topic_info.source
+                print(f"[Controller] 深度接近上限({current_depth}/{self.state.max_depth})，预加载下一个考核点: {next_topic_name} (来源: {next_topic_source})")
+                
+                next_context = await self.retriever.get_resume_context(
+                    candidate_id=self.candidate_id,
+                    topic=next_topic_name,
+                    max_chunks=2
+                )
+                
+                if next_context:
+                    context_parts.append(f"【下一个考核点：{next_topic_name} (来源: {next_topic_source})】\n{next_context}")
+                    print(f"[Controller] 下一个考核点简历上下文已预加载 ({len(next_context)} 字符)")
+        
+        # 拼接双重上下文
+        self.resume_context = "\n\n".join(context_parts) if context_parts else ""
+        
         if self.resume_context:
-            print(f"[Controller] 简历上下文已加载 ({len(self.resume_context)} 字符)")
+            print(f"[Controller] 简历上下文总计 ({len(self.resume_context)} 字符)")
     
     async def _retrieve_questions(self, query: str, limit: int = 3) -> List[Dict]:
         """
@@ -176,7 +215,7 @@ class InterviewController:
                     limit=limit * 2
                 )
         
-        # 3. 过滤：未使用 + 相似度>0.5（从0.6降低，避免有效题目被过滤）
+        # 3. 过滤：未使用 + 相似度>0.5
         filtered = []
         for q in all_questions:
             q_id = q.get('id')

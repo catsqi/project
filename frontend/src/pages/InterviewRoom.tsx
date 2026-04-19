@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Text } from '../components/ui/Text';
-import { Progress } from '../components/ui/Progress';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { DigitalInterviewer } from '../components/ui/DigitalInterviewer';
 import { InteractionBar } from '../components/ui/InteractionBar';
@@ -37,9 +36,7 @@ const InterviewRoom: React.FC = () => {
   // 用于嘴型动画和麦克风堵塞，确保两者逻辑一致
   const isAIActuallySpeaking = isAISpeaking || isAudioSpeaking;
   
-  const [messages, setMessages] = useState<{id: number, sender: 'ai'|'user', text: string}[]>([
-    { id: 1, sender: 'ai', text: 'HELLO. I AM READY. SHALL WE BEGIN?' }
-  ]);
+  const [messages, setMessages] = useState<{id: number, sender: 'ai'|'user', text: string}[]>([]);
   const [progress, setProgress] = useState(0);
   const [aiState, setAiState] = useState<'idle' | 'listening' | 'thinking' | 'speaking'>('idle');
   const [isVoiceActive, setIsVoiceActive] = useState(false);
@@ -431,15 +428,6 @@ const InterviewRoom: React.FC = () => {
 
         {/* Right Column: Chat Console & Interaction */}
         <section className="flex-1 flex flex-col md:w-1/2 min-h-0">
-          
-          {/* Progress */}
-          <div className="flex-none mb-6">
-            <div className="flex justify-between mb-2">
-              <Text variant="caption">PROGRESS</Text>
-              <Text variant="caption">{progress}%</Text>
-            </div>
-            <Progress value={progress} />
-          </div>
 
           {/* Chat History Flow */}
           <div className="flex-1 overflow-y-auto pr-4 space-y-8 pb-4 custom-scrollbar">
