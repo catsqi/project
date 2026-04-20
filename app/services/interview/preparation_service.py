@@ -213,26 +213,32 @@ class InterviewPreparationService:
         """
         使用 DeepSeek 决策第一个考核点
         
-        简化版：不生成完整的 InterviewGuidance，只决定考什么
+        重要：面试从项目经验阶段开始，第一个问题必须关于项目
         """
-        # 构建 Prompt
         project_names = [p.get("project_name", "") for p in projects[:2]]
+        project_skills = []
+        for proj in projects[:2]:
+            project_skills.extend(proj.get("project_specific_skills", []))
+        
         question_previews = [f"[{q.get('category')}] {q.get('question', '')[:40]}..." for q in questions[:5]]
         
         prompt = f"""请分析以下候选人简历，决定面试的第一个考核点。
 
+【重要】面试的第一个阶段是"项目经验考核"，必须从候选人的项目经历中选择考核点！
+
 候选人：{candidate_name}
 技能列表：{', '.join(skills[:10])}
 主要项目：{', '.join(project_names)}
+项目相关技能：{', '.join(project_skills[:8])}
 
 相关题库题目：
 {chr(10).join(question_previews)}
 
 请输出 JSON 格式决策：
 {{
-    "target_topic": "要考核的技术点（从技能中选择最核心的）",
-    "question_focus": "核心要了解什么",
-    "suggested_angle": "提问角度（原理/实践/优化/场景）",
+    "target_topic": "要考核的技术点（必须从项目相关技能中选择）",
+    "question_focus": "核心要了解什么（结合项目经验提问）",
+    "suggested_angle": "提问角度（实践/场景/优化）",
     "context_hints": ["结合简历的提示1", "结合简历的提示2"],
     "selected_question_id": "选用的题库ID（从上面选择最相关的）",
     "reason": "选择理由"
@@ -242,7 +248,7 @@ class InterviewPreparationService:
             response = await self.decision_client.chat.completions.create(
                 model=self.decision_model,
                 messages=[
-                    {"role": "system", "content": "你是技术面试官，负责决定面试策略。输出JSON格式。"},
+                    {"role": "system", "content": "你是技术面试官，负责决定面试策略。面试从项目经验考核开始，必须选择项目相关的考核点。输出JSON格式。"},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.3,
@@ -261,8 +267,8 @@ class InterviewPreparationService:
             
             return {
                 "action": "transition",
-                "target_topic": result.get("target_topic", skills[0] if skills else "Java基础"),
-                "question_focus": result.get("question_focus", "了解技术经验"),
+                "target_topic": result.get("target_topic", project_skills[0] if project_skills else "Java基础"),
+                "question_focus": result.get("question_focus", "了解项目中的技术经验"),
                 "suggested_angle": result.get("suggested_angle", "实践"),
                 "context_hints": result.get("context_hints", []),
                 "question_bank_id": selected_id,
@@ -272,13 +278,13 @@ class InterviewPreparationService:
             
         except Exception as e:
             print(f"[Preparation-Error] DeepSeek 决策失败: {e}")
-            # 降级：使用第一个技能
+            # 降级：使用第一个项目技能
             return {
                 "action": "transition",
-                "target_topic": skills[0] if skills else "Java基础",
-                "question_focus": f"了解{skills[0] if skills else 'Java'}的使用经验",
+                "target_topic": project_skills[0] if project_skills else "Java基础",
+                "question_focus": f"了解项目中{project_skills[0] if project_skills else 'Java'}的使用经验",
                 "suggested_angle": "实践",
-                "context_hints": ["从简历中提取的核心技能"],
+                "context_hints": ["从简历中提取的项目相关技能"],
                 "question_bank_id": questions[0].get("id") if questions else None,
                 "question_bank_text": questions[0].get("question") if questions else None,
                 "reason": "DeepSeek 失败，使用默认策略"

@@ -24,12 +24,21 @@ class AnswerQuality(str, Enum):
     IRRELEVANT = "irrelevant" # 跑题：答非所问
 
 
+class InterviewPhase(str, Enum):
+    """面试阶段"""
+    PROJECTS = "projects"       # 项目经验考核
+    TECHNICAL = "technical"     # 技术题库考核
+    BEHAVIORAL = "behavioral"   # 行为面试
+    CLOSING = "closing"         # 结束阶段
+
+
 @dataclass
 class TopicInfo:
     """考核点信息"""
     topic: str           # 技术点名称，如"Redis分布式锁"
     source: str          # 来源：项目A/简历技能
     priority: int        # 优先级：8=高（项目经验），5=中（技能列表）
+    phase: InterviewPhase = InterviewPhase.PROJECTS  # 归属阶段
     asked_count: int = 0 # 已问次数
     depth: int = 0       # 当前深度
 
@@ -48,6 +57,10 @@ class InterviewGuidance:
     context_hints: List[str] = field(default_factory=list)  # 上下文提示（简历相关点、之前回答线索）
     depth_level: int = 1                 # 深度级别：1=基础，2=深入，3=挑战
     suggested_angle: str = "实践"         # 建议角度：原理/实践/优化/对比/场景/故障
+    
+    # 阶段信息
+    phase: InterviewPhase = InterviewPhase.PROJECTS  # 当前面试阶段
+    phase_transition_hint: Optional[str] = None      # 阶段切换提示，如"项目考核完成，开始技术题"
     
     # 可选约束
     must_use_bank_question: bool = False # 是否必须用题库原题

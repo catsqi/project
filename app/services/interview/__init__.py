@@ -12,7 +12,7 @@ AI 面试控制器模块
 """
 
 # 导入模型
-from .models import InterviewGuidance, ActionType, AnswerQuality, TopicInfo
+from .models import InterviewGuidance, ActionType, AnswerQuality, TopicInfo, InterviewPhase
 
 # 保持兼容性：Instruction 是 InterviewGuidance 的别名
 Instruction = InterviewGuidance
@@ -29,5 +29,6 @@ __all__ = [
     "ActionType",
     "AnswerQuality",
     "TopicInfo",
+    "InterviewPhase",
     "get_interview_controller"
 ]

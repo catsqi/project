@@ -295,27 +295,26 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
                 }
                 instruction = length_instruction.get(quality_tier, length_instruction["medium"])
 
-                return f"""你现在是一位技术精湛、性格温和的资深面试官。候选人刚刚回答完一段话。
-你的任务：对候选人【刚刚的语音内容】给出一个自然、口语化、像真人交流一样的回应。
+                return f"""你现在是面试官的"即时反馈助手"。候选人刚刚回答完一段话。
+你的任务：对候选人【刚刚的语音内容】给出一个自然、温和、情感丰富的口语化回应。
 长度要求：{instruction}
 
-【打破死板！你可以根据语境，自由选择以下一种或多种"接话策略"】：
-1. 沉思与延展 (例如："嗯...你刚才提到的这个点，确实在目前的工业界落地时经常会遇到，这是一个很经典的痛点。")
-2. 提炼与升华 (例如："其实听到这里，我感觉你本质上是在用空间换时间，把底层的逻辑梳理得很透彻。")
-3. 场景代入感 (例如："我完全能想象到那个业务场景，当高并发真的打过来的时候，能想到加这一层兜底，思路是很清晰的。")
-4. 表达专业共鸣 (例如："没错，真正踩过这个坑的人，确实会对底层的这个机制有更深的体会。")
+**核心定位**：
+- 你只负责承接对话、共鸣情感、提炼亮点。
+- **绝对不要提问！** 提问环节由后续的"决策大脑"负责，你只需做好过渡。
+- 说话要像真人，多用停顿词（嗯、喔、确实、原来是这样）。
 
-【表现得像个真人】
-- 多用口语化的停顿词，比如"嗯"、"确实"、"其实"。
-- 严禁像机器人一样每次都说"好的，我听懂了"、"你的回答很详细"。
-- 顺着候选人的话往下聊半句，假装你在思考。
+【接话策略建议】：
+1. 表达共鸣 (例如："我完全能理解那种压力，在这种高并发场景下，能稳住确实不容易。")
+2. 肯定亮点 (例如："嗯，听得出你在底层原理这块下过功夫，逻辑梳理得很顺畅。")
+3. 纯粹回声 (例如："原来是这么个业务背景，确实，场景的特殊性决定了方案的独特性。")
 
-【最高级红线指令】
-1. 绝对禁止提问！严禁在句尾使用任何形式的问号（？或 ?）。
-2. 必须以坚定的陈述语气结束（使用句号或感叹号）。
-3. 绝对不要引出未来的流程（严禁说"接下来"、"那么"、"我们继续"、"下一个问题"）。
+【表现红线】
+1. **绝对禁止提问！** 严禁在任何地方使用问号（？）。
+2. **绝对禁止开启新话题！** 严禁说"接下来"、"我们谈谈"、"我想了解"。
+3. **坚定结尾**：必须以陈述句（句号或感叹号）坚定结束，不要留出让对方接话的余地。
 
-绝对禁止提问。绝对禁止提问。绝对禁止提问。只输出陈述式反馈。"""
+记住：你只是一个反馈者，不要把自己当成正在审考对方的面试官，表现得更像一个倾听者。"""
 
             # 依然使用物理隔离，屏蔽一问一答的历史记录
             async with temporary_system_prompt_modifier(short_response_modifier):
@@ -434,9 +433,22 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
         hints = "\n".join([f"- {h}" for h in guidance.context_hints]) if guidance.context_hints else ""
         bank_ref = f"\n参考题库：{guidance.question_bank_text}" if guidance.must_use_bank_question else ""
         
+        is_ending = getattr(guidance.action, "value", str(guidance.action)) == "end"
+
         def modify_prompt(original_prompt: str) -> str:
             """修改函数：追加 Guidance 要求"""
-            return original_prompt + f"""
+            if is_ending:
+                return original_prompt + f"""
+            
+【当前指令】
+考核点：{guidance.target_topic}
+任务焦点：{guidance.question_focus}
+{hints}
+
+⚠️ 角色提醒：你是面试官。面试已经到达尾声，请根据上面的指导自然地进行总结并礼貌地结束面试。
+🚫 严格遵守：**绝对不要**再提出任何新的问题，**绝对不要**在句尾使用问号。保持口语化、专业。"""
+            else:
+                return original_prompt + f"""
             
 【当前面试问题要求】
 考核点：{guidance.target_topic}
@@ -452,10 +464,11 @@ class HighSpeedVADHandler(AsyncAudioVideoStreamHandler):
 
         # 使用上下文管理器：临时修改 System Prompt，确保恢复
         async with temporary_system_prompt_modifier(modify_prompt):
-            # 触发 GLM 继续生成（幽灵消息：触发词不写入历史记录）
+            # 触发词改为更自然的、非指令性的标识符，避免模型回复“好的”
+            trigger_text = "（面试继续，请开始总结并道别：）" if is_ending else "（面试继续，请基于最新指导提出问题：）"
             await process_interaction(
                 "text",
-                "请根据以上给出的最新焦点和指导，自然地向候选人提出下一个面试问题。",  # 避免过短的触发词导致模型幻觉生成滴滴声
+                trigger_text,
                 self.output_queue,
                 on_text_chunk=send_ai_text,
                 manage_processing_state=False,

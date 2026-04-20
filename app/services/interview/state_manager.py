@@ -2,167 +2,321 @@
 面试状态管理器
 
 职责：
-- 管理面试进度（当前话题、深度、历史）
-- 从简历提取考核点（支持演示模式限制）
+- 管理面试进度（三阶段状态机：项目→技术→行为→结束）
+- 从简历提取考核点，按阶段分队列管理
+- 阶段差异化深度限制
 - 状态持久化和查询
 """
 
 from typing import List, Dict, Optional, Set
-from .models import TopicInfo, InterviewGuidance, ActionType
+from .models import TopicInfo, InterviewGuidance, ActionType, InterviewPhase
+
+# 阶段顺序
+PHASE_ORDER = [InterviewPhase.PROJECTS, InterviewPhase.TECHNICAL, InterviewPhase.BEHAVIORAL]
+
+# 各阶段深度限制
+PHASE_DEPTH_LIMITS = {
+    InterviewPhase.PROJECTS: 3,     # 项目阶段可深入追问
+    InterviewPhase.TECHNICAL: 2,    # 技术题答完就换
+    InterviewPhase.BEHAVIORAL: 1,   # 行为题浅问即可
+}
+
+# 阶段中文标签（用于 Prompt 注入）
+PHASE_LABELS = {
+    InterviewPhase.PROJECTS: "项目经验考核",
+    InterviewPhase.TECHNICAL: "技术题库考核",
+    InterviewPhase.BEHAVIORAL: "行为面试",
+    InterviewPhase.CLOSING: "面试结束",
+}
+
+# 阶段切换提示（用于 GLM 过渡语）
+PHASE_TRANSITION_HINTS = {
+    (InterviewPhase.PROJECTS, InterviewPhase.TECHNICAL): "项目经验聊得差不多了，接下来我们考几道技术题",
+    (InterviewPhase.TECHNICAL, InterviewPhase.BEHAVIORAL): "技术方面了解得差不多了，最后聊一个行为面试的问题",
+    (InterviewPhase.BEHAVIORAL, InterviewPhase.CLOSING): "面试已经全部完成，感谢你的参与",
+}
 
 
 class InterviewStateManager:
-    """面试状态管理器"""
+    """面试状态管理器（三阶段状态机）"""
     
-    def __init__(self, max_depth_per_topic: int = 3, max_projects: int = None, max_skills: int = None):
-        self.max_depth = max_depth_per_topic
-        self.max_projects = max_projects  # 演示模式：限制项目数量
-        self.max_skills = max_skills      # 演示模式：限制技能数量
+    def __init__(self, max_projects: int = 2, max_technical: int = 2, max_behavioral: int = 1):
+        # 各阶段话题数量限制
+        self.max_projects = max_projects
+        self.max_technical = max_technical
+        self.max_behavioral = max_behavioral
         
-        # 面试进度
-        self.phase = "technical"           # technical/behavioral/closing
-        self.current_topic_index = 0       # 当前考核点游标
+        # 状态机
+        self.current_phase = InterviewPhase.PROJECTS
+        self.current_topic_index = 0       # 当前阶段内的游标
         
-        # 数据
-        self.resume_topics: List[TopicInfo] = []      # 简历考核点队列
-        self.current_question_bank: List[Dict] = []   # 当前话题的候选题目
-        self.used_question_ids: Set[str] = set()      # 防重复
+        # 三阶段独立队列
+        self.project_topics: List[TopicInfo] = []
+        self.technical_topics: List[TopicInfo] = []
+        self.behavioral_topics: List[TopicInfo] = []
+        
+        # 兼容旧接口：resume_topics 扁平视图
+        self.resume_topics: List[TopicInfo] = []
+        
+        # 题库防重复
+        self.current_question_bank: List[Dict] = []
+        self.used_question_ids: Set[str] = set()
         
         # 历史记录
         self.history: List[Dict] = []
     
-    def load_candidate(self, resume_json: Dict):
-        """加载候选人简历，提取考核点（支持演示模式限制）"""
-        self.resume_topics = self._extract_resume_topics(resume_json)
-        
-        if self.resume_topics:
-            print(f"[State] 提取 {len(self.resume_topics)} 个考核点（演示模式: 项目≤{self.max_projects}, 技能≤{self.max_skills}）")
-        else:
-            print("[State] 警告：未提取到考核点")
+    # ==================== 加载候选人 ====================
     
-    def _extract_resume_topics(self, resume: Dict) -> List[TopicInfo]:
-        """从简历提取考核点，按优先级排序（支持演示模式限制）"""
-        topics = []
-        seen = set()
-        project_count = 0
+    def load_candidate(self, resume_json: Dict):
+        """加载候选人简历，按阶段提取考核点"""
+        self.project_topics, self.technical_topics, self.behavioral_topics = \
+            self._extract_resume_topics(resume_json)
         
-        # 1. 项目实战技能（高优先级）
+        self.current_phase = InterviewPhase.PROJECTS
+        self.current_topic_index = 0
+        
+        # 构建扁平视图（兼容旧代码）
+        self.resume_topics = self.project_topics + self.technical_topics + self.behavioral_topics
+        
+        total = len(self.resume_topics)
+        print(f"[State] 提取考核点: 项目{len(self.project_topics)}个, "
+              f"技术{len(self.technical_topics)}个, 行为{len(self.behavioral_topics)}个 (共{total}个)")
+    
+    def _extract_resume_topics(self, resume: Dict):
+        """从简历提取考核点，按阶段分队列"""
+        seen = set()
+        project_topics = []
+        technical_topics = []
+        behavioral_topics = []
+        
+        # === 1. 项目技能 → project_topics ===
+        project_count = 0
         for proj in resume.get("projects", []):
-            # 演示模式：限制项目数量
-            if self.max_projects is not None and project_count >= self.max_projects:
+            if project_count >= self.max_projects:
                 break
-                
+            
             proj_name = proj.get("project_name", "未知项目")
             for skill in proj.get("project_specific_skills", []):
                 skill_lower = skill.lower()
                 if skill_lower not in seen:
-                    topics.append(TopicInfo(
+                    project_topics.append(TopicInfo(
                         topic=skill,
                         source=f"项目:{proj_name}",
-                        priority=8
+                        priority=8,
+                        phase=InterviewPhase.PROJECTS
                     ))
                     seen.add(skill_lower)
             
             project_count += 1
         
-        # 2. 全局技能（中优先级）
+        # === 2. 全局技能 → technical_topics ===
         skill_count = 0
         for skill in resume.get("global_profile", {}).get("all_technical_skills", []):
-            # 演示模式：限制技能数量
-            if self.max_skills is not None and skill_count >= self.max_skills:
+            if skill_count >= self.max_technical:
                 break
-                
+            
             skill_lower = skill.lower()
             if skill_lower not in seen:
-                topics.append(TopicInfo(
+                technical_topics.append(TopicInfo(
                     topic=skill,
                     source="简历技能",
-                    priority=5
+                    priority=5,
+                    phase=InterviewPhase.TECHNICAL
                 ))
                 seen.add(skill_lower)
                 skill_count += 1
         
-        # 按优先级排序
-        topics.sort(key=lambda x: x.priority, reverse=True)
-        return topics
+        # === 3. 行为题占位 → behavioral_topics ===
+        for i in range(self.max_behavioral):
+            behavioral_topics.append(TopicInfo(
+                topic="行为面试题",
+                source="行为题库",
+                priority=3,
+                phase=InterviewPhase.BEHAVIORAL
+            ))
+        
+        return project_topics, technical_topics, behavioral_topics
+    
+    # ==================== 当前阶段话题列表 ====================
+    
+    def _get_current_topics(self) -> List[TopicInfo]:
+        """获取当前阶段的话题列表"""
+        return {
+            InterviewPhase.PROJECTS: self.project_topics,
+            InterviewPhase.TECHNICAL: self.technical_topics,
+            InterviewPhase.BEHAVIORAL: self.behavioral_topics,
+        }.get(self.current_phase, [])
+    
+    # ==================== 话题访问 ====================
     
     def get_current_topic(self) -> Optional[TopicInfo]:
         """获取当前考核点"""
-        if 0 <= self.current_topic_index < len(self.resume_topics):
-            return self.resume_topics[self.current_topic_index]
+        topics = self._get_current_topics()
+        if 0 <= self.current_topic_index < len(topics):
+            return topics[self.current_topic_index]
         return None
     
     def get_next_topic(self) -> str:
         """获取下一个考核点名称（安全）"""
-        next_idx = self.current_topic_index + 1
-        if next_idx < len(self.resume_topics):
-            return self.resume_topics[next_idx].topic
-        return "其他技术点"
+        info = self.get_next_topic_info()
+        return info.topic if info else "其他技术点"
     
     def get_next_topic_info(self) -> Optional[TopicInfo]:
-        """获取下一个考核点的完整信息（用于简历检索和决策）"""
+        """获取下一个考核点的完整信息（先阶段内，再下一阶段）"""
+        topics = self._get_current_topics()
+        
+        # 阶段内下一个
         next_idx = self.current_topic_index + 1
-        if next_idx < len(self.resume_topics):
-            return self.resume_topics[next_idx]
+        if next_idx < len(topics):
+            return topics[next_idx]
+        
+        # 跨阶段下一个
+        next_phase = self._get_next_phase()
+        if next_phase:
+            next_topics = {
+                InterviewPhase.PROJECTS: self.project_topics,
+                InterviewPhase.TECHNICAL: self.technical_topics,
+                InterviewPhase.BEHAVIORAL: self.behavioral_topics,
+            }.get(next_phase, [])
+            if next_topics:
+                return next_topics[0]
+        
         return None
     
+    def get_current_phase(self) -> InterviewPhase:
+        """获取当前面试阶段"""
+        return self.current_phase
+    
+    def get_current_phase_label(self) -> str:
+        """获取当前阶段中文标签"""
+        return PHASE_LABELS.get(self.current_phase, "未知阶段")
+    
     def is_last_topic(self) -> bool:
-        """检查当前是否是最后一个考核点"""
-        return self.current_topic_index >= len(self.resume_topics) - 1
+        """检查当前是否是阶段内最后一个考核点（兼容旧接口）"""
+        return self.is_last_topic_in_phase()
+    
+    def is_last_topic_in_phase(self) -> bool:
+        """检查当前是否是阶段内最后一个考核点"""
+        topics = self._get_current_topics()
+        return self.current_topic_index >= len(topics) - 1
+    
+    def is_last_topic_overall(self) -> bool:
+        """检查当前是否是整个面试最后一个考核点"""
+        if self.current_phase != InterviewPhase.BEHAVIORAL:
+            return False
+        topics = self._get_current_topics()
+        return self.current_topic_index >= len(topics) - 1
     
     def is_interview_complete(self) -> bool:
-        """检查面试是否已完成（所有考核点已覆盖）"""
-        return self.current_topic_index >= len(self.resume_topics)
+        """检查面试是否已完成"""
+        return self.current_phase == InterviewPhase.CLOSING
+    
+    # ==================== 深度限制 ====================
+    
+    def get_max_depth(self) -> int:
+        """获取当前阶段的深度上限"""
+        return PHASE_DEPTH_LIMITS.get(self.current_phase, 2)
+    
+    # 兼容旧代码：max_depth 属性
+    @property
+    def max_depth(self) -> int:
+        return self.get_max_depth()
+    
+    def is_depth_limit_reached(self) -> bool:
+        """检查当前话题是否达到深度上限"""
+        topic = self.get_current_topic()
+        if topic:
+            return topic.depth >= self.get_max_depth()
+        return False
+    
+    # ==================== 状态更新 ====================
     
     def update(self, guidance: InterviewGuidance, user_answer: str = ""):
         """根据思路指令更新状态"""
         current_topic = self.get_current_topic()
         
         if guidance.action == ActionType.TRANSITION:
-            # 切换话题：重置深度，移动游标，清空题库
+            # 重置当前话题深度
             if current_topic:
                 current_topic.depth = 0
             
+            # 阶段内游标 +1
             self.current_topic_index += 1
             self.current_question_bank = []
             
-            # 更新新话题
-            new_topic = self.get_current_topic()
-            if new_topic:
-                new_topic.depth = 0  # 新话题初始深度为0（还没问问题）
-                new_topic.asked_count += 1
-
+            # 检查是否需要跨阶段
+            topics = self._get_current_topics()
+            if self.current_topic_index >= len(topics):
+                self._advance_phase()
+            else:
+                # 阶段内切换
+                new_topic = self.get_current_topic()
+                if new_topic:
+                    new_topic.depth = 0
+                    new_topic.asked_count += 1
+        
         elif guidance.action == ActionType.NEXT_QUESTION:
-            # 同话题新题：重置深度
             if current_topic:
                 current_topic.depth += 1
                 current_topic.asked_count += 1
-                
+        
         elif guidance.action == ActionType.FOLLOW_UP:
-            # 追问：深度+1
             if current_topic:
                 current_topic.depth += 1
         
         elif guidance.action == ActionType.END:
-            # 结束面试：标记为完成状态
             if current_topic:
                 current_topic.depth = 0
-            self.current_topic_index = len(self.resume_topics)  # 标记所有考核点已完成
+            self.current_phase = InterviewPhase.CLOSING
         
         # 记录历史
         self.history.append({
             "action": guidance.action.value,
             "topic": guidance.target_topic,
+            "phase": self.current_phase.value,
             "focus": guidance.question_focus[:80],
             "user_answer": user_answer
         })
     
-    def is_depth_limit_reached(self) -> bool:
-        """检查当前话题是否达到深度上限"""
-        topic = self.get_current_topic()
-        if topic:
-            return topic.depth >= self.max_depth
-        return False
+    # ==================== 阶段切换 ====================
+    
+    def _get_next_phase(self) -> Optional[InterviewPhase]:
+        """获取下一个阶段"""
+        try:
+            current_idx = PHASE_ORDER.index(self.current_phase)
+            if current_idx + 1 < len(PHASE_ORDER):
+                return PHASE_ORDER[current_idx + 1]
+        except ValueError:
+            pass
+        return None
+    
+    def _advance_phase(self):
+        """切换到下一个阶段"""
+        old_phase = self.current_phase
+        next_phase = self._get_next_phase()
+        
+        if next_phase:
+            self.current_phase = next_phase
+            self.current_topic_index = 0
+            print(f"[State] 阶段切换: {PHASE_LABELS[old_phase]} → {PHASE_LABELS[next_phase]}")
+            
+            # 初始化新阶段的第一个话题
+            new_topic = self.get_current_topic()
+            if new_topic:
+                new_topic.depth = 0
+                new_topic.asked_count += 1
+        else:
+            self.current_phase = InterviewPhase.CLOSING
+            print(f"[State] 面试结束")
+    
+    def get_phase_transition_hint(self) -> Optional[str]:
+        """获取阶段切换提示语（供 GLM 使用）"""
+        next_phase = self._get_next_phase()
+        if next_phase:
+            return PHASE_TRANSITION_HINTS.get((self.current_phase, next_phase))
+        return None
+    
+    # ==================== 题库防重复 ====================
     
     def mark_question_used(self, question_id: str):
         """标记题目已使用"""
@@ -173,11 +327,17 @@ class InterviewStateManager:
         """检查题目是否已使用"""
         return question_id in self.used_question_ids
     
+    # ==================== 摘要 ====================
+    
     def get_summary(self) -> Dict:
         """获取面试摘要"""
+        total = len(self.project_topics) + len(self.technical_topics) + len(self.behavioral_topics)
         return {
-            "total_topics": len(self.resume_topics),
-            "covered_topics": self.current_topic_index + 1,
+            "current_phase": self.current_phase.value,
+            "total_topics": total,
+            "project_topics": len(self.project_topics),
+            "technical_topics": len(self.technical_topics),
+            "behavioral_topics": len(self.behavioral_topics),
             "total_questions": len(self.used_question_ids),
             "history": self.history
         }
